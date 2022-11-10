@@ -125,6 +125,7 @@ textarea {
     transform-origin: 90% 0%;
     animation: headerNotifyGrowth ease-in 0.1s;
     will-change: opacity, transform;
+    border-radius: 5px;
     display: none;
 }
 
@@ -154,6 +155,46 @@ textarea {
     padding: 8px 0;
 }
 
-#body img {
+.header__setting-item:last-child,
+.header__user-item:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#body {}
+
+.body__slideshow-container {
+    height: 600px;
+}
+
+.body__slideshow {
     width: 100%;
+    height: 600px;
+    position: relative;
+    top: 90px;
+    z-index: -1;
+}
+
+.body__slideshow-background {
+    position: relative;
+}
+
+.body__slideshow-background--img {
+    width: 100%;
+}
+
+.body__slideshow-logo {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* Search tiket */
+
+.container {
+    height: 200px;
+    background-color: aquamarine;
 }
