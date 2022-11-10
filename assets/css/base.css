@@ -1,0 +1,12 @@
+:root {
+    --text-title-color: #240046;
+    --text-color: #333333D6;
+}
+
+html {
+    /* 16px = 1rem */
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
