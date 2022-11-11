@@ -23,7 +23,7 @@
     <header id="header" class="container-fluid">
         <div class="header_wrap">
             <div class="header__logo">
-                <img src="./assets/img/logo_has_color.png" alt="This is LOGO">
+                <img loading="lazy" src="./assets/img/logo_has_color.png" alt="This is LOGO">
             </div>
             <div class="header__search">
                 <input type="text" class="header__search-input" placeholder="Search...">
@@ -71,23 +71,216 @@
         <div class="body__slideshow-container">
             <div class="body__slideshow">
                 <div class="body__slideshow-background">
-                    <img class="body__slideshow-background--img" src="./assets/img/home_1.png" alt="">
+                    <img loading="lazy" class="body__slideshow-background--img" src="./assets/img/home_1.png" alt="">
                 </div>
                 <div class="body__slideshow-logo">
-                    <img src="./assets/img/logo_not_color.png" alt="">
+                    <img loading="lazy" src="./assets/img/logo_not_color.png" alt="">
                 </div>
             </div>
         </div>
 
         <!-- Search Ticket -->
-        <div class="container">
+        <div class="search__ticket">
+            <div class="container">
+                <h5 class="search__ticket-header">Search Ticket</h5>
+                <div class="search__ticket-choose-wrap">
+
+                    <div class="search__ticket-choose-direction">
+                        <div class="search__ticket-wrap-item">
+                            <img src="./assets/img/mini_icon_location.png" alt="" class="search__ticket-choose-img">
+                            <select class="search__ticket-choose">
+                                <option value="">Your location</option>
+                                <option value="hochiminh">TP Hồ Chí Minh</option>
+                                <option value="dalat">Đà Lạt</option>
+                                <option value="vungtau">Vũng Tàu</option>
+                                <option value="tayninh">Tây Ninh</option>
+                                <option value="camau">Cà Mau</option>
+                                <option value="hue">Huế</option>
+                            </select>
+                        </div>
+                        <img src="./assets/img/mini_icon_direction.png" alt="">
+                        <div class="search__ticket-wrap-item">
+                            <img src="./assets/img/mini_icon_destination.png" alt="" class="search__ticket-choose-img">
+                            <select class="search__ticket-choose">
+                                <option value="">Your destination</option>
+                                <option value="hochiminh">TP Hồ Chí Minh</option>
+                                <option value="vungtau">Vũng Tàu</option>
+                                <option value="dalat">Đà Lạt</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="search__ticket-wrap-item">
+                        <img src="./assets/img/mini_icon_date.png" alt="" class="search__ticket-choose-img">
+                        <select class="search__ticket-choose">
+                            <option value="">Departure Date</option>
+                            <option value="saab">Saab</option>
+                            <option value="mercedes">Mercedes</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="search__ticket-submit">
+                    <button class="btn-base btn-search__ticket">
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Available Ticket -->
+        <div class="availableTicket-container">
+            <div class="container">
+                <div class="availableTicket-header">
+                    <div class="availableTicket-header-title">Available Ticket</div>
+                    <div class="availableTicket-header-choose">
+                        <div class="availableTicket-header-choose__filter">
+                            Filter
+                            <i class="fa-solid fa-filter"></i>
+                        </div>
+                        <div class="availableTicket-header-choose__sort">
+                            Sort by
+                            <i class="fa-solid fa-sort"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ticket__information row">
+                    <div class="ticket__information-content col-xl-8">
+                        <div class="row">
+                            <div class="ticket__information-description col-xl-8">
+                                <div class="ticket__car">
+                                    <div class="ticket__car-name">Thành Bưởi</div>
+                                    <div class="ticket__car-rate">
+                                        <i class="fa-solid fa-star"></i>
+                                        <span>4.8 (B55)</span>
+                                    </div>
+                                </div>
+                                <div class="ticket__car-type">Limousine 9 seats</div>
+                                <div class="ticket__car-depart">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span class="ticket__car-depart-time">09:00</span>
+                                    <span class="ticket__car-depart-location">Bến xe miền Đông</span>
+                                </div>
+                                <div class="ticket__car-depart-period">2h</div>
+                                <div class="ticket__car-arrive">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span class="ticket__car-arrive-time">14:00</span>
+                                    <span class="ticket__car-arrive-location">Văn phòng Bà Rịa</span>
+                                </div>
+                            </div>
+                            <div class="ticket__information-price col-xl-4">
+                                <div class="ticket-wrap-price">
+                                    <span class="ticket-price">Từ 180.000đ</span>
+                                    <a class="ticket-price__more">More information</a>
+                                </div>
+
+                                <div class="ticket-wrap-buy">
+                                    <span class="ticket-left">9 slots left</span>
+                                    <span class="btn-base ticket-buy">Buy</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ticket__information-img col-xl-4">
+                        <img src="./assets/img/nha-xe-thanh-buoi.png" alt="">
+                    </div>
+                </div>
+
+                <div class="ticket__information row">
+                    <div class="ticket__information-content col-xl-8">
+                        <div class="row">
+                            <div class="ticket__information-description col-xl-8">
+                                <div class="ticket__car">
+                                    <div class="ticket__car-name">Thành Bưởi</div>
+                                    <div class="ticket__car-rate">
+                                        <i class="fa-solid fa-star"></i>
+                                        <span>4.8 (B55)</span>
+                                    </div>
+                                </div>
+                                <div class="ticket__car-type">Limousine 9 seats</div>
+                                <div class="ticket__car-depart">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span class="ticket__car-depart-time">09:00</span>
+                                    <span class="ticket__car-depart-location">Bến xe miền Đông</span>
+                                </div>
+                                <div class="ticket__car-depart-period">2h</div>
+                                <div class="ticket__car-arrive">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span class="ticket__car-arrive-time">14:00</span>
+                                    <span class="ticket__car-arrive-location">Văn phòng Bà Rịa</span>
+                                </div>
+                            </div>
+                            <div class="ticket__information-price col-xl-4">
+                                <div class="ticket-wrap-price">
+                                    <span class="ticket-price">Từ 180.000đ</span>
+                                    <a class="ticket-price__more">More information</a>
+                                </div>
+
+                                <div class="ticket-wrap-buy">
+                                    <span class="ticket-left">9 slots left</span>
+                                    <span class="btn-base ticket-buy">Buy</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ticket__information-img col-xl-4">
+                        <img src="./assets/img/nha-xe-thanh-buoi.png" alt="">
+                    </div>
+                </div>
+
+                <div class="ticket__information row">
+                    <div class="ticket__information-content col-xl-8">
+                        <div class="row">
+                            <div class="ticket__information-description col-xl-8">
+                                <div class="ticket__car">
+                                    <div class="ticket__car-name">Thành Bưởi</div>
+                                    <div class="ticket__car-rate">
+                                        <i class="fa-solid fa-star"></i>
+                                        <span>4.8 (B55)</span>
+                                    </div>
+                                </div>
+                                <div class="ticket__car-type">Limousine 9 seats</div>
+                                <div class="ticket__car-depart">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span class="ticket__car-depart-time">09:00</span>
+                                    <span class="ticket__car-depart-location">Bến xe miền Đông</span>
+                                </div>
+                                <div class="ticket__car-depart-period">2h</div>
+                                <div class="ticket__car-arrive">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span class="ticket__car-arrive-time">14:00</span>
+                                    <span class="ticket__car-arrive-location">Văn phòng Bà Rịa</span>
+                                </div>
+                            </div>
+                            <div class="ticket__information-price col-xl-4">
+                                <div class="ticket-wrap-price">
+                                    <span class="ticket-price">Từ 180.000đ</span>
+                                    <a class="ticket-price__more">More information</a>
+                                </div>
+
+                                <div class="ticket-wrap-buy">
+                                    <span class="ticket-left">9 slots left</span>
+                                    <button class="btn-base ticket-buy">Buy</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ticket__information-img col-xl-4">
+                        <img src="./assets/img/nha-xe-thanh-buoi.png" alt="">
+                    </div>
+                </div>
+
+
+
+            </div>
         </div>
     </div>
 
     <!-- Footer -->
-    <div id="footer">
+    <footer id="footer">
 
-    </div>
+    </footer>
 
 </body>
 

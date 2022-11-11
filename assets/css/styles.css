@@ -27,6 +27,8 @@
     justify-content: space-between;
     align-items: center;
     position: fixed;
+    z-index: 3;
+    box-shadow: 0px 1px #888888;
 }
 
 .header_wrap {
@@ -41,7 +43,7 @@ textarea {
 }
 
 .header__search {
-    min-width: 300px;
+    max-width: 300px;
     margin-top: 22.5px;
     align-items: center;
     height: 45px;
@@ -51,7 +53,7 @@ textarea {
 
 .header__search-input {
     position: relative;
-    min-width: 300px;
+    max-width: 300px;
     height: 100%;
     border-radius: 6px;
     padding: 0 0 0 16px;
@@ -161,17 +163,17 @@ textarea {
     border-bottom-right-radius: 5px;
 }
 
-#body {}
-
-.body__slideshow-container {
-    height: 600px;
+#body {
+    position: relative;
+    top: 90px;
 }
+
+.body__slideshow-container {}
 
 .body__slideshow {
     width: 100%;
-    height: 600px;
     position: relative;
-    top: 90px;
+    top: 0;
     z-index: -1;
 }
 
@@ -181,6 +183,9 @@ textarea {
 
 .body__slideshow-background--img {
     width: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
 }
 
 .body__slideshow-logo {
@@ -192,9 +197,260 @@ textarea {
 }
 
 
-/* Search tiket */
+/* Search ticket */
 
-.container {
+.search__ticket {
+    /* position: absolute; */
+    top: 100%;
+    width: 100%;
     height: 200px;
-    background-color: aquamarine;
+    background-color: rgba(217, 217, 217, 0.5);
+    padding: 20px;
+}
+
+.container {}
+
+.search__ticket-header {
+    color: var(--text-title-color);
+}
+
+.search__ticket-choose-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.search__ticket-choose-direction {
+    display: flex;
+}
+
+.search__ticket-choose-direction>img {
+    display: block;
+    margin: 0 50px;
+}
+
+.search__ticket-wrap-item {
+    display: flex;
+    align-items: center;
+}
+
+.search__ticket-choose {
+    color: var(--text-title-color);
+    align-items: center;
+    display: flex;
+    width: 300px;
+    height: 40px;
+    background-color: rgba(197, 197, 197, 0.5);
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+.search__ticket-choose:hover {
+    cursor: pointer;
+}
+
+.search__ticket-choose-img {
+    height: 30px;
+    width: 30px;
+    margin-right: 5px;
+}
+
+.search__ticket-choose-title {
+    flex-grow: 3;
+    padding-left: 20px;
+}
+
+.search__ticket-choose-icon {
+    display: inline-block;
+}
+
+.search__ticket-submit {
+    text-align: center;
+    margin: 30px 0;
+}
+
+
+/* Available ticket */
+
+.availableTicket-container {
+    width: 100%;
+}
+
+.availableTicket-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--text-title-color);
+    margin: 20px 0;
+}
+
+.availableTicket-header-title {
+    font-weight: 700;
+    align-items: center;
+}
+
+.availableTicket-header-choose {
+    display: flex;
+}
+
+.availableTicket-header-choose__filter {
+    background-color: rgba(197, 197, 197, 0.5);
+    padding: 8px 24px;
+    border-radius: 100px;
+    margin-right: 10px;
+}
+
+.availableTicket-header-choose__sort {
+    background-color: rgba(197, 197, 197, 0.5);
+    padding: 8px 24px;
+    border-radius: 100px;
+}
+
+.availableTicket-header-choose__filter:hover,
+.availableTicket-header-choose__sort:hover {
+    cursor: pointer;
+}
+
+.availableTicket-header-choose__filter img {
+    width: 20px;
+    height: 20px;
+}
+
+.ticket__information {
+    height: 340px;
+    padding: 20px 20px;
+    border: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+.ticket__information-content {}
+
+.ticket__information-img {
+    width: 100%;
+}
+
+.ticket__information-description {}
+
+.ticket__information-price {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ticket__car {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.ticket__car-name {
+    font-size: 37px;
+    font-weight: bold;
+    color: var(--text-title-color);
+    margin-right: 20px;
+}
+
+.ticket__car-rate {
+    height: 30px;
+    line-height: 30px;
+    color: white;
+    width: 120px;
+    border-radius: 8px;
+    background-color: var(--text-title-color);
+}
+
+.ticket__car-type {
+    font-weight: 400;
+    font-size: 23px;
+    margin: 12px 0;
+}
+
+.ticket__car-arrive,
+.ticket__car-depart {
+    display: flex;
+    align-items: center;
+}
+
+.ticket__car-depart>i,
+.ticket__car-depart-time {
+    display: inline-block;
+    color: var(--text-title-color);
+    font-weight: 700;
+    font-size: 38px;
+}
+
+.ticket__car-arrive>i,
+.ticket__car-depart>i {
+    margin-right: 8px;
+}
+
+.ticket__car-arrive-time,
+.ticket__car-depart-time {
+    margin-right: 10px;
+}
+
+.ticket__car-arrive-location,
+.ticket__car-depart-location {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 25px;
+}
+
+.ticket__car-depart-period {
+    height: 50px;
+    font-size: 1.4rem;
+    border-left: 1px solid #333;
+    margin-left: 13px;
+    line-height: 50px;
+    padding-left: 26px
+}
+
+.ticket__car-arrive>i,
+.ticket__car-arrive-time {
+    display: inline-block;
+    color: #FF9E00;
+    font-weight: 700;
+    font-size: 38px;
+}
+
+.ticket__information-img img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.ticket-wrap-price {
+    display: flex;
+    flex-direction: column;
+}
+
+.ticket-wrap-buy {
+    display: flex;
+    flex-direction: column;
+}
+
+.ticket-price {
+    color: #FF9E00;
+    font-weight: 700;
+    font-size: 38px;
+    text-align: right;
+}
+
+.ticket-price__more {
+    font-size: 24px;
+    color: #333;
+    text-align: right;
+}
+
+.ticket-price__more:hover {
+    cursor: pointer;
+}
+
+.ticket-left {
+    text-align: center;
+}
+
+.ticket-buy:hover {
+    background-color: #FF9E00;
 }
