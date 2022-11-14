@@ -22,13 +22,15 @@
 
 #header {
     height: 90px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.6);
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
     z-index: 3;
     box-shadow: 0px 1px #888888;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
 }
 
 .header_wrap {
@@ -305,6 +307,7 @@ textarea {
     background-color: rgba(197, 197, 197, 0.5);
     padding: 8px 24px;
     border-radius: 100px;
+    position: relative;
 }
 
 .availableTicket-header-choose__filter:hover,
@@ -315,6 +318,58 @@ textarea {
 .availableTicket-header-choose__filter img {
     width: 20px;
     height: 20px;
+}
+
+.availableTicket-location-list {
+    position: absolute;
+    top: 50px;
+    left: -175px;
+    background-color: white;
+    width: 300px;
+    border: 1px solid #333;
+    padding-top: 20px;
+    border-radius: 3px;
+    transform-origin: 90% 0%;
+    animation: headerNotifyGrowth ease-in 0.1s;
+    will-change: opacity, transform;
+    display: none;
+}
+
+.availableTicket-location-list::before {
+    content: "";
+    height: 30px;
+    width: 250px;
+    top: -15px;
+    left: 48px;
+    display: block;
+    position: absolute;
+}
+
+.availableTicket-header-choose__sort:hover .availableTicket-location-list {
+    display: block;
+}
+
+.availableTicket__sort-list {
+    padding: 5px 0 5px 20px;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.availableTicket__sort-list:hover {
+    cursor: text;
+}
+
+.availableTicket__sort-item {
+    width: calc(300px -2px);
+    margin-left: -20px;
+    font-size: 1.2rem;
+    padding: 8px 30px;
+    font-weight: 400;
+}
+
+.availableTicket__sort-item:hover {
+    cursor: pointer;
+    background-color: rgb(211, 211, 211);
 }
 
 .ticket__information {
@@ -453,4 +508,127 @@ textarea {
 
 .ticket-buy:hover {
     background-color: #FF9E00;
+}
+
+
+/* Footer */
+
+#footer {
+    border-top: 4px solid var(--primary-color);
+    padding-top: 66px;
+    padding-bottom: 40px;
+    background-color: #ffb43b;
+    position: relative;
+    top: 150px;
+}
+
+#footer .container {
+    padding: 0;
+}
+
+.footer__heading {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: var(--text-title-color);
+}
+
+.footer__list {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-item {}
+
+.footer-item__link:hover {
+    color: var(--primary-color);
+}
+
+.footer-item__link {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--text-title-color);
+    font-size: 1.4rem;
+    padding: 8px 0;
+}
+
+.footer__download {
+    display: flex;
+}
+
+.footer__download-qr {
+    width: 80px;
+    height: 80px;
+    border: 1px solid var(--border-color);
+}
+
+.footer__download-apps {
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-decoration: none;
+}
+
+.footer__download-apps-img {
+    height: 25px;
+}
+
+
+/* Policy */
+
+.footer__bottom {
+    /* background: #f5f5f5; */
+}
+
+.policy {
+    /* background: #f5f5f5; */
+}
+
+.policy__heading {
+    display: flex;
+    justify-content: center;
+}
+
+.policy__heading-item {
+    /* padding: 20px 30px; */
+    font-size: 1.2rem;
+    margin: 40px 0px;
+    padding: 0px 25px;
+    border-right: 1px solid rgba(0, 0, 0, .09);
+}
+
+.policy__heading-item:last-child {
+    border-right: none;
+}
+
+.policy__heading-item-link {
+    text-decoration: none;
+    color: rgba(0, 0, 0, .65);
+}
+
+.policy__heading-item-link:hover {
+    color: rgba(31, 31, 31, 0.65);
+}
+
+.policy__heading-logo {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px;
+}
+
+.policy__heading-logo-item__img {
+    display: block;
+    width: 300px;
+}
+
+.policy__decription_heading {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.policy__decription {
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 11px 0;
+    margin: 0;
 }
