@@ -19,76 +19,77 @@
 </head>
 
 <body>
-    <!-- Header -->
-    <header id="header" class="container-fluid">
-        <div class="header_wrap">
-            <div class="header__logo">
-                <img loading="lazy" src="./assets/img/logo_has_color.png" alt="This is LOGO">
-            </div>
-            <div class="header__search">
-                <input type="text" class="header__search-input" placeholder="Search...">
-                <i class="header__search-icon fa-solid fa-magnifying-glass"></i>
-            </div>
-        </div>
-        <div class="header__information">
-            <ul class="header__information-list">
-                <li class="header__information-item"><a href="">Garage Information</a></li>
-                <li class="header__information-item"><a href="">Route Information</a></li>
-                <li class="header__information-item"><a href="">Reservation Information</a></li>
-                <li class="header__information-item">
-                    <i class="header__information-info fa-solid fa-user-large"></i>
-                    <ul class="header__user-list">
-                        <li class="header__user-item">
-                            <a href="">Sign Up</a>
-                        </li>
-                        <li class="header__user-item">
-                            <a href="">Sign In</a>
-                        </li>
-                        <li class="header__user-item">
-                            <a href="">History</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="header__information-item">
-                    <i class="header__information-setting fa-solid fa-gear"></i>
-                    <ul class="header__setting-list">
-                        <p>Language</p>
-                        <li class="header__setting-item">
-                            <a href="">English</a>
-                        </li>
-                        <li class="header__setting-item">
-                            <a href="">Vietnamese</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </header>
-
-    <!-- Body -->
-    <div id="body">
-        <!-- Slider -->
-        <div class="body__slideshow-container">
-            <div class="body__slideshow">
-                <div class="body__slideshow-background">
-                    <img loading="lazy" class="body__slideshow-background--img" src="./assets/img/home_1.png" alt="">
+    <div class="app">
+        <!-- Header -->
+        <header id="header" class="container-fluid">
+            <div class="header_wrap">
+                <div class="header__logo">
+                    <img loading="lazy" src="./assets/img/logo_has_color.png" alt="This is LOGO">
                 </div>
-                <div class="body__slideshow-logo">
-                    <img loading="lazy" src="./assets/img/logo_not_color.png" alt="">
+                <div class="header__search">
+                    <input type="text" class="header__search-input" placeholder="Search...">
+                    <i class="header__search-icon fa-solid fa-magnifying-glass"></i>
                 </div>
             </div>
-        </div>
+            <div class="header__information">
+                <ul class="header__information-list">
+                    <li class="header__information-item"><a href="">Garage Information</a></li>
+                    <li class="header__information-item"><a href="">Route Information</a></li>
+                    <li class="header__information-item"><a href="">Reservation Information</a></li>
+                    <li class="header__information-item">
+                        <i class="header__information-info fa-solid fa-user-large"></i>
+                        <ul class="header__user-list">
+                            <li class="header__user-item btn-signup">
+                                <a href="">Sign Up</a>
+                            </li>
+                            <li class="header__user-item btn-signin">
+                                <a href="">Sign In</a>
+                            </li>
+                            <li class="header__user-item btn-history">
+                                <a href="">History</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="header__information-item">
+                        <i class="header__information-setting fa-solid fa-gear"></i>
+                        <ul class="header__setting-list">
+                            <span>Language</span>
+                            <li class="header__setting-item">
+                                <a href="">English</a>
+                            </li>
+                            <li class="header__setting-item">
+                                <a href="">Vietnamese</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </header>
 
-        <!-- Search Ticket -->
-        <div class="search__ticket">
-            <div class="container">
-                <h5 class="search__ticket-header">Search Ticket</h5>
-                <div class="search__ticket-choose-wrap">
+        <!-- Body -->
+        <div id="body">
+            <!-- Slider -->
+            <div class="body__slideshow-container">
+                <div class="body__slideshow">
+                    <div class="body__slideshow-background">
+                        <img loading="lazy" class="body__slideshow-background--img" src="./assets/img/home_1.png" alt="">
+                    </div>
+                    <div class="body__slideshow-logo">
+                        <img loading="lazy" src="./assets/img/logo_not_color.png" alt="">
+                    </div>
+                </div>
+            </div>
 
-                    <div class="search__ticket-choose-direction">
-                        <div class="search__ticket-wrap-item">
-                            <img src="./assets/img/mini_icon_location.png" alt="" class="search__ticket-choose-img">
-                            <select class="search__ticket-choose">
+            <!-- Search Ticket -->
+            <div class="search__ticket">
+                <div class="container">
+                    <h5 class="search__ticket-header">Search Ticket</h5>
+                    <div class="search__ticket-choose-wrap">
+
+                        <div class="search__ticket-choose-direction">
+                            <div class="search__ticket-wrap-item">
+                                <img src="./assets/img/mini_icon_location.png" alt="" class="search__ticket-choose-img">
+                                <select class="search__ticket-choose">
                                 <option value="">Your location</option>
                                 <option value="hochiminh">TP Hồ Chí Minh</option>
                                 <option value="dalat">Đà Lạt</option>
@@ -97,327 +98,593 @@
                                 <option value="camau">Cà Mau</option>
                                 <option value="hue">Huế</option>
                             </select>
-                        </div>
-                        <img src="./assets/img/mini_icon_direction.png" alt="">
-                        <div class="search__ticket-wrap-item">
-                            <img src="./assets/img/mini_icon_destination.png" alt="" class="search__ticket-choose-img">
-                            <select class="search__ticket-choose">
+                            </div>
+                            <img src="./assets/img/mini_icon_direction.png" alt="">
+                            <div class="search__ticket-wrap-item">
+                                <img src="./assets/img/mini_icon_destination.png" alt="" class="search__ticket-choose-img">
+                                <select class="search__ticket-choose">
                                 <option value="">Your destination</option>
                                 <option value="hochiminh">TP Hồ Chí Minh</option>
                                 <option value="vungtau">Vũng Tàu</option>
                                 <option value="dalat">Đà Lạt</option>
                             </select>
+                            </div>
+                        </div>
+
+                        <div class="search__ticket-wrap-item">
+                            <img src="./assets/img/mini_icon_date.png" alt="" class="search__ticket-choose-img">
+                            <input type="date" id="date" name="date" class="search__ticket-choose">
+
+                            </input>
+                        </div>
+                    </div>
+                    <div class="search__ticket-submit">
+                        <button class="btn-base btn-search__ticket">
+                        Search
+                    </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Available Ticket -->
+            <div class="availableTicket-container">
+                <div class="container">
+                    <div class="availableTicket-header">
+                        <div class="availableTicket-header-title">Available Ticket</div>
+                        <div class="availableTicket-header-choose">
+                            <div class="availableTicket-header-choose__filter">
+                                Filter
+                                <i class="fa-solid fa-filter"></i>
+                            </div>
+                            <div class="availableTicket-header-choose__sort">
+                                Sort by
+                                <i class="fa-solid fa-sort"></i>
+                                <div class="availableTicket-location-list">
+                                    <ul class="availableTicket__sort-list">
+                                        Tỉnh - Thành phố
+                                        <li class="availableTicket__sort-item">Hà Nội</li>
+                                        <li class="availableTicket__sort-item">Quảng Ninh</li>
+                                        <li class="availableTicket__sort-item">Ninh Bình</li>
+                                        <li class="availableTicket__sort-item">Đà Nẵng</li>
+                                        <li class="availableTicket__sort-item">Sài Gòn</li>
+                                    </ul>
+                                    <ul class="availableTicket__sort-list">
+                                        Quận - Huyện
+                                        <li class="availableTicket__sort-item">SaPa</li>
+                                        <li class="availableTicket__sort-item">Vũng Tàu</li>
+                                        <li class="availableTicket__sort-item">Đà Lạt</li>
+                                        <li class="availableTicket__sort-item">Nha Trang</li>
+                                        <li class="availableTicket__sort-item">Phan Thiết</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="search__ticket-wrap-item">
-                        <img src="./assets/img/mini_icon_date.png" alt="" class="search__ticket-choose-img">
-                        <input type="date" id="date" name="date" class="search__ticket-choose">
+                    <div class="ticket__information row">
+                        <div class="ticket__information-content col-xl-8">
+                            <div class="row">
+                                <div class="ticket__information-description col-xl-8">
+                                    <div class="ticket__car">
+                                        <div class="ticket__car-name">Thành Bưởi</div>
+                                        <div class="ticket__car-rate">
+                                            <i class="fa-solid fa-star"></i>
+                                            <span>4.8 (B55)</span>
+                                        </div>
+                                    </div>
+                                    <div class="ticket__car-type">Limousine 9 seats</div>
+                                    <div class="ticket__car-depart">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <span class="ticket__car-depart-time">09:00</span>
+                                        <span class="ticket__car-depart-location">Bến xe miền Đông</span>
+                                    </div>
+                                    <div class="ticket__car-depart-period">2h</div>
+                                    <div class="ticket__car-arrive">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <span class="ticket__car-arrive-time">14:00</span>
+                                        <span class="ticket__car-arrive-location">Văn phòng Bà Rịa</span>
+                                    </div>
+                                </div>
+                                <div class="ticket__information-price col-xl-4">
+                                    <div class="ticket-wrap-price">
+                                        <span class="ticket-price">Từ 180.000đ</span>
+                                        <a class="ticket-price__more">More information</a>
+                                    </div>
 
-                        </input>
+                                    <div class="ticket-wrap-buy">
+                                        <span class="ticket-left">9 slots left</span>
+                                        <span class="btn-base ticket-buy">Buy</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ticket__information-img col-xl-4">
+                            <img src="./assets/img/nha-xe-thanh-buoi.png" alt="">
+                        </div>
                     </div>
-                </div>
-                <div class="search__ticket-submit">
-                    <button class="btn-base btn-search__ticket">
-                        Search
-                    </button>
+
+                    <div class="ticket__information row">
+                        <div class="ticket__information-content col-xl-8">
+                            <div class="row">
+                                <div class="ticket__information-description col-xl-8">
+                                    <div class="ticket__car">
+                                        <div class="ticket__car-name">Thành Bưởi</div>
+                                        <div class="ticket__car-rate">
+                                            <i class="fa-solid fa-star"></i>
+                                            <span>4.8 (B55)</span>
+                                        </div>
+                                    </div>
+                                    <div class="ticket__car-type">Limousine 9 seats</div>
+                                    <div class="ticket__car-depart">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <span class="ticket__car-depart-time">09:00</span>
+                                        <span class="ticket__car-depart-location">Bến xe miền Đông</span>
+                                    </div>
+                                    <div class="ticket__car-depart-period">2h</div>
+                                    <div class="ticket__car-arrive">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <span class="ticket__car-arrive-time">14:00</span>
+                                        <span class="ticket__car-arrive-location">Văn phòng Bà Rịa</span>
+                                    </div>
+                                </div>
+                                <div class="ticket__information-price col-xl-4">
+                                    <div class="ticket-wrap-price">
+                                        <span class="ticket-price">Từ 180.000đ</span>
+                                        <a class="ticket-price__more">More information</a>
+                                    </div>
+
+                                    <div class="ticket-wrap-buy">
+                                        <span class="ticket-left">9 slots left</span>
+                                        <span class="btn-base ticket-buy">Buy</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ticket__information-img col-xl-4">
+                            <img src="./assets/img/nha-xe-thanh-buoi.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="ticket__information row">
+                        <div class="ticket__information-content col-xl-8">
+                            <div class="row">
+                                <div class="ticket__information-description col-xl-8">
+                                    <div class="ticket__car">
+                                        <div class="ticket__car-name">Thành Bưởi</div>
+                                        <div class="ticket__car-rate">
+                                            <i class="fa-solid fa-star"></i>
+                                            <span>4.8 (B55)</span>
+                                        </div>
+                                    </div>
+                                    <div class="ticket__car-type">Limousine 9 seats</div>
+                                    <div class="ticket__car-depart">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <span class="ticket__car-depart-time">09:00</span>
+                                        <span class="ticket__car-depart-location">Bến xe miền Đông</span>
+                                    </div>
+                                    <div class="ticket__car-depart-period">2h</div>
+                                    <div class="ticket__car-arrive">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <span class="ticket__car-arrive-time">14:00</span>
+                                        <span class="ticket__car-arrive-location">Văn phòng Bà Rịa</span>
+                                    </div>
+                                </div>
+                                <div class="ticket__information-price col-xl-4">
+                                    <div class="ticket-wrap-price">
+                                        <span class="ticket-price">Từ 180.000đ</span>
+                                        <a class="ticket-price__more">More information</a>
+                                    </div>
+
+                                    <div class="ticket-wrap-buy">
+                                        <span class="ticket-left">9 slots left</span>
+                                        <button class="btn-base ticket-buy">Buy</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ticket__information-img col-xl-4">
+                            <img src="./assets/img/nha-xe-thanh-buoi.png" alt="">
+                        </div>
+                    </div>
+
+
+
                 </div>
             </div>
         </div>
 
-        <!-- Available Ticket -->
-        <div class="availableTicket-container">
+        <!-- Footer -->
+        <footer id="footer">
             <div class="container">
-                <div class="availableTicket-header">
-                    <div class="availableTicket-header-title">Available Ticket</div>
-                    <div class="availableTicket-header-choose">
-                        <div class="availableTicket-header-choose__filter">
-                            Filter
-                            <i class="fa-solid fa-filter"></i>
-                        </div>
-                        <div class="availableTicket-header-choose__sort">
-                            Sort by
-                            <i class="fa-solid fa-sort"></i>
-                            <div class="availableTicket-location-list">
-                                <ul class="availableTicket__sort-list">
-                                    Tỉnh - Thành phố
-                                    <li class="availableTicket__sort-item">Hà Nội</li>
-                                    <li class="availableTicket__sort-item">Quảng Ninh</li>
-                                    <li class="availableTicket__sort-item">Ninh Bình</li>
-                                    <li class="availableTicket__sort-item">Đà Nẵng</li>
-                                    <li class="availableTicket__sort-item">Sài Gòn</li>
-                                </ul>
-                                <ul class="availableTicket__sort-list">
-                                    Quận - Huyện
-                                    <li class="availableTicket__sort-item">SaPa</li>
-                                    <li class="availableTicket__sort-item">Vũng Tàu</li>
-                                    <li class="availableTicket__sort-item">Đà Lạt</li>
-                                    <li class="availableTicket__sort-item">Nha Trang</li>
-                                    <li class="availableTicket__sort-item">Phan Thiết</li>
-                                </ul>
+                <div class="grid__row">
+                    <div class="grid__column-2-4">
+                        <h3 class="footer__heading">Chăm sóc khách hàng</h3>
+                        <ul class="footer__list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">
+                                Trung tâm trợ giúp
+                            </a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">
+                                Câu hỏi thường gặp
+                            </a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">
+                                Hướng dẫn đặt vé
+                            </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid__column-2-4">
+                        <h3 class="footer__heading">Giới thiệu</h3>
+                        <ul class="footer__list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">
+                                Giới thiệu
+                            </a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">
+                                Tuyển dụng
+                            </a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">
+                                Điều khoản
+                            </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid__column-2-4">
+                        <h3 class="footer__heading">Danh mục</h3>
+                        <ul class="footer__list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">
+                                Vé combo
+                            </a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">
+                                Vé sale
+                            </a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">
+                                Vé khứ hồi
+                            </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid__column-2-4">
+                        <h3 class="footer__heading">Theo dõi</h3>
+                        <ul class="footer__list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">
+                                    <i class="fab fa-facebook"></i> Facebook
+                                </a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">
+                                    <i class="fab fa-instagram"></i> Instagram
+                                </a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">
+                                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid__column-2-4">
+                        <h3 class="footer__heading">Vào cửa hàng trên ứng dụng</h3>
+                        <div class="footer__download">
+                            <img src="./assets/img/qr_code.png" alt="" class="footer__download-qr">
+                            <div class="footer__download-apps">
+                                <img src="./assets/img/app_store.png" alt="App Store" class="footer__download-apps-img">
+                                <img src="./assets/img/google_play.png" alt="Google Play" class="footer__download-apps-img">
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="ticket__information row">
-                    <div class="ticket__information-content col-xl-8">
-                        <div class="row">
-                            <div class="ticket__information-description col-xl-8">
-                                <div class="ticket__car">
-                                    <div class="ticket__car-name">Thành Bưởi</div>
-                                    <div class="ticket__car-rate">
-                                        <i class="fa-solid fa-star"></i>
-                                        <span>4.8 (B55)</span>
-                                    </div>
-                                </div>
-                                <div class="ticket__car-type">Limousine 9 seats</div>
-                                <div class="ticket__car-depart">
-                                    <i class="fa-solid fa-location-dot"></i>
-                                    <span class="ticket__car-depart-time">09:00</span>
-                                    <span class="ticket__car-depart-location">Bến xe miền Đông</span>
-                                </div>
-                                <div class="ticket__car-depart-period">2h</div>
-                                <div class="ticket__car-arrive">
-                                    <i class="fa-solid fa-location-dot"></i>
-                                    <span class="ticket__car-arrive-time">14:00</span>
-                                    <span class="ticket__car-arrive-location">Văn phòng Bà Rịa</span>
-                                </div>
-                            </div>
-                            <div class="ticket__information-price col-xl-4">
-                                <div class="ticket-wrap-price">
-                                    <span class="ticket-price">Từ 180.000đ</span>
-                                    <a class="ticket-price__more">More information</a>
-                                </div>
-
-                                <div class="ticket-wrap-buy">
-                                    <span class="ticket-left">9 slots left</span>
-                                    <span class="btn-base ticket-buy">Buy</span>
-                                </div>
-                            </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="policy">
+                    <div class="policy__heading">
+                        <div class="policy__heading-item">
+                            <a href="" class="policy__heading-item-link">
+                            CHÍNH SÁCH BẢO MẬT
+                        </a>
+                        </div>
+                        <div class="policy__heading-item">
+                            <a href="" class="policy__heading-item-link">
+                            QUY CHẾ HOẠT ĐỘNG
+                        </a>
+                        </div>
+                        <div class="policy__heading-item">
+                            <a href="" class="policy__heading-item-link">
+                            CHÍNH SÁCH ĐƯA ĐÓN
+                        </a>
                         </div>
                     </div>
-                    <div class="ticket__information-img col-xl-4">
-                        <img src="./assets/img/nha-xe-thanh-buoi.png" alt="">
+                    <div class="policy__heading-logo">
+                        <img src="./assets/img/dadangki.png" alt="" class="policy__heading-logo-item__img">
+                    </div>
+                    <p class="policy__decription_heading">Công ty TNHH Ticket Take It</p>
+                    <p class="policy__decription">Địa chỉ: Tòa I, trường Đại học Khoa học Tự nhiên Thành phố Hồ Chí Minh, 227 Nguyễn Văn Cừ, P4, Q5, TP Hồ Chí Minh, Việt Nam. Tổng đài hỗ trợ: 22446688 - Email: cskh@hotro.tickettakeit.vn</p>
+                    <p class="policy__decription">Chịu Trách Nhiệm Quản Lý Nội Dung: Vũ Đức Dũng - Điện thoại liên hệ: 0399888999 (ext 4678)</p>
+                    <p class="policy__decription">Mã số doanh nghiệp: 010677999 do Sở Kế hoạch & Đầu tư TP Hồ Chí Minh cấp lần đầu ngày 10/12/2022</p>
+                    <p class="policy__decription">© 2022 - Bản quyền thuộc về Công ty TNHH Ticket Take It</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Filter -->
+    <div class="filter-wrap">
+        <div class="filter__overlay">
+        </div>
+        <div class="filter__body">
+            <div class="filter__header">
+                <h2>Filters</h2>
+                <span>Clear all</span>
+            </div>
+            <div class="container">
+                <div class="filter__applied">
+                    <h3>Applied Filters</h3>
+                    <div class="filter__applied-list"></div>
+                </div>
+                <div class="filter__departureTime">
+                    <h3>Departure time</h3>
+                    <div class="filter__departureTime-list">
+                        <div class="filter__departureTime-item">
+                            <div class="filter__departureTime-title">Early Morning (200)</div>
+                            <div class="filter__departureTime-time">00:00 - 06:00</div>
+                        </div>
+                        <div class="filter__departureTime-item">
+                            <div class="filter__departureTime-title">Morning (250)</div>
+                            <div class="filter__departureTime-time">06:01 - 12:00</div>
+                        </div>
+                        <div class="filter__departureTime-item">
+                            <div class="filter__departureTime-title">Afternoon (204)</div>
+                            <div class="filter__departureTime-time">12:01 - 18:00</div>
+                        </div>
+                        <div class="filter__departureTime-item">
+                            <div class="filter__departureTime-title">Evening (173)</div>
+                            <div class="filter__departureTime-time">18:01 - 23:59</div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="ticket__information row">
-                    <div class="ticket__information-content col-xl-8">
-                        <div class="row">
-                            <div class="ticket__information-description col-xl-8">
-                                <div class="ticket__car">
-                                    <div class="ticket__car-name">Thành Bưởi</div>
-                                    <div class="ticket__car-rate">
-                                        <i class="fa-solid fa-star"></i>
-                                        <span>4.8 (B55)</span>
-                                    </div>
-                                </div>
-                                <div class="ticket__car-type">Limousine 9 seats</div>
-                                <div class="ticket__car-depart">
-                                    <i class="fa-solid fa-location-dot"></i>
-                                    <span class="ticket__car-depart-time">09:00</span>
-                                    <span class="ticket__car-depart-location">Bến xe miền Đông</span>
-                                </div>
-                                <div class="ticket__car-depart-period">2h</div>
-                                <div class="ticket__car-arrive">
-                                    <i class="fa-solid fa-location-dot"></i>
-                                    <span class="ticket__car-arrive-time">14:00</span>
-                                    <span class="ticket__car-arrive-location">Văn phòng Bà Rịa</span>
-                                </div>
-                            </div>
-                            <div class="ticket__information-price col-xl-4">
-                                <div class="ticket-wrap-price">
-                                    <span class="ticket-price">Từ 180.000đ</span>
-                                    <a class="ticket-price__more">More information</a>
-                                </div>
+                <div class="filter__departureSlider">
+                    <h3>Price</h3>
+                    <span class="multi-range">
+                        <input type="range" min="0" max="50" value="5" id="lower">
+                        <input type="range" min="0" max="50" value="45" id="upper">
+                    </span>
+                </div>
 
-                                <div class="ticket-wrap-buy">
-                                    <span class="ticket-left">9 slots left</span>
-                                    <span class="btn-base ticket-buy">Buy</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ticket__information-img col-xl-4">
-                        <img src="./assets/img/nha-xe-thanh-buoi.png" alt="">
+                <div class="filter__departurePosition">
+                    <h3>Position of seats</h3>
+                    <div class="filter__departurePosition-list">
+                        <label for="name">
+                            <input type="checkbox" value="front" id="front" name="front">
+                            Front
+                        </label>
+                        <label for="name">
+                            <input type="checkbox" value="middle" id="middle" name="middle">
+                            Middle
+                        </label>
+                        <label for="name">
+                            <input type="checkbox" value="back" id="back" name="back">
+                            Back
+                        </label>
                     </div>
                 </div>
 
-                <div class="ticket__information row">
-                    <div class="ticket__information-content col-xl-8">
-                        <div class="row">
-                            <div class="ticket__information-description col-xl-8">
-                                <div class="ticket__car">
-                                    <div class="ticket__car-name">Thành Bưởi</div>
-                                    <div class="ticket__car-rate">
-                                        <i class="fa-solid fa-star"></i>
-                                        <span>4.8 (B55)</span>
-                                    </div>
-                                </div>
-                                <div class="ticket__car-type">Limousine 9 seats</div>
-                                <div class="ticket__car-depart">
-                                    <i class="fa-solid fa-location-dot"></i>
-                                    <span class="ticket__car-depart-time">09:00</span>
-                                    <span class="ticket__car-depart-location">Bến xe miền Đông</span>
-                                </div>
-                                <div class="ticket__car-depart-period">2h</div>
-                                <div class="ticket__car-arrive">
-                                    <i class="fa-solid fa-location-dot"></i>
-                                    <span class="ticket__car-arrive-time">14:00</span>
-                                    <span class="ticket__car-arrive-location">Văn phòng Bà Rịa</span>
-                                </div>
-                            </div>
-                            <div class="ticket__information-price col-xl-4">
-                                <div class="ticket-wrap-price">
-                                    <span class="ticket-price">Từ 180.000đ</span>
-                                    <a class="ticket-price__more">More information</a>
-                                </div>
-
-                                <div class="ticket-wrap-buy">
-                                    <span class="ticket-left">9 slots left</span>
-                                    <button class="btn-base ticket-buy">Buy</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ticket__information-img col-xl-4">
-                        <img src="./assets/img/nha-xe-thanh-buoi.png" alt="">
+                <div class="filter__departureGarage">
+                    <h3>Garage</h3>
+                    <div class="filter__departureGarage-list list-item">
+                        <input class="filter__departureGarage-item" type="text" placeholder="Search">
+                        <label for="name">
+                            <input class="filter__departureGarage-item" type="checkbox" value="hoamai" id="hoamai" name="hoamai">
+                            Hoa Mai <span class="garage-quantity">(25)</span>
+                        </label>
+                        <label for="name">
+                            <input class="filter__departureGarage-item" type="checkbox" value="thienphu" id="thienphu" name="thienphu">
+                            Thiên Phú <span class="garage-quantity">(1)</span>
+                        </label>
+                        <label for="name">
+                            <input class="filter__departureGarage-item" type="checkbox" value="vielimousine" id="vielimousine" name="vielimousine">
+                            Vie Limousine <span class="garage-quantity">(6)</span>
+                        </label>
                     </div>
                 </div>
 
+                <div class="filter__departurePickupLocation">
+                    <h3>Pick up Location</h3>
+                    <div class="filter__departurePickupLocation-list list-item">
+                        <input class="filter__departurePickupLocation-item" type="text" placeholder="Search">
+                        <label for="name">
+                            <input class="filter__departurePickupLocation-item" type="checkbox" value="hoamai" id="hoamai" name="hoamai">
+                            Quận 1
+                        </label>
+                        <label for="name">
+                            <input class="filter__departurePickupLocation-item" type="checkbox" value="thienphu" id="thienphu" name="thienphu">
+                            Quận 2
+                        </label>
+                        <label for="name">
+                            <input class="filter__departurePickupLocation-item" type="checkbox" value="vielimousine" id="vielimousine" name="vielimousine">
+                            Quận 5
+                        </label>
+                    </div>
+                </div>
 
+                <div class="filter__departureDropOffLocation">
+                    <h3>Pick up Location</h3>
+                    <div class="filter__departureDropOffLocation-list list-item">
+                        <input class="filter__departureDropOffLocation-item" type="text" placeholder="Search">
+                        <label for="name">
+                            <input class="filter__departureDropOffLocation-item" type="checkbox" value="hoamai" id="hoamai" name="hoamai">
+                            Vũng Tàu
+                        </label>
+                        <label for="name">
+                            <input class="filter__departureDropOffLocation-item" type="checkbox" value="thienphu" id="thienphu" name="thienphu">
+                            Bà Rịa
+                        </label>
+                        <label for="name">
+                            <input class="filter__departureDropOffLocation-item" type="checkbox" value="vielimousine" id="vielimousine" name="vielimousine">
+                            Đà Lạt
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter__departureVehical">
+                    <h3>Pick up Location</h3>
+                    <div class="filter__departureVehical-list list-item">
+                        <input class="filter__departureVehical-item" type="text" placeholder="Search">
+                        <label for="name">
+                            <input class="filter__departureVehical-item" type="checkbox" value="hoamai" id="hoamai" name="hoamai">
+                            Seat
+                        </label>
+                        <label for="name">
+                            <input class="filter__departureVehical-item" type="checkbox" value="thienphu" id="thienphu" name="thienphu">
+                            Bed
+                        </label>
+                        <label for="name">
+                            <input class="filter__departureVehical-item" type="checkbox" value="vielimousine" id="vielimousine" name="vielimousine">
+                            Limousine
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter__departureNumberOfSeat">
+                    <h3>Number of seats</h3>
+                    <div class="filter__departureNumberOfSeat--choose">
+                        <span class="down">-</span>
+                        <span class="quantity">2</span>
+                        <span class="up">+</span>
+                    </div>
+                </div>
+
+                <button class="filter__apply">
+                    Apply
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </button>
 
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer id="footer">
-        <div class="container">
-            <div class="grid__row">
-                <div class="grid__column-2-4">
-                    <h3 class="footer__heading">Chăm sóc khách hàng</h3>
-                    <ul class="footer__list">
-                        <li class="footer-item">
-                            <a href="" class="footer-item__link">
-                                Trung tâm trợ giúp
-                            </a>
-                        </li>
-                        <li class="footer-item">
-                            <a href="" class="footer-item__link">
-                                Câu hỏi thường gặp
-                            </a>
-                        </li>
-                        <li class="footer-item">
-                            <a href="" class="footer-item__link">
-                                Hướng dẫn đặt vé
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="grid__column-2-4">
-                    <h3 class="footer__heading">Giới thiệu</h3>
-                    <ul class="footer__list">
-                        <li class="footer-item">
-                            <a href="" class="footer-item__link">
-                                Giới thiệu
-                            </a>
-                        </li>
-                        <li class="footer-item">
-                            <a href="" class="footer-item__link">
-                                Tuyển dụng
-                            </a>
-                        </li>
-                        <li class="footer-item">
-                            <a href="" class="footer-item__link">
-                                Điều khoản
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="grid__column-2-4">
-                    <h3 class="footer__heading">Danh mục</h3>
-                    <ul class="footer__list">
-                        <li class="footer-item">
-                            <a href="" class="footer-item__link">
-                                Vé combo
-                            </a>
-                        </li>
-                        <li class="footer-item">
-                            <a href="" class="footer-item__link">
-                                Vé sale
-                            </a>
-                        </li>
-                        <li class="footer-item">
-                            <a href="" class="footer-item__link">
-                                Vé khứ hồi
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="grid__column-2-4">
-                    <h3 class="footer__heading">Theo dõi</h3>
-                    <ul class="footer__list">
-                        <li class="footer-item">
-                            <a href="" class="footer-item__link">
-                                <i class="fab fa-facebook"></i> Facebook
-                            </a>
-                        </li>
-                        <li class="footer-item">
-                            <a href="" class="footer-item__link">
-                                <i class="fab fa-instagram"></i> Instagram
-                            </a>
-                        </li>
-                        <li class="footer-item">
-                            <a href="" class="footer-item__link">
-                                <i class="fa-brands fa-linkedin"></i> LinkedIn
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="grid__column-2-4">
-                    <h3 class="footer__heading">Vào cửa hàng trên ứng dụng</h3>
-                    <div class="footer__download">
-                        <img src="./assets/img/qr_code.png" alt="" class="footer__download-qr">
-                        <div class="footer__download-apps">
-                            <img src="./assets/img/app_store.png" alt="App Store" class="footer__download-apps-img">
-                            <img src="./assets/img/google_play.png" alt="Google Play" class="footer__download-apps-img">
+    <!-- Modal layout -->
+    <div class="modal-wrap">
+        <div class="modal__overlay">
+        </div>
+
+        <div class="modal__body">
+            <!-- Register form -->
+            <div class="auth-form">
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">
+                            Đăng kí
+                        </h3>
+                        <span class="auth-form__switch-btn">Đăng nhập</span>
+                    </div>
+
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <input type="text" class="auth-form__input" placeholder="Email của bạn">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Mật khẩu của bạn">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Nhập lại mật khẩu">
                         </div>
                     </div>
+
+                    <div class="auth-form__aside">
+                        <div class="auth-form__aside-img">
+                            <img src="./assets/img/logo_has_color.png" alt="">
+                        </div>
+                        <p class="auth-form__policy">
+                            Bằng việc đăng kí, bạn đã đồng ý với Ticket Take It về
+                            <a class="auth-form__policy-link" href="">Điều khoản dịch vụ</a> &
+                            <a class="auth-form__policy-link" href="">Chính sách bảo mật</a>
+                        </p>
+                    </div>
+
+                    <div class="auth-form__controls">
+                        <button class="btn auth-form__controls-back btn--normal">TRỞ LẠI</button>
+                        <button class="btn-base btn--signUp">ĐĂNG KÍ</button>
+                    </div>
+                </div>
+
+                <div class="auth-form__socials">
+                    <a href="" class="auth-form__socials--facebook btn-modal btn--size-s btn--with-icon">
+                        <i class="auth-form__socials-icon fa-brands fa-square-facebook"></i>
+                        <span class="auth-form__socials-title">Kết nối với Facebook</span>
+                    </a>
+                    <a href="" class="auth-form__socials--google btn-modal btn--size-s btn--with-icon">
+                        <i class="auth-form__socials-icon fa-brands fa-google"></i>
+                        <span class="auth-form__socials-title">Kết nối với Google</span>
+                    </a>
                 </div>
             </div>
-        </div>
-        <div class="footer__bottom">
-            <div class="policy">
-                <div class="policy__heading">
-                    <div class="policy__heading-item">
-                        <a href="" class="policy__heading-item-link">
-                            CHÍNH SÁCH BẢO MẬT
-                        </a>
-                    </div>
-                    <div class="policy__heading-item">
-                        <a href="" class="policy__heading-item-link">
-                            QUY CHẾ HOẠT ĐỘNG
-                        </a>
-                    </div>
-                    <div class="policy__heading-item">
-                        <a href="" class="policy__heading-item-link">
-                            CHÍNH SÁCH ĐƯA ĐÓN
-                        </a>
-                    </div>
-                </div>
-                <div class="policy__heading-logo">
-                    <img src="./assets/img/dadangki.png" alt="" class="policy__heading-logo-item__img">
-                </div>
-                <p class="policy__decription_heading">Công ty TNHH Ticket Take It</p>
-                <p class="policy__decription">Địa chỉ: Tòa I, trường Đại học Khoa học Tự nhiên Thành phố Hồ Chí Minh, 227 Nguyễn Văn Cừ, P4, Q5, TP Hồ Chí Minh, Việt Nam. Tổng đài hỗ trợ: 22446688 - Email: cskh@hotro.tickettakeit.vn</p>
-                <p class="policy__decription">Chịu Trách Nhiệm Quản Lý Nội Dung: Vũ Đức Dũng - Điện thoại liên hệ: 0399888999 (ext 4678)</p>
-                <p class="policy__decription">Mã số doanh nghiệp: 010677999 do Sở Kế hoạch & Đầu tư TP Hồ Chí Minh cấp lần đầu ngày 10/12/2022</p>
-                <p class="policy__decription">© 2022 - Bản quyền thuộc về Công ty TNHH Ticket Take It</p>
+
+            <!-- Login form -->
+            <!-- <div class="auth-form">
+        <div class="auth-form__container">
+            <div class="auth-form__header">
+                <h3 class="auth-form__heading">
+                    Đăng nhập
+                </h3>
+                <span class="auth-form__switch-btn">Đăng kí</span>
             </div>
+
+            <div ADSFDGFNBclass="auth-form__form">
+                <div class="auth-form__group">
+                    <input type="text" class="auth-form__input" placeholder="Email/Số điện thoại/Tên đăng nhập">
+                </div>
+                <div class="auth-form__group">
+                    <input type="password" class="auth-form__input" placeholder="Mật khẩu">
+                </div>
+            </div>
+
+            <div class="auth-form__aside">
+                <div class="auth-form__help">
+                    <a href="" class="auth-form__help-link auth-form__help-forget">Quên mật khẩu</a>
+                    <span class="auth-form__help-separate"></span>
+                    <a href="" class="auth-form__help-link auth-form__help-need">Cần trợ giúp?</a>
+                </div>
+            </div>
+
+            <div class="auth-form__controls">
+                <button class="btn auth-form__controls-back btn--normal">TRỞ LẠI</button>
+                <button class="btn btn--primary">ĐĂNG NHẬP</button>
+            </div>
+
         </div>
-    </footer>
+
+        <div class="auth-form__socials">
+            <a href="" class="auth-form__socials--facebook btn btn--size-s btn--with-icon">
+                <i class="auth-form__socials-icon fa-brands fa-square-facebook"></i>
+                <span class="auth-form__socials-title">Kết nối với Facebook</span>
+            </a>
+            <a href="" class="auth-form__socials--google btn btn--size-s btn--with-icon">
+                <i class="auth-form__socials-icon fa-brands fa-google"></i>
+                <span class="auth-form__socials-title">Kết nối với Google</span>
+            </a>
+        </div>
+    </div> -->
+
+        </div>
+    </div>
+
+    <script src="./assets/js/rangeSlider.js">
+    </script>
 
 </body>
 

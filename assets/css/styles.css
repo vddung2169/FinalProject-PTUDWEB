@@ -27,8 +27,8 @@
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    z-index: 3;
-    box-shadow: 0px 1px #888888;
+    z-index: 1;
+    box-shadow: 0px 2px #888888;
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
 }
@@ -38,7 +38,7 @@
     height: 100%;
 }
 
-input[type="text"],
+input[type="text"].header__search-input,
 textarea {
     background-color: #D9D9D978;
     border: none;
@@ -187,12 +187,10 @@ textarea {
     width: 100%;
     object-fit: cover;
     object-position: center;
-    z-index: -1;
 }
 
 .body__slideshow-logo {
     position: absolute;
-    z-index: 1;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -507,7 +505,7 @@ textarea {
 }
 
 .ticket-buy:hover {
-    background-color: #FF9E00;
+    background-color: #53316e;
 }
 
 
@@ -631,4 +629,325 @@ textarea {
     font-size: 1.1rem;
     padding: 11px 0;
     margin: 0;
+}
+
+
+/* Authen modal */
+
+.btn-modal {
+    min-width: 142px;
+    height: 34px;
+    border: none;
+    border-radius: 3px;
+    font-size: 1.5rem;
+    outline: none;
+    cursor: pointer;
+    background-color: var(--white-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 12px;
+}
+
+.btn-modal.btn--size-s {
+    height: 34px;
+    font-size: 1rem;
+    padding: 0 8px;
+}
+
+.auth-form {
+    width: 600px;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 10px 0 0 0;
+}
+
+.auth-form__container {
+    padding: 0 36px;
+}
+
+.auth-form__header {
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.auth-form__heading {
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+.auth-form__switch-btn {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--text-title-color);
+    cursor: pointer;
+}
+
+.auth-form__form {
+    /* margin-top: 16px; */
+}
+
+.auth-form__group {}
+
+.auth-form__input {
+    margin-top: 16px;
+    width: 100%;
+    height: 50px;
+    padding: 0 12px;
+    font-size: 1.2rem;
+    border: 1px solid #333;
+    border-radius: 2px;
+    outline: none;
+}
+
+.auth-form__input:focus {
+    border-color: #777;
+}
+
+.auth-form__aside {
+    margin-top: 16px;
+    padding: 0 10px;
+    margin-bottom: 80px;
+}
+
+.auth-form__policy {
+    line-height: 1.6rem;
+    font-weight: 500;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.auth-form__policy-link {
+    text-decoration: none;
+    color: var(--text-title-color);
+}
+
+.auth-form__controls {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.auth-form__controls-back {
+    margin-right: 8px;
+}
+
+.auth-form__socials {
+    background-color: #DFDFDF;
+    display: flex;
+    justify-content: space-around;
+    padding: 18px 28px;
+    /* margin: 8px 20px; */
+    /* border-radius: 5px; */
+}
+
+.btn--with-icon {
+    min-width: 120px;
+    text-decoration: none;
+    color: var(--black-color);
+    background-color: #y;
+}
+
+.auth-form__socials-icon {
+    font-size: 1.6rem;
+}
+
+.auth-form__socials--facebook {
+    color: #fff;
+    background-color: #3A5A98;
+}
+
+.auth-form__socials--facebook:hover {
+    color: white;
+}
+
+.auth-form__socials-title {
+    margin: 0 32px;
+}
+
+.auth-form__socials--google {
+    color: #666;
+    background-color: #fff;
+}
+
+.auth-form__socials--google:hover {
+    color: #666;
+}
+
+.auth-form__help {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.auth-form__help-separate {
+    display: block;
+    height: 12px;
+    margin: 0 16px 2px 16px;
+    border-left: 1px solid var(--border-color);
+}
+
+.auth-form__help-link {
+    text-decoration: none;
+    weight: 600;
+    font-size: 1.2rem;
+}
+
+.auth-form__help-forget {
+    color: var(--primary-color);
+}
+
+.auth-form__help-need {
+    color: #939393;
+}
+
+.auth-form__aside-img {
+    display: flex;
+    justify-content: center;
+}
+
+.btn--signUp {
+    color: #fff;
+    background-color: var(--text-title-color);
+    font-size: 1rem;
+}
+
+
+/* Filter Right */
+
+.filter__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    background-color: #D9D9D945;
+    box-shadow: 0px 2px #888888;
+}
+
+.filter__header h2 {
+    padding-left: 20px;
+    color: var(--text-title-color);
+}
+
+.filter__header span {
+    display: block;
+    padding-right: 20px;
+    text-decoration: underline;
+    color: #4f4f4f;
+}
+
+.filter__header span:hover {
+    cursor: pointer;
+    color: #262626;
+}
+
+.filter__departureTime {}
+
+.filter__departureTime-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.filter__departureTime-item {
+    text-align: center;
+    background-color: rgba(217, 217, 217, 0.3);
+    width: 140px;
+    height: 90px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.filter__departureTime-item--active {
+    background-color: rgba(100, 100, 100, 0.3);
+}
+
+.filter__departureTime-item:hover {
+    cursor: pointer;
+}
+
+.filter__departureTime-title {
+    color: var(--text-title-color);
+    font-weight: bold;
+}
+
+.filter__departureTime-time {}
+
+.filter__departureGarage {}
+
+.filter__departureGarage-list {
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.filter__departureGarage-item,
+.filter__departurePickupLocation-item,
+.filter__departureDropOffLocation-item,
+.filter__departureVehical-item {
+    margin-bottom: 16px;
+}
+
+.filter__departureNumberOfSeat {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.filter__departureNumberOfSeat--choose {
+    display: flex;
+    width: 100px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quantity {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.up,
+.down {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 24px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    background-color: #ffb43b;
+    border-radius: 100%;
+}
+
+.up:hover,
+.down:hover {
+    cursor: pointer;
+    background-color: #fca71e;
+}
+
+.filter__apply {
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    border: none;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    color: white;
+    background-color: var(--text-title-color);
+    border-radius: 100px;
+}
+
+.filter__apply:hover {
+    background-color: #53316e;
+}
+
+.filter__apply i {
+    margin-left: 10px;
+    line-height: 40px;
 }
