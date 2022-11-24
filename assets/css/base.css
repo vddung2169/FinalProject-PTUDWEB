@@ -42,6 +42,8 @@ html {
     line-height: 1.6rem;
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
+    /* overflow: scroll-x; */
+    /* max-width: 100%; */
 }
 
 body {
@@ -51,6 +53,7 @@ body {
     /* Hỗ trợ in background */
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
+    /* overflow-x: scroll; */
 }
 
 
@@ -108,7 +111,7 @@ body {
     bottom: 0;
     left: 0;
     display: flex;
-    /* display: none; */
+    display: none;
     / animation: fadeIn linear 0.1s;
     z-index: 2;
 }

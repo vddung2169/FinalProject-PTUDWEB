@@ -371,7 +371,7 @@ textarea {
 }
 
 .ticket__information {
-    height: 340px;
+    min-height: 340px;
     padding: 20px 20px;
     border: 1px solid #ccc;
     margin: 20px 0;
@@ -380,7 +380,10 @@ textarea {
 .ticket__information-content {}
 
 .ticket__information-img {
-    width: 100%;
+    /* height: 100px; */
+    background-image: url(/assets/img/nha-xe-thanh-buoi.png);
+    background-size: 450px;
+    background-position: center;
 }
 
 .ticket__information-description {}
@@ -950,4 +953,129 @@ textarea {
 .filter__apply i {
     margin-left: 10px;
     line-height: 40px;
+}
+
+
+/* More information */
+
+.active {}
+
+.ticket__information-details {
+    border-top: 1px solid #333;
+    margin-top: 30px;
+    display: none;
+}
+
+.ticket__information-details-heading {
+    height: 60px;
+    line-height: 60px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    margin-top: 5px;
+}
+
+.ticket__information-details-heading .line {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 6px;
+    border-radius: 15px;
+    background-color: #53316e;
+    transition: all 0.3s ease;
+}
+
+.ticket__information-details-heading-item {
+    min-width: 100px;
+    font-size: 20px;
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 5px solid transparent;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.ticket__information-details-heading-item:hover {
+    background-color: #dabff0;
+    border-color: #ceafe7;
+    cursor: pointer;
+}
+
+.image-detail {
+    margin-top: 10px;
+}
+
+.image-heading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.image-heading h3 {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--text-title-color);
+}
+
+.image-heading p {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--text-title-color);
+}
+
+.image-heading p a {
+    text-decoration: none;
+    color: #ffb43b;
+}
+
+.image-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image-content .fa-angle-left,
+.image-content .fa-angle-right {
+    font-size: 1.4rem;
+    padding: 20px;
+}
+
+.image-content .fa-angle-left:hover,
+.image-content .fa-angle-right:hover {
+    cursor: pointer;
+    border-radius: 100px;
+    background-color: rgb(241, 241, 241);
+}
+
+.image-content-mainImage {
+    display: block;
+    width: 100%;
+    height: 500px;
+    background-image: url(/assets/img/nha-xe-thanh-buoi.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.image__number {
+    margin: 10px;
+    text-align: center;
+}
+
+.image__list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.image__item {
+    display: block;
+    margin: 8px;
+    width: 100%;
+    height: 200px;
+    background-image: url(/assets/img/nha-xe-thanh-buoi.png);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
