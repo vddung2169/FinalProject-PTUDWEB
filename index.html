@@ -1408,6 +1408,182 @@
                 </div>
             </div> -->
 
+            <!-- Seat form -->
+            <div class="seat-form bg-white">
+                <header class="seat-form__header">
+                    <div class="seat-form__step seat-form__step--active" id="seat-form__step--choose-seat">
+                        <img src="./assets/img/number_1.png" alt="buoc1" class="seat-form__number_img"> Vị trí ghế ngồi
+                    </div>
+                    <div class="seat-form__step" id="seat-form__step--pick-location">
+                        <img src="./assets/img/number_2.png" alt="buoc2" class="seat-form__number_img"> Vị trí đón/trả khách
+                    </div>
+                    <div class="seat-form__step" id="seat-form__step--your-seat">
+                        <img src="./assets/img/number_3.png" alt="buoc3" class="seat-form__number_img"> Nhập thông tin
+                    </div>
+                </header>
+                <hr style="margin:0">
+
+                <div class="seat-form__container">
+                    <div class="seat-form__note mt-5 mb-5">
+                        <h4 class="mb-5">Chú thích: </h4>
+                        <div class="seat-form__seat mb-4">
+                            <img class="seat-form__seat-img" src="./assets/img/empty_seat.png" alt="empty_seat">
+                            <span class="seat-form__seat-condition">Còn trống</span>
+                        </div>
+                        <div class="seat-form__seat mb-4">
+                            <img class="seat-form__seat-img" src="./assets/img/notsale_seat.png" alt="empty_seat">
+                            <span class="seat-form__seat-condition">Ghế không bán</span>
+                        </div>
+                        <div class="seat-form__seat">
+                            <img class="seat-form__seat-img" src="./assets/img/choice_seat.png" alt="empty_seat">
+                            <span class="seat-form__seat-condition">Đang chọn</span>
+                        </div>
+                    </div>
+
+                    <div class="seat-form__seat-place mt-5 mb-5">
+                        <table>
+                            <tbody>
+                                <tr class="coach-row">
+                                    <td>
+                                        <div class="coach-row__seat">
+                                            <img class="driver-seat" src="./assets/img/volant.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="coach-row__seat">
+                                            <img class="not-for-sale" src="./assets/img/empty_seat.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="coach-row__seat">
+                                            <img class="current-choice" src="./assets/img/empty_seat.png" alt="">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="coach-row">
+                                    <td>
+                                        <div class="coach-row__seat">
+                                            <img src="./assets/img/empty_seat.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="coach-row__seat">
+                                            <img src="./assets/img/empty_seat.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="coach-row__seat">
+                                            <img src="./assets/img/empty_seat.png" alt="">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="coach-row">
+                                    <td>
+                                        <div class="coach-row__seat">
+                                            <img src="./assets/img/empty_seat.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="coach-row__seat">
+                                            <img src="./assets/img/empty_seat.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="coach-row__seat">
+                                            <img src="./assets/img/empty_seat.png" alt="">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="coach-row">
+                                    <td>
+                                        <div class="coach-row__seat">
+                                            <img src="./assets/img/empty_seat.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="coach-row__seat">
+                                            <img src="./assets/img/empty_seat.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="coach-row__seat">
+                                            <img src="./assets/img/empty_seat.png" alt="">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                </div>
+
+                <div class="seat-form__footer">
+                    <span class="seat-form__text">Số lượng ghế: 
+                        <span class="seat-form__price">1</span>
+                    </span>
+                    <div class="seat-form__right-corner">
+                        <span class="seat-form__text py-2">Tổng: <span class="seat-form__price">200.000đ</span></span>
+                        <button class="btn-continue px-4">Tiếp tục</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Information form -->
+            <!-- <div class="info-form bg-white">
+                <header class="info-form__header">
+                    <div class="info-form__step" id="info-form__step--choose-seat">
+                        <img src="./assets/img/number_1.png" alt="buoc1" class="info-form__number_img">
+                        Vị trí ghế ngồi
+                    </div>
+                    <div class="info-form__step" id="info-form__step--pick-location">
+                        <img src="./assets/img/number_2.png" alt="buoc2" class="info-form__number_img">
+                        Vị trí đón/trả khách
+                    </div>
+                    <div class="info-form__step info-form__step--active" id="info-form__step--your-info">
+                        <img src="./assets/img/number_3.png" alt="buoc3" class="info-form__number_img">
+                        Nhập thông tin
+                    </div>
+                </header>
+                <hr style="margin:0">
+                
+                <div class="info-form__container">
+                    <div class="info-form__form">
+                        <div class="info-form__group">
+                            <label for="fullname" class="py-2">Họ và tên<code style="color: red; font-weight: 700;">*</code></label>
+                            <input type="text" class="info-form__input" placeholder="Tên hành khách" name="fullname" required>
+                        </div>
+                        <div class="info-form__group">
+                            <label for="phone" class="py-2">Số điện thoại<code style="color: red; font-weight: 700;">*</code></label>
+                            <br>    
+                            <div class="info-form-wrap-item">
+                                <select class="info-form_area-code">
+                                    <option value="">(VN)+84</option>
+                                    <option value="US">(US)+1</option>
+                                    <option value="CA">(CA)+1</option>
+                                    <option value="JP">(JP)+81</option>
+                                </select>
+                                <input type="tel" class="info-form__input" placeholder="Số điện thoại" name="phone" required>
+                            </div>
+                        </div>
+                        <div class="info-form__group">
+                            <label for="email" class="py-2">Email<code style="color: red; font-weight: 700;">*</code></label>
+                            <input type="email" class="info-form__input" placeholder="Email để nhận thông báo" name="email" required>
+                        </div>
+                        <div class="info-form__group">
+                            <label for="note" class="py-2">Ghi chú hoặc yêu cầu khác (Nếu có)<code style="color: red; font-weight: 700;">*</code></label>
+                            <br>
+                            <textarea name="note" id="info-form__note" cols="" rows="2" placeholder="Các yêu cầu đặc biệt không thể được đảm bảo - nhưng nhà xe sẽ cố gắng hết sức để đáp ứng nhu cầu của bạn."></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info-form__footer">
+                    <button class="btn-back px-4">Trở lại</button>
+                    <span class="info-form__total px-4 py-2">Tổng: <span class="info-form__price">200.000đ</span></span>
+                    <button class="btn-continue px-4">Tiếp tục</button>
+                </div>
+            </div> -->
         </div>
     </div>
 

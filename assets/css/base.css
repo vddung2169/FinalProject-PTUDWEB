@@ -30,6 +30,8 @@
 :root {
     --text-title-color: #240046;
     --text-color: #333333D6;
+    --yellow-color: #ff9e00;
+    --white-color: #fff;
 }
 
 * {
@@ -80,6 +82,24 @@ body {
     justify-content: center;
     align-items: center;
     padding: 0 12px;
+}
+
+.btn-back {
+    border: none;
+    border-radius: 5px;
+    height: 35px;
+    background-color: var(--yellow-color);
+    color: var(--text-title-color);
+    font-weight: 600;
+}
+
+.btn-continue {
+    border: none;
+    border-radius: 5px;
+    height: 35px;
+    background-color: var(--text-title-color);
+    color: var(--white-color);
+    font-weight: 400;
 }
 
 .grid {
