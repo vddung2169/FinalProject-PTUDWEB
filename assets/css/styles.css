@@ -381,7 +381,7 @@ textarea {
 
 .ticket__information-img {
     /* height: 100px; */
-    background-image: url(/assets/img/nha-xe-thanh-buoi.png);
+    background-image: url(../img/nha-xe-thanh-buoi.png);
     background-size: 450px;
     background-position: center;
 }
@@ -1080,7 +1080,9 @@ textarea {
     background-repeat: no-repeat;
 }
 
+
 /* Seat form */
+
 .seat-form__container {
     padding: 0 32px;
     display: flex;
@@ -1113,7 +1115,7 @@ textarea {
 }
 
 .seat-form__step--active {
-    background-color: rgba(0,0,0,0.08);
+    background-color: rgba(0, 0, 0, 0.08);
 }
 
 .seat-form__seat-place {
@@ -1129,17 +1131,19 @@ textarea {
     flex: 1;
 }
 
-.seat-form__seat{
+.seat-form__seat {
     display: flex;
 }
-.seat-form__seat-condition{
+
+.seat-form__seat-condition {
     margin-left: 15px;
     font-weight: 400;
     display: flex;
     justify-content: right;
     align-items: center;
 }
-.seat-form__seat-img{
+
+.seat-form__seat-img {
     width: 50px;
     height: 50px;
 }
@@ -1178,7 +1182,9 @@ textarea {
     width: 100%;
 }
 
+
 /* Information form */
+
 .info-form__container {
     padding: 0 32px;
 }
@@ -1209,7 +1215,7 @@ textarea {
 }
 
 .info-form__step--active {
-    background-color: rgba(0,0,0,0.08);
+    background-color: rgba(0, 0, 0, 0.08);
 }
 
 .info-form__form {
