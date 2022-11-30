@@ -27,6 +27,17 @@
     }
 }
 
+@keyframes filterGrowth {
+    from {
+        opacity: 0;
+        right: -410px;
+    }
+    to {
+        opacity: 1;
+        right: 0;
+    }
+}
+
 :root {
     --text-title-color: #240046;
     --text-color: #333333D6;
@@ -130,10 +141,13 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-    display: flex;
     display: none;
     animation: fadeIn linear 0.1s;
     z-index: 2;
+}
+
+.modal-wrap.active {
+    display: flex;
 }
 
 .modal__overlay {
@@ -164,10 +178,13 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-    display: flex;
     display: none;
     animation: fadeIn linear 0.1s;
     z-index: 4;
+}
+
+.filter-wrap.active {
+    display: flex;
 }
 
 .filter__overlay {
@@ -179,13 +196,6 @@ body {
 }
 
 .filter__body {
-    /* --growth-from: 0.7;
-    --growth-to: 1;
-    width: 500px;
-    margin: auto;
-    z-index: 1;
-    border-radius: 5px;
-    animation: growth linear 0.1s; */
     position: absolute;
     top: 0;
     right: 0;
@@ -193,6 +203,8 @@ body {
     width: 400px;
     height: 100vh;
     background-color: white;
+    color: var(--text-title-color);
+    animation: filterGrowth linear 0.2s;
 }
 
 .filter__body .container {

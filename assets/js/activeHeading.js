@@ -1,16 +1,12 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
-const tabs = $$('.ticket__information-details-heading-item');
-const tabDetails = $$('.content-detail');
+
 const ticketMores = $$('.ticket-price__more');
 const moreInformations = $$('.ticket__information-details');
-const tabActive = $('.ticket__information-details-heading-item.active');
 
-const line = $('.ticket__information-details-heading .line');
-
-line.style.left = tabActive.offsetLeft + 'px';
-line.style.width = tabActive.offsetWidth + 'px';
+var tabs = $$('.ticket__information-details.active .ticket__information-details-heading-item');
+// console.log("Check1", tabs)
 
 ticketMores.forEach((ticketMore, index) => {
     var moreInformation = moreInformations[index];
@@ -25,9 +21,18 @@ ticketMores.forEach((ticketMore, index) => {
                 current.classList.remove('active');
             }
             moreInformation.classList.add('active');
+            tabs = $$('.ticket__information-details.active .ticket__information-details-heading-item');
         }
     }
 })
+
+// var tabs = $$('.ticket__information-details.active .ticket__information-details-heading-item');
+// console.log(tabs);
+const tabDetails = $$('.content-detail');
+const tabActive = $('.ticket__information-details-heading-item.active');
+const line = $('.ticket__information-details-heading .line');
+line.style.left = tabActive.offsetLeft + 'px';
+line.style.width = tabActive.offsetWidth + 'px';
 
 tabs.forEach((tab, index) => {
     const tabDetail = tabDetails[index];

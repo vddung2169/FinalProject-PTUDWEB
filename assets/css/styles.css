@@ -848,6 +848,13 @@ textarea {
     color: #262626;
 }
 
+.filter__header span i {
+    display: inline-block;
+    font-size: 1.4rem;
+    margin-left: 20px;
+    padding: 5px;
+}
+
 .filter__departureTime {}
 
 .filter__departureTime-list {
