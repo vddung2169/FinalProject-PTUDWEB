@@ -112,7 +112,7 @@ body {
     left: 0;
     display: flex;
     display: none;
-    / animation: fadeIn linear 0.1s;
+    animation: fadeIn linear 0.1s;
     z-index: 2;
 }
 
