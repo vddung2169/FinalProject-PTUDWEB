@@ -373,8 +373,8 @@ textarea {
 .ticket__information {
     min-height: 340px;
     padding: 20px 20px;
-    border: 3px solid rgb(188, 188, 188);
-    margin: 30px 0;
+    border: 1px solid #ccc;
+    margin: 20px 0;
 }
 
 .ticket__information-content {}
@@ -382,8 +382,7 @@ textarea {
 .ticket__information-img {
     /* height: 100px; */
     background-image: url(/assets/img/nha-xe-thanh-buoi.png);
-    background-size: 400px;
-    background-repeat: no-repeat;
+    background-size: 450px;
     background-position: center;
 }
 
@@ -967,10 +966,6 @@ textarea {
     display: none;
 }
 
-.ticket__information-details.active {
-    display: block;
-}
-
 .ticket__information-details-heading {
     height: 60px;
     line-height: 60px;
@@ -1011,12 +1006,8 @@ textarea {
     cursor: pointer;
 }
 
-
-/* Display none để ẩn đi */
-
 .image-detail {
     margin-top: 10px;
-    display: none;
 }
 
 .image-heading {
@@ -1089,205 +1080,7 @@ textarea {
     background-repeat: no-repeat;
 }
 
-.utility-detail {
-    margin-top: 10px;
-}
-
-.view-list {
-    padding-left: 0;
-}
-
-.view-item {
-    background: rgba(217, 217, 217, 0.42);
-    border-radius: 10px;
-    padding: 20px 20px;
-    margin-top: 15px;
-}
-
-.view-item__heading {
-    font-size: 1.4rem;
-    font-weight: 600;
-}
-
-.view-item__heading i {
-    color: #ffb43b;
-}
-
-.view-item__content {}
-
-.content-detail {
-    display: none;
-}
-
-.content-detail.active {
-    display: block;
-}
-
-.route-detail__note {
-    padding: 10px 50px;
-    font-size: 1.4rem;
-}
-
-.route-detail__note span {
-    font-size: 1.6rem;
-    font-weight: 600;
-}
-
-.route-detail__PickUp,
-.route-detail__DropOff {
-    margin-left: 50px;
-    /* display: flex; */
-    /* justify-content: center; */
-}
-
-.route-detail__DropOff--heading,
-.route-detail__PickUp--heading {
-    min-width: 300px;
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--text-title-color);
-    background-color: rgba(217, 217, 217, 0.5);
-    border-radius: 10px;
-    padding: 10px 20px;
-}
-
-.route-detail__DropOff--heading i,
-.route-detail__PickUp--heading i {
-    display: inline-block;
-    margin-right: 5px;
-}
-
-.route-detail__DropOff--content,
-.route-detail__PickUp--content {
-    margin: 20px 50px;
-}
-
-.route-detail__DropOff,
-.route-detail__PickUp {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    font-weight: 500;
-}
-
-.route-detail__time {
-    color: var(--text-title-color);
-    font-size: 1.4rem;
-    font-weight: 600;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-.route-detail__location {}
-
-.policy-detail-Cancellation {
-    margin: 10px 0 20px 0;
-}
-
-.policy-detail-Cancellation h3 {
-    margin: 10px 0;
-}
-
-.policy-detail-Cancellation-time {
-    text-align: center;
-}
-
-.policy-detail-Cancellation-timeLine .col-xl-6 {}
-
-.policy-detail-Cancellation-timeLine {
-    display: flex;
-    text-align: center;
-    line-height: 30px;
-    font-weight: 600;
-}
-
-.policy-detail-Cancellation-timeLine--part:first-child {
-    width: 100%;
-    height: 30px;
-    background-color: #ffb43b;
-}
-
-.policy-detail-Cancellation-timeLine--part:last-child {
-    width: 100%;
-    height: 30px;
-    background-color: red;
-}
-
-.policy-detail-garage-item {}
-
-.policy-detail-garage-item__content {
-    list-style-type: disc;
-}
-
-.policy-detail-garage-item__content li:last-child {
-    margin-bottom: 8px;
-}
-
-.rate-detail__heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.rate-detail__heading-averageRate {
-    min-width: 200px;
-    padding: 10px;
-    color: white;
-    background-color: var(--text-title-color);
-    border-radius: 10px;
-    text-align: center;
-    font-size: 1.4rem;
-}
-
-.rate-detail__userComment-rate .fa-star,
-.rate-detail__heading-fiveStarRate .fa-star {
-    font-size: 2rem;
-    color: #ffb43b;
-}
-
-.rate-detail__userComment-list {
-    padding-left: 0;
-    margin-top: 20px;
-}
-
-.rate-detail__userComment-item>i {
-    display: inline-block;
-    font-size: 1.6rem;
-    padding: 10px;
-    margin-right: 10px;
-}
-
-.rate-detail__userComment-item {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: rgba(217, 217, 217, 0.5);
-    padding: 5px 10px;
-    margin: 12px 0;
-    border-radius: 10px;
-}
-
-.rate-detail__userComment-wrap {
-    flex-grow: 1;
-}
-
-.rate-detail__userComment-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.4rem;
-}
-
-.rate-detail__userComment-rate .fa-star {
-    font-size: 1.4rem;
-}
-
-.rate-detail__userComment-rate {}
-
-
 /* Seat form */
-
 .seat-form__container {
     padding: 0 32px;
     display: flex;
@@ -1320,7 +1113,7 @@ textarea {
 }
 
 .seat-form__step--active {
-    background-color: rgba(0, 0, 0, 0.08);
+    background-color: rgba(0,0,0,0.08);
 }
 
 .seat-form__seat-place {
@@ -1336,19 +1129,17 @@ textarea {
     flex: 1;
 }
 
-.seat-form__seat {
+.seat-form__seat{
     display: flex;
 }
-
-.seat-form__seat-condition {
+.seat-form__seat-condition{
     margin-left: 15px;
     font-weight: 400;
     display: flex;
     justify-content: right;
     align-items: center;
 }
-
-.seat-form__seat-img {
+.seat-form__seat-img{
     width: 50px;
     height: 50px;
 }
@@ -1387,9 +1178,7 @@ textarea {
     width: 100%;
 }
 
-
 /* Information form */
-
 .info-form__container {
     padding: 0 32px;
 }
@@ -1420,7 +1209,7 @@ textarea {
 }
 
 .info-form__step--active {
-    background-color: rgba(0, 0, 0, 0.08);
+    background-color: rgba(0,0,0,0.08);
 }
 
 .info-form__form {
