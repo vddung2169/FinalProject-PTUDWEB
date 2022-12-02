@@ -1501,3 +1501,117 @@ textarea {
 table {
     border-color: #262626;
 }
+
+
+/* Location form */
+
+.location-form__container {
+    display: flex;
+}
+
+.location-form__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--text-title-color);
+    font-weight: 600;
+    max-height: 54px;
+}
+
+.location-form__number_img {
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+}
+
+.location-form__step {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    min-height: 54px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.location-form__information {
+    flex: 1;
+}
+
+.location-form__location {
+    background-color: rgba(217, 217, 217, 0.8);
+    border-radius: 8px;
+}
+
+.location-form__location label {
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--text-title-color)
+}
+
+.location-form__input {
+    border: none;
+    outline: none;
+    color: var(--text-color);
+    background-color: var(--white-color);
+    border-radius: 2px;
+}
+
+.location-form__nearest-location {}
+
+.location-form__nearest-title {
+    font-weight: 500;
+    color: var(--text-title-color);
+}
+
+.location-form__nearest-start {
+    color: var(--yellow-color);
+    font-weight: 600;
+    font-size: 16px;
+    flex: 1;
+}
+
+.location-form__nearest-start-details {
+    color: var(--text-title-color);
+    font-size: 16px;
+    line-height: 1.6;
+    flex: 1;
+}
+
+.location-form__footer {
+    background-color: #f5f5f5;
+    padding: 12px 36px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+
+.location-form__total {
+    font-weight: 500;
+    font-size: 18px;
+    margin-left: 150px;
+}
+
+.location-form__price {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--yellow-color);
+}
+
+.location-form__address {
+    display: flex;
+}
+
+.location-form__distance {
+    color: #27AE60;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.verticalLine {
+    border-left: 1px solid #d9d9d9;
+}
+
+.location-form__step--active {
+    background-color: rgba(0, 0, 0, 0.08);
+}
