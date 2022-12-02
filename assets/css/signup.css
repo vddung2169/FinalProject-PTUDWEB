@@ -229,9 +229,21 @@ html {
 
 .modal-logo {
     display: inline-block;
-    position: relative;
-    left: 50%;
-    top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-title-color);
+}
+
+.modal-logo img {
+    display: inline-block;
+    width: 150px;
+}
+
+.modal-logo span {
+    display: inline-block;
+    font-size: 1.4rem;
 }
 
 .modal-logo:hover {
