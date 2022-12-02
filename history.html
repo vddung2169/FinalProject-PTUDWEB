@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History - TTI</title>
+    <link rel="icon" href="./assets/img/logo_has_color.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/history.css">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/6501cf2109.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header id="header" class="container-fluid">
+            <div class="header_wrap">
+                <a href="index.html" class="header__logo">
+                    <img loading="lazy" src="./assets/img/logo_has_color.png" alt="This is LOGO">
+                </a>
+                <div class="header__search">
+                    <input type="text" class="header__search-input" placeholder="Search...">
+                    <i class="header__search-icon fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            <div class="header__information">
+                <ul class="header__information-list">
+                    <li class="header__information-item"><a href="">Garage Information</a></li>
+                    <li class="header__information-item"><a href="">Route Information</a></li>
+                    <li class="header__information-item"><a href="">Reservation Information</a></li>
+                    <li class="header__information-item">
+                        <i class="header__information-info fa-solid fa-user-large"></i>
+                        <ul class="header__user-list">
+                            <li class="header__user-item btn-signup">
+                                <a href="./signUp.html">Sign Up</a>
+                            </li>
+                            <li class="header__user-item btn-signin">
+                                <a href="./signIn.html">Sign In</a>
+                            </li>
+                            <li class="header__user-item btn-history">
+                                <a href="">History</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="header__information-item">
+                        <i class="header__information-setting fa-solid fa-gear"></i>
+                        <ul class="header__setting-list">
+                            <span>Language</span>
+                            <li class="header__setting-item">
+                                <a href="">English</a>
+                            </li>
+                            <li class="header__setting-item">
+                                <a href="">Vietnamese</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <div id="body" class="history">
+            <!-- Available Ticket -->
+            <div class="availableTicket-container">
+                <div class="container">
+                    <div class="availableTicket-header">
+                        <div class="availableTicket-header-title">History</div>
+                    </div>
+                    <ul class="ticket__information-list">
+                        <li class="ticket__information sketchy">
+                            <div class="ticket__information-summary row">
+                                <div class="ticket__information-content col-xl-8">
+                                    <div class="row">
+                                        <div class="ticket__information-description col-xl-8">
+                                            <div class="ticket__car">
+                                                <div class="ticket__car-name">Thành Bưởi</div>
+                                                <div class="ticket__car-rate">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <span>4.8 (B55)</span>
+                                                </div>
+                                            </div>
+                                            <div class="ticket__car-type">Limousine 9 seats</div>
+                                            <div class="ticket__car-depart">
+                                                <i class="fa-solid fa-location-dot"></i>
+                                                <span class="ticket__car-depart-time">09:00</span>
+                                                <span class="ticket__car-depart-location">Bến xe miền Đông</span>
+                                            </div>
+                                            <div class="ticket__car-depart-period">2h</div>
+                                            <div class="ticket__car-arrive">
+                                                <i class="fa-solid fa-location-dot"></i>
+                                                <span class="ticket__car-arrive-time">14:00</span>
+                                                <span class="ticket__car-arrive-location">Văn phòng Bà Rịa</span>
+                                            </div>
+                                        </div>
+                                        <div class="ticket__information-price col-xl-4">
+                                            <div class="ticket__information-price-heading">Total:</div>
+                                            <div class="ticket__information-price-detail">200.000<span>đ</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ticket__information-img col-xl-4">
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="ticket__information sketchy">
+                            <div class="ticket__information-summary row">
+                                <div class="ticket__information-content col-xl-8">
+                                    <div class="row">
+                                        <div class="ticket__information-description col-xl-8">
+                                            <div class="ticket__car">
+                                                <div class="ticket__car-name">Thành Bưởi</div>
+                                                <div class="ticket__car-rate">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <span>4.8 (B55)</span>
+                                                </div>
+                                            </div>
+                                            <div class="ticket__car-type">Limousine 9 seats</div>
+                                            <div class="ticket__car-depart">
+                                                <i class="fa-solid fa-location-dot"></i>
+                                                <span class="ticket__car-depart-time">09:00</span>
+                                                <span class="ticket__car-depart-location">Bến xe miền Đông</span>
+                                            </div>
+                                            <div class="ticket__car-depart-period">2h</div>
+                                            <div class="ticket__car-arrive">
+                                                <i class="fa-solid fa-location-dot"></i>
+                                                <span class="ticket__car-arrive-time">14:00</span>
+                                                <span class="ticket__car-arrive-location">Văn phòng Bà Rịa</span>
+                                            </div>
+                                        </div>
+                                        <div class="ticket__information-price col-xl-4">
+                                            <div class="ticket__information-price-heading">Total:</div>
+                                            <div class="ticket__information-price-detail">200.000<span>đ</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ticket__information-img col-xl-4">
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="ticket__information sketchy">
+                            <div class="ticket__information-summary row">
+                                <div class="ticket__information-content col-xl-8">
+                                    <div class="row">
+                                        <div class="ticket__information-description col-xl-8">
+                                            <div class="ticket__car">
+                                                <div class="ticket__car-name">Thành Bưởi</div>
+                                                <div class="ticket__car-rate">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <span>4.8 (B55)</span>
+                                                </div>
+                                            </div>
+                                            <div class="ticket__car-type">Limousine 9 seats</div>
+                                            <div class="ticket__car-depart">
+                                                <i class="fa-solid fa-location-dot"></i>
+                                                <span class="ticket__car-depart-time">09:00</span>
+                                                <span class="ticket__car-depart-location">Bến xe miền Đông</span>
+                                            </div>
+                                            <div class="ticket__car-depart-period">2h</div>
+                                            <div class="ticket__car-arrive">
+                                                <i class="fa-solid fa-location-dot"></i>
+                                                <span class="ticket__car-arrive-time">14:00</span>
+                                                <span class="ticket__car-arrive-location">Văn phòng Bà Rịa</span>
+                                            </div>
+                                        </div>
+                                        <div class="ticket__information-price col-xl-4">
+                                            <div class="ticket__information-price-heading">Total:</div>
+                                            <div class="ticket__information-price-detail">200.000<span>đ</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ticket__information-img col-xl-4">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

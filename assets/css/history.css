@@ -1,0 +1,58 @@
+.availableTicket-header {
+    margin: 0 0 20px 0;
+}
+
+.availableTicket-header-title {
+    padding-top: 20px;
+    font-size: 1.6rem;
+}
+
+.ticket__information {
+    margin: 20px 0;
+}
+
+.ticket__information-list {
+    padding-left: 0;
+}
+
+.ticket__information-price {
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-end;
+    padding-bottom: 5px;
+}
+
+.ticket__information-content .row {
+    padding: 0 20px;
+}
+
+.ticket__information-price-heading {
+    font-weight: 600;
+    color: var(--text-title-color);
+}
+
+.ticket__information-price-detail {
+    color: #ffb43b;
+    font-weight: 600;
+}
+
+.sketchy {
+    border: 3px solid #333333;
+    border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+    background: #ffffff;
+    position: relative;
+    &::before {
+        content: '';
+        border: 2px solid #353535;
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
+        border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
+    }
+}
