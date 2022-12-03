@@ -1,0 +1,281 @@
+/* Big tablet to 1200px; */
+@media only screen and (max-width : 1200px){
+
+    .search__ticket-choose {
+        width: 15rem;
+    }
+
+    .search__ticket-choose-direction>img {
+        margin: 0 1.5rem;
+    }
+
+    .ticket-price {
+        font-size: 1.6rem;
+    }
+
+    .ticket-price__more {
+        font-size: 1.3rem;
+    }
+
+
+}
+
+
+/* Small tablet to big tablet from 768x to 1023px */
+@media only screen and (max-width:1023px){
+    .header__search {
+        /* max-width: 15rem; */
+        width: 13rem;
+    }
+
+    .header__search-input {
+        max-width: 10rem;
+        
+    }
+
+    .header__information{
+        width: 55%;
+    }
+
+    .header__information-list {
+        padding: 0;   
+    }
+
+
+    .header__information-item:nth-child(-n+3) {
+        width: 20%;
+        padding: 0 5px;
+    }
+
+    .header__information-info,
+    .header__information-setting {
+        margin-top: 1rem;
+       font-size: 1.5rem;
+    }
+
+    .search__ticket-choose {
+        width: 10rem;
+    }
+
+    .search__ticket-choose-direction>img {
+        margin: 0 0.8rem;
+    }
+
+    .ticket__car{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .ticket__car-name {
+        font-size: 2rem;
+    }
+
+    .ticket__car-type {
+        font-size: 1.4rem;
+        margin: 0.5rem 0;
+    }
+
+    .ticket__car-depart>i,
+    .ticket__car-depart-time {
+        font-size: 2rem;
+    }
+
+    .ticket__car-arrive-location,
+    .ticket__car-depart-location {
+        font-size: 1.4rem;
+    }
+
+    .ticket__car-depart-period {
+        height: 2.5rem;
+        font-size: 1.3rem;
+        border-left: 1px solid #333;
+        margin-left: 13px;
+        line-height: 2.5rem;
+        padding-left: 26px
+    }
+
+    .ticket__car-arrive>i,
+    .ticket__car-arrive-time {
+        font-size: 2rem;
+    }
+
+    .ticket-price {
+        font-size: 1.2rem;
+    }
+
+    .ticket-price__more {
+        font-size: 1rem;
+    }
+
+    .grid__column-2-4 {
+        padding-left: 5px;
+        padding-right: 5px;
+        width: 18%;
+      }
+
+    .footer__heading {
+        font-size: 1rem;
+      }
+    
+    .footer-item__link {
+        font-size: 1rem;
+    }
+
+    .policy__decription {
+        
+        font-size: 1rem;
+        
+      }
+}
+
+/* Small phones to small tablets */
+@media only screen and (max-width: 767px){
+
+    .search__ticket {
+        height: auto;
+    }
+
+    
+    .search__ticket-choose-wrap{
+        flex-direction: column;
+    }
+
+    .search__ticket-choose-direction {
+        justify-content: space-around;
+    }
+
+    .search__ticket-choose {
+        width: 12rem;
+    }
+
+    .search__ticket-choose-direction>img {
+        margin-top: 1.5rem;
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .search__ticket-wrap-item {
+        margin-top: 1.5rem;
+        justify-content: center;
+    }
+
+
+    
+
+
+    /* .ticket__information {
+        min-height: 800px;
+        height: auto;
+      } */
+
+    .ticket__car {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .ticket__car-rate {
+        margin-top: 0.5rem;
+    }
+
+    .ticket__information-img {
+        height: 22rem;
+        background-size: 25rem;
+        
+    }
+
+    .ticket-left {
+        margin: 1rem;
+        text-align: right;
+        font-size: 1.2rem;
+    }
+
+    
+
+    .ticket-wrap-price {
+        margin-top: 1rem;
+        align-items: flex-start;
+    }
+
+    .ticket-price {
+        font-size: 2rem;
+    }
+
+    .btn-base {
+        height: 2.5rem;
+      }
+
+      .grid__row {
+        margin-left: -10px;
+        margin-right: 0px;
+        width: 40rem;
+      }
+
+      .grid__column-2-4 {
+        padding-left: 5px;
+        padding-right: 5px;
+        width: 10rem;
+      }
+
+      
+      .policy__decription {
+        width: 80%;
+        margin: 0 auto;
+      }
+}
+
+
+/* Small phones from 0 to 480px; */
+@media only screen and (max-width: 480px){
+    
+
+      .body__slideshow-background {
+        height: 15rem;
+      }
+
+      .body__slideshow-background--img {
+        width: 100%;
+        height: 100%;
+        object-fit:cover;
+        object-position: center;
+      }
+
+      .search__ticket-choose-direction {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .search__ticket-wrap-item {
+        margin-top: 1rem;
+        justify-content: center;
+      }
+      .search__ticket-choose {
+        width: 20rem;
+      }
+
+      .search__ticket-choose-direction > img {
+        margin-top: 1rem;
+      }
+
+      .search__ticket-choose-wrap > .search__ticket-wrap-item {
+        margin-top: 2rem;
+    }
+
+
+    .grid__row {
+        margin-left: 5rem;
+        margin-right: 0px;
+        width: 20rem;
+      }
+
+      .grid__column-2-4 {
+        padding-left: 6px;
+        padding-right: 6px;
+        margin-top: 1rem;
+        width: 10rem;
+      }
+
+      .policy__heading-item {
+        font-size: 1rem;
+      }
+}
