@@ -1,7 +1,6 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
-
 const ticketMores = $$('.ticket-price__more');
 const moreInformations = $$('.ticket__information-details');
 

@@ -146,6 +146,10 @@ body {
     z-index: 4;
 }
 
+.modal__container-form {
+    display: none;
+}
+
 .modal-wrap.active {
     display: flex;
 }

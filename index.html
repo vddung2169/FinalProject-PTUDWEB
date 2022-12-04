@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/slider.css">
     <link rel="stylesheet" href="./assets/css/home.css">
+    <link rel="stylesheet" href="./assets/css/buyTicket.css">
     <!-- Latest compiled and minified CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Latest compiled JavaScript -->
@@ -1492,377 +1493,384 @@
         </div>
 
         <!-- Modal layout -->
-        <div class="modal-wrap">
+        <div class="modal-wrap active">
             <div class="modal__overlay">
             </div>
 
             <div class="modal__body">
-                <!-- Register form -->
-                <!-- Uncomment để mở form đăng kí -->
-                <div class="auth-form register-form">
-                    <div class="auth-form__container">
-                        <div class="auth-form__header">
-                            <h3 class="auth-form__heading">
-                                Đăng kí
-                            </h3>
-                            <span class="auth-form__switch-btn">Đăng nhập</span>
-                        </div>
-
-                        <div class="auth-form__form">
-                            <div class="auth-form__group">
-                                <input type="text" class="auth-form__input" placeholder="Email của bạn">
-                            </div>
-                            <div class="auth-form__group">
-                                <input type="password" class="auth-form__input" placeholder="Mật khẩu của bạn">
-                            </div>
-                            <div class="auth-form__group">
-                                <input type="password" class="auth-form__input" placeholder="Nhập lại mật khẩu">
-                            </div>
-                        </div>
-
-                        <div class="auth-form__aside">
-                            <div class="auth-form__aside-img">
-                                <img src="./assets/img/logo_has_color.png" alt="">
-                            </div>
-                            <p class="auth-form__policy">
-                                Bằng việc đăng kí, bạn đã đồng ý với Ticket Take It về
-                                <a class="auth-form__policy-link" href="">Điều khoản dịch vụ</a> &
-                                <a class="auth-form__policy-link" href="">Chính sách bảo mật</a>
-                            </p>
-                        </div>
-
-                        <div class="auth-form__controls">
-                            <button class="btn auth-form__controls-back btn--normal">TRỞ LẠI</button>
-                            <button class="btn-base btn--signUp">ĐĂNG KÍ</button>
-                        </div>
-                    </div>
-
-                    <div class="auth-form__socials">
-                        <a href="" class="auth-form__socials--facebook btn-modal btn--size-s btn--with-icon">
-                            <i class="auth-form__socials-icon fa-brands fa-square-facebook"></i>
-                            <span class="auth-form__socials-title">Kết nối với Facebook</span>
-                        </a>
-                        <a href="" class="auth-form__socials--google btn-modal btn--size-s btn--with-icon">
-                            <i class="auth-form__socials-icon fa-brands fa-google"></i>
-                            <span class="auth-form__socials-title">Kết nối với Google</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Login form -->
-                <!-- Uncomment để mở form đăng nhập -->
-
-                <!-- <div class="auth-form login-form">
-                <div class="auth-form__container">
-                    <div class="auth-form__header">
-                        <h3 class="auth-form__heading">
-                            Đăng nhập
-                        </h3>
-                        <span class="auth-form__switch-btn">Đăng kí</span>
-                    </div>
-
-                    <div class="auth-form__form">
-                        <div class="auth-form__group">
-                            <input type="text" class="auth-form__input" placeholder="Email của bạn">
-                        </div>
-                        <div class="auth-form__group">
-                            <input type="password" class="auth-form__input" placeholder="Mật khẩu của bạn">
-                        </div>
-                    </div>
-
-                    <div class="auth-form__aside">
-                        <div class="auth-form__aside-img">
-                            <img src="./assets/img/logo_has_color.png" alt="">
-                        </div>
-                    </div>
-
-                    <div class="auth-form__controls">
-                        <button class="btn auth-form__controls-back btn--normal">TRỞ LẠI</button>
-                        <button class="btn-base btn--signUp">ĐĂNG NHẬP</button>
-                    </div>
-                </div>
-
-                <div class="auth-form__socials">
-                    <a href="" class="auth-form__socials--facebook btn-modal btn--size-s btn--with-icon">
-                        <i class="auth-form__socials-icon fa-brands fa-square-facebook"></i>
-                        <span class="auth-form__socials-title">Đăng nhập với Facebook</span>
-                    </a>
-                    <a href="" class="auth-form__socials--google btn-modal btn--size-s btn--with-icon">
-                        <i class="auth-form__socials-icon fa-brands fa-google"></i>
-                        <span class="auth-form__socials-title">Đăng nhập với Google</span>
-                    </a>
-                </div>
-            </div> -->
-
                 <!-- Seat form -->
-                <!-- <div class="seat-form bg-white">
-                <header class="seat-form__header">
-                    <div class="seat-form__step seat-form__step--active" id="seat-form__step--choose-seat">
-                        <img src="./assets/img/number_1.png" alt="buoc1" class="seat-form__number_img"> Vị trí ghế ngồi
-                    </div>
-                    <div class="seat-form__step" id="seat-form__step--pick-location">
-                        <img src="./assets/img/number_2.png" alt="buoc2" class="seat-form__number_img"> Vị trí đón/trả khách
-                    </div>
-                    <div class="seat-form__step" id="seat-form__step--your-seat">
-                        <img src="./assets/img/number_3.png" alt="buoc3" class="seat-form__number_img"> Nhập thông tin
-                    </div>
-                </header>
-                <hr style="margin:0">
-
-                <div class="seat-form__container">
-                    <div class="seat-form__note mt-5 mb-5">
-                        <h4 class="mb-5">Chú thích: </h4>
-                        <div class="seat-form__seat mb-4">
-                            <img class="seat-form__seat-img" src="./assets/img/empty_seat.png" alt="empty_seat">
-                            <span class="seat-form__seat-condition">Còn trống</span>
+                <div class="seat-form bg-white">
+                    <header class="seat-form__header">
+                        <div class="seat-form__step seat-form__step--active" id="seat-form__step--choose-seat">
+                            <img src="./assets/img/number_1.png" alt="buoc1" class="seat-form__number_img"> Vị trí ghế ngồi
                         </div>
-                        <div class="seat-form__seat mb-4">
-                            <img class="seat-form__seat-img" src="./assets/img/notsale_seat.png" alt="empty_seat">
-                            <span class="seat-form__seat-condition">Ghế không bán</span>
+                        <div class="seat-form__step" id="seat-form__step--pick-location">
+                            <img src="./assets/img/number_2.png" alt="buoc2" class="seat-form__number_img"> Vị trí đón/trả khách
                         </div>
-                        <div class="seat-form__seat">
-                            <img class="seat-form__seat-img" src="./assets/img/choice_seat.png" alt="empty_seat">
-                            <span class="seat-form__seat-condition">Đang chọn</span>
+                        <div class="seat-form__step" id="seat-form__step--your-seat">
+                            <img src="./assets/img/number_3.png" alt="buoc3" class="seat-form__number_img"> Nhập thông tin
                         </div>
-                    </div>
+                    </header>
+                    <hr style="margin:0">
 
-                    <div class="seat-form__seat-place mt-5 mb-5">
-                        <table>
-                            <tbody>
-                                <tr class="coach-row">
-                                    <td>
-                                        <div class="coach-row__seat">
-                                            <img class="driver-seat" src="./assets/img/volant.png" alt="">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="coach-row__seat">
-                                            <img class="not-for-sale" src="./assets/img/empty_seat.png" alt="">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="coach-row__seat">
-                                            <img class="current-choice" src="./assets/img/empty_seat.png" alt="">
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="coach-row">
-                                    <td>
-                                        <div class="coach-row__seat">
-                                            <img src="./assets/img/empty_seat.png" alt="">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="coach-row__seat">
-                                            <img src="./assets/img/empty_seat.png" alt="">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="coach-row__seat">
-                                            <img src="./assets/img/empty_seat.png" alt="">
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="coach-row">
-                                    <td>
-                                        <div class="coach-row__seat">
-                                            <img src="./assets/img/empty_seat.png" alt="">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="coach-row__seat">
-                                            <img src="./assets/img/empty_seat.png" alt="">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="coach-row__seat">
-                                            <img src="./assets/img/empty_seat.png" alt="">
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="coach-row">
-                                    <td>
-                                        <div class="coach-row__seat">
-                                            <img src="./assets/img/empty_seat.png" alt="">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="coach-row__seat">
-                                            <img src="./assets/img/empty_seat.png" alt="">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="coach-row__seat">
-                                            <img src="./assets/img/empty_seat.png" alt="">
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-
-                        </table>
-                    </div>
-
-                </div>
-
-                <div class="seat-form__footer">
-                    <span class="seat-form__text">Số lượng ghế: 
-                        <span class="seat-form__price">1</span>
-                    </span>
-                    <div class="seat-form__right-corner">
-                        <span class="seat-form__text py-2">Tổng: <span class="seat-form__price">200.000đ</span></span>
-                        <button class="btn-continue px-4">Tiếp tục</button>
-                    </div>
-                </div>
-            </div> -->
-                <!-- Location form -->
-                <!-- <div class="Location-form bg-white">
-                <header class="location-form__header">
-                    <div class="location-form__step" id="location-form__step--choose-seat">
-                        <img src="./assets/img/number_1.png" alt="buoc1" class="location-form__number_img"> Vị trí ghế ngồi
-                    </div>
-                    <div class="location-form__step location-form__step--active" id="location-form__step--pick-location">
-                        <img src="./assets/img/number_2.png" alt="buoc2" class="location-form__number_img"> Vị trí đón/trả khách
-                    </div>
-                    <div class="location-form__step" id="location-form__step--your-seat">
-                        <img src="./assets/img/number_3.png" alt="buoc3" class="location-form__number_img"> Nhập thông tin
-                    </div>
-                </header>
-
-                <hr style="margin:0">
-
-                <div class="location-form__container">
-                    <div class="location-form__information p-4">
-                        <div class="location-form__location px-4 py-3">
-                            <label for="location-form__place">Điểm đón</label>
-                            <br>
-                            <input type="text" class="location-form__input mt-3 mb-2 px-2" placeholder="Điểm đón của bạn" required>
+                    <div class="seat-form__container modal__container-form active">
+                        <div class="seat-form__note mt-5 mb-5">
+                            <h4 class="mb-5">Chú thích: </h4>
+                            <div class="seat-form__seat mb-4">
+                                <img class="seat-form__seat-img" src="./assets/img/empty_seat.png" alt="empty_seat">
+                                <span class="seat-form__seat-condition">Còn trống</span>
+                            </div>
+                            <div class="seat-form__seat mb-4">
+                                <img class="seat-form__seat-img" src="./assets/img/notsale_seat.png" alt="empty_seat">
+                                <span class="seat-form__seat-condition">Ghế không bán</span>
+                            </div>
+                            <div class="seat-form__seat">
+                                <img class="seat-form__seat-img" src="./assets/img/choice_seat.png" alt="empty_seat">
+                                <span class="seat-form__seat-condition">Đang chọn</span>
+                            </div>
                         </div>
 
-                        <div class="location-form__nearest-location p-3">
-                            <div class="location-form__nearest-title mb-2">Điểm đón gần nhất</div>
+                        <div class="seat-form__seat-place mt-5 mb-5">
+                            <table>
+                                <tbody>
+                                    <tr class="coach-row">
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img class="driver-seat" src="./assets/img/volant.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img class="not-for-sale" src="./assets/img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img class="current-choice" src="./assets/img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="coach-row">
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img src="./assets/img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img src="./assets/img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img src="./assets/img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="coach-row">
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img src="./assets/img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img src="./assets/img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img src="./assets/img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="coach-row">
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img src="./assets/img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img src="./assets/img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img src="./assets/img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
 
-                            <div class="location-form__nearest-start">
-                                <i class="fa-regular fa-circle-dot"></i>
-                                <span class="mx-2">17:40 
-                                    <span>Văn phòng quận 5</span> 
-                                </span>    
+                            </table>
+                        </div>
+
+                    </div>
+
+                    <div class="location-form__container modal__container-form">
+                        <div class="location-form__information p-4">
+                            <div class="location-form__location px-4 py-3">
+                                <label for="location-form__place">Điểm đón</label>
+                                <br>
+                                <input type="text" class="location-form__input mt-3 mb-2 px-2" placeholder="Điểm đón của bạn" required>
                             </div>
 
-                            <div class="location-form__nearest-start-details mt-2">
-                                <div class="location-form__address">
-                                    <i class="fa-solid fa-location-dot mt-1"></i>
-                                    <span class="mx-3">269 Hùng Vương, Phường 09, Quận 5, Hồ Chí Minh 
+                            <div class="location-form__nearest-location p-3">
+                                <div class="location-form__nearest-title mb-2">Điểm đón gần nhất</div>
+
+                                <div class="location-form__nearest-start">
+                                    <i class="fa-regular fa-circle-dot"></i>
+                                    <span class="mx-2">17:40 
+                                    <span>Văn phòng quận 5</span>
+                                    </span>
+                                </div>
+
+                                <div class="location-form__nearest-start-details mt-2">
+                                    <div class="location-form__address">
+                                        <i class="fa-solid fa-location-dot mt-1"></i>
+                                        <span class="mx-3">269 Hùng Vương, Phường 09, Quận 5, Hồ Chí Minh 
                                         <span>
                                             <a href="#">Xem vị trí</a>
                                         </span>
                                         <br>
                                         <span class="location-form__distance py-4">Cách vị trí của bạn 2.7km</span>
-                                    </span>
-                                   
+                                        </span>
+
+                                    </div>
+
                                 </div>
-                        
                             </div>
                         </div>
-                    </div>
 
-                    <div class="verticalLine mt-4"></div>
+                        <div class="verticalLine mt-4"></div>
 
-                    <div class="location-form__information p-4">
-                        <div class="location-form__location px-4 py-3">
-                            <label for="location-form__place">Điểm trả</label>
-                            <br>
-                            <input type="text" class="location-form__input mt-3 mb-2 px-2" placeholder="Điểm trả của bạn" required>
-                        </div>
-
-                        <div class="location-form__nearest-location p-3">
-                            <div class="location-form__nearest-title mb-2">Điểm trả gần nhất</div>
-
-                            <div class="location-form__nearest-start">
-                                <i class="fa-regular fa-circle-dot"></i>
-                                <span class="mx-2">20:00 
-                                    <span>Vũng Tàu</span> 
-                                </span>    
+                        <div class="location-form__information p-4">
+                            <div class="location-form__location px-4 py-3">
+                                <label for="location-form__place">Điểm trả</label>
+                                <br>
+                                <input type="text" class="location-form__input mt-3 mb-2 px-2" placeholder="Điểm trả của bạn" required>
                             </div>
 
-                            <div class="location-form__nearest-start-details mt-2">
-                                <div class="location-form__address">
-                                    <i class="fa-solid fa-location-dot mt-1"></i>
-                                    <span class="mx-3">Phường 1, Vũng Tàu, Bà Rịa-Vũng Tàu 
+                            <div class="location-form__nearest-location p-3">
+                                <div class="location-form__nearest-title mb-2">Điểm trả gần nhất</div>
+
+                                <div class="location-form__nearest-start">
+                                    <i class="fa-regular fa-circle-dot"></i>
+                                    <span class="mx-2">20:00 
+                                    <span>Vũng Tàu</span>
+                                    </span>
+                                </div>
+
+                                <div class="location-form__nearest-start-details mt-2">
+                                    <div class="location-form__address">
+                                        <i class="fa-solid fa-location-dot mt-1"></i>
+                                        <span class="mx-3">Phường 1, Vũng Tàu, Bà Rịa-Vũng Tàu 
                                         <span>
                                             <a href="#">Xem vị trí</a>
                                         </span>
                                         <br>
                                         <span class="location-form__distance py-4">Cách vị trí của bạn 1.4km</span>
-                                    </span>
-                                   
+                                        </span>
+
+                                    </div>
+
                                 </div>
-                        
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="location-form__footer">
-                    <button class="btn-back px-4">Trở lại</button>
-                    <span class="location-form__total px-4 py-2">Tổng: <span class="location-form__price">200.000đ</span></span>
-                    <button class="btn-continue px-4">Tiếp tục</button>
-                </div>
-            </div> -->
-                <!-- Information form -->
-                <!-- <div class="info-form bg-white">
-                <header class="info-form__header">
-                    <div class="info-form__step" id="info-form__step--choose-seat">
-                        <img src="./assets/img/number_1.png" alt="buoc1" class="info-form__number_img">
-                        Vị trí ghế ngồi
-                    </div>
-                    <div class="info-form__step" id="info-form__step--pick-location">
-                        <img src="./assets/img/number_2.png" alt="buoc2" class="info-form__number_img">
-                        Vị trí đón/trả khách
-                    </div>
-                    <div class="info-form__step info-form__step--active" id="info-form__step--your-info">
-                        <img src="./assets/img/number_3.png" alt="buoc3" class="info-form__number_img">
-                        Nhập thông tin
-                    </div>
-                </header>
-                <hr style="margin:0">
-                
-                <div class="info-form__container">
-                    <div class="info-form__form">
-                        <div class="info-form__group">
-                            <label for="fullname" class="py-2">Họ và tên<code style="color: red; font-weight: 700;">*</code></label>
-                            <input type="text" class="info-form__input" placeholder="Tên hành khách" name="fullname" required>
-                        </div>
-                        <div class="info-form__group">
-                            <label for="phone" class="py-2">Số điện thoại<code style="color: red; font-weight: 700;">*</code></label>
-                            <br>    
-                            <div class="info-form-wrap-item">
-                                <select class="info-form_area-code">
+                    <div class="info-form__container modal__container-form">
+                        <div class="info-form__form">
+                            <div class="info-form__group">
+                                <label for="fullname" class="py-2">Họ và tên<code style="color: red; font-weight: 700;">*</code></label>
+                                <input type="text" class="info-form__input" placeholder="Tên hành khách" name="fullname" required>
+                            </div>
+                            <div class="info-form__group">
+                                <label for="phone" class="py-2">Số điện thoại<code style="color: red; font-weight: 700;">*</code></label>
+                                <br>
+                                <div class="info-form-wrap-item">
+                                    <select class="info-form_area-code">
                                     <option value="">(VN)+84</option>
                                     <option value="US">(US)+1</option>
                                     <option value="CA">(CA)+1</option>
                                     <option value="JP">(JP)+81</option>
                                 </select>
-                                <input type="tel" class="info-form__input" placeholder="Số điện thoại" name="phone" required>
+                                    <input type="tel" class="info-form__input" placeholder="Số điện thoại" name="phone" required>
+                                </div>
+                            </div>
+                            <div class="info-form__group">
+                                <label for="email" class="py-2">Email<code style="color: red; font-weight: 700;">*</code></label>
+                                <input type="email" class="info-form__input" placeholder="Email để nhận thông báo" name="email" required>
+                            </div>
+                            <div class="info-form__group">
+                                <label for="note" class="py-2">Ghi chú hoặc yêu cầu khác (Nếu có)<code style="color: red; font-weight: 700;">*</code></label>
+                                <br>
+                                <textarea name="note" id="info-form__note" cols="" rows="2" placeholder="Các yêu cầu đặc biệt không thể được đảm bảo - nhưng nhà xe sẽ cố gắng hết sức để đáp ứng nhu cầu của bạn."></textarea>
                             </div>
                         </div>
-                        <div class="info-form__group">
-                            <label for="email" class="py-2">Email<code style="color: red; font-weight: 700;">*</code></label>
-                            <input type="email" class="info-form__input" placeholder="Email để nhận thông báo" name="email" required>
-                        </div>
-                        <div class="info-form__group">
-                            <label for="note" class="py-2">Ghi chú hoặc yêu cầu khác (Nếu có)<code style="color: red; font-weight: 700;">*</code></label>
-                            <br>
-                            <textarea name="note" id="info-form__note" cols="" rows="2" placeholder="Các yêu cầu đặc biệt không thể được đảm bảo - nhưng nhà xe sẽ cố gắng hết sức để đáp ứng nhu cầu của bạn."></textarea>
+                    </div>
+
+                    <div class="seat-form__footer">
+                        <span class="seat-form__text">Số lượng ghế: 
+                        <span class="seat-form__price">1</span>
+                        </span>
+                        <div class="seat-form__right-corner">
+                            <span class="seat-form__text py-2">Tổng: <span class="seat-form__price">200.000đ</span></span>
+                            <button class="btn-continue px-4">Tiếp tục</button>
                         </div>
                     </div>
                 </div>
-                
-                <div class="info-form__footer">
-                    <button class="btn-back px-4">Trở lại</button>
-                    <span class="info-form__total px-4 py-2">Tổng: <span class="info-form__price">200.000đ</span></span>
-                    <button class="btn-continue px-4">Tiếp tục</button>
-                </div>
-            </div> -->
+
+
+                <!-- Location form -->
+                <!-- <div class="Location-form bg-white modal__header-form">
+                    <header class="location-form__header">
+                        <div class="location-form__step" id="location-form__step--choose-seat">
+                            <img src="./assets/img/number_1.png" alt="buoc1" class="location-form__number_img"> Vị trí ghế ngồi
+                        </div>
+                        <div class="location-form__step location-form__step--active" id="location-form__step--pick-location">
+                            <img src="./assets/img/number_2.png" alt="buoc2" class="location-form__number_img"> Vị trí đón/trả khách
+                        </div>
+                        <div class="location-form__step" id="location-form__step--your-seat">
+                            <img src="./assets/img/number_3.png" alt="buoc3" class="location-form__number_img"> Nhập thông tin
+                        </div>
+                    </header>
+
+                    <hr style="margin:0">
+
+                    <div class="location-form__container">
+                        <div class="location-form__information p-4">
+                            <div class="location-form__location px-4 py-3">
+                                <label for="location-form__place">Điểm đón</label>
+                                <br>
+                                <input type="text" class="location-form__input mt-3 mb-2 px-2" placeholder="Điểm đón của bạn" required>
+                            </div>
+
+                            <div class="location-form__nearest-location p-3">
+                                <div class="location-form__nearest-title mb-2">Điểm đón gần nhất</div>
+
+                                <div class="location-form__nearest-start">
+                                    <i class="fa-regular fa-circle-dot"></i>
+                                    <span class="mx-2">17:40 
+                                    <span>Văn phòng quận 5</span>
+                                    </span>
+                                </div>
+
+                                <div class="location-form__nearest-start-details mt-2">
+                                    <div class="location-form__address">
+                                        <i class="fa-solid fa-location-dot mt-1"></i>
+                                        <span class="mx-3">269 Hùng Vương, Phường 09, Quận 5, Hồ Chí Minh 
+                                        <span>
+                                            <a href="#">Xem vị trí</a>
+                                        </span>
+                                        <br>
+                                        <span class="location-form__distance py-4">Cách vị trí của bạn 2.7km</span>
+                                        </span>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="verticalLine mt-4"></div>
+
+                        <div class="location-form__information p-4">
+                            <div class="location-form__location px-4 py-3">
+                                <label for="location-form__place">Điểm trả</label>
+                                <br>
+                                <input type="text" class="location-form__input mt-3 mb-2 px-2" placeholder="Điểm trả của bạn" required>
+                            </div>
+
+                            <div class="location-form__nearest-location p-3">
+                                <div class="location-form__nearest-title mb-2">Điểm trả gần nhất</div>
+
+                                <div class="location-form__nearest-start">
+                                    <i class="fa-regular fa-circle-dot"></i>
+                                    <span class="mx-2">20:00 
+                                    <span>Vũng Tàu</span>
+                                    </span>
+                                </div>
+
+                                <div class="location-form__nearest-start-details mt-2">
+                                    <div class="location-form__address">
+                                        <i class="fa-solid fa-location-dot mt-1"></i>
+                                        <span class="mx-3">Phường 1, Vũng Tàu, Bà Rịa-Vũng Tàu 
+                                        <span>
+                                            <a href="#">Xem vị trí</a>
+                                        </span>
+                                        <br>
+                                        <span class="location-form__distance py-4">Cách vị trí của bạn 1.4km</span>
+                                        </span>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="location-form__footer">
+                        <button class="btn-back px-4">Trở lại</button>
+                        <span class="location-form__total px-4 py-2">Tổng: <span class="location-form__price">200.000đ</span></span>
+                        <button class="btn-continue px-4">Tiếp tục</button>
+                    </div>
+                </div> -->
+
+
+                <!-- Information form -->
+                <!-- <div class="info-form bg-white modal__header-form">
+                    <header class="info-form__header">
+                        <div class="info-form__step" id="info-form__step--choose-seat">
+                            <img src="./assets/img/number_1.png" alt="buoc1" class="info-form__number_img"> Vị trí ghế ngồi
+                        </div>
+                        <div class="info-form__step" id="info-form__step--pick-location">
+                            <img src="./assets/img/number_2.png" alt="buoc2" class="info-form__number_img"> Vị trí đón/trả khách
+                        </div>
+                        <div class="info-form__step info-form__step--active" id="info-form__step--your-info">
+                            <img src="./assets/img/number_3.png" alt="buoc3" class="info-form__number_img"> Nhập thông tin
+                        </div>
+                    </header>
+                    <hr style="margin:0">
+
+                    <div class="info-form__container">
+                        <div class="info-form__form">
+                            <div class="info-form__group">
+                                <label for="fullname" class="py-2">Họ và tên<code style="color: red; font-weight: 700;">*</code></label>
+                                <input type="text" class="info-form__input" placeholder="Tên hành khách" name="fullname" required>
+                            </div>
+                            <div class="info-form__group">
+                                <label for="phone" class="py-2">Số điện thoại<code style="color: red; font-weight: 700;">*</code></label>
+                                <br>
+                                <div class="info-form-wrap-item">
+                                    <select class="info-form_area-code">
+                                    <option value="">(VN)+84</option>
+                                    <option value="US">(US)+1</option>
+                                    <option value="CA">(CA)+1</option>
+                                    <option value="JP">(JP)+81</option>
+                                </select>
+                                    <input type="tel" class="info-form__input" placeholder="Số điện thoại" name="phone" required>
+                                </div>
+                            </div>
+                            <div class="info-form__group">
+                                <label for="email" class="py-2">Email<code style="color: red; font-weight: 700;">*</code></label>
+                                <input type="email" class="info-form__input" placeholder="Email để nhận thông báo" name="email" required>
+                            </div>
+                            <div class="info-form__group">
+                                <label for="note" class="py-2">Ghi chú hoặc yêu cầu khác (Nếu có)<code style="color: red; font-weight: 700;">*</code></label>
+                                <br>
+                                <textarea name="note" id="info-form__note" cols="" rows="2" placeholder="Các yêu cầu đặc biệt không thể được đảm bảo - nhưng nhà xe sẽ cố gắng hết sức để đáp ứng nhu cầu của bạn."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-form__footer">
+                        <button class="btn-back px-4">Trở lại</button>
+                        <span class="info-form__total px-4 py-2">Tổng: <span class="info-form__price">200.000đ</span></span>
+                        <button class="btn-continue px-4">Tiếp tục</button>
+                    </div>
+                </div> -->
             </div>
         </div>
 
@@ -1871,6 +1879,7 @@
         <script src="./assets/js/account.js"></script>
         <script src="./assets/js/slider.js"></script>
         <script src="./assets/js/searchTicket.js"></script>
+        <script src="./assets/js/buyTicket.js"></script>
 </body>
 
 </html>
