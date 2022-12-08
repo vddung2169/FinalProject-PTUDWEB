@@ -416,7 +416,7 @@ textarea {
 }
 
 .ticket__information {
-    min-height: 340px;
+    min-height: 250px;
     padding: 20px 20px;
     border: 1px solid rgb(68, 61, 61);
     border-radius: 8px;
@@ -427,7 +427,7 @@ textarea {
 .ticket__information-content {}
 
 .ticket__information-img {
-    max-height: 280px;
+    max-height: 220px;
 }
 
 .ticket__information-img img {
@@ -455,7 +455,7 @@ textarea {
 }
 
 .ticket__car-name {
-    font-size: 37px;
+    font-size: 1.8rem;
     font-weight: bold;
     color: var(--text-title-color);
     margin-right: 20px;
@@ -487,7 +487,7 @@ textarea {
     display: inline-block;
     color: var(--text-title-color);
     font-weight: 700;
-    font-size: 38px;
+    font-size: 1.8rem;
 }
 
 .ticket__car-arrive>i,
@@ -504,15 +504,15 @@ textarea {
 .ticket__car-depart-location {
     display: inline-block;
     font-weight: 400;
-    font-size: 25px;
+    font-size: 1.4rem;
 }
 
 .ticket__car-depart-period {
-    height: 50px;
-    font-size: 1.4rem;
+    height: 30px;
+    font-size: 1.1rem;
     border-left: 1px solid #333;
     margin-left: 13px;
-    line-height: 50px;
+    line-height: 30px;
     padding-left: 26px
 }
 
@@ -521,7 +521,7 @@ textarea {
     display: inline-block;
     color: #FF9E00;
     font-weight: 700;
-    font-size: 38px;
+    font-size: 1.8rem;
 }
 
 .ticket__information-img img {
@@ -543,12 +543,12 @@ textarea {
 .ticket-price {
     color: #FF9E00;
     font-weight: 700;
-    font-size: 38px;
+    font-size: 1.4rem;
     text-align: right;
 }
 
 .ticket-price__more {
-    font-size: 24px;
+    font-size: 1.2rem;
     color: #333;
     text-align: right;
 }
@@ -1118,12 +1118,9 @@ textarea {
 }
 
 .image-content-mainImage {
-    display: block;
+    /* display: block;
     width: 100%;
-    height: 500px;
-    background-image: url(/assets/img/nha-xe-thanh-buoi.png);
-    background-repeat: no-repeat;
-    background-position: center;
+    height: 500px; */
 }
 
 .image__number {
@@ -1137,13 +1134,13 @@ textarea {
 }
 
 .image__item {
-    display: block;
+    /* display: block;
     margin: 8px;
     width: 100%;
-    height: 200px;
-    background-image: url(/assets/img/nha-xe-thanh-buoi.png);
+    height: 200px; */
+    /* background-image: url(/assets/img/nha-xe-thanh-buoi.png);
     background-size: contain;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
 }
 
 .utility-detail {
