@@ -12,6 +12,8 @@
 ## Frond-end
 ### Task:
 - [ ] Tạo giao diện cho hệ quản trị (file html riêng)
+- [ ] Chuyển sang handlebar
+- [ ] Cấu trúc lại file
 ## Back-end
 ### Task:
 - [ ] Set up server, route
