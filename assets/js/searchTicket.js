@@ -17,4 +17,3 @@ searchTicketBtn.onclick = showListRoute
 homeItem.forEach(e => {
     e.onclick = showListRoute
 })
-

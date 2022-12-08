@@ -23,7 +23,7 @@ modalBody.onclick = function(event) { event.stopPropagation(); }
 
 const infoHeaders = $$('.seat-form__step');
 const infoContainers = $$('.modal__container-form');
-console.log(infoHeaders)
+// console.log(infoHeaders)
 infoHeaders.forEach((infoHeader, index) => {
     const infoContainer = infoContainers[index];
     infoHeader.onclick = function() {
