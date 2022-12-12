@@ -431,13 +431,28 @@ textarea {
 }
 
 .ticket__information-img img {
-    max-width: 100%;
     height: 100%;
     border-radius: 8px;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
+    object-fit: cover;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.more-ticket-down {
+    display: block;
+    font-size: 1.4rem;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 10px;
+}
+
+.more-ticket-down:hover {
+    cursor: pointer;
+    /* background-color: #ccb1de; */
 }
 
 .ticket__information-description {}
@@ -524,12 +539,6 @@ textarea {
     font-size: 1.8rem;
 }
 
-.ticket__information-img img {
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
 .ticket-wrap-price {
     display: flex;
     flex-direction: column;
@@ -570,7 +579,7 @@ textarea {
 
 #footer {
     border-top: 4px solid var(--primary-color);
-    padding-top: 66px;
+    padding-top: 46px;
     padding-bottom: 40px;
     background-color: #ffb43b;
     position: relative;
@@ -582,7 +591,7 @@ textarea {
 }
 
 .footer__heading {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
     color: var(--text-title-color);
 }
@@ -602,7 +611,7 @@ textarea {
     display: inline-block;
     text-decoration: none;
     color: var(--text-title-color);
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     padding: 8px 0;
 }
 
@@ -646,7 +655,7 @@ textarea {
 
 .policy__heading-item {
     /* padding: 20px 30px; */
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 40px 0px;
     padding: 0px 25px;
     border-right: 1px solid rgba(0, 0, 0, .09);
@@ -678,12 +687,12 @@ textarea {
 
 .policy__decription_heading {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .policy__decription {
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 1rem;
     padding: 11px 0;
     margin: 0;
 }
@@ -1033,9 +1042,9 @@ textarea {
 }
 
 .ticket__information-details-heading {
-    height: 60px;
-    line-height: 60px;
-    font-size: 1.4rem;
+    height: 40px;
+    line-height: 40px;
+    font-size: 1.1rem;
     font-weight: 600;
     text-align: center;
     display: flex;
@@ -1049,7 +1058,7 @@ textarea {
     left: 0;
     bottom: 0;
     width: 0;
-    height: 6px;
+    height: 4px;
     border-radius: 15px;
     background-color: #53316e;
     transition: all 0.3s ease;
@@ -1057,7 +1066,6 @@ textarea {
 
 .ticket__information-details-heading-item {
     min-width: 100px;
-    font-size: 20px;
     text-align: center;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -1082,13 +1090,13 @@ textarea {
 }
 
 .image-heading h3 {
-    font-size: 32px;
+    font-size: 1.6rem;
     font-weight: bold;
     color: var(--text-title-color);
 }
 
 .image-heading p {
-    font-size: 28px;
+    font-size: 1.4rem;
     font-weight: bold;
     color: var(--text-title-color);
 }
@@ -1106,7 +1114,7 @@ textarea {
 
 .image-content .fa-angle-left,
 .image-content .fa-angle-right {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     padding: 20px;
 }
 
@@ -1118,9 +1126,16 @@ textarea {
 }
 
 .image-content-mainImage {
-    /* display: block;
-    width: 100%;
-    height: 500px; */
+    max-height: 500px;
+}
+
+.image-content-mainImage img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .image__number {
@@ -1159,7 +1174,7 @@ textarea {
 }
 
 .view-item__heading {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 600;
 }
 
@@ -1179,11 +1194,11 @@ textarea {
 
 .route-detail__note {
     padding: 10px 50px;
-    font-size: 1.4rem;
+    font-size: 1rem;
 }
 
 .route-detail__note span {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     font-weight: 600;
 }
 
@@ -1196,8 +1211,8 @@ textarea {
 
 .route-detail__DropOff--heading,
 .route-detail__PickUp--heading {
-    min-width: 300px;
-    font-size: 1.6rem;
+    min-width: 240px;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--text-title-color);
     background-color: rgba(217, 217, 217, 0.5);
@@ -1226,7 +1241,7 @@ textarea {
 
 .route-detail__time {
     color: var(--text-title-color);
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 600;
     display: inline-block;
     margin-right: 10px;
@@ -1285,18 +1300,18 @@ textarea {
 }
 
 .rate-detail__heading-averageRate {
-    min-width: 200px;
-    padding: 10px;
+    min-width: 180px;
+    padding: 6px;
     color: white;
     background-color: var(--text-title-color);
     border-radius: 10px;
     text-align: center;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 
 .rate-detail__userComment-rate .fa-star,
 .rate-detail__heading-fiveStarRate .fa-star {
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: #ffb43b;
 }
 
@@ -1307,7 +1322,7 @@ textarea {
 
 .rate-detail__userComment-item>i {
     display: inline-block;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     padding: 10px;
     margin-right: 10px;
 }
@@ -1330,11 +1345,11 @@ textarea {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 
 .rate-detail__userComment-rate .fa-star {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 
 .rate-detail__userComment-rate {}
