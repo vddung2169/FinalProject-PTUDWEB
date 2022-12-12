@@ -47,7 +47,7 @@
 ### Hướng dẫn chạy server
 #### Cài đặt biến môi trường:
 Biến môi trường giúp cho việc bảo mật, config theo máy của mình, tránh lộ ra trong code hay push lên github,... Ở đây sẽ dùng cho config database
-- Tạo file đặt là `.env` ở file server
+- Tạo file đặt là `.env` ở thư mục server
 - Nhập các thông tin sau vào file đó :
 ```
 DB_HOST = 'localhost'
