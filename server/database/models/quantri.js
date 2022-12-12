@@ -1,0 +1,29 @@
+'use strict';
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class Quantri extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      Quantri.hasMany(models.Nhaxe,{
+        foreignKey: 'nhaxe'
+      })
+    }
+  }
+  Quantri.init({
+    tenquantri: DataTypes.STRING,
+    matkhau: DataTypes.STRING,
+    email: DataTypes.STRING,
+    sodienthoai: DataTypes.STRING
+  }, {
+    sequelize,
+    modelName: 'Quantri',
+    freezeTableName:true
+  });
+  return Quantri;
+};
