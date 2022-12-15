@@ -17,8 +17,7 @@ app.set('view engine','hbs')
 app.set('views',path.join(__dirname,'../client/resources/views'))
 
 // - Static
-// app.use(express.static(path.join(__dirname,'../client/resources/js')))
-// app.use(express.static(path.join(__dirname,'../public')))
+app.use(express.static(path.join(__dirname,'../client/public')))
 
 
 
