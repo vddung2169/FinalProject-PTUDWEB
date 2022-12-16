@@ -77,14 +77,14 @@ Có thể vào kiểm tra tại pgAdmin, nhấn chuột phải vài database **t
 - Deadline luôn là tối ngày hôm đó phải có
 ### Phân công
 1. <details><summary> <b>Tạo dữ liệu mẫu</b> </summary>
-    <ul><li>Người làm:</li>
+    <ul><li>Người làm: Dũng</li>
     <li>Mô tả: Cần  có ít nhất 10 chuyến xe thuộc 4-5 nhà xe, 3-4 loại xe, có nội dung mô tả và hình ảnh minh hoạ đầy đủ. Thông tin nhà xe có thông tin đánh giá và bình luận đầy đủ</li>
     <li>Deadline: 18/12/2022</li>
     </ul>
   </detail>
   
 2.  <details><summary> <b>Thiết kế giao diện quản trị</b> </summary>
-    <ul><li>Người làm:</li>
+    <ul><li>Người làm: Quỳnh, Niên</li>
     <li>Mô tả:  
     <ul>
           <li> Đăng nhập bằng tài khoản riêng</li>
@@ -100,7 +100,7 @@ Có thể vào kiểm tra tại pgAdmin, nhấn chuột phải vài database **t
   </detail>
   
 3.  <details><summary> <b> Chuyển sang handlebar</b> </summary>
-    <ul><li>Người làm:</li>
+    <ul><li>Người làm: Hiện</li>
     <li>Mô tả: 
         <ul>
             <li>Chuyển các file html sang handlebar .hbs, 
