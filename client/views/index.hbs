@@ -1,50 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Take It!</title>
+    <link rel="icon" href=" /img/logo_has_color.png" type="image/x-icon">
+    <link rel="stylesheet" href=" /css/base.css">
+    <link rel="stylesheet" href=" /css/styles.css">
+    <link rel="stylesheet" href=" /css/reset.css">
+    <link rel="stylesheet" href=" /css/slider.css">
+    <link rel="stylesheet" href=" /css/home.css">
+    <link rel="stylesheet" href=" /css/buyTicket.css">
+    <link rel="stylesheet" href=" /css/queries.css">
+    <link rel="stylesheet" href=" /css/mobile.css">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/6501cf2109.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
     <div class="app">
         <!-- Header -->
-        <header id="header" class="container-fluid">
-            <div class="header_wrap">
-                <a href="index.html" class="header__logo">
-                    <img loading="lazy" src=" /img/logo_has_color.png" alt="This is LOGO">
-                </a>
-                <div class="header__search">
-                    <input type="text" class="header__search-input" placeholder="Search...">
-                    <i class="header__search-icon fa-solid fa-magnifying-glass"></i>
-                </div>
-            </div>
-            <div class="header__information">
-                <ul class="header__information-list">
-                    <li class="header__information-item"><a href="./signUp.html">Sign Up</a></li>
-                    <li class="header__information-item"><a href="./signIn.html">Sign In</a></li>
-                    <li class="header__information-item"><a href="./history.html">History</a></li>
-                    <!-- <li class="header__information-item">
-                        <i class="header__information-info fa-solid fa-user-large"></i>
-                        <ul class="header__user-list">
-                            <li class="header__user-item btn-signup">
-                                <a href="./signUp.html">Sign Up</a>
-                            </li>
-                            <li class="header__user-item btn-signin">
-                                <a href="./signIn.html">Sign In</a>
-                            </li>
-                            <li class="header__user-item btn-history">
-                                <a href="./history.html">History</a>
-                            </li>
-                        </ul>
-                    </li> -->
-                    <li class="header__information-item">
-                        <i class="header__information-setting fa-solid fa-gear"></i>
-                        <ul class="header__setting-list">
-                            <span>Language</span>
-                            <li class="header__setting-item">
-                                <a href="">English</a>
-                            </li>
-                            <li class="header__setting-item">
-                                <a href="">Vietnamese</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </header>
+        {{>header}}
 
         <!-- Body -->
         <div id="body">
@@ -1188,131 +1170,7 @@
 
 
             <!-- Footer -->
-            <footer id="footer">
-                <div class="container">
-                    <div class="grid__row">
-                        <div class="grid__column-2-4">
-                            <h3 class="footer__heading">Chăm sóc khách hàng</h3>
-                            <ul class="footer__list">
-                                <li class="footer-item">
-                                    <a href="" class="footer-item__link">
-                                Trung tâm trợ giúp
-                            </a>
-                                </li>
-                                <li class="footer-item">
-                                    <a href="" class="footer-item__link">
-                                Câu hỏi thường gặp
-                            </a>
-                                </li>
-                                <li class="footer-item">
-                                    <a href="" class="footer-item__link">
-                                Hướng dẫn đặt vé
-                            </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="grid__column-2-4">
-                            <h3 class="footer__heading">Giới thiệu</h3>
-                            <ul class="footer__list">
-                                <li class="footer-item">
-                                    <a href="" class="footer-item__link">
-                                Giới thiệu
-                            </a>
-                                </li>
-                                <li class="footer-item">
-                                    <a href="" class="footer-item__link">
-                                Tuyển dụng
-                            </a>
-                                </li>
-                                <li class="footer-item">
-                                    <a href="" class="footer-item__link">
-                                Điều khoản
-                            </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="grid__column-2-4">
-                            <h3 class="footer__heading">Danh mục</h3>
-                            <ul class="footer__list">
-                                <li class="footer-item">
-                                    <a href="" class="footer-item__link">
-                                Vé combo
-                            </a>
-                                </li>
-                                <li class="footer-item">
-                                    <a href="" class="footer-item__link">
-                                Vé sale
-                            </a>
-                                </li>
-                                <li class="footer-item">
-                                    <a href="" class="footer-item__link">
-                                Vé khứ hồi
-                            </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="grid__column-2-4">
-                            <h3 class="footer__heading">Theo dõi</h3>
-                            <ul class="footer__list">
-                                <li class="footer-item">
-                                    <a href="" class="footer-item__link">
-                                        <i class="fab fa-facebook"></i> Facebook
-                                    </a>
-                                </li>
-                                <li class="footer-item">
-                                    <a href="" class="footer-item__link">
-                                        <i class="fab fa-instagram"></i> Instagram
-                                    </a>
-                                </li>
-                                <li class="footer-item">
-                                    <a href="" class="footer-item__link">
-                                        <i class="fa-brands fa-linkedin"></i> LinkedIn
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="grid__column-2-4">
-                            <h3 class="footer__heading">Vào cửa hàng trên ứng dụng</h3>
-                            <div class="footer__download">
-                                <img src=" /img/qr_code.png" alt="" class="footer__download-qr">
-                                <div class="footer__download-apps">
-                                    <img src=" /img/app_store.png" alt="App Store" class="footer__download-apps-img">
-                                    <img src=" /img/google_play.png" alt="Google Play" class="footer__download-apps-img">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer__bottom">
-                    <div class="policy">
-                        <div class="policy__heading">
-                            <div class="policy__heading-item">
-                                <a href="" class="policy__heading-item-link">
-                            CHÍNH SÁCH BẢO MẬT
-                        </a>
-                            </div>
-                            <div class="policy__heading-item">
-                                <a href="" class="policy__heading-item-link">
-                            QUY CHẾ HOẠT ĐỘNG
-                        </a>
-                            </div>
-                            <div class="policy__heading-item">
-                                <a href="" class="policy__heading-item-link">
-                            CHÍNH SÁCH ĐƯA ĐÓN
-                        </a>
-                            </div>
-                        </div>
-                        <div class="policy__heading-logo">
-                            <img src=" /img/dadangki.png" alt="" class="policy__heading-logo-item__img">
-                        </div>
-                        <p class="policy__decription_heading">Công ty TNHH Ticket Take It</p>
-                        <p class="policy__decription">Địa chỉ: Tòa I, trường Đại học Khoa học Tự nhiên Thành phố Hồ Chí Minh, 227 Nguyễn Văn Cừ, P4, Q5, TP Hồ Chí Minh, Việt Nam. Tổng đài hỗ trợ: 22446688 - Email: cskh@hotro.tickettakeit.vn</p>
-                        <p class="policy__decription">Chịu Trách Nhiệm Quản Lý Nội Dung: Vũ Đức Dũng - Điện thoại liên hệ: 0399888999 (ext 4678)</p>
-                        <p class="policy__decription">Mã số doanh nghiệp: 010677999 do Sở Kế hoạch & Đầu tư TP Hồ Chí Minh cấp lần đầu ngày 10/12/2022</p>
-                        <p class="policy__decription">© 2022 - Bản quyền thuộc về Công ty TNHH Ticket Take It</p>
-                    </div>
-                </div>
-            </footer>
+            {{>footer}}
         </div>
 
         <!-- Filter -->
@@ -1713,3 +1571,6 @@
         <script src=" /js/slider.js"></script>
         <script src=" /js/searchTicket.js"></script>
         <script src=" /js/buyTicket.js"></script>
+</body>
+
+</html>
