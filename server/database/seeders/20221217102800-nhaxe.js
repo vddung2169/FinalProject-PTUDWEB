@@ -8,7 +8,8 @@ module.exports = {
       attributes: ['maquantri']
     })
     
-    console.log(danhsachquantri)
+    // Kiểm tra dữ liệu mình lấy đúng k
+    //console.log(danhsachquantri)
 
     const nhaxedata = [
       {
