@@ -67,9 +67,10 @@ Vào cmd chạy các lệnh sau theo trình tự:
 
  Vào cmd chạy các lệnh sau theo trình tự:
 - `npm run db:create` : tạo database. thấy `Database tickettakeit created` là ok
-- `npm run db:migrate` tạo các table, không ERROR là ok
+- `npm start` chạy server
+- truy cập đường dẫn `http://localhost:3000/createDatabase` và hiện lên **create database tickettakeit successful** là thành công
 
-Có thể vào kiểm tra tại pgAdmin, nhấn chuột phải vài database **tickettakeit** -> chọn **Grenerate ERD** (Tổng 14 bảng)
+Có thể vào kiểm tra tại pgAdmin, nhấn chuột phải vài database **tickettakeit** -> chọn **Grenerate ERD** (Tổng 13 bảng)
 ### Lưu ý
 - Mở VScode ra làm thì trước tiên &rarr; **FETCH**: để kiếm tra trên github có thay đổi gì không (bước này để chuẩn bị backup trước khi pull nếu confilct), nếu có thì **PULL**: lấy code trên github về máy
 - Làm xong một chức năng, một hàm rồi (***Không bị lỗi compile***) &rarr; **COMMIT** và **PUSH**
