@@ -10,10 +10,10 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Nhaxe.belongsTo(models.Quantri,{
+      Nhaxe.belongsTo(models.quantri,{
         foreignKey: 'maquantri'
       })
-      Nhaxe.hasMany(models.Chuyenxe,{
+      Nhaxe.hasMany(models.chuyenxe,{
         foreignKey: 'manhaxe'
       })
     }
@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
     maquantri: DataTypes.UUID
   }, {
     sequelize,
-    modelName: 'Nhaxe',
+    modelName: 'nhaxe',
     freezeTableName:true
   });
   return Nhaxe;

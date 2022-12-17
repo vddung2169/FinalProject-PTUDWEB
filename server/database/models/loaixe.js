@@ -10,10 +10,10 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Loaixe.hasMany(models.Ghexe,{
+      Loaixe.hasMany(models.ghexe,{
         foreignKey : 'maloaixe'
       })
-      Loaixe.hasMany(models.Chuyenxe,{
+      Loaixe.hasMany(models.chuyenxe,{
         foreignKey: 'maloaixe'
       })
     }
@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
     tenloaixe: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'Loaixe',
+    modelName: 'loaixe',
     freezeTableName: true
   });
   return Loaixe;

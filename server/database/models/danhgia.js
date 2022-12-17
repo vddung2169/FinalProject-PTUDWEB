@@ -10,10 +10,10 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Danhgia.belongsTo(models.Khachhang,{
+      Danhgia.belongsTo(models.khachhang,{
         foreignKey: 'makhachhang'
       })
-      Danhgia.belongsTo(models.Nhaxe,{
+      Danhgia.belongsTo(models.nhaxe,{
         foreignKey: 'manhaxe'
       })
     }
@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
     diemso: DataTypes.DECIMAL
   }, {
     sequelize,
-    modelName: 'Danhgia',
+    modelName: 'danhgia',
     freezeTableName:true
   });
   return Danhgia;

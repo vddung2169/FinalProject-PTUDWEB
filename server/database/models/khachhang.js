@@ -1,4 +1,5 @@
 'use strict';
+
 const {
   Model
 } = require('sequelize');
@@ -10,7 +11,12 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Khachhang.hasMany(models.danhgia,{
+        foreignKey:'makhachhang'
+      })
+      Khachhang.hasMany(models.vexe,{
+        foreignKey:'makhachhang'
+      })
     }
   }
   Khachhang.init({
@@ -25,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
     sodienthoai: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'Khachhang',
+    modelName: 'khachhang',
     freezeTableName: true
   });
   return Khachhang;

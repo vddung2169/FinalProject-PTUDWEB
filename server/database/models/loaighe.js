@@ -10,8 +10,8 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Loaighe.hasMany(models.Ghexe,{
-        foreignKey : 'loaighe'
+      Loaighe.hasMany(models.ghexe,{
+        foreignKey : 'maloaighe'
       })
     }
   }
@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
     giaghe: DataTypes.DECIMAL(12, 2) 
   }, {
     sequelize,
-    modelName: 'Loaighe',
+    modelName: 'loaighe',
     freezeTableName: true
   });
   return Loaighe;

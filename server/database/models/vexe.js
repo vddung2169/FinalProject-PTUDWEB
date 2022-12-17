@@ -10,12 +10,17 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Vexe.belongsTo(models.Chuyenxe,{
+      Vexe.belongsTo(models.chuyenxe,{
         foreignKey:'machuyenxe'
       })
-      Vexe.belongsTo(models.Khachhang,{
+      Vexe.belongsTo(models.khachhang,{
         foreignKey:'makhachhang'
       })
+      Vexe.belongsToMany(models.ghexe,{
+        through: "chitietvexe",
+        uniqueKey: 'mave'
+      })
+
     }
   }
   Vexe.init({
@@ -30,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
     tongtien: DataTypes.DECIMAL(12,2)
   }, {
     sequelize,
-    modelName: 'Vexe',
+    modelName: 'vexe',
     freezeTableName: true
   });
   return Vexe;

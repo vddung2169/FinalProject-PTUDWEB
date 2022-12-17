@@ -10,8 +10,8 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Quantri.hasMany(models.Nhaxe,{
-        foreignKey: 'manhaxe'
+      Quantri.hasMany(models.nhaxe,{
+        foreignKey: 'maquantri'
       })
     }
   }
@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
     sodienthoai: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'Quantri',
+    modelName: 'quantri',
     freezeTableName:true
   });
   return Quantri;

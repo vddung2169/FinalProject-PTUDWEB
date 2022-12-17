@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-        Diachi.belongsTo(models.Tinhthanh,{
+        Diachi.belongsTo(models.tinhthanh,{
           foreignKey : 'matinh'
         })
     }
@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
     matinh: DataTypes.STRING,
   }, {
     sequelize,
-    modelName: 'Diachi',
+    modelName: 'diachi',
     freezeTableName: true
   });
   return Diachi;

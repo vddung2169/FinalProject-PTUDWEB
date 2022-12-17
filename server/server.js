@@ -20,11 +20,20 @@ app.set('views',path.join(__dirname,'../client/views'))
 app.use(express.static(path.join(__dirname,'../client/public')))
 
 
-app.get('/createDatabase',(req,res)=>{
-    let model = require('./database/models')
-    model.sequelize.sync().then(()=>{
-        res.send("create database tickettakeit successful")
+app.get('/createDatabase', (req,res)=>{
+    const {Sequelize} = require('sequelize')
+    const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
+        host: 'localhost',
+        dialect:  'postgres'
     })
+    sequelize.query('CREATE EXTENSION IF NOT EXISTS "uuid-ossp";').then(() =>{
+        let model = require('./database/models')
+        model.sequelize.sync().then(()=>{
+        res.send("create database tickettakeit successful")
+    })  
+})
+
+    
 })
 app.use('/',require('./routes/viewRouter'))
 
