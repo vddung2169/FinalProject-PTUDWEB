@@ -9,8 +9,6 @@ module.exports = {
         tendiachi: 'Bến xe miền Đông',
         diachicuthe: '292 Đinh Bộ Lĩnh, P. 26, Q. Bình Thạnh, Thành phố Hồ Chí Minh',
         matinh : '02',
-        createdAt: new Date(),
-        updatedAt: new Date()
       },
       {
         madiachi: 2,
@@ -18,9 +16,9 @@ module.exports = {
         diachicuthe: '292 Đinh Bộ Lĩnh, P. 26, Q. Bình Thạnh, Thành phố Hồ Chí Minh',
         matinh : '02',
       },
-      
-
     ]
+
+    //không đụng vào phần này
     for (const data of diachidata) {
       await diachi.create(data)
     }

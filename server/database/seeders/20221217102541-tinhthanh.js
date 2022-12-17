@@ -18,6 +18,8 @@ module.exports = {
       }
 
     ]
+
+    // không đụng vào phần này
     await queryInterface.bulkInsert('tinhthanh',
       tinhthanhdata,
       {}
