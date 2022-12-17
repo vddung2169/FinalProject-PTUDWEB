@@ -14,6 +14,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Khachhang.init({
+    makhachhang: {
+      primaryKey: true,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4 
+    },
     tenkhachhang: DataTypes.STRING,
     matkhau: DataTypes.STRING,
     email: DataTypes.STRING,

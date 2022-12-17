@@ -20,7 +20,12 @@ app.set('views',path.join(__dirname,'../client/views'))
 app.use(express.static(path.join(__dirname,'../client/public')))
 
 
-
+app.get('/createDatabase',(req,res)=>{
+    let model = require('./database/models')
+    model.sequelize.sync().then(()=>{
+        res.send("create database tickettakeit successful")
+    })
+})
 app.use('/',require('./routes/viewRouter'))
 
 

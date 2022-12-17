@@ -24,6 +24,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Chuyenxe.init({
+    machuyenxe: {
+      primaryKey: true,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4
+    },
     matuyenduong: DataTypes.INTEGER,
     manhaxe: DataTypes.UUID,
     tgkhoihanh: DataTypes.DATE,

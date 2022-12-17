@@ -13,10 +13,17 @@ module.exports = (sequelize, DataTypes) => {
       Loaixe.hasMany(models.Ghexe,{
         foreignKey : 'maloaixe'
       })
-      Loaixe.hasMany(models.Chuyenxe)
+      Loaixe.hasMany(models.Chuyenxe,{
+        foreignKey: 'maloaixe'
+      })
     }
   }
   Loaixe.init({
+    maloaixe: {
+      allowNull: false,
+      primaryKey: true,
+      type: DataTypes.STRING
+    },
     tenloaixe: DataTypes.STRING
   }, {
     sequelize,

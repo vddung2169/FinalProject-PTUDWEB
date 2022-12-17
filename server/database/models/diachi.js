@@ -16,7 +16,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Diachi.init({
+    madiachi: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
     tendiachi: DataTypes.STRING,
+    diachicuthe: DataTypes.STRING,
     matinh: DataTypes.STRING,
   }, {
     sequelize,

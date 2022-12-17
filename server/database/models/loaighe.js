@@ -16,6 +16,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Loaighe.init({
+    maloaighe: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
     tenloaighe: DataTypes.STRING,
     giaghe: DataTypes.DECIMAL(12, 2) 
   }, {

@@ -19,6 +19,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Danhgia.init({
+    madanhgia: {
+      primaryKey: true,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4 
+    },
     makhachhang: DataTypes.UUID,
     manhaxe: DataTypes.UUID,
     binhluan: DataTypes.STRING,

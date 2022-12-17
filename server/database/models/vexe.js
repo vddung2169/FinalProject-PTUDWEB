@@ -19,6 +19,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Vexe.init({
+    mave: {
+      primaryKey: true,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4 
+    },
     machuyenxe: DataTypes.UUID,
     makhachhang: DataTypes.UUID,
     tinhtrang: DataTypes.STRING,

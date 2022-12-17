@@ -13,10 +13,17 @@ module.exports = (sequelize, DataTypes) => {
       Nhaxe.belongsTo(models.Quantri,{
         foreignKey: 'maquantri'
       })
-      Nhaxe.hasMany(models.Chuyenxe)
+      Nhaxe.hasMany(models.Chuyenxe,{
+        foreignKey: 'manhaxe'
+      })
     }
   }
   Nhaxe.init({
+    manhaxe: {
+      primaryKey: true,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4 
+    },
     tennhaxe: DataTypes.STRING,
     hinhanh: DataTypes.STRING,
     sodienthoai: DataTypes.STRING,

@@ -10,12 +10,20 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
+      Chitietvexe.belongsTo(models.Vexe,{
+        foreignKey: 'mave'
+      })
+
       Chitietvexe.belongsTo(models.Ghexe,{
         foreignKey:'maghe'
       })
     }
   }
   Chitietvexe.init({
+    mave: {
+      primaryKey: true,
+      type: DataTypes.UUID
+    },
     maghe: DataTypes.STRING
   }, {
     sequelize,

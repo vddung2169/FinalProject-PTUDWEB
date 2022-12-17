@@ -23,6 +23,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Tinhthanh.init({
+    matinh: {
+      allowNull: false,
+      primaryKey: true,
+      type: DataTypes.STRING
+    },
     tentinh: DataTypes.STRING
   }, {
     sequelize,

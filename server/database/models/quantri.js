@@ -11,11 +11,16 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Quantri.hasMany(models.Nhaxe,{
-        foreignKey: 'nhaxe'
+        foreignKey: 'manhaxe'
       })
     }
   }
   Quantri.init({
+    maquantri: {
+      primaryKey: true,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4 
+    },
     tenquantri: DataTypes.STRING,
     matkhau: DataTypes.STRING,
     email: DataTypes.STRING,

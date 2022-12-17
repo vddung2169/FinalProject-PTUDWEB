@@ -19,6 +19,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Ghexe.init({
+    maghe: {
+      allowNull: false,
+      primaryKey: true,
+      type: DataTypes.STRING
+    },
     maloaixe: DataTypes.STRING,
     loaighe: DataTypes.INTEGER
   }, {
