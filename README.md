@@ -69,6 +69,7 @@ Vào cmd chạy các lệnh sau theo trình tự:
 - `npm run db:create` : tạo database. thấy `Database tickettakeit created` là ok
 - `npm start` chạy server
 - truy cập đường dẫn `http://localhost:3000/createDatabase` và hiện lên **create database tickettakeit successful** là thành công
+- `npm run db:drop` để xóa database
 
 Có thể vào kiểm tra tại pgAdmin, nhấn chuột phải vài database **tickettakeit** -> chọn **Grenerate ERD** (Tổng 13 bảng)
 ### Lưu ý
