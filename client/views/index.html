@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Take It!</title>
+    <link rel="icon" href="../public/img/logo_has_color.png" type="image/x-icon">
+    <link rel="stylesheet" href="../public/css/base.css">
+    <link rel="stylesheet" href="../public/css/styles.css">
+    <link rel="stylesheet" href="../public/css/reset.css">
+    <link rel="stylesheet" href="../public/css/slider.css">
+    <link rel="stylesheet" href="../public/css/home.css">
+    <link rel="stylesheet" href="../public/css/buyTicket.css">
+    <link rel="stylesheet" href="../public/css/queries.css">
+    <link rel="stylesheet" href="../public/css/mobile.css">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/6501cf2109.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header id="header" class="container-fluid">
+            <div class="header_wrap">
+                <a href="index.html" class="header__logo">
+                    <img loading="lazy" src="../public/img/logo_has_color.png" alt="This is LOGO">
+                </a>
+                <div class="header__search">
+                    <input type="text" class="header__search-input" placeholder="Search...">
+                    <i class="header__search-icon fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            <div class="header__information">
+                <ul class="header__information-list">
+                    <li class="header__information-item"><a href="./signUp.html">Sign Up</a></li>
+                    <li class="header__information-item"><a href="./signIn.html">Sign In</a></li>
+                    <li class="header__information-item"><a href="./history.html">History</a></li>
+                    <!-- <li class="header__information-item">
+                        <i class="header__information-info fa-solid fa-user-large"></i>
+                        <ul class="header__user-list">
+                            <li class="header__user-item btn-signup">
+                                <a href="./signUp.html">Sign Up</a>
+                            </li>
+                            <li class="header__user-item btn-signin">
+                                <a href="./signIn.html">Sign In</a>
+                            </li>
+                            <li class="header__user-item btn-history">
+                                <a href="./history.html">History</a>
+                            </li>
+                        </ul>
+                    </li> -->
+                    <li class="header__information-item">
+                        <i class="header__information-setting fa-solid fa-gear"></i>
+                        <ul class="header__setting-list">
+                            <span>Language</span>
+                            <li class="header__setting-item">
+                                <a href="">English</a>
+                            </li>
+                            <li class="header__setting-item">
+                                <a href="">Vietnamese</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <!-- Body -->
+        <div id="body">
+            <!-- Slider -->
+            <div class="body__slideshow-container">
+                <!-- <div class="body__slideshow">
+                    <div class="body__slideshow-background">
+                        <img loading="lazy" class="body__slideshow-background--img" src="../public/img/home_1.png" alt="">
+                    </div>
+                    <div class="body__slideshow-logo">
+                        <img loading="lazy" src="../public/img/logo_not_color.png" alt="">
+                    </div>
+                </div> -->
+
+                <!-- Carousel -->
+                <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+                    <!-- Indicators/dots -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+                    </div>
+
+                    <!-- The slideshow/carousel -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../public/img/home_1.png" alt="Los Angeles" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../public/img/home_2.png" alt="Chicago" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../public/img/home_3.png" alt="New York" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../public/img/home_4.png" alt="New York" class="d-block w-100">
+                        </div>
+                        <div class="body__slideshow-logo">
+                            <img loading="lazy" src="../public/img/logo_not_color.png" alt="">
+                        </div>
+                    </div>
+
+                    <!-- Left and right controls/icons -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+                </div>
+            </div>
+
+            <!-- Search Ticket -->
+            <div class="search__ticket">
+                <div class="container">
+                    <h5 class="search__ticket-header">Search Ticket</h5>
+                    <div class="search__ticket-choose-wrap">
+
+                        <div class="search__ticket-choose-direction">
+                            <div class="search__ticket-wrap-item">
+                                <img src="../public/img/mini_icon_location.png" alt="" class="search__ticket-choose-img">
+                                <select class="search__ticket-choose">
+                                <option value="">Your location</option>
+                                <option value="hochiminh">TP Hồ Chí Minh</option>
+                                <option value="dalat">Đà Lạt</option>
+                                <option value="vungtau">Vũng Tàu</option>
+                                <option value="tayninh">Tây Ninh</option>
+                                <option value="camau">Cà Mau</option>
+                                <option value="hue">Huế</option>
+                            </select>
+                            </div>
+                            <img src="../public/img/mini_icon_direction.png" alt="">
+                            <div class="search__ticket-wrap-item">
+                                <img src="../public/img/mini_icon_destination.png" alt="" class="search__ticket-choose-img">
+                                <select class="search__ticket-choose">
+                                <option value="">Your destination</option>
+                                <option value="hochiminh">TP Hồ Chí Minh</option>
+                                <option value="vungtau">Vũng Tàu</option>
+                                <option value="dalat">Đà Lạt</option>
+                            </select>
+                            </div>
+                        </div>
+
+                        <div class="search__ticket-wrap-item">
+                            <img src="../public/img/mini_icon_date.png" alt="" class="search__ticket-choose-img">
+                            <input type="date" id="date" name="date" class="search__ticket-choose">
+
+                            </input>
+                        </div>
+                    </div>
+                    <div class="search__ticket-submit">
+                        <button class="btn-base btn-search__ticket">
+                        Search
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Home -->
+
+            <div class="home">
+                <div class="container">
+                    <h4 class="home__popular-heading">Popular bus routes</h4>
+                    <div class="home__popular">
+                        <ul class="home__popular-list">
+                            <li class="home__popular-item">
+                                <a href="">
+                                    <div class="home__popular-item--img">
+                                        <img src="../public/img/nha-xe-toan-thang.png" alt="">
+                                    </div>
+                                    <div class="home__popular-item--title">
+                                        <p>Sài Gòn - Đà Lạt</p>
+                                        <span>Từ 130.000</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="home__popular-item">
+                                <a href="">
+                                    <div class="home__popular-item--img">
+                                        <img src="../public/img/nha-xe-phuong-trang.png" alt="">
+                                    </div>
+                                    <div class="home__popular-item--title">
+                                        <p>Sài Gòn - Đà Lạt</p>
+                                        <span>Từ 130.000</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="home__popular-item">
+                                <a href="">
+                                    <div class="home__popular-item--img">
+                                        <img src="../public/img/nha-xe-thanh-buoi.png" alt="">
+                                    </div>
+                                    <div class="home__popular-item--title">
+                                        <p>Sài Gòn - Đà Lạt</p>
+                                        <span>Từ 130.000</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="home__popular-item">
+                                <a href="">
+                                    <div class="home__popular-item--img">
+                                        <img src="../public/img/nha-xe-toan-thang.png" alt="">
+                                    </div>
+                                    <div class="home__popular-item--title">
+                                        <p>Sài Gòn - Đà Lạt</p>
+                                        <span>Từ 130.000</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="home__popular-item">
+                                <a href="">
+                                    <div class="home__popular-item--img">
+                                        <img src="../public/img/nha-xe-phuong-trang.png" alt="">
+                                    </div>
+                                    <div class="home__popular-item--title">
+                                        <p>Sài Gòn - Đà Lạt</p>
+                                        <span>Từ 130.000</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h4 class="home__popular-heading">About</h4>
+                    <div class="home__about">
+
+                        <ul class="home__about-list">
+                            <li class="home__popular-item">
+                                <a href="">
+                                    <div class="home__popular-item--img">
+                                        <img src="../public/img/about1.png" alt="">
+                                    </div>
+                                    <div class="home__popular-item--title">
+                                        <p>Sài Gòn - Đà Lạt</p>
+                                        <span>Từ 130.000</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="home__popular-item">
+                                <a href="">
+                                    <div class="home__popular-item--img">
+                                        <img src="../public/img/about2.png" alt="">
+                                    </div>
+                                    <div class="home__popular-item--title">
+                                        <p>Sài Gòn - Đà Lạt</p>
+                                        <span>Từ 130.000</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="home__popular-item">
+                                <a href="">
+                                    <div class="home__popular-item--img">
+                                        <img src="../public/img/about3.jpg" alt="">
+                                    </div>
+                                    <div class="home__popular-item--title">
+                                        <p>Sài Gòn - Đà Lạt</p>
+                                        <span>Từ 130.000</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="home__popular-item">
+                                <a href="">
+                                    <div class="home__popular-item--img">
+                                        <img src="../public/img/about4.png" alt="">
+                                    </div>
+                                    <div class="home__popular-item--title">
+                                        <p>Sài Gòn - Đà Lạt</p>
+                                        <span>Từ 130.000</span>
+                                    </div>
+                                </a>
+                            </li>
+                            </li>
+                            <li class="home__popular-item">
+                                <a href="">
+                                    <div class="home__popular-item--img">
+                                        <img src="../public/img/about5.png" alt="">
+                                    </div>
+                                    <div class="home__popular-item--title">
+                                        <p>Sài Gòn - Đà Lạt</p>
+                                        <span>Từ 130.000</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="home__popular-item">
+                                <a href="">
+                                    <div class="home__popular-item--img">
+                                        <img src="../public/img/about2.png" alt="">
+                                    </div>
+                                    <div class="home__popular-item--title">
+                                        <p>Sài Gòn - Đà Lạt</p>
+                                        <span>Từ 130.000</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Available Ticket -->
+            <!-- Bỏ class disabled để hiện các vé search theo yêu cầu -->
+            <div class="availableTicket-container disabled">
+                <div class="container">
+                    <div class="availableTicket-header">
+                        <div class="availableTicket-header-title">Available Ticket</div>
+                        <div class="availableTicket-header-choose">
+                            <div class="availableTicket-header-choose__filter">
+                                Filter
+                                <i class="fa-solid fa-filter"></i>
+                            </div>
+                            <div class="availableTicket-header-choose__sort">
+                                Sort by
+                                <i class="fa-solid fa-sort"></i>
+                                <div class="availableTicket-location-list">
+                                    <ul class="availableTicket__sort-list">
+                                        Tỉnh - Thành phố
+                                        <li class="availableTicket__sort-item">Hà Nội</li>
+                                        <li class="availableTicket__sort-item">Quảng Ninh</li>
+                                        <li class="availableTicket__sort-item">Ninh Bình</li>
+                                        <li class="availableTicket__sort-item">Đà Nẵng</li>
+                                        <li class="availableTicket__sort-item">Sài Gòn</li>
+                                    </ul>
+                                    <ul class="availableTicket__sort-list">
+                                        Quận - Huyện
+                                        <li class="availableTicket__sort-item">SaPa</li>
+                                        <li class="availableTicket__sort-item">Vũng Tàu</li>
+                                        <li class="availableTicket__sort-item">Đà Lạt</li>
+                                        <li class="availableTicket__sort-item">Nha Trang</li>
+                                        <li class="availableTicket__sort-item">Phan Thiết</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ticket__information">
+                        <div class="ticket__information-summary row">
+                            <div class="ticket__information-content col-md-8">
+                                <div class="row">
+                                    <div class="ticket__information-description col-md-8">
+                                        <div class="ticket__car">
+                                            <div class="ticket__car-name">Thành Bưởi</div>
+                                            <div class="ticket__car-rate">
+                                                <i class="fa-solid fa-star"></i>
+                                                <span>4.8 (B55)</span>
+                                            </div>
+                                        </div>
+                                        <div class="ticket__car-type">Limousine 9 seats</div>
+                                        <div class="ticket__car-depart">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <span class="ticket__car-depart-time">09:00</span>
+                                            <span class="ticket__car-depart-location">Bến xe miền Đông</span>
+                                        </div>
+                                        <div class="ticket__car-depart-period">2h</div>
+                                        <div class="ticket__car-arrive">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <span class="ticket__car-arrive-time">14:00</span>
+                                            <span class="ticket__car-arrive-location">Văn phòng Bà Rịa</span>
+                                        </div>
+                                    </div>
+                                    <div class="ticket__information-price col-md-4">
+                                        <div class="ticket-wrap-price">
+                                            <span class="ticket-price">Từ 180.000đ</span>
+                                            <a class="ticket-price__more">More information</a>
+                                        </div>
+
+                                        <div class="ticket-wrap-buy">
+                                            <span class="ticket-left">9 slots left</span>
+                                            <span class="btn-base ticket-buy">Buy</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ticket__information-img col-md-4">
+                                <img src="../public/img/nha-xe-thanh-buoi.png" alt="">
+                            </div>
+                        </div>
+
+                        <!-- Xử lí trong JavaScript! -->
+                        <div class="ticket__information-details">
+                            <div class="ticket__information-details-heading">
+                                <div class="ticket__information-details-heading-item active">
+                                    <i class="fa-solid fa-image"></i> Image
+                                </div>
+                                <div class="ticket__information-details-heading-item">
+                                    <i class="fa-solid fa-gear"></i> Utility
+                                </div>
+                                <div class="ticket__information-details-heading-item">
+                                    <i class="fa-solid fa-map-location-dot"></i> Route
+                                </div>
+                                <div class="ticket__information-details-heading-item">
+                                    <i class="fa-solid fa-building-shield"></i> Policy
+                                </div>
+                                <div class="ticket__information-details-heading-item">
+                                    <i class="fa-solid fa-star"></i> Rate
+                                </div>
+                                <div class="line"></div>
+                            </div>
+                            <!-- Content -->
+                            <div class="image-detail content-detail active">
+                                <div class="image-heading">
+                                    <h3>Thành Bưởi</h3>
+                                    <p>Hotline: <a href="tel:+0918919189">0918 91 91 89</a></p>
+                                </div>
+                                <div class="image-content">
+                                    <i class="fa-solid fa-angle-left"></i>
+                                    <div class="image-content-mainImage">
+                                        <img src="../public/img/nha-xe-thanh-buoi.png" alt="">
+                                    </div>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                </div>
+                                <div class="image-footer">
+                                    <div class="image__number">
+                                        <span class="current">1</span> / <span class="total">5</span>
+                                    </div>
+                                    <div class="image__list">
+                                        <div class="image__item">
+
+                                        </div>
+                                        <div class="image__item"></div>
+                                        <div class="image__item"></div>
+                                        <div class="image__item"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="utility-detail content-detail">
+                                <ul class="view-list">
+                                    <li class="view-item">
+                                        <div class="view-item__heading">
+                                            <i class="fa-solid fa-location-crosshairs"></i> View location online
+                                        </div>
+                                        <div class="view-item__content">
+                                            Allow passengers to see the route and travel time of the bus they have booked.
+                                        </div>
+                                    </li>
+                                    <li class="view-item">
+                                        <div class="view-item__heading">
+                                            <i class="fa-solid fa-location-crosshairs"></i> View location online
+                                        </div>
+                                        <div class="view-item__content">
+                                            Allow passengers to see the route and travel time of the bus they have booked.
+                                        </div>
+                                    </li>
+                                    <li class="view-item">
+                                        <div class="view-item__heading">
+                                            <i class="fa-solid fa-location-crosshairs"></i> View location online
+                                        </div>
+                                        <div class="view-item__content">
+                                            Allow passengers to see the route and travel time of the bus they have booked.
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="route-detail content-detail">
+                                <div class="route-detail__note">
+                                    <p><span>Note:</span> <br>The pick-up and drop-off times below are estimated times.
+                                        <br>This schedule is subject to change depending on the actual situation.</p>
+                                </div>
+                                <div class="route-detail__PickUp">
+                                    <div class="route-detail__PickUp--heading">
+                                        <i class="fa-solid fa-location-dot"></i> Pick Up Location
+                                    </div>
+                                    <div class="route-detail__PickUp--content">
+                                        <div class="route-detail__PickUp">
+                                            <span class="route-detail__time">09:00</span>
+                                            <span class="route-detail__location"> - Bến xe miền Đông</span>
+                                        </div>
+                                        <div class="route-detail__PickUp">
+                                            <span class="route-detail__time">09:30</span>
+                                            <span class="route-detail__location"> - Bến xe miền Tây</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="route-detail__DropOff">
+                                    <div class="route-detail__DropOff--heading">
+                                        <i class="fa-solid fa-location-dot"></i> Drop off Location
+                                    </div>
+                                    <div class="route-detail__DropOff--content">
+                                        <div class="route-detail__DropOff">
+                                            <span class="route-detail__time">10:25</span>
+                                            <span class="route-detail__location"> - Cổng chào Bà Rịa</span>
+                                        </div>
+                                        <div class="route-detail__DropOff">
+                                            <span class="route-detail__time">10:28</span>
+                                            <span class="route-detail__location"> - Bến xe Bà Rịa</span>
+                                        </div>
+                                        <div class="route-detail__DropOff">
+                                            <span class="route-detail__time">11:30</span>
+                                            <span class="route-detail__location"> - Co.op mart Bà Rịa</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="policy-detail content-detail">
+                                <div class="policy-detail-Cancellation">
+                                    <h4>Cancellation Policy</h4>
+                                    <div class="policy-detail-Cancellation-time">
+                                        07:00 06/11/2022
+                                    </div>
+                                    <div class="policy-detail-Cancellation-timeLine">
+                                        <div class="policy-detail-Cancellation-timeLine--part">
+                                            Không mất phí
+                                        </div>
+                                        <div class="policy-detail-Cancellation-timeLine--part">
+                                            Mất phí
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="policy-detail-note">
+                                    <h4>Note:</h4>
+                                    <ul class="policy-detail-garage-item__content">
+                                        <li>Cancellation fees will be charged on the original price, without discounting promotions or discounts; at the same time not exceed the amount you have paid.</li>
+                                    </ul>
+                                </div>
+                                <div class="policy-detail-garage">
+                                    <h4>Garage Policy</h4>
+                                    <ul class="policy-detail-garage-list">
+                                        <li class="policy-detail-garage-item">
+                                            <h5>Safety Covid-19</h5>
+                                            <ul class="policy-detail-garage-item__content">
+                                                <li>Masks are required when boarding</li>
+                                            </ul>
+                                        </li>
+                                        <li class="policy-detail-garage-item">
+                                            <h5>Requirements when boarding</h5>
+                                            <ul class="policy-detail-garage-item__content">
+                                                <li>Be at the office/ticket counter/bus station 30 minutes in advance to check in</li>
+                                                <li>Present SMS/Email to book tickets before boarding</li>
+                                                <li>Do not bring food, smelly food on the car</li>
+                                                <li>Do not smoke, drink alcohol, use drugs in the car</li>
+                                                <li>Do not bring flammable objects onto the vehicle</li>
+                                                <li>Do not throw garbage in the car</li>
+                                                <li>Do not make noise or cause disorder in the car</li>
+                                                <li>Do not wear shoes or slippers in the car</li>
+                                            </ul>
+                                        </li>
+                                        <li class="policy-detail-garage-item">
+                                            <h5>Luggage</h5>
+                                            <ul class="policy-detail-garage-item__content">
+                                                <li>The total weight of the luggage must not exceed 10 kg</li>
+                                                <li>Do not transport bulky goods</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                            <div class="rate-detail content-detail">
+                                <div class="rate-detail__heading">
+                                    <div class="rate-detail__heading-averageRate">
+                                        <i class="fa-solid fa-star"></i>
+                                        <span class="">4.8 (855)</span>
+                                    </div>
+                                    <div class="rate-detail__heading-fiveStarRate">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="rate-detail__userComment">
+                                    <ul class="rate-detail__userComment-list">
+                                        <li class="rate-detail__userComment-item">
+                                            <i class="fa-solid fa-user"></i>
+                                            <div class="rate-detail__userComment-wrap">
+                                                <div class="rate-detail__userComment-info">
+                                                    <div class="rate-detail__userComment-name">Vu Duc Dung</div>
+                                                    <div class="rate-detail__userComment-rate">
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="rate-detail__userComment-comment">
+                                                    Amazing!
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="rate-detail__userComment-item">
+                                            <i class="fa-solid fa-user"></i>
+                                            <div class="rate-detail__userComment-wrap">
+                                                <div class="rate-detail__userComment-info">
+                                                    <div class="rate-detail__userComment-name">Vu Duc Dung</div>
+                                                    <div class="rate-detail__userComment-rate">
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="rate-detail__userComment-comment">
+                                                    Amazing!
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="rate-detail__userComment-item">
+                                            <i class="fa-solid fa-user"></i>
+                                            <div class="rate-detail__userComment-wrap">
+                                                <div class="rate-detail__userComment-info">
+                                                    <div class="rate-detail__userComment-name">Vu Duc Dung</div>
+                                                    <div class="rate-detail__userComment-rate">
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="rate-detail__userComment-comment">
+                                                    Amazing!
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ticket__information">
+                        <div class="ticket__information-summary row">
+                            <div class="ticket__information-content col-md-8">
+                                <div class="row">
+                                    <div class="ticket__information-description col-md-8">
+                                        <div class="ticket__car">
+                                            <div class="ticket__car-name">Phương Trang</div>
+                                            <div class="ticket__car-rate">
+                                                <i class="fa-solid fa-star"></i>
+                                                <span>4.9 (B55)</span>
+                                            </div>
+                                        </div>
+                                        <div class="ticket__car-type">Limousine 9 seats</div>
+                                        <div class="ticket__car-depart">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <span class="ticket__car-depart-time">15:00</span>
+                                            <span class="ticket__car-depart-location">Bến xe miền Đông</span>
+                                        </div>
+                                        <div class="ticket__car-depart-period">2h</div>
+                                        <div class="ticket__car-arrive">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <span class="ticket__car-arrive-time">17:00</span>
+                                            <span class="ticket__car-arrive-location">Văn phòng Bà Rịa</span>
+                                        </div>
+                                    </div>
+                                    <div class="ticket__information-price col-md-4">
+                                        <div class="ticket-wrap-price">
+                                            <span class="ticket-price">Từ 180.000đ</span>
+                                            <a class="ticket-price__more">More information</a>
+                                        </div>
+
+                                        <div class="ticket-wrap-buy">
+                                            <span class="ticket-left">9 slots left</span>
+                                            <span class="btn-base ticket-buy">Buy</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ticket__information-img col-md-4">
+                                <img src="../public/img/nha-xe-phuong-trang.png" alt="">
+                            </div>
+                        </div>
+
+                        <!-- Xử lí trong JavaScript! -->
+                        <div class="ticket__information-details">
+                            <div class="ticket__information-details-heading">
+                                <div class="ticket__information-details-heading-item active">
+                                    <i class="fa-solid fa-image"></i> Image
+                                </div>
+                                <div class="ticket__information-details-heading-item">
+                                    <i class="fa-solid fa-gear"></i> Utility
+                                </div>
+                                <div class="ticket__information-details-heading-item">
+                                    <i class="fa-solid fa-map-location-dot"></i> Route
+                                </div>
+                                <div class="ticket__information-details-heading-item">
+                                    <i class="fa-solid fa-building-shield"></i> Policy
+                                </div>
+                                <div class="ticket__information-details-heading-item">
+                                    <i class="fa-solid fa-star"></i> Rate
+                                </div>
+                                <div class="line"></div>
+                            </div>
+                            <!-- Content -->
+                            <div class="image-detail content-detail active">
+                                <div class="image-heading">
+                                    <h3>Phương Trang</h3>
+                                    <p>Hotline: <a href="tel:+0918919189">0918 91 91 89</a></p>
+                                </div>
+                                <div class="image-content">
+                                    <i class="fa-solid fa-angle-left"></i>
+                                    <div class="image-content-mainImage">
+                                        <img src="../public/img/nha-xe-phuong-trang.png" alt="">
+                                    </div>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                </div>
+                                <div class="image-footer">
+                                    <div class="image__number">
+                                        <span class="current">1</span> / <span class="total">5</span>
+                                    </div>
+                                    <div class="image__list">
+                                        <div class="image__item"></div>
+                                        <div class="image__item"></div>
+                                        <div class="image__item"></div>
+                                        <div class="image__item"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="utility-detail content-detail">
+                                <ul class="view-list">
+                                    <li class="view-item">
+                                        <div class="view-item__heading">
+                                            <i class="fa-solid fa-location-crosshairs"></i> View location online
+                                        </div>
+                                        <div class="view-item__content">
+                                            Allow passengers to see the route and travel time of the bus they have booked.
+                                        </div>
+                                    </li>
+                                    <li class="view-item">
+                                        <div class="view-item__heading">
+                                            <i class="fa-solid fa-location-crosshairs"></i> View location online
+                                        </div>
+                                        <div class="view-item__content">
+                                            Allow passengers to see the route and travel time of the bus they have booked.
+                                        </div>
+                                    </li>
+                                    <li class="view-item">
+                                        <div class="view-item__heading">
+                                            <i class="fa-solid fa-location-crosshairs"></i> View location online
+                                        </div>
+                                        <div class="view-item__content">
+                                            Allow passengers to see the route and travel time of the bus they have booked.
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="route-detail content-detail">
+                                <div class="route-detail__note">
+                                    <p><span>Note:</span> <br>The pick-up and drop-off times below are estimated times.
+                                        <br>This schedule is subject to change depending on the actual situation.</p>
+                                </div>
+                                <div class="route-detail__PickUp">
+                                    <div class="route-detail__PickUp--heading">
+                                        <i class="fa-solid fa-location-dot"></i> Pick Up Location
+                                    </div>
+                                    <div class="route-detail__PickUp--content">
+                                        <div class="route-detail__PickUp">
+                                            <span class="route-detail__time">09:00</span>
+                                            <span class="route-detail__location"> - Bến xe miền Đông</span>
+                                        </div>
+                                        <div class="route-detail__PickUp">
+                                            <span class="route-detail__time">09:30</span>
+                                            <span class="route-detail__location"> - Bến xe miền Tây</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="route-detail__DropOff">
+                                    <div class="route-detail__DropOff--heading">
+                                        <i class="fa-solid fa-location-dot"></i> Drop off Location
+                                    </div>
+                                    <div class="route-detail__DropOff--content">
+                                        <div class="route-detail__DropOff">
+                                            <span class="route-detail__time">10:25</span>
+                                            <span class="route-detail__location"> - Cổng chào Bà Rịa</span>
+                                        </div>
+                                        <div class="route-detail__DropOff">
+                                            <span class="route-detail__time">10:28</span>
+                                            <span class="route-detail__location"> - Bến xe Bà Rịa</span>
+                                        </div>
+                                        <div class="route-detail__DropOff">
+                                            <span class="route-detail__time">11:30</span>
+                                            <span class="route-detail__location"> - Co.op mart Bà Rịa</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="policy-detail content-detail">
+                                <div class="policy-detail-Cancellation">
+                                    <h4>Cancellation Policy</h4>
+                                    <div class="policy-detail-Cancellation-time">
+                                        07:00 06/11/2022
+                                    </div>
+                                    <div class="policy-detail-Cancellation-timeLine">
+                                        <div class="policy-detail-Cancellation-timeLine--part">
+                                            Không mất phí
+                                        </div>
+                                        <div class="policy-detail-Cancellation-timeLine--part">
+                                            Mất phí
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="policy-detail-note">
+                                    <h4>Note:</h4>
+                                    <ul class="policy-detail-garage-item__content">
+                                        <li>Cancellation fees will be charged on the original price, without discounting promotions or discounts; at the same time not exceed the amount you have paid.</li>
+                                    </ul>
+                                </div>
+                                <div class="policy-detail-garage">
+                                    <h4>Garage Policy</h4>
+                                    <ul class="policy-detail-garage-list">
+                                        <li class="policy-detail-garage-item">
+                                            <h5>Safety Covid-19</h5>
+                                            <ul class="policy-detail-garage-item__content">
+                                                <li>Masks are required when boarding</li>
+                                            </ul>
+                                        </li>
+                                        <li class="policy-detail-garage-item">
+                                            <h5>Requirements when boarding</h5>
+                                            <ul class="policy-detail-garage-item__content">
+                                                <li>Be at the office/ticket counter/bus station 30 minutes in advance to check in</li>
+                                                <li>Present SMS/Email to book tickets before boarding</li>
+                                                <li>Do not bring food, smelly food on the car</li>
+                                                <li>Do not smoke, drink alcohol, use drugs in the car</li>
+                                                <li>Do not bring flammable objects onto the vehicle</li>
+                                                <li>Do not throw garbage in the car</li>
+                                                <li>Do not make noise or cause disorder in the car</li>
+                                                <li>Do not wear shoes or slippers in the car</li>
+                                            </ul>
+                                        </li>
+                                        <li class="policy-detail-garage-item">
+                                            <h5>Luggage</h5>
+                                            <ul class="policy-detail-garage-item__content">
+                                                <li>The total weight of the luggage must not exceed 10 kg</li>
+                                                <li>Do not transport bulky goods</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                            <div class="rate-detail content-detail">
+                                <div class="rate-detail__heading">
+                                    <div class="rate-detail__heading-averageRate">
+                                        <i class="fa-solid fa-star"></i>
+                                        <span class="">4.8 (855)</span>
+                                    </div>
+                                    <div class="rate-detail__heading-fiveStarRate">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="rate-detail__userComment">
+                                    <ul class="rate-detail__userComment-list">
+                                        <li class="rate-detail__userComment-item">
+                                            <i class="fa-solid fa-user"></i>
+                                            <div class="rate-detail__userComment-wrap">
+                                                <div class="rate-detail__userComment-info">
+                                                    <div class="rate-detail__userComment-name">Vu Duc Dung</div>
+                                                    <div class="rate-detail__userComment-rate">
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="rate-detail__userComment-comment">
+                                                    Amazing!
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="rate-detail__userComment-item">
+                                            <i class="fa-solid fa-user"></i>
+                                            <div class="rate-detail__userComment-wrap">
+                                                <div class="rate-detail__userComment-info">
+                                                    <div class="rate-detail__userComment-name">Vu Duc Dung</div>
+                                                    <div class="rate-detail__userComment-rate">
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="rate-detail__userComment-comment">
+                                                    Amazing!
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="rate-detail__userComment-item">
+                                            <i class="fa-solid fa-user"></i>
+                                            <div class="rate-detail__userComment-wrap">
+                                                <div class="rate-detail__userComment-info">
+                                                    <div class="rate-detail__userComment-name">Vu Duc Dung</div>
+                                                    <div class="rate-detail__userComment-rate">
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="rate-detail__userComment-comment">
+                                                    Amazing!
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ticket__information">
+                        <div class="ticket__information-summary row">
+                            <div class="ticket__information-content col-md-8">
+                                <div class="row">
+                                    <div class="ticket__information-description col-md-8">
+                                        <div class="ticket__car">
+                                            <div class="ticket__car-name">Toàn Thắng</div>
+                                            <div class="ticket__car-rate">
+                                                <i class="fa-solid fa-star"></i>
+                                                <span>4.8 (A33)</span>
+                                            </div>
+                                        </div>
+                                        <div class="ticket__car-type">Limousine 16 seats</div>
+                                        <div class="ticket__car-depart">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <span class="ticket__car-depart-time">08:00</span>
+                                            <span class="ticket__car-depart-location">Bến xe miền Đông</span>
+                                        </div>
+                                        <div class="ticket__car-depart-period">3h</div>
+                                        <div class="ticket__car-arrive">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <span class="ticket__car-arrive-time">14:00</span>
+                                            <span class="ticket__car-arrive-location">Văn phòng Bà Rịa</span>
+                                        </div>
+                                    </div>
+                                    <div class="ticket__information-price col-md-4">
+                                        <div class="ticket-wrap-price">
+                                            <span class="ticket-price">Từ 180.000đ</span>
+                                            <a class="ticket-price__more">More information</a>
+                                        </div>
+
+                                        <div class="ticket-wrap-buy">
+                                            <span class="ticket-left">9 slots left</span>
+                                            <span class="btn-base ticket-buy">Buy</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ticket__information-img col-md-4">
+                                <img src="../public/img/nha-xe-toan-thang.png" alt="">
+                            </div>
+                        </div>
+
+                        <!-- Xử lí trong JavaScript! -->
+                        <div class="ticket__information-details">
+                            <div class="ticket__information-details-heading">
+                                <div class="ticket__information-details-heading-item active">
+                                    <i class="fa-solid fa-image"></i> Image
+                                </div>
+                                <div class="ticket__information-details-heading-item">
+                                    <i class="fa-solid fa-gear"></i> Utility
+                                </div>
+                                <div class="ticket__information-details-heading-item">
+                                    <i class="fa-solid fa-map-location-dot"></i> Route
+                                </div>
+                                <div class="ticket__information-details-heading-item">
+                                    <i class="fa-solid fa-building-shield"></i> Policy
+                                </div>
+                                <div class="ticket__information-details-heading-item">
+                                    <i class="fa-solid fa-star"></i> Rate
+                                </div>
+                                <div class="line"></div>
+                            </div>
+                            <!-- Content -->
+                            <div class="image-detail content-detail active">
+                                <div class="image-heading">
+                                    <h3>Toàn Thắng</h3>
+                                    <p>Hotline: <a href="tel:+0918919189">0918 91 91 89</a></p>
+                                </div>
+                                <div class="image-content">
+                                    <i class="fa-solid fa-angle-left"></i>
+                                    <div class="image-content-mainImage">
+                                        <img src="../public/img/nha-xe-toan-thang.png" alt="">
+                                    </div>
+                                    <i class="fa-solid fa-angle-right"></i>
+                                </div>
+                                <div class="image-footer">
+                                    <div class="image__number">
+                                        <span class="current">1</span> / <span class="total">5</span>
+                                    </div>
+                                    <div class="image__list">
+                                        <div class="image__item"></div>
+                                        <div class="image__item"></div>
+                                        <div class="image__item"></div>
+                                        <div class="image__item"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="utility-detail content-detail">
+                                <ul class="view-list">
+                                    <li class="view-item">
+                                        <div class="view-item__heading">
+                                            <i class="fa-solid fa-location-crosshairs"></i> View location online
+                                        </div>
+                                        <div class="view-item__content">
+                                            Allow passengers to see the route and travel time of the bus they have booked.
+                                        </div>
+                                    </li>
+                                    <li class="view-item">
+                                        <div class="view-item__heading">
+                                            <i class="fa-solid fa-location-crosshairs"></i> View location online
+                                        </div>
+                                        <div class="view-item__content">
+                                            Allow passengers to see the route and travel time of the bus they have booked.
+                                        </div>
+                                    </li>
+                                    <li class="view-item">
+                                        <div class="view-item__heading">
+                                            <i class="fa-solid fa-location-crosshairs"></i> View location online
+                                        </div>
+                                        <div class="view-item__content">
+                                            Allow passengers to see the route and travel time of the bus they have booked.
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="route-detail content-detail">
+                                <div class="route-detail__note">
+                                    <p><span>Note:</span> <br>The pick-up and drop-off times below are estimated times.
+                                        <br>This schedule is subject to change depending on the actual situation.</p>
+                                </div>
+                                <div class="route-detail__PickUp">
+                                    <div class="route-detail__PickUp--heading">
+                                        <i class="fa-solid fa-location-dot"></i> Pick Up Location
+                                    </div>
+                                    <div class="route-detail__PickUp--content">
+                                        <div class="route-detail__PickUp">
+                                            <span class="route-detail__time">09:00</span>
+                                            <span class="route-detail__location"> - Bến xe miền Đông</span>
+                                        </div>
+                                        <div class="route-detail__PickUp">
+                                            <span class="route-detail__time">09:30</span>
+                                            <span class="route-detail__location"> - Bến xe miền Tây</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="route-detail__DropOff">
+                                    <div class="route-detail__DropOff--heading">
+                                        <i class="fa-solid fa-location-dot"></i> Drop off Location
+                                    </div>
+                                    <div class="route-detail__DropOff--content">
+                                        <div class="route-detail__DropOff">
+                                            <span class="route-detail__time">10:25</span>
+                                            <span class="route-detail__location"> - Cổng chào Bà Rịa</span>
+                                        </div>
+                                        <div class="route-detail__DropOff">
+                                            <span class="route-detail__time">10:28</span>
+                                            <span class="route-detail__location"> - Bến xe Bà Rịa</span>
+                                        </div>
+                                        <div class="route-detail__DropOff">
+                                            <span class="route-detail__time">11:30</span>
+                                            <span class="route-detail__location"> - Co.op mart Bà Rịa</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="policy-detail content-detail">
+                                <div class="policy-detail-Cancellation">
+                                    <h4>Cancellation Policy</h4>
+                                    <div class="policy-detail-Cancellation-time">
+                                        07:00 06/11/2022
+                                    </div>
+                                    <div class="policy-detail-Cancellation-timeLine">
+                                        <div class="policy-detail-Cancellation-timeLine--part">
+                                            Không mất phí
+                                        </div>
+                                        <div class="policy-detail-Cancellation-timeLine--part">
+                                            Mất phí
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="policy-detail-note">
+                                    <h4>Note:</h4>
+                                    <ul class="policy-detail-garage-item__content">
+                                        <li>Cancellation fees will be charged on the original price, without discounting promotions or discounts; at the same time not exceed the amount you have paid.</li>
+                                    </ul>
+                                </div>
+                                <div class="policy-detail-garage">
+                                    <h4>Garage Policy</h4>
+                                    <ul class="policy-detail-garage-list">
+                                        <li class="policy-detail-garage-item">
+                                            <h5>Safety Covid-19</h5>
+                                            <ul class="policy-detail-garage-item__content">
+                                                <li>Masks are required when boarding</li>
+                                            </ul>
+                                        </li>
+                                        <li class="policy-detail-garage-item">
+                                            <h5>Requirements when boarding</h5>
+                                            <ul class="policy-detail-garage-item__content">
+                                                <li>Be at the office/ticket counter/bus station 30 minutes in advance to check in</li>
+                                                <li>Present SMS/Email to book tickets before boarding</li>
+                                                <li>Do not bring food, smelly food on the car</li>
+                                                <li>Do not smoke, drink alcohol, use drugs in the car</li>
+                                                <li>Do not bring flammable objects onto the vehicle</li>
+                                                <li>Do not throw garbage in the car</li>
+                                                <li>Do not make noise or cause disorder in the car</li>
+                                                <li>Do not wear shoes or slippers in the car</li>
+                                            </ul>
+                                        </li>
+                                        <li class="policy-detail-garage-item">
+                                            <h5>Luggage</h5>
+                                            <ul class="policy-detail-garage-item__content">
+                                                <li>The total weight of the luggage must not exceed 10 kg</li>
+                                                <li>Do not transport bulky goods</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                            <div class="rate-detail content-detail">
+                                <div class="rate-detail__heading">
+                                    <div class="rate-detail__heading-averageRate">
+                                        <i class="fa-solid fa-star"></i>
+                                        <span class="">4.8 (855)</span>
+                                    </div>
+                                    <div class="rate-detail__heading-fiveStarRate">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="rate-detail__userComment">
+                                    <ul class="rate-detail__userComment-list">
+                                        <li class="rate-detail__userComment-item">
+                                            <i class="fa-solid fa-user"></i>
+                                            <div class="rate-detail__userComment-wrap">
+                                                <div class="rate-detail__userComment-info">
+                                                    <div class="rate-detail__userComment-name">Vu Duc Dung</div>
+                                                    <div class="rate-detail__userComment-rate">
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="rate-detail__userComment-comment">
+                                                    Amazing!
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="rate-detail__userComment-item">
+                                            <i class="fa-solid fa-user"></i>
+                                            <div class="rate-detail__userComment-wrap">
+                                                <div class="rate-detail__userComment-info">
+                                                    <div class="rate-detail__userComment-name">Vu Duc Dung</div>
+                                                    <div class="rate-detail__userComment-rate">
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="rate-detail__userComment-comment">
+                                                    Amazing!
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="rate-detail__userComment-item">
+                                            <i class="fa-solid fa-user"></i>
+                                            <div class="rate-detail__userComment-wrap">
+                                                <div class="rate-detail__userComment-info">
+                                                    <div class="rate-detail__userComment-name">Vu Duc Dung</div>
+                                                    <div class="rate-detail__userComment-rate">
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="rate-detail__userComment-comment">
+                                                    Amazing!
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <i class="more-ticket-down fa-solid fa-angles-down"></i>
+                </div>
+            </div>
+
+
+            <!-- Footer -->
+            <footer id="footer">
+                <div class="container">
+                    <div class="grid__row">
+                        <div class="grid__column-2-4">
+                            <h3 class="footer__heading">Chăm sóc khách hàng</h3>
+                            <ul class="footer__list">
+                                <li class="footer-item">
+                                    <a href="" class="footer-item__link">
+                                Trung tâm trợ giúp
+                            </a>
+                                </li>
+                                <li class="footer-item">
+                                    <a href="" class="footer-item__link">
+                                Câu hỏi thường gặp
+                            </a>
+                                </li>
+                                <li class="footer-item">
+                                    <a href="" class="footer-item__link">
+                                Hướng dẫn đặt vé
+                            </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grid__column-2-4">
+                            <h3 class="footer__heading">Giới thiệu</h3>
+                            <ul class="footer__list">
+                                <li class="footer-item">
+                                    <a href="" class="footer-item__link">
+                                Giới thiệu
+                            </a>
+                                </li>
+                                <li class="footer-item">
+                                    <a href="" class="footer-item__link">
+                                Tuyển dụng
+                            </a>
+                                </li>
+                                <li class="footer-item">
+                                    <a href="" class="footer-item__link">
+                                Điều khoản
+                            </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grid__column-2-4">
+                            <h3 class="footer__heading">Danh mục</h3>
+                            <ul class="footer__list">
+                                <li class="footer-item">
+                                    <a href="" class="footer-item__link">
+                                Vé combo
+                            </a>
+                                </li>
+                                <li class="footer-item">
+                                    <a href="" class="footer-item__link">
+                                Vé sale
+                            </a>
+                                </li>
+                                <li class="footer-item">
+                                    <a href="" class="footer-item__link">
+                                Vé khứ hồi
+                            </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grid__column-2-4">
+                            <h3 class="footer__heading">Theo dõi</h3>
+                            <ul class="footer__list">
+                                <li class="footer-item">
+                                    <a href="" class="footer-item__link">
+                                        <i class="fab fa-facebook"></i> Facebook
+                                    </a>
+                                </li>
+                                <li class="footer-item">
+                                    <a href="" class="footer-item__link">
+                                        <i class="fab fa-instagram"></i> Instagram
+                                    </a>
+                                </li>
+                                <li class="footer-item">
+                                    <a href="" class="footer-item__link">
+                                        <i class="fa-brands fa-linkedin"></i> LinkedIn
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grid__column-2-4">
+                            <h3 class="footer__heading">Vào cửa hàng trên ứng dụng</h3>
+                            <div class="footer__download">
+                                <img src="../public/img/qr_code.png" alt="" class="footer__download-qr">
+                                <div class="footer__download-apps">
+                                    <img src="../public/img/app_store.png" alt="App Store" class="footer__download-apps-img">
+                                    <img src="../public/img/google_play.png" alt="Google Play" class="footer__download-apps-img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__bottom">
+                    <div class="policy">
+                        <div class="policy__heading">
+                            <div class="policy__heading-item">
+                                <a href="" class="policy__heading-item-link">
+                            CHÍNH SÁCH BẢO MẬT
+                        </a>
+                            </div>
+                            <div class="policy__heading-item">
+                                <a href="" class="policy__heading-item-link">
+                            QUY CHẾ HOẠT ĐỘNG
+                        </a>
+                            </div>
+                            <div class="policy__heading-item">
+                                <a href="" class="policy__heading-item-link">
+                            CHÍNH SÁCH ĐƯA ĐÓN
+                        </a>
+                            </div>
+                        </div>
+                        <div class="policy__heading-logo">
+                            <img src="../public/img/dadangki.png" alt="" class="policy__heading-logo-item__img">
+                        </div>
+                        <p class="policy__decription_heading">Công ty TNHH Ticket Take It</p>
+                        <p class="policy__decription">Địa chỉ: Tòa I, trường Đại học Khoa học Tự nhiên Thành phố Hồ Chí Minh, 227 Nguyễn Văn Cừ, P4, Q5, TP Hồ Chí Minh, Việt Nam. Tổng đài hỗ trợ: 22446688 - Email: cskh@hotro.tickettakeit.vn</p>
+                        <p class="policy__decription">Chịu Trách Nhiệm Quản Lý Nội Dung: Vũ Đức Dũng - Điện thoại liên hệ: 0399888999 (ext 4678)</p>
+                        <p class="policy__decription">Mã số doanh nghiệp: 010677999 do Sở Kế hoạch & Đầu tư TP Hồ Chí Minh cấp lần đầu ngày 10/12/2022</p>
+                        <p class="policy__decription">© 2022 - Bản quyền thuộc về Công ty TNHH Ticket Take It</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Filter -->
+        <div class="filter-wrap">
+            <div class="filter__overlay">
+            </div>
+            <div class="filter__body">
+                <div class="filter__header">
+                    <h2>Filters</h2>
+                    <span>
+                    Clear all
+                    <i class="fa-solid fa-xmark"></i>
+                </span>
+
+                </div>
+                <div class="container">
+                    <div class="filter__applied">
+                        <h3>Applied Filters</h3>
+                        <div class="filter__applied-list"></div>
+                    </div>
+                    <div class="filter__departureTime">
+                        <h3>Departure time</h3>
+                        <div class="filter__departureTime-list">
+                            <div class="filter__departureTime-item">
+                                <div class="filter__departureTime-title">Early Morning (200)</div>
+                                <div class="filter__departureTime-time">00:00 - 06:00</div>
+                            </div>
+                            <div class="filter__departureTime-item">
+                                <div class="filter__departureTime-title">Morning (250)</div>
+                                <div class="filter__departureTime-time">06:01 - 12:00</div>
+                            </div>
+                            <div class="filter__departureTime-item">
+                                <div class="filter__departureTime-title">Afternoon (204)</div>
+                                <div class="filter__departureTime-time">12:01 - 18:00</div>
+                            </div>
+                            <div class="filter__departureTime-item">
+                                <div class="filter__departureTime-title">Evening (173)</div>
+                                <div class="filter__departureTime-time">18:01 - 23:59</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter__departureSlider">
+                        <h3>Price</h3>
+                        <span class="multi-range">
+                        <input type="range" min="0" max="50" value="5" id="lower">
+                        <input type="range" min="0" max="50" value="45" id="upper">
+                    </span>
+                    </div>
+
+                    <div class="filter__departurePosition">
+                        <h3>Position of seats</h3>
+                        <div class="filter__departurePosition-list">
+                            <label for="name">
+                            <input type="checkbox" value="front" id="front" name="front">
+                            Front
+                        </label>
+                            <label for="name">
+                            <input type="checkbox" value="middle" id="middle" name="middle">
+                            Middle
+                        </label>
+                            <label for="name">
+                            <input type="checkbox" value="back" id="back" name="back">
+                            Back
+                        </label>
+                        </div>
+                    </div>
+
+                    <div class="filter__departureGarage">
+                        <h3>Garage</h3>
+                        <div class="filter__departureGarage-list list-item">
+                            <input class="filter__departureGarage-item" type="text" placeholder="Search">
+                            <label for="name">
+                            <input class="filter__departureGarage-item" type="checkbox" value="hoamai" id="hoamai" name="hoamai">
+                            Hoa Mai <span class="garage-quantity">(25)</span>
+                        </label>
+                            <label for="name">
+                            <input class="filter__departureGarage-item" type="checkbox" value="thienphu" id="thienphu" name="thienphu">
+                            Thiên Phú <span class="garage-quantity">(1)</span>
+                        </label>
+                            <label for="name">
+                            <input class="filter__departureGarage-item" type="checkbox" value="vielimousine" id="vielimousine" name="vielimousine">
+                            Vie Limousine <span class="garage-quantity">(6)</span>
+                        </label>
+                        </div>
+                    </div>
+
+                    <div class="filter__departurePickupLocation">
+                        <h3>Pick up Location</h3>
+                        <div class="filter__departurePickupLocation-list list-item">
+                            <input class="filter__departurePickupLocation-item" type="text" placeholder="Search">
+                            <label for="name">
+                            <input class="filter__departurePickupLocation-item" type="checkbox" value="hoamai" id="hoamai" name="hoamai">
+                            Quận 1
+                        </label>
+                            <label for="name">
+                            <input class="filter__departurePickupLocation-item" type="checkbox" value="thienphu" id="thienphu" name="thienphu">
+                            Quận 2
+                        </label>
+                            <label for="name">
+                            <input class="filter__departurePickupLocation-item" type="checkbox" value="vielimousine" id="vielimousine" name="vielimousine">
+                            Quận 5
+                        </label>
+                        </div>
+                    </div>
+
+                    <div class="filter__departureDropOffLocation">
+                        <h3>Pick up Location</h3>
+                        <div class="filter__departureDropOffLocation-list list-item">
+                            <input class="filter__departureDropOffLocation-item" type="text" placeholder="Search">
+                            <label for="name">
+                            <input class="filter__departureDropOffLocation-item" type="checkbox" value="hoamai" id="hoamai" name="hoamai">
+                            Vũng Tàu
+                        </label>
+                            <label for="name">
+                            <input class="filter__departureDropOffLocation-item" type="checkbox" value="thienphu" id="thienphu" name="thienphu">
+                            Bà Rịa
+                        </label>
+                            <label for="name">
+                            <input class="filter__departureDropOffLocation-item" type="checkbox" value="vielimousine" id="vielimousine" name="vielimousine">
+                            Đà Lạt
+                        </label>
+                        </div>
+                    </div>
+
+                    <div class="filter__departureVehical">
+                        <h3>Pick up Location</h3>
+                        <div class="filter__departureVehical-list list-item">
+                            <input class="filter__departureVehical-item" type="text" placeholder="Search">
+                            <label for="name">
+                            <input class="filter__departureVehical-item" type="checkbox" value="hoamai" id="hoamai" name="hoamai">
+                            Seat
+                        </label>
+                            <label for="name">
+                            <input class="filter__departureVehical-item" type="checkbox" value="thienphu" id="thienphu" name="thienphu">
+                            Bed
+                        </label>
+                            <label for="name">
+                            <input class="filter__departureVehical-item" type="checkbox" value="vielimousine" id="vielimousine" name="vielimousine">
+                            Limousine
+                        </label>
+                        </div>
+                    </div>
+
+                    <div class="filter__departureNumberOfSeat">
+                        <h3>Number of seats</h3>
+                        <div class="filter__departureNumberOfSeat--choose">
+                            <span class="down">-</span>
+                            <span class="quantity">2</span>
+                            <span class="up">+</span>
+                        </div>
+                    </div>
+
+                    <button class="filter__apply">
+                    Apply
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </button>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal layout -->
+        <div class="modal-wrap">
+            <div class="modal__overlay">
+            </div>
+
+            <div class="modal__body">
+                <!-- Seat form -->
+                <div class="seat-form bg-white">
+                    <header class="seat-form__header">
+                        <div class="seat-form__step seat-form__step--active" id="seat-form__step--choose-seat">
+                            <img src="../public/img/number_1.png" alt="buoc1" class="seat-form__number_img"> Vị trí ghế ngồi
+                        </div>
+                        <div class="seat-form__step" id="seat-form__step--pick-location">
+                            <img src="../public/img/number_2.png" alt="buoc2" class="seat-form__number_img"> Vị trí đón/trả khách
+                        </div>
+                        <div class="seat-form__step" id="seat-form__step--your-seat">
+                            <img src="../public/img/number_3.png" alt="buoc3" class="seat-form__number_img"> Nhập thông tin
+                        </div>
+                    </header>
+                    <hr style="margin:0">
+
+                    <div class="seat-form__container modal__container-form active">
+                        <div class="seat-form__note mt-5 mb-5">
+                            <h4 class="mb-5">Chú thích: </h4>
+                            <div class="seat-form__seat mb-4">
+                                <img class="seat-form__seat-img" src="../public/img/empty_seat.png" alt="empty_seat">
+                                <span class="seat-form__seat-condition">Còn trống</span>
+                            </div>
+                            <div class="seat-form__seat mb-4">
+                                <img class="seat-form__seat-img" src="../public/img/notsale_seat.png" alt="empty_seat">
+                                <span class="seat-form__seat-condition">Ghế không bán</span>
+                            </div>
+                            <div class="seat-form__seat">
+                                <img class="seat-form__seat-img" src="../public/img/choice_seat.png" alt="empty_seat">
+                                <span class="seat-form__seat-condition">Đang chọn</span>
+                            </div>
+                        </div>
+
+                        <div class="seat-form__seat-place mt-5 mb-5">
+                            <table>
+                                <tbody>
+                                    <tr class="coach-row">
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img class="driver-seat" src="../public/img/volant.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img class="not-for-sale" src="../public/img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img class="current-choice" src="../public/img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="coach-row">
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img src="../public/img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img src="../public/img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img src="../public/img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="coach-row">
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img src="../public/img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img src="../public/img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img src="../public/img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="coach-row">
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img src="../public/img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img src="../public/img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img src="../public/img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+
+                    </div>
+
+                    <div class="location-form__container modal__container-form">
+                        <div class="location-form__information p-4">
+                            <div class="location-form__location px-4 py-3">
+                                <label for="location-form__place">Điểm đón</label>
+                                <br>
+                                <input type="text" class="location-form__input mt-3 mb-2 px-2" placeholder="Điểm đón của bạn" required>
+                            </div>
+
+                            <div class="location-form__nearest-location p-3">
+                                <div class="location-form__nearest-title mb-2">Điểm đón gần nhất</div>
+
+                                <div class="location-form__nearest-start">
+                                    <i class="fa-regular fa-circle-dot"></i>
+                                    <span class="mx-2">17:40 
+                                    <span>Văn phòng quận 5</span>
+                                    </span>
+                                </div>
+
+                                <div class="location-form__nearest-start-details mt-2">
+                                    <div class="location-form__address">
+                                        <i class="fa-solid fa-location-dot mt-1"></i>
+                                        <span class="mx-3">269 Hùng Vương, Phường 09, Quận 5, Hồ Chí Minh 
+                                        <span>
+                                            <a href="#">Xem vị trí</a>
+                                        </span>
+                                        <br>
+                                        <span class="location-form__distance py-4">Cách vị trí của bạn 2.7km</span>
+                                        </span>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="verticalLine mt-4"></div>
+
+                        <div class="location-form__information p-4">
+                            <div class="location-form__location px-4 py-3">
+                                <label for="location-form__place">Điểm trả</label>
+                                <br>
+                                <input type="text" class="location-form__input mt-3 mb-2 px-2" placeholder="Điểm trả của bạn" required>
+                            </div>
+
+                            <div class="location-form__nearest-location p-3">
+                                <div class="location-form__nearest-title mb-2">Điểm trả gần nhất</div>
+
+                                <div class="location-form__nearest-start">
+                                    <i class="fa-regular fa-circle-dot"></i>
+                                    <span class="mx-2">20:00 
+                                    <span>Vũng Tàu</span>
+                                    </span>
+                                </div>
+
+                                <div class="location-form__nearest-start-details mt-2">
+                                    <div class="location-form__address">
+                                        <i class="fa-solid fa-location-dot mt-1"></i>
+                                        <span class="mx-3">Phường 1, Vũng Tàu, Bà Rịa-Vũng Tàu 
+                                        <span>
+                                            <a href="#">Xem vị trí</a>
+                                        </span>
+                                        <br>
+                                        <span class="location-form__distance py-4">Cách vị trí của bạn 1.4km</span>
+                                        </span>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-form__container modal__container-form">
+                        <div class="info-form__form">
+                            <div class="info-form__group">
+                                <label for="fullname" class="py-2">Họ và tên<code style="color: red; font-weight: 700;">*</code></label>
+                                <input type="text" class="info-form__input" placeholder="Tên hành khách" name="fullname" required>
+                            </div>
+                            <div class="info-form__group">
+                                <label for="phone" class="py-2">Số điện thoại<code style="color: red; font-weight: 700;">*</code></label>
+                                <br>
+                                <div class="info-form-wrap-item">
+                                    <select class="info-form_area-code">
+                                    <option value="">(VN)+84</option>
+                                    <option value="US">(US)+1</option>
+                                    <option value="CA">(CA)+1</option>
+                                    <option value="JP">(JP)+81</option>
+                                </select>
+                                    <input type="tel" class="info-form__input" placeholder="Số điện thoại" name="phone" required>
+                                </div>
+                            </div>
+                            <div class="info-form__group">
+                                <label for="email" class="py-2">Email<code style="color: red; font-weight: 700;">*</code></label>
+                                <input type="email" class="info-form__input" placeholder="Email để nhận thông báo" name="email" required>
+                            </div>
+                            <div class="info-form__group">
+                                <label for="note" class="py-2">Ghi chú hoặc yêu cầu khác (Nếu có)<code style="color: red; font-weight: 700;">*</code></label>
+                                <br>
+                                <textarea name="note" id="info-form__note" cols="" rows="2" placeholder="Các yêu cầu đặc biệt không thể được đảm bảo - nhưng nhà xe sẽ cố gắng hết sức để đáp ứng nhu cầu của bạn."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="seat-form__footer">
+                        <span class="seat-form__text">Số lượng ghế: 
+                        <span class="seat-form__price">1</span>
+                        </span>
+                        <div class="seat-form__right-corner">
+                            <span class="seat-form__text py-2">Tổng: <span class="seat-form__price">200.000đ</span></span>
+                            <button class="btn-continue px-4">Tiếp tục</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="../public/js/rangeSlider.js"></script>
+        <script src="../public/js/activeHeading.js"></script>
+        <script src="../public/js/account.js"></script>
+        <script src="../public/js/slider.js"></script>
+        <script src="../public/js/searchTicket.js"></script>
+        <script src="../public/js/buyTicket.js"></script>
+</body>
+
+</html>
