@@ -12,8 +12,8 @@
 
 ## Frond-end
 ### Task:
-- [ ] Tạo giao diện cho hệ quản trị (file html riêng)
-- [ ] Chuyển sang handlebar
+- [X] Tạo giao diện cho hệ quản trị (file html riêng)
+- [X] Chuyển sang handlebar
 - [X] Cấu trúc lại file
 ## Back-end
 ### Task:
