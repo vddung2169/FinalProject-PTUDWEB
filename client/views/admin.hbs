@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>TT Admin - Trang chủ</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        {{>sidebar}}
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                {{>topbar}}
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Quản lý</h1>
+                    </div>
+
+                    <!-- Bus house management table -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3 d-flex justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">Quản lý nhà xe</h6>
+                            <div class="button-group">
+                                <a href="/admin/viewgarage"><button class="btn-info" name="View-bus-house">Xem nhà xe</button></a>
+                                <a href="/admin/addgarage"><button class="btn-primary" name="Add-new-bus-house">Thêm nhà xe</button></a>
+                                <a href="/admin/updategarage"><button class="btn-warning" name="Add-new-bus-house">Cập nhật nhà xe</button></a>
+                                <a href="/admin/removegarage"><button class="btn-danger" name="Add-new-bus-house">Xóa nhà xe</button></a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Mã nhà xe</th>
+                                            <th>Tên nhà xe</th>
+                                            <th>Hình ảnh</th>
+                                            <th>Số điện thoại</th>
+                                            <th>Mã quản trị</th>
+                                            <th>Đánh giá</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Mã nhà xe</th>
+                                            <th>Tên nhà xe</th>
+                                            <th>Hình ảnh</th>
+                                            <th>Số điện thoại</th>
+                                            <th>Mã quản trị</th>
+                                            <th>Đánh giá</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>Mã nhà xe</td>
+                                            <td>Tên nhà xe</td>
+                                            <td>Hình ảnh</td>
+                                            <td>Số điện tdoại</td>
+                                            <td>Mã quản trị</td>
+                                            <td>Đánh giá</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mã nhà xe</td>
+                                            <td>Tên nhà xe</td>
+                                            <td>Hình ảnh</td>
+                                            <td>Số điện tdoại</td>
+                                            <td>Mã quản trị</td>
+                                            <td>Đánh giá</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mã nhà xe</td>
+                                            <td>Tên nhà xe</td>
+                                            <td>Hình ảnh</td>
+                                            <td>Số điện tdoại</td>
+                                            <td>Mã quản trị</td>
+                                            <td>Đánh giá</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <!-- Bus trip management table -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3 d-flex justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">Quản lý chuyến xe</h6>
+                            <div class="button-group">
+                                <a href="/admin/addroute"><button class="btn-primary" name="Add-new-bus-house">Thêm chuyến xe</button></a>
+                                <a href="/admin/updateroute"><button class="btn-warning" name="Add-new-bus-house">Cập nhật chuyến xe</button></a>
+                                <a href="/admin/removeroute"><button class="btn-danger" name="Add-new-bus-house">Xóa chuyến xe</button></a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Mã chuyến xe</th>
+                                            <th>Mã nhà xe</th>
+                                            <th>Điểm khởi hành</th>
+                                            <th>Điểm kết thúc</th>
+                                            <th>Thời gian khởi hành</th>
+                                            <th>Thời gian kết thúc</th>
+                                            <th>Số ghế</th>
+                                            <th>Loại xe</th>
+                                            <th>Mô tả</th>
+                                            <th>Hình ảnh</th>
+                                            <th>Giá vé</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Mã chuyến xe</th>
+                                            <th>Mã nhà xe</th>
+                                            <th>Điểm khởi hành</th>
+                                            <th>Điểm kết thúc</th>
+                                            <th>Thời gian khởi hành</th>
+                                            <th>Thời gian kết thúc</th>
+                                            <th>Số ghế</th>
+                                            <th>Loại xe</th>
+                                            <th>Mô tả</th>
+                                            <th>Hình ảnh</th>
+                                            <th>Giá vé</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>Mã chuyến xe</td>
+                                            <td>Mã nhà xe</td>
+                                            <td>Điểm khởi hành</td>
+                                            <td>Điểm kết thúc</td>
+                                            <td>Thời gian khởi hành</td>
+                                            <td>Thời gian kết thúc</td>
+                                            <td>Số ghế</td>
+                                            <td>Loại xe</td>
+                                            <td>Mô tả</td>
+                                            <td>Hình ảnh</td>
+                                            <td>Giá vé</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mã chuyến xe</td>
+                                            <td>Mã nhà xe</td>
+                                            <td>Điểm khởi hành</td>
+                                            <td>Điểm kết thúc</td>
+                                            <td>Thời gian khởi hành</td>
+                                            <td>Thời gian kết thúc</td>
+                                            <td>Số ghế</td>
+                                            <td>Loại xe</td>
+                                            <td>Mô tả</td>
+                                            <td>Hình ảnh</td>
+                                            <td>Giá vé</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mã chuyến xe</td>
+                                            <td>Mã nhà xe</td>
+                                            <td>Điểm khởi hành</td>
+                                            <td>Điểm kết thúc</td>
+                                            <td>Thời gian khởi hành</td>
+                                            <td>Thời gian kết thúc</td>
+                                            <td>Số ghế</td>
+                                            <td>Loại xe</td>
+                                            <td>Mô tả</td>
+                                            <td>Hình ảnh</td>
+                                            <td>Giá vé</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+                    <!-- Booking management table -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3 d-flex justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">Quản lý đặt chỗ</h6>
+                            <div class="button-group">
+                                <a href="/admin/viewseat"><button class="btn-info" name="Add-new-bus-house">Xem đặt chỗ</button></a>
+                                <a href="/admin/updateseat"><button class="btn-warning" name="Add-new-bus-house">Cập nhật đặt chỗ</button></a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Mã đặt chỗ</th>
+                                            <th>Mã chuyến xe</th>
+                                            <th>Tên khách hàng</th>
+                                            <th>Mã khách hàng</th>
+                                            <th>Email</th>
+                                            <th>Số điện thoại</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Mã đặt chỗ</th>
+                                            <th>Mã chuyến xe</th>
+                                            <th>Tên khách hàng</th>
+                                            <th>Mã khách hàng</th>
+                                            <th>Email</th>
+                                            <th>Số điện thoại</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td>Mã đặt chỗ</td>
+                                            <td>Mã chuyến xe</td>
+                                            <td>Tên khách hàng</td>
+                                            <td>Mã khách hàng</td>
+                                            <td>Email</td>
+                                            <td>Số điện thoại</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mã đặt chỗ</td>
+                                            <td>Mã chuyến xe</td>
+                                            <td>Tên khách hàng</td>
+                                            <td>Mã khách hàng</td>
+                                            <td>Email</td>
+                                            <td>Số điện thoại</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mã đặt chỗ</td>
+                                            <td>Mã chuyến xe</td>
+                                            <td>Tên khách hàng</td>
+                                            <td>Mã khách hàng</td>
+                                            <td>Email</td>
+                                            <td>Số điện thoại</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    {{>logoutmodal}}
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="/js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>

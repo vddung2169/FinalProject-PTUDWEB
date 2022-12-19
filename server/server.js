@@ -35,7 +35,8 @@ app.get('/createDatabase', (req,res)=>{
 
     
 })
-app.use('/',require('./routes/viewRouter'))
+app.use('/admin',require('./routes/adminView'))
+app.use('/',require('./routes/userView'))
 
 
 
