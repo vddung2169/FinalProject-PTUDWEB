@@ -19,7 +19,7 @@
 ### Task:
 - [X] Set up server, route
 - [X] Tạo database bằng sequelize
-- [ ] Tạo dữ liệu mẫu
+- [X] Tạo dữ liệu mẫu
 - [ ] Hiển thị tuyến xe ở trang chủ
 - [ ] Hiển thị danh sách xe theo tuyến
 - [ ] Hiển thị thông tin chi tiết của xe
@@ -78,14 +78,14 @@ Có thể vào kiểm tra tại pgAdmin, nhấn chuột phải vài database **t
 - Chỉ nên làm trên **file mình được giao**, cần chỉnh file khác thì báo trước
 - Deadline luôn là tối ngày hôm đó phải có
 ### Phân công
-1. <details><summary> <b>Tạo dữ liệu mẫu</b> </summary>
+1. <details><summary> <b>Tạo dữ liệu mẫu 	&#10004</b> </summary>
     <ul><li>Người làm: Dũng</li>
     <li>Mô tả: Cần  có ít nhất 10 chuyến xe thuộc 4-5 nhà xe, 3-4 loại xe, có nội dung mô tả và hình ảnh minh hoạ đầy đủ. Thông tin nhà xe có thông tin đánh giá và bình luận đầy đủ</li>
     <li>Deadline: 18/12/2022</li>
     </ul>
   </detail>
   
-2.  <details><summary> <b>Thiết kế giao diện quản trị</b> </summary>
+2.  <details><summary> <b>Thiết kế giao diện quản trị 	&#10004</b> </summary>
     <ul><li>Người làm: Quỳnh, Niên</li>
     <li>Mô tả:  
     <ul>
@@ -101,7 +101,7 @@ Có thể vào kiểm tra tại pgAdmin, nhấn chuột phải vài database **t
     </ul>
   </detail>
   
-3.  <details><summary> <b> Chuyển sang handlebar</b> </summary>
+3.  <details><summary> <b> Chuyển sang handlebar 	&#10004</b> </summary>
     <ul><li>Người làm: Hiện</li>
     <li>Mô tả: 
         <ul>
@@ -115,5 +115,176 @@ Có thể vào kiểm tra tại pgAdmin, nhấn chuột phải vài database **t
     <li>Deadline: 19/12/2022</li>
     </ul>
   </detail>
+  
+4.  <details><summary> <b> Hiển thị tuyến xe ở trang chủ</b> </summary>
+    <ul><li>Người làm: </li>
+    <li>Mô tả: 
+        <ul></ul>
+    </li>
+    <li>Deadline: 22/12/2022</li>
+    </ul>
+  </detail>
 
+5.  <details><summary> <b> Hiển thị danh sách xe theo tuyến</b> </summary>
+    <ul><li>Người làm: </li>
+    <li>Mô tả: 
+        <ul></ul>
+    </li>
+    <li>Deadline: 23/12/2022</li>
+    </ul>
+  </detail>
 
+6.  <details><summary> <b> Hiển thị thông tin chi tiết của xe</b> </summary>
+    <ul><li>Người làm: </li>
+    <li>Mô tả: 
+        <ul></ul>
+    </li>
+    <li>Deadline: 23/12/2022</li>
+    </ul>
+  </detail>
+  
+7.  <details><summary> <b> Sử dụng phân trang</b> </summary>
+    <ul><li>Người làm: </li>
+    <li>Mô tả: 
+        <ul></ul>
+    </li>
+    <li>Deadline: 24/12/2022</li>
+    </ul>
+  </detail>
+  
+8.  <details><summary> <b> Thêm dữ liệu vào lựa tuyến xe (điểm bắt đầu, kết thúc)</b> </summary>
+    <ul><li>Người làm: </li>
+    <li>Mô tả: 
+        <ul></ul>
+    </li>
+    <li>Deadline: 23/12/2022</li>
+    </ul>
+  </detail>
+  
+9.  <details><summary> <b> Thực hiện sort</b> </summary>
+    <ul><li>Người làm: </li>
+    <li>Mô tả: 
+        <ul></ul>
+    </li>
+    <li>Deadline: 25/12/2022</li>
+    </ul>
+  </detail>
+  
+ 
+ - <details><summary> <b>10.Thực hiện search</b> </summary>
+      <ul><li>Người làm: </li>
+      <li>Mô tả: 
+          <ul></ul>
+      </li>
+      <li>Deadline: 25/12/2022</li>
+      </ul>
+    </detail>
+ - <details><summary> <b>11.Thực hiện filter</b> </summary>
+    <ul><li>Người làm: </li>
+    <li>Mô tả: 
+        <ul></ul>
+    </li>
+    <li>Deadline: 25/12/2022</li>
+    </ul>
+  </detail>
+
+ - <details><summary> <b>12.Hiển thị thông tin lên phần mua vé</b> </summary>
+    <ul><li>Người làm: </li>
+    <li>Mô tả: 
+        <ul></ul>
+    </li>
+    <li>Deadline: 26/12/2022</li>
+    </ul>
+  </detail>
+  
+ - <details><summary> <b>13.Lưu thông tin mua vé lên database</b> </summary>
+    <ul><li>Người làm: </li>
+    <li>Mô tả: 
+        <ul></ul>
+    </li>
+    <li>Deadline: 26/12/2022</li>
+    </ul>
+  </detail>
+  
+ - <details><summary> <b>14.Quản lý nhà xe: Xem, thêm, xóa, sửa</b> </summary>
+    <ul><li>Người làm: </li>
+    <li>Mô tả: 
+        <ul></ul>
+    </li>
+    <li>Deadline: 26/12/2022</li>
+    </ul>
+  </detail>
+  
+ - <details><summary> <b>15.Quản lý chuyến xe: Thêm, xóa, sửa</b> </summary>
+    <ul><li>Người làm: </li>
+    <li>Mô tả: 
+        <ul></ul>
+    </li>
+    <li>Deadline: 27/12/2022</li>
+    </ul>
+  </detail>
+  
+ - <details><summary> <b>16.Quản lý đặt chỗ: Xem, sửa</b> </summary>
+    <ul><li>Người làm: </li>
+    <li>Mô tả: 
+        <ul></ul>
+    </li>
+    <li>Deadline: 26/12/2022</li>
+    </ul>
+  </detail>
+  
+ - <details><summary> <b>17.Chức năng đăng nhập</b> </summary>
+    <ul><li>Người làm: </li>
+    <li>Mô tả: 
+        <ul></ul>
+    </li>
+    <li>Deadline: 27/12/2022</li>
+    </ul>
+  </detail>
+  
+ - <details><summary> <b>18.Chức năng đăng ký</b> </summary>
+    <ul><li>Người làm: </li>
+    <li>Mô tả: 
+        <ul></ul>
+    </li>
+    <li>Deadline: 27/12/2022</li>
+    </ul>
+  </detail>
+  
+ - <details><summary> <b>19.Hiển thị lịch sử đặt vé</b> </summary>
+    <ul><li>Người làm: </li>
+    <li>Mô tả: 
+        <ul></ul>
+    </li>
+    <li>Deadline: 27/12/2022</li>
+    </ul>
+  </detail>
+  
+ - <details><summary> <b>20.Confirm đăng ký + quên mật khẩu</b> </summary>
+    <ul><li>Người làm: </li>
+    <li>Mô tả: 
+        <ul></ul>
+    </li>
+    <li>Deadline: 28/12/2022</li>
+    </ul>
+  </detail>
+  
+ - <details><summary> <b>21.Gửi thông tin qua vé email</b> </summary>
+    <ul><li>Người làm: </li>
+    <li>Mô tả: 
+        <ul></ul>
+    </li>
+    <li>Deadline: 28/12/2022</li>
+    </ul>
+  </detail>
+  
+ - <details><summary> <b>22.Thực hiện đánh giá + bình luận</b> </summary>
+    <ul><li>Người làm: </li>
+    <li>Mô tả: 
+        <ul></ul>
+    </li>
+    <li>Deadline: 29/12/2022</li>
+    </ul>
+  </detail>
+  
+**Những ngày còn lại test và viết báo cáo...**
