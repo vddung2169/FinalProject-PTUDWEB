@@ -7,14 +7,14 @@ const renderIndex = async (req,res) => {
         // TODO : Lấy dữ liệu tỉnh thành và truyền vào index.hbs
         //const tinhthanh
        
-
+        const tinhthanh = await dataController.getAllTinhthanh()
 
         const tuyenduongtop = await dataController.getAllTuyenduongtop()
 
         //console.log(tuyenduongtop)
 
-        res.render('index',{tuyenduongtop})
-        //res.render('index',{tuyenduongtop,tinhthanh})
+        // res.render('index',{tuyenduongtop})
+        res.render('index',{tuyenduongtop,tinhthanh})
 
     } catch (error) {
         console.log(error.message)
