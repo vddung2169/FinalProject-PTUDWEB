@@ -1,32 +1,21 @@
-const Chuyenxe = require('../database/models').chuyenxe
-const Tuyenduong = require('../database/models').tuyenduong
+const dataController = require('./getDataController')
 
 
-
-const moment = require('moment')
-
-// Tham khảo cách query : https://sequelize.org/docs/v6/core-concepts/model-querying-basics/
-// Tham khảo cách inner join 2 table : https://sequelize.org/docs/v6/advanced-association-concepts/eager-loading/#required-eager-loading
-
-
-const getAllTuyenxe = () =>{
-
-
-
-}
-
-const getAllChuyenxe = async () => {
+const renderBus = async (req,res) => {
     try {
-        
+        // Mục đích công việc này là đọc hiểu code getDataController.js
+        // coi ví dụ bên busDataController_copy.js
+         // TODO : Lấy dữ liệu tỉnh thành và truyền vào index.hbs
+        //const tinhthanh
+
+
+        // TODO lấy dữ liệu tất cả chuyến xe và truyền vào bus.hbs
+
 
         
-
-
-        
-
 
     } catch (error) {
-        console.log(error.message);
+        console.log(error.message)
         res.status(500).json(error.message)
     }
 
@@ -34,28 +23,7 @@ const getAllChuyenxe = async () => {
 
 
 
-const getTuyenduongbyID = (ID) => {
-    try {
-       
-
-        
-
-
-        return testh
-
-
-    } catch (error) {
-        console.log(error.message);
-    }
-
-
-
-}
-
-
-
 
 module.exports = {
-    getAllTuyenxe,
-    getAllChuyenxe
+    renderBus
 }

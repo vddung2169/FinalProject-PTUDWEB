@@ -82,7 +82,59 @@
             </div>
 
             <!-- Search Ticket -->
-            {{>searchticket tuyenduongSearch}}
+            <div class="search__ticket">
+                <div class="container">
+                    <h5 class="search__ticket-header">Search Ticket</h5>
+                    <div class="search__ticket-choose-wrap">
+
+                        <div class="search__ticket-choose-direction">
+                            <div class="search__ticket-wrap-item">
+                                <img src=" /img/mini_icon_location.png" alt="" class="search__ticket-choose-img">
+                                <select class="search__ticket-choose">
+                                    {{!-- <option value="">Your location</option>
+                                    <option value="hochiminh">TP Hồ Chí Minh</option>
+                                    <option value="dalat">Đà Lạt</option>
+                                    <option value="vungtau">Vũng Tàu</option>
+                                    <option value="tayninh">Tây Ninh</option>
+                                    <option value="camau">Cà Mau</option>
+                                    <option value="hue">Huế</option> --}}
+                                    <option value="">Your location</option>
+                                    {{#each tinhthanh}}
+                                    <option value="{{matinh}}">{{tentinh}}</option>
+                                    {{/each}}
+
+                                </select>
+                            </div>
+                            <img src=" /img/mini_icon_direction.png" alt="">
+                            <div class="search__ticket-wrap-item">
+                                <img src=" /img/mini_icon_destination.png" alt="" class="search__ticket-choose-img">
+                                <select class="search__ticket-choose">
+                                    <option value="">Your destination</option>
+                                    {{!-- <option value="hochiminh">TP Hồ Chí Minh</option>
+                                    <option value="vungtau">Vũng Tàu</option>
+                                    <option value="dalat">Đà Lạt</option> --}}
+                                    {{#each tinhthanh}}
+                                    <option value="{{matinh}}">{{tentinh}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="search__ticket-wrap-item">
+                            <img src=" /img/mini_icon_date.png" alt="" class="search__ticket-choose-img">
+                            <input type="date" id="date" name="date" class="search__ticket-choose">
+
+                            </input>
+                        </div>
+                    </div>
+                    <div class="search__ticket-submit">
+                        <button class="btn-base btn-search__ticket">
+                            Search
+                        </button>
+
+                    </div>
+                </div>
+            </div>
 
 
             <!-- Available Ticket -->
@@ -131,25 +183,25 @@
                                             <div class="ticket__car-name">{{tennhaxe}}</div>
                                             <div class="ticket__car-rate">
                                                 <i class="fa-solid fa-star"></i>
-                                                <span>{{diemso}} (B55)</span>
+                                                <span>{{formatRating diemso}} (B55)</span>
                                             </div>
                                         </div>
                                         <div class="ticket__car-type">{{tenloaixe}}</div>
                                         <div class="ticket__car-depart">
                                             <i class="fa-solid fa-location-dot"></i>
-                                            <span class="ticket__car-depart-time">{{tgkhoihanh}}</span>
+                                            <span class="ticket__car-depart-time">{{formatHours tgkhoihanh}}</span>
                                             <span class="ticket__car-depart-location">{{tendiachikhoihanh}}</span>
                                         </div>
                                         <div class="ticket__car-depart-period">{{calculateTime tgkhoihanh tgketthuc}}h</div>
                                         <div class="ticket__car-arrive">
                                             <i class="fa-solid fa-location-dot"></i>
-                                            <span class="ticket__car-arrive-time">{{tgketthuc}}</span>
+                                            <span class="ticket__car-arrive-time">{{formatHours tgketthuc}}</span>
                                             <span class="ticket__car-arrive-location">{{tendiachiketthuc}}</span>
                                         </div>
                                     </div>
                                     <div class="ticket__information-price col-md-4">
                                         <div class="ticket-wrap-price">
-                                            <span class="ticket-price">Từ {{giavenhonhat}}</span>
+                                            <span class="ticket-price">Từ {{formatMoney giavenhonhat}} đ</span>
                                             <a class="ticket-price__more">More information</a>
                                         </div>
 
@@ -161,7 +213,7 @@
                                 </div>
                             </div>
                             <div class="ticket__information-img col-md-4">
-                                <img src=" /img/nha-xe-thanh-buoi.png" alt="">
+                                <img src="{{hinhanhxe}}" alt="">
                             </div>
                         </div>
 

@@ -18,7 +18,9 @@ app.engine('hbs', engine({
     defaultLayout: "main",
     helpers: {
         calculateTime : require('./utils/calculateTime'),
-        formatHours : require('./utils/formatTime')
+        formatHours : require('./utils/formatTime'),
+        formatRating: require('./utils/formatRating'),
+        formatMoney: require('./utils/formatMoney')
     }
 }))
 app.set('view engine','hbs')
@@ -44,7 +46,10 @@ app.get('/createDatabase', (req,res)=>{
     
 })
 
-app.get('/test', busDataController.getAllChuyenxe)
+app.get('/test', async(req,res)=>{
+    const data = await busDataController.getAllChuyenxe()
+    res.json(data)
+})
 
 
 app.use('/admin',require('./routes/adminView'))

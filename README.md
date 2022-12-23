@@ -116,19 +116,19 @@ Có thể vào kiểm tra tại pgAdmin, nhấn chuột phải vài database **t
     </ul>
   </detail>
   
-4.  <details><summary> <b> Hiển thị tuyến xe ở trang chủ</b> </summary>
+4.  <details><summary> <b> Hiển thị tuyến xe top ở trang chủ &#9733</b> </summary>
     <ul><li>Người làm: </li>
     <li>Mô tả: 
-        <ul></ul>
+        <ul>File làm việc : /server/controllers/busDataController_copy.js</ul>
     </li>
     <li>Deadline: 22/12/2022</li>
     </ul>
   </detail>
 
-5.  <details><summary> <b> Hiển thị danh sách xe theo tuyến</b> </summary>
+5.  <details><summary> <b> Hiển thị danh sách chuyến xe &#9733</b> </summary>
     <ul><li>Người làm: </li>
     <li>Mô tả: 
-        <ul></ul>
+        <ul>File làm việc : /server/controllers/busDataController.js</ul>
     </li>
     <li>Deadline: 23/12/2022</li>
     </ul>
@@ -152,14 +152,6 @@ Có thể vào kiểm tra tại pgAdmin, nhấn chuột phải vài database **t
     </ul>
   </detail>
   
-8.  <details><summary> <b> Thêm dữ liệu vào lựa tuyến xe (điểm bắt đầu, kết thúc)</b> </summary>
-    <ul><li>Người làm: </li>
-    <li>Mô tả: 
-        <ul></ul>
-    </li>
-    <li>Deadline: 23/12/2022</li>
-    </ul>
-  </detail>
   
 9.  <details><summary> <b> Thực hiện sort</b> </summary>
     <ul><li>Người làm: </li>

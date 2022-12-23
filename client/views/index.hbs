@@ -82,11 +82,160 @@
             </div>
 
             <!-- Search Ticket -->
-            {{>searchticket tuyenduongSearch}}
+            <div class="search__ticket">
+                <div class="container">
+                    <h5 class="search__ticket-header">Search Ticket</h5>
+                    <div class="search__ticket-choose-wrap">
+
+                        <div class="search__ticket-choose-direction">
+                            <div class="search__ticket-wrap-item">
+                                <img src=" /img/mini_icon_location.png" alt="" class="search__ticket-choose-img">
+                                <select class="search__ticket-choose">
+                                    {{!-- <option value="">Your location</option>
+                                    <option value="hochiminh">TP Hồ Chí Minh</option>
+                                    <option value="dalat">Đà Lạt</option>
+                                    <option value="vungtau">Vũng Tàu</option>
+                                    <option value="tayninh">Tây Ninh</option>
+                                    <option value="camau">Cà Mau</option>
+                                    <option value="hue">Huế</option> --}}
+                                    <option value="">Your location</option>
+                                    {{#each tinhthanh}}
+                                    <option value="{{matinh}}">{{tentinh}}</option>
+                                    {{/each}}
+
+                                </select>
+                            </div>
+                            <img src=" /img/mini_icon_direction.png" alt="">
+                            <div class="search__ticket-wrap-item">
+                                <img src=" /img/mini_icon_destination.png" alt="" class="search__ticket-choose-img">
+                                <select class="search__ticket-choose">
+                                    <option value="">Your destination</option>
+                                    {{!-- <option value="hochiminh">TP Hồ Chí Minh</option>
+                                    <option value="vungtau">Vũng Tàu</option>
+                                    <option value="dalat">Đà Lạt</option> --}}
+                                    {{#each tinhthanh}}
+                                    <option value="{{matinh}}">{{tentinh}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="search__ticket-wrap-item">
+                            <img src=" /img/mini_icon_date.png" alt="" class="search__ticket-choose-img">
+                            <input type="date" id="date" name="date" class="search__ticket-choose">
+
+                            </input>
+                        </div>
+                    </div>
+                    <div class="search__ticket-submit">
+                        <button class="btn-base btn-search__ticket">
+                            Search
+                        </button>
+
+                    </div>
+                </div>
+            </div>
 
             <!-- Home -->
 
-            {{>home tuyenduongHome}}
+            <div class="home">
+                <div class="container">
+                    <h4 class="home__popular-heading">Popular bus routes</h4>
+                    <div class="home__popular">
+                        <ul class="home__popular-list">
+                            {{#each tuyenduongtop}}
+                            <li class="home__popular-item">
+                                <a href="">
+                                    <div class="home__popular-item--img">
+                                        <img src="/img/about1.png" alt="">
+                                    </div>
+                                    <div class="home__popular-item--title">
+                                        <p>{{ten}}</p>
+                                        <span>Từ {{formatMoney giachitu}} đ</span>
+                                    </div>
+                                </a>
+                            </li>
+                            {{/each}}
+
+
+                        </ul>
+                    </div>
+
+                    <h4 class="home__popular-heading">About</h4>
+                    <div class="home__about">
+
+                        <ul class="home__about-list">
+                            <li class="home__popular-item">
+                                <a href="">
+                                    <div class="home__popular-item--img">
+                                        <img src=" /img/about1.png" alt="">
+                                    </div>
+                                    <div class="home__popular-item--title">
+                                        <p>Sài Gòn - Đà Lạt</p>
+                                        <span>Từ 130.000</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="home__popular-item">
+                                <a href="">
+                                    <div class="home__popular-item--img">
+                                        <img src=" /img/about2.png" alt="">
+                                    </div>
+                                    <div class="home__popular-item--title">
+                                        <p>Sài Gòn - Đà Lạt</p>
+                                        <span>Từ 130.000</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="home__popular-item">
+                                <a href="">
+                                    <div class="home__popular-item--img">
+                                        <img src=" /img/about3.jpg" alt="">
+                                    </div>
+                                    <div class="home__popular-item--title">
+                                        <p>Sài Gòn - Đà Lạt</p>
+                                        <span>Từ 130.000</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="home__popular-item">
+                                <a href="">
+                                    <div class="home__popular-item--img">
+                                        <img src=" /img/about4.png" alt="">
+                                    </div>
+                                    <div class="home__popular-item--title">
+                                        <p>Sài Gòn - Đà Lạt</p>
+                                        <span>Từ 130.000</span>
+                                    </div>
+                                </a>
+                            </li>
+                            </li>
+                            <li class="home__popular-item">
+                                <a href="">
+                                    <div class="home__popular-item--img">
+                                        <img src=" /img/about5.png" alt="">
+                                    </div>
+                                    <div class="home__popular-item--title">
+                                        <p>Sài Gòn - Đà Lạt</p>
+                                        <span>Từ 130.000</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="home__popular-item">
+                                <a href="">
+                                    <div class="home__popular-item--img">
+                                        <img src=" /img/about2.png" alt="">
+                                    </div>
+                                    <div class="home__popular-item--title">
+                                        <p>Sài Gòn - Đà Lạt</p>
+                                        <span>Từ 130.000</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
             <!-- Available Ticket -->
             <!-- Bỏ class disabled để hiện các vé search theo yêu cầu -->
@@ -124,7 +273,7 @@
                         </div>
                     </div>
 
-                    
+
                     <i class="more-ticket-down fa-solid fa-angles-down"></i>
                 </div>
             </div>
