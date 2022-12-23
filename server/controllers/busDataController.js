@@ -17,20 +17,12 @@ const getAllTuyenxe = () =>{
 
 const getAllChuyenxe = async () => {
     try {
-        Chuyenxe.findAll({
-            include: [{
-                model: 
-            }]
-        }
-
-
-
-        )
+        
 
         
 
 
-        return testh
+        
 
 
     } catch (error) {

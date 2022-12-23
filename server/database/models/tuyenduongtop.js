@@ -22,10 +22,12 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER
     },
+    ten:DataTypes.STRING,
     giachitu: DataTypes.DECIMAL(12, 2) 
   }, {
     sequelize,
     modelName: 'tuyenduongtop',
+    freezeTableName:true
   });
   return tuyenduongtop;
 };
