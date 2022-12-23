@@ -6,14 +6,14 @@ module.exports = {
         const ghexedata = [{
                 maghe: '2A',
                 maloaixe: 'LIMOU9',
-                maloaighe: 1,
+                maloaighe: 4,
                 createdAt: new Date(),
                 updatedAt: new Date()
             },
             {
                 maghe: '2B',
                 maloaixe: 'LIMOU9',
-                maloaighe: 1,
+                maloaighe: 4,
                 createdAt: new Date(),
                 updatedAt: new Date()
             },

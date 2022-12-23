@@ -10,20 +10,14 @@ module.exports = {
                 updatedAt: new Date()
             },
             {
-                maloaixe: 'LIMOU16',
-                tenloaixe: 'Limousine 16 seats',
-                createdAt: new Date(),
-                updatedAt: new Date()
-            },
-            {
                 maloaixe: 'LIMOU7',
                 tenloaixe: 'Limousine 7 seats',
                 createdAt: new Date(),
                 updatedAt: new Date()
             },
             {
-                maloaixe: 'LIMOU20',
-                tenloaixe: 'Limousine 20 seats',
+                maloaixe: 'LIMOU4',
+                tenloaixe: 'Limousine 4 seats',
                 createdAt: new Date(),
                 updatedAt: new Date()
             },
@@ -38,37 +32,7 @@ module.exports = {
                 tenloaixe: 'Toyota 4 seats',
                 createdAt: new Date(),
                 updatedAt: new Date()
-            },
-            {
-                maloaixe: 'TOYOTA16',
-                tenloaixe: 'Toyota 16 seats',
-                createdAt: new Date(),
-                updatedAt: new Date()
-            },
-            {
-                maloaixe: 'MERCEDES7',
-                tenloaixe: 'Mercedes 7 seats',
-                createdAt: new Date(),
-                updatedAt: new Date()
-            },
-            {
-                maloaixe: 'MERCEDES2',
-                tenloaixe: 'Mercedes 2 seats',
-                createdAt: new Date(),
-                updatedAt: new Date()
-            },
-            {
-                maloaixe: 'MERCEDES4',
-                tenloaixe: 'Mercedes 4 seats',
-                createdAt: new Date(),
-                updatedAt: new Date()
-            },
-            {
-                maloaixe: 'MERCEDES12',
-                tenloaixe: 'Mercedes 12 seats',
-                createdAt: new Date(),
-                updatedAt: new Date()
-            },
+            }
         ]
         await queryInterface.bulkInsert('loaixe',
             loaixedata, {}

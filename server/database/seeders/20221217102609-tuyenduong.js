@@ -9,41 +9,25 @@ module.exports = {
                 tinhketthuc: '02',
             },
             {
+                matruyenduong: 2,
                 tinhbatdau: '01',
-                tinhketthuc: '03',
+                tinhketthuc: '29',
             },
             {
-                tinhbatdau: '01',
-                tinhketthuc: '04',
+                matruyenduong: 3,
+                tinhbatdau: '29',
+                tinhketthuc: '02',
             },
             {
-                tinhbatdau: '01',
-                tinhketthuc: '05',
-            },
-            {
+                matruyenduong: 4,
                 tinhbatdau: '02',
-                tinhketthuc: '03',
+                tinhketthuc: '52',
             },
             {
+                matruyenduong: 5,
                 tinhbatdau: '02',
-                tinhketthuc: '04',
-            },
-            {
-                tinhbatdau: '02',
-                tinhketthuc: '07',
-            },
-            {
-                tinhbatdau: '01',
-                tinhketthuc: '09',
-            },
-            {
-                tinhbatdau: '01',
-                tinhketthuc: '11',
-            },
-            {
-                tinhbatdau: '03',
-                tinhketthuc: '06',
-            },
+                tinhketthuc: '42',
+            }
         ]
         for (const data of tuyenduongdata) {
             await tuyenduong.create(data)

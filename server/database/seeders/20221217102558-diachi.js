@@ -68,6 +68,42 @@ module.exports = {
                 tendiachi: 'Ga Hà Nội',
                 diachicuthe: '120 Lê Duẩn, quận Hoàn Kiếm, Hà Nội',
                 matinh: '01',
+            },
+            {
+                madiachi: 12,
+                tendiachi: 'Bến xe Liên tỉnh Đà Lạt',
+                diachicuthe: '1 Đường Tô Hiến Thành, Phường 3, Thành phố Đà Lạt, Lâm Đồng',
+                matinh: '42',
+            },
+            {
+                madiachi: 13,
+                tendiachi: 'Trạm dừng chân Phương Trang – Madagui',
+                diachicuthe: 'Mạ Đa Guôi, Đạ Huoai District, Lam Dong',
+                matinh: '42',
+            },
+            {
+                madiachi: 14,
+                tendiachi: 'Trạm dừng chân Phương Trang – Madagui',
+                diachicuthe: 'Mạ Đa Guôi, Đạ Huoai District, Lam Dong',
+                matinh: '42',
+            },
+            {
+                madiachi: 15,
+                tendiachi: 'Trạm dừng chân Phương Trang – Madagui',
+                diachicuthe: 'Mạ Đa Guôi, Đạ Huoai District, Lam Dong',
+                matinh: '42',
+            },
+            {
+                madiachi: 16,
+                tendiachi: 'Bến xe thành phố Vinh',
+                diachicuthe: 'Thành phố Vinh, Nghệ An',
+                matinh: '29',
+            },
+            {
+                madiachi: 17,
+                tendiachi: 'Bến Xe Khách Vũng Tàu',
+                diachicuthe: 'Nam Kỳ Khởi Nghĩa, Phường Thắng Tam, Vũng Tàu, Bà Rịa - Vũng Tàu',
+                matinh: '52',
             }
         ]
 
