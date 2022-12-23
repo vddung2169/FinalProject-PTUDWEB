@@ -22,6 +22,14 @@ module.exports = (sequelize, DataTypes) => {
       Chuyenxe.hasMany(models.vexe,{
         foreignKey: 'machuyenxe'
       })
+      Chuyenxe.belongsTo(models.diachi,{
+        as: 'DCBD',
+        foreignKey: 'diachibatdau'
+      })
+      Chuyenxe.belongsTo(models.diachi,{
+        as: 'DCKT',
+        foreignKey: 'diachiketthuc'
+      })
 
 
     }
@@ -36,6 +44,9 @@ module.exports = (sequelize, DataTypes) => {
     manhaxe: DataTypes.UUID,
     tgkhoihanh: DataTypes.DATE,
     tgketthuc: DataTypes.DATE,
+    diachibatdau: DataTypes.INTEGER,
+    diachiketthuc: DataTypes.INTEGER,
+    giavenhonhat: DataTypes.INTEGER,
     hinhanhxe: DataTypes.STRING,
     mota: DataTypes.STRING,
     maloaixe: DataTypes.STRING
