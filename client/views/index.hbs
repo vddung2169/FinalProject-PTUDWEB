@@ -83,14 +83,14 @@
 
             <!-- Search Ticket -->
             <div class="search__ticket">
-                <div class="container">
+                <form method="GET" action="/bus"  class="container">
                     <h5 class="search__ticket-header">Search Ticket</h5>
                     <div class="search__ticket-choose-wrap">
 
                         <div class="search__ticket-choose-direction">
                             <div class="search__ticket-wrap-item">
                                 <img src=" /img/mini_icon_location.png" alt="" class="search__ticket-choose-img">
-                                <select class="search__ticket-choose">
+                                <select name="tinhbatdau" required class="search__ticket-choose" id="tinhbatdau">
                                     {{!-- <option value="">Your location</option>
                                     <option value="hochiminh">TP Hồ Chí Minh</option>
                                     <option value="dalat">Đà Lạt</option>
@@ -108,7 +108,7 @@
                             <img src=" /img/mini_icon_direction.png" alt="">
                             <div class="search__ticket-wrap-item">
                                 <img src=" /img/mini_icon_destination.png" alt="" class="search__ticket-choose-img">
-                                <select class="search__ticket-choose">
+                                <select name="tinhketthuc" required class="search__ticket-choose" id="tinhketthuc">
                                     <option value="">Your destination</option>
                                     {{!-- <option value="hochiminh">TP Hồ Chí Minh</option>
                                     <option value="vungtau">Vũng Tàu</option>
@@ -128,12 +128,12 @@
                         </div>
                     </div>
                     <div class="search__ticket-submit">
-                        <button class="btn-base btn-search__ticket">
+                        <button type="submit" class="btn-base btn-search__ticket">
                             Search
                         </button>
 
                     </div>
-                </div>
+                </form>
             </div>
 
             <!-- Home -->

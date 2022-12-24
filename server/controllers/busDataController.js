@@ -3,6 +3,11 @@ const dataController = require('./getDataController')
 
 const renderBus = async(req, res) => {
     try {
+
+        const {tinhbatdau,tinhketthuc} = req.query
+      
+        
+
         const tinhthanh = await dataController.getAllTinhthanh()
         const chuyenxe = await dataController.getAllChuyenxe()
 
