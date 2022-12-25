@@ -33,3 +33,33 @@ infoHeaders.forEach((infoHeader, index) => {
         infoContainer.classList.add('active');
     }
 })
+
+function indexInClass(node) {
+    var num = 0;
+    for (var i = 0; i < infoHeaders.length; i++) {
+        if (infoHeaders[i] === node) {
+            return num;
+        }
+        num++;
+    }
+    return -1;
+}
+
+const btnNext = $('.seat-form__footer .btn-continue');
+btnNext.onclick = function() {
+    const currentHeading = $('.seat-form__step.seat-form__step--active');
+
+    var indexCurrent = indexInClass(currentHeading);
+
+    if (indexCurrent < 2) {
+        indexCurrent++;
+    } else {
+        indexCurrent = 0;
+    }
+
+    currentHeading.classList.remove('seat-form__step--active');
+    $('.modal__container-form.active').classList.remove('active');
+
+    infoHeaders[indexCurrent].classList.add('seat-form__step--active');
+    infoContainers[indexCurrent].classList.add('active');
+}
