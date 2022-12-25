@@ -1108,21 +1108,8 @@ textarea {
 
 .image-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-}
-
-.image-content .fa-angle-left,
-.image-content .fa-angle-right {
-    font-size: 1.2rem;
-    padding: 20px;
-}
-
-.image-content .fa-angle-left:hover,
-.image-content .fa-angle-right:hover {
-    cursor: pointer;
-    border-radius: 100px;
-    background-color: rgb(241, 241, 241);
 }
 
 .image-content-mainImage {
@@ -1136,26 +1123,6 @@ textarea {
     width: 50%;
     object-fit: cover;
     object-position: center;
-}
-
-.image__number {
-    margin: 10px;
-    text-align: center;
-}
-
-.image__list {
-    display: flex;
-    justify-content: space-around;
-}
-
-.image__item {
-    /* display: block;
-    margin: 8px;
-    width: 100%;
-    height: 200px; */
-    /* background-image: url(/assets/img/nha-xe-thanh-buoi.png);
-    background-size: contain;
-    background-repeat: no-repeat; */
 }
 
 .utility-detail {
