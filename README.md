@@ -20,11 +20,11 @@
 - [X] Set up server, route
 - [X] Tạo database bằng sequelize
 - [X] Tạo dữ liệu mẫu
-- [ ] Hiển thị tuyến xe ở trang chủ
-- [ ] Hiển thị danh sách xe theo tuyến
+- [X] Hiển thị tuyến xe ở trang chủ
+- [X] Hiển thị danh sách xe theo tuyến
 - [ ] Hiển thị thông tin chi tiết của xe
 - [ ] Sử dụng phân trang
-- [ ] Thêm dữ liệu vào lựa tuyến xe (điểm bắt đầu, kết thúc)
+- [X] Thêm dữ liệu vào lựa tuyến xe (điểm bắt đầu, kết thúc)
 - [ ] Thực hiện sort
 - [ ] Thực hiện search
 - [ ] Thực hiện filter

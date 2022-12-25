@@ -82,22 +82,15 @@
             </div>
 
             <!-- Search Ticket -->
-            <div class="search__ticket">
-                <div class="container">
+             <div class="search__ticket">
+                <form method="GET" action="/bus"  class="container">
                     <h5 class="search__ticket-header">Search Ticket</h5>
                     <div class="search__ticket-choose-wrap">
 
                         <div class="search__ticket-choose-direction">
                             <div class="search__ticket-wrap-item">
                                 <img src=" /img/mini_icon_location.png" alt="" class="search__ticket-choose-img">
-                                <select class="search__ticket-choose">
-                                    {{!-- <option value="">Your location</option>
-                                    <option value="hochiminh">TP Hồ Chí Minh</option>
-                                    <option value="dalat">Đà Lạt</option>
-                                    <option value="vungtau">Vũng Tàu</option>
-                                    <option value="tayninh">Tây Ninh</option>
-                                    <option value="camau">Cà Mau</option>
-                                    <option value="hue">Huế</option> --}}
+                                <select name="tinhbatdau" required class="search__ticket-choose" id="tinhbatdau">
                                     <option value="">Your location</option>
                                     {{#each tinhthanh}}
                                     <option value="{{matinh}}">{{tentinh}}</option>
@@ -108,11 +101,8 @@
                             <img src=" /img/mini_icon_direction.png" alt="">
                             <div class="search__ticket-wrap-item">
                                 <img src=" /img/mini_icon_destination.png" alt="" class="search__ticket-choose-img">
-                                <select class="search__ticket-choose">
+                                <select name="tinhketthuc" required class="search__ticket-choose" id="tinhketthuc">
                                     <option value="">Your destination</option>
-                                    {{!-- <option value="hochiminh">TP Hồ Chí Minh</option>
-                                    <option value="vungtau">Vũng Tàu</option>
-                                    <option value="dalat">Đà Lạt</option> --}}
                                     {{#each tinhthanh}}
                                     <option value="{{matinh}}">{{tentinh}}</option>
                                     {{/each}}
@@ -128,12 +118,12 @@
                         </div>
                     </div>
                     <div class="search__ticket-submit">
-                        <button class="btn-base btn-search__ticket">
+                        <button type="submit" class="btn-base btn-search__ticket">
                             Search
                         </button>
 
                     </div>
-                </div>
+                </form>
             </div>
 
 
@@ -174,7 +164,7 @@
                     </div>
 
                     {{#each chuyenxe}}
-                       <div class="ticket__information">
+                    <div class="ticket__information">
                         <div class="ticket__information-summary row">
                             <div class="ticket__information-content col-md-8">
                                 <div class="row">
@@ -192,7 +182,8 @@
                                             <span class="ticket__car-depart-time">{{formatHours tgkhoihanh}}</span>
                                             <span class="ticket__car-depart-location">{{tendiachikhoihanh}}</span>
                                         </div>
-                                        <div class="ticket__car-depart-period">{{calculateTime tgkhoihanh tgketthuc}}h</div>
+                                        <div class="ticket__car-depart-period">{{calculateTime tgkhoihanh tgketthuc}}h
+                                        </div>
                                         <div class="ticket__car-arrive">
                                             <i class="fa-solid fa-location-dot"></i>
                                             <span class="ticket__car-arrive-time">{{formatHours tgketthuc}}</span>
@@ -224,9 +215,6 @@
                                     <i class="fa-solid fa-image"></i> Image
                                 </div>
                                 <div class="ticket__information-details-heading-item">
-                                    <i class="fa-solid fa-gear"></i> Utility
-                                </div>
-                                <div class="ticket__information-details-heading-item">
                                     <i class="fa-solid fa-map-location-dot"></i> Route
                                 </div>
                                 <div class="ticket__information-details-heading-item">
@@ -240,27 +228,12 @@
                             <!-- Content -->
                             <div class="image-detail content-detail active">
                                 <div class="image-heading">
-                                    <h3>{{tennhaxe}}</h3>
-                                    <p>Hotline: <a href="tel:+0918919189">{{sodienthoai}}</a></p>
+                                    <h3>Thành Bưởi</h3>
+                                    <p>Hotline: <a href="tel:+0918919189">0918 91 91 89</a></p>
                                 </div>
                                 <div class="image-content">
-                                    <i class="fa-solid fa-angle-left"></i>
                                     <div class="image-content-mainImage">
-                                        <img src=" /img/nha-xe-thanh-buoi.png" alt="">
-                                    </div>
-                                    <i class="fa-solid fa-angle-right"></i>
-                                </div>
-                                <div class="image-footer">
-                                    <div class="image__number">
-                                        <span class="current">1</span> / <span class="total">5</span>
-                                    </div>
-                                    <div class="image__list">
-                                        <div class="image__item">
-
-                                        </div>
-                                        <div class="image__item"></div>
-                                        <div class="image__item"></div>
-                                        <div class="image__item"></div>
+                                        <img src="/img/nha-xe-thanh-buoi.png" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -468,7 +441,7 @@
                             </div>
                         </div>
                     </div>
-                       
+
                     {{/each}}
                     {{!-- <div class="ticket__information">
                         <div class="ticket__information-summary row">
@@ -1781,7 +1754,7 @@
         <script src=" /js/slider.js"></script>
         <script src=" /js/searchTicket.js"></script>
         <script src=" /js/buyTicket.js"></script>
-        
+
         <script src="/js/bus.js"></script>
 </body>
 
