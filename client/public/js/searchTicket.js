@@ -12,8 +12,8 @@ function showListRoute(e) {
     ticketPage.classList.remove('disabled');
 }
 
-
-searchTicketBtn.onclick = showListRoute
-homeItem.forEach(e => {
-    e.onclick = showListRoute
-})
+// TODO chuyển sang trang mới
+// searchTicketBtn.onclick = showListRoute
+// homeItem.forEach(e => {
+//     e.onclick = showListRoute
+// })

@@ -29,6 +29,7 @@ module.exports = {
                 tinhketthuc: '42',
             }
         ]
+        
         for (const data of tuyenduongdata) {
             await tuyenduong.create(data)
         }

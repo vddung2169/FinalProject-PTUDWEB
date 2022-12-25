@@ -14,9 +14,11 @@ module.exports = (sequelize, DataTypes) => {
           foreignKey : 'matinh'
         })
         Tinhthanh.hasMany(models.tuyenduong,{
+          as: 'TBD',
           foreignKey : 'tinhbatdau'
         })
         Tinhthanh.hasMany(models.tuyenduong,{
+          as: 'TKT',
           foreignKey : 'tinhketthuc'
         })
 

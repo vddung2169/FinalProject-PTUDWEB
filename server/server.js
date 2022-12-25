@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 3000
 const {engine} = require('express-handlebars')
 const path = require('path')
 // const methodOverride = require('method-override')
+const busDataController = require('./controllers/busDataController')
 
 // - Middleware
 app.use(express.json())
@@ -12,7 +13,16 @@ app.use(express.urlencoded({extended:true}))
 // app.use(methodOverride('_method'))  // for DELETE/UPDATE method form
 
 // - Handlebars
-app.engine('hbs', engine({ extname: '.hbs', defaultLayout: "main"}));
+app.engine('hbs', engine({ 
+    extname: '.hbs', 
+    defaultLayout: "main",
+    helpers: {
+        calculateTime : require('./utils/calculateTime'),
+        formatHours : require('./utils/formatTime'),
+        formatRating: require('./utils/formatRating'),
+        formatMoney: require('./utils/formatMoney')
+    }
+}))
 app.set('view engine','hbs')
 app.set('views',path.join(__dirname,'../client/views'))
 
@@ -35,6 +45,13 @@ app.get('/createDatabase', (req,res)=>{
 
     
 })
+
+app.get('/test', async(req,res)=>{
+    const data = await busDataController.getAllChuyenxe()
+    res.json(data)
+})
+
+
 app.use('/admin',require('./routes/adminView'))
 app.use('/',require('./routes/userView'))
 
