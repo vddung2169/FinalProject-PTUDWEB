@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 3000
 const {engine} = require('express-handlebars')
 const path = require('path')
 // const methodOverride = require('method-override')
-const busDataController = require('./controllers/busDataController')
+const busDataController = require('./controllers/getDataController')
 
 // - Middleware
 app.use(express.json())
@@ -19,7 +19,8 @@ app.engine('hbs', engine({
     helpers: {
         calculateTime : require('./utils/calculateTime'),
         formatHours : require('./utils/formatTime'),
-        formatRating: require('./utils/formatRating'),
+        formatRating: require('./utils/formatRating').formatRating,
+        formatStar: require('./utils/formatRating').formatRatingStar,
         formatMoney: require('./utils/formatMoney')
     }
 }))
@@ -47,7 +48,7 @@ app.get('/createDatabase', (req,res)=>{
 })
 
 app.get('/test', async(req,res)=>{
-    const data = await busDataController.getAllChuyenxe()
+    const data = await busDataController.getAllChuyenxeByTuyenduong()
     res.json(data)
 })
 

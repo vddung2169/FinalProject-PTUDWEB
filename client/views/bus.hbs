@@ -233,40 +233,9 @@
                                 </div>
                                 <div class="image-content">
                                     <div class="image-content-mainImage">
-                                        <img src="/img/nha-xe-thanh-buoi.png" alt="">
+                                        <img src="{{hinhanhxe}}" alt="">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="utility-detail content-detail">
-                                <ul class="view-list">
-                                    <li class="view-item">
-                                        <div class="view-item__heading">
-                                            <i class="fa-solid fa-location-crosshairs"></i> View location online
-                                        </div>
-                                        <div class="view-item__content">
-                                            Allow passengers to see the route and travel time of the bus they have
-                                            booked.
-                                        </div>
-                                    </li>
-                                    <li class="view-item">
-                                        <div class="view-item__heading">
-                                            <i class="fa-solid fa-location-crosshairs"></i> View location online
-                                        </div>
-                                        <div class="view-item__content">
-                                            Allow passengers to see the route and travel time of the bus they have
-                                            booked.
-                                        </div>
-                                    </li>
-                                    <li class="view-item">
-                                        <div class="view-item__heading">
-                                            <i class="fa-solid fa-location-crosshairs"></i> View location online
-                                        </div>
-                                        <div class="view-item__content">
-                                            Allow passengers to see the route and travel time of the bus they have
-                                            booked.
-                                        </div>
-                                    </li>
-                                </ul>
                             </div>
                             <div class="route-detail content-detail">
                                 <div class="route-detail__note">
@@ -279,6 +248,8 @@
                                         <i class="fa-solid fa-location-dot"></i> Pick Up Location
                                     </div>
                                     <div class="route-detail__PickUp--content">
+                                        3
+
                                         <div class="route-detail__PickUp">
                                             <span class="route-detail__time">09:00</span>
                                             <span class="route-detail__location"> - Bến xe miền Đông</span>
@@ -333,44 +304,14 @@
                                     </ul>
                                 </div>
                                 <div class="policy-detail-garage">
-                                    <h4>Garage Policy</h4>
-                                    <ul class="policy-detail-garage-list">
-                                        <li class="policy-detail-garage-item">
-                                            <h5>Safety Covid-19</h5>
-                                            <ul class="policy-detail-garage-item__content">
-                                                <li>Masks are required when boarding</li>
-                                            </ul>
-                                        </li>
-                                        <li class="policy-detail-garage-item">
-                                            <h5>Requirements when boarding</h5>
-                                            <ul class="policy-detail-garage-item__content">
-                                                <li>Be at the office/ticket counter/bus station 30 minutes in advance to
-                                                    check in</li>
-                                                <li>Present SMS/Email to book tickets before boarding</li>
-                                                <li>Do not bring food, smelly food on the car</li>
-                                                <li>Do not smoke, drink alcohol, use drugs in the car</li>
-                                                <li>Do not bring flammable objects onto the vehicle</li>
-                                                <li>Do not throw garbage in the car</li>
-                                                <li>Do not make noise or cause disorder in the car</li>
-                                                <li>Do not wear shoes or slippers in the car</li>
-                                            </ul>
-                                        </li>
-                                        <li class="policy-detail-garage-item">
-                                            <h5>Luggage</h5>
-                                            <ul class="policy-detail-garage-item__content">
-                                                <li>The total weight of the luggage must not exceed 10 kg</li>
-                                                <li>Do not transport bulky goods</li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-
+                                    {{mota}}
                                 </div>
                             </div>
                             <div class="rate-detail content-detail">
                                 <div class="rate-detail__heading">
                                     <div class="rate-detail__heading-averageRate">
                                         <i class="fa-solid fa-star"></i>
-                                        <span class="">4.8 (855)</span>
+                                        <span class="">{{formatRating diemso}} (855)</span>
                                     </div>
                                     <div class="rate-detail__heading-fiveStarRate">
                                         <i class="fa-solid fa-star"></i>
@@ -382,60 +323,27 @@
                                 </div>
                                 <div class="rate-detail__userComment">
                                     <ul class="rate-detail__userComment-list">
+                                        {{#each danhgia}}
                                         <li class="rate-detail__userComment-item">
                                             <i class="fa-solid fa-user"></i>
                                             <div class="rate-detail__userComment-wrap">
                                                 <div class="rate-detail__userComment-info">
-                                                    <div class="rate-detail__userComment-name">Vu Duc Dung</div>
+                                                    <div class="rate-detail__userComment-name"{{tenkhachhang}}</div>
                                                     <div class="rate-detail__userComment-rate">
+                                                        {{formatStar diem}}
+                                                        {{!-- <i class="fa-solid fa-star"></i>
                                                         <i class="fa-solid fa-star"></i>
                                                         <i class="fa-solid fa-star"></i>
                                                         <i class="fa-solid fa-star"></i>
-                                                        <i class="fa-solid fa-star"></i>
-                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i> --}}
                                                     </div>
                                                 </div>
                                                 <div class="rate-detail__userComment-comment">
-                                                    Amazing!
+                                                    {{binhluan}}
                                                 </div>
                                             </div>
                                         </li>
-                                        <li class="rate-detail__userComment-item">
-                                            <i class="fa-solid fa-user"></i>
-                                            <div class="rate-detail__userComment-wrap">
-                                                <div class="rate-detail__userComment-info">
-                                                    <div class="rate-detail__userComment-name">Vu Duc Dung</div>
-                                                    <div class="rate-detail__userComment-rate">
-                                                        <i class="fa-solid fa-star"></i>
-                                                        <i class="fa-solid fa-star"></i>
-                                                        <i class="fa-solid fa-star"></i>
-                                                        <i class="fa-solid fa-star"></i>
-                                                        <i class="fa-solid fa-star"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="rate-detail__userComment-comment">
-                                                    Amazing!
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="rate-detail__userComment-item">
-                                            <i class="fa-solid fa-user"></i>
-                                            <div class="rate-detail__userComment-wrap">
-                                                <div class="rate-detail__userComment-info">
-                                                    <div class="rate-detail__userComment-name">Vu Duc Dung</div>
-                                                    <div class="rate-detail__userComment-rate">
-                                                        <i class="fa-solid fa-star"></i>
-                                                        <i class="fa-solid fa-star"></i>
-                                                        <i class="fa-solid fa-star"></i>
-                                                        <i class="fa-solid fa-star"></i>
-                                                        <i class="fa-solid fa-star"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="rate-detail__userComment-comment">
-                                                    Amazing!
-                                                </div>
-                                            </div>
-                                        </li>
+                                         {{/each}}
                                     </ul>
                                 </div>
                             </div>
@@ -1505,7 +1413,7 @@
         </div>
 
         <!-- Modal layout -->
-        <div class="modal-wrap">
+        {{!-- <div class="modal-wrap">
             <div class="modal__overlay">
             </div>
 
@@ -1746,7 +1654,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <script src=" /js/rangeSlider.js"></script>
         <script src=" /js/activeHeading.js"></script>
