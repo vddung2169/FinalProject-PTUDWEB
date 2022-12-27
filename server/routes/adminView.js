@@ -4,9 +4,11 @@ const router = require('express').Router()
 const garageDataController = require('../controllers/garageDataController')
 
 
-router.get('/viewgarage',authorization,garageDataController.getAllNhaxe)
+router.get('/viewgarage',authorization,(req,res) =>
+garageDataController.viewAllNhaxe(req,res,'viewgarage'))
 router.get('/addgarage',(req,res) => res.render('addgarage'))
-router.get('/updategarage',(req,res) => res.render('updategarage'))
+router.get('/updategarage',authorization,(req,res) => 
+garageDataController.viewAllNhaxe(req,res,'updategarage'))
 router.get('/removegarage',(req,res) => res.render('removegarage'))
 router.get('/viewseat',authorization,garageDataController.getAllNhaxe)
 router.get('/updateseat',(req,res) => res.render('updateseat'))

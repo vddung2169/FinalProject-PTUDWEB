@@ -191,6 +191,19 @@ const getAllChuyenxeBy2Tinh = async(tinhbatdau,tinhketthuc) => {
 
 }
 
+const getAllNhaxe =async () => {
+    try {
+        const data = await sequelize.query('SELECT NX.MANHAXE,NX.TENNHAXE,NX.SODIENTHOAI,NX.HINHANH,DS.DIEMSO '+ 
+        'FROM NHAXE NX LEFT OUTER JOIN (SELECT NX1.MANHAXE,AVG(DG.DIEMSO) DIEMSO FROM NHAXE NX1 LEFT OUTER JOIN DANHGIA DG ' + 
+        'ON NX1.MANHAXE = DG.MANHAXE GROUP BY NX1.MANHAXE) DS ON NX.MANHAXE = DS.MANHAXE '+
+        `WHERE NX.MAQUANTRI = '${userInfo[0].maquantri}'`,QueryTypes.SELECT)
+
+        return data[0]
+    } catch (error) {
+        console.log(error.message)
+    }
+}
+
 
 
 
@@ -215,5 +228,6 @@ module.exports = {
     getAllTuyenduongtop,
     getAllChuyenxe,
     getAllChuyenxeBy2Tinh,
-    getAllChuyenxeByTuyenduong
+    getAllChuyenxeByTuyenduong,
+    getAllNhaxe
 }
