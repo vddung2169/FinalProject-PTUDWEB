@@ -10,6 +10,9 @@ router.get('/updateseat',(req,res) => res.render('updateseat'))
 router.get('/addroute',(req,res) => res.render('addroute'))
 router.get('/updateroute',(req,res) => res.render('updateroute'))
 router.get('/removeroute',(req,res) => res.render('removeroute'))
+router.get('/login',(req,res) => res.render('loginAdmin'))
+router.get('/register',(req,res) => res.render('registerAdmin'))
+router.get('/forgotpassword',(req,res) => res.render('forgot-passwordAdmin'))
 router.get('/',(req,res) => res.render('admin'))
 
 
