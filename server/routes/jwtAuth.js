@@ -82,8 +82,9 @@ router.post("/login", async (req, res) => {
     }
     const token = jwtGenerator(user[0].maquantri);
     
+    req.session.token = token
 
-    return res.json({token})
+    res.redirect('/admin')
 
   } catch (err) {
     console.error(err.message);

@@ -22,7 +22,7 @@ async function getInfo() {
 
     } catch (error) {
         console.error(error.message ?? error)
-        window.location.href = "http://localhost:3000/admin/login"
+        window.location.href =  hostname + "/admin/login"
     }
 }
 

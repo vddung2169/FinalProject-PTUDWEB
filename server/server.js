@@ -4,8 +4,23 @@ const app = express()
 const PORT = process.env.PORT || 3000
 const {engine} = require('express-handlebars')
 const path = require('path')
+const cookieParser = require('cookie-parser')
+const sessions = require('express-session')
+
+
+
 // const methodOverride = require('method-override')
 const busDataController = require('./controllers/getDataController')
+
+
+
+app.use(sessions({
+    secret: process.env.SECRET_KEY,
+    saveUninitialized:true,
+    cookie: { maxAge: 1000*60*60 },
+    resave: false
+}));
+app.use(cookieParser());
 
 // - Middleware
 app.use(express.json())
@@ -53,7 +68,8 @@ app.post('/test', async(req,res)=>{
     res.json(data)
 })
 
-app.use('/auth',require('./routes/jwtAuth'))
+app.use('/admin/GRUD',require('./routes/adminOperation'))
+app.use('/admin/auth',require('./routes/jwtAuth'))
 app.use('/admin',require('./routes/adminView'))
 app.use('/',require('./routes/userView'))
 

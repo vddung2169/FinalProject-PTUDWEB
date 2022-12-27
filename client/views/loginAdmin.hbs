@@ -41,7 +41,7 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Ticket Take It Admin</h1>
                                     </div>
-                                    <form class="user" id="loginForm">
+                                    <form method="POST" action="/admin/auth/login" class="user" id="loginForm">
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
@@ -94,7 +94,7 @@
     <!-- Custom scripts for all pages-->
     <script src="/js/sb-admin-2.min.js"></script>
 
-    <script src="/js/auth/loginAdmin.js"></script>
+    {{!-- <script src="/js/auth/loginAdmin.js"></script> --}}
 </body>
 
 </html>

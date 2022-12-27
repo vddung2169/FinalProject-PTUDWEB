@@ -1,13 +1,14 @@
 const authorization = require('../middlewares/authorization')
 const accountDataController = require('../controllers/getAccountDataController')
 const router = require('express').Router()
+const garageDataController = require('../controllers/garageDataController')
 
 
-router.get('/viewgarage',(req,res) => res.render('viewgarage'))
+router.get('/viewgarage',authorization,garageDataController.getAllNhaxe)
 router.get('/addgarage',(req,res) => res.render('addgarage'))
 router.get('/updategarage',(req,res) => res.render('updategarage'))
 router.get('/removegarage',(req,res) => res.render('removegarage'))
-router.get('/viewseat',(req,res) => res.render('viewseat'))
+router.get('/viewseat',authorization,garageDataController.getAllNhaxe)
 router.get('/updateseat',(req,res) => res.render('updateseat'))
 router.get('/addroute',(req,res) => res.render('addroute'))
 router.get('/updateroute',(req,res) => res.render('updateroute'))
@@ -22,8 +23,6 @@ router.post('/infor',authorization,async(req,res) =>{
         if(req.userType === 'system'){
             userInfo = await accountDataController.getAnAccountByID(req.user)
         }
-
-       
         
         res.json(userInfo[0]);
        
@@ -33,7 +32,7 @@ router.post('/infor',authorization,async(req,res) =>{
         res.status(500).send("Server error");
       }
 })
-router.get('/',(req,res) => res.render('admin'))
+router.get('/',authorization,(req,res) => res.render('admin'))
 
 
 
