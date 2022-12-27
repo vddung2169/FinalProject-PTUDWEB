@@ -7,9 +7,8 @@ const authorization = async (req,res,next) =>{
 
     try {
         const token = req.header("jwtToken")
-
         if(token !== 'undefined'){
-            const payload = jwt.verify(token,process.env.secretKey)
+            const payload = jwt.verify(token,process.env.SECRET_KEY)
 
         // USER = ID
             req.userType = 'system'

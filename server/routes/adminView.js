@@ -1,3 +1,5 @@
+const authorization = require('../middlewares/authorization')
+const accountDataController = require('../controllers/getAccountDataController')
 const router = require('express').Router()
 
 
@@ -13,6 +15,24 @@ router.get('/removeroute',(req,res) => res.render('removeroute'))
 router.get('/login',(req,res) => res.render('loginAdmin'))
 router.get('/register',(req,res) => res.render('registerAdmin'))
 router.get('/forgotpassword',(req,res) => res.render('forgot-passwordAdmin'))
+router.post('/infor',authorization,async(req,res) =>{
+    try {
+        let userInfo = null
+        
+        if(req.userType === 'system'){
+            userInfo = await accountDataController.getAnAccountByID(req.user)
+        }
+
+       
+        
+        res.json(userInfo[0]);
+       
+    
+      } catch (err) {
+        console.error(err.message);
+        res.status(500).send("Server error");
+      }
+})
 router.get('/',(req,res) => res.render('admin'))
 
 

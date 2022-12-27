@@ -47,12 +47,13 @@ app.get('/createDatabase', (req,res)=>{
     
 })
 
-app.get('/test', async(req,res)=>{
-    const data = await busDataController.getAllChuyenxeByTuyenduong()
+app.post('/test', async(req,res)=>{
+    const {name,email,password,number} = req.body
+    const data = await require('./controllers/getAccountDataController').createAnAdminAccount(name,password,number,email)
     res.json(data)
 })
 
-
+app.use('/auth',require('./routes/jwtAuth'))
 app.use('/admin',require('./routes/adminView'))
 app.use('/',require('./routes/userView'))
 
