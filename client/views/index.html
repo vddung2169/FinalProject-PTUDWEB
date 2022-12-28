@@ -327,22 +327,12 @@
                                 Sort by
                                 <i class="fa-solid fa-sort"></i>
                                 <div class="availableTicket-location-list">
-                                    <ul class="availableTicket__sort-list">
-                                        Tỉnh - Thành phố
-                                        <li class="availableTicket__sort-item">Hà Nội</li>
-                                        <li class="availableTicket__sort-item">Quảng Ninh</li>
-                                        <li class="availableTicket__sort-item">Ninh Bình</li>
-                                        <li class="availableTicket__sort-item">Đà Nẵng</li>
-                                        <li class="availableTicket__sort-item">Sài Gòn</li>
-                                    </ul>
-                                    <ul class="availableTicket__sort-list">
-                                        Quận - Huyện
-                                        <li class="availableTicket__sort-item">SaPa</li>
-                                        <li class="availableTicket__sort-item">Vũng Tàu</li>
-                                        <li class="availableTicket__sort-item">Đà Lạt</li>
-                                        <li class="availableTicket__sort-item">Nha Trang</li>
-                                        <li class="availableTicket__sort-item">Phan Thiết</li>
-                                    </ul>
+                                    <div class="availableTicket__sort-list asc">
+                                        Giá tăng dần
+                                    </div>
+                                    <div class="availableTicket__sort-list desc">
+                                        Giá giảm dần
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1332,10 +1322,10 @@
 
                     <div class="filter__departureSlider">
                         <h3>Price</h3>
-                        <span class="multi-range">
-                        <input type="range" min="0" max="50" value="5" id="lower">
-                        <input type="range" min="0" max="50" value="45" id="upper">
-                    </span>
+                        <div class="slidecontainer">
+                            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                            <p>Value: <span id="demo"></span></p>
+                        </div>
                     </div>
 
                     <div class="filter__departurePosition">
@@ -1689,6 +1679,7 @@
         <script src="../public/js/slider.js"></script>
         <script src="../public/js/searchTicket.js"></script>
         <script src="../public/js/buyTicket.js"></script>
+        <script src="../public/js/sortTicket.js"></script>
 </body>
 
 </html>

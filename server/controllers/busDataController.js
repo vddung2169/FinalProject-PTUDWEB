@@ -41,9 +41,6 @@ const renderIndex = async(req, res) => {
 }
 
 
-
-
-
 module.exports = {
     renderBus,
     renderIndex
