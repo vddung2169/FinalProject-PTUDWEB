@@ -205,20 +205,67 @@ const getAllNhaxe =async (maquantri) => {
 }
 
 
-
-
-const getTuyenduongbyTinh = (batdau,ketthuc) => {
+const getAllDiachi = async () => {
     try {
-       
-        
+        const diachi = await database.diachi.findAll({
+            attributes : ['madiachi','tendiachi','diachicuthe'],
+            raw : true
+        })
 
+        return  diachi
+
+    } catch (error) {
+        console.log(error.message);
+        
+    }
+}
+
+const getAllLoaixe = async () => {
+    try {
+        const loaixe = await database.loaixe.findAll({
+            attributes : ['maloaixe','tenloaixe'],
+            raw : true
+        })
+
+        return  loaixe
+
+    } catch (error) {
+        console.log(error.message);
+        
+    }
+}
+
+const getAllChuyenxeAdmin = async (maquantri) => {
+    try {
+        const chuyenxe = await sequelize.query('SELECT CX.MACHUYENXE,NX.MANHAXE,CX.TGKHOIHANH,'+
+        'CX.TGKETTHUC,CX.DIACHIBATDAU,CX.DIACHIKETTHUC,CX.GIAVENHONHAT,CX.HINHANHXE,CX.MOTA,CX.MALOAIXE '+   
+        'FROM CHUYENXE CX INNER JOIN NHAXE NX ON CX.MANHAXE = NX.MANHAXE INNER JOIN ' + 
+        'QUANTRI QT ON NX.MAQUANTRI = QT.MAQUANTRI '+ 
+        `WHERE QT.MAQUANTRI ='${maquantri}'`)
+
+        return chuyenxe[0]
+
+    } catch (error) {
+        console.log(error.message);
+        
+    }
+}
+
+const getAllVexeAdmin = async(maquantri) => {
+    try {
+        const vexe = await sequelize.query('SELECT VX.MAVE,VX.MACHUYENXE,VX.MAKHACHHANG,VX.TINHTRANG,VX.TONGTIEN '+
+        'FROM VEXE VX INNER JOIN CHUYENXE CX ON VX.MACHUYENXE = CX.MACHUYENXE INNER JOIN NHAXE NX ON CX.MANHAXE = NX.MANHAXE '+ 
+        'INNER JOIN QUANTRI QT ON NX.MAQUANTRI = QT.MAQUANTRI '+
+        `WHERE QT.MAQUANTRI ='${maquantri}'`)
+
+        return vexe[0]
 
     } catch (error) {
         console.log(error.message);
     }
-
-
 }
+
+
 
 
 
@@ -229,5 +276,9 @@ module.exports = {
     getAllChuyenxe,
     getAllChuyenxeBy2Tinh,
     getAllChuyenxeByTuyenduong,
-    getAllNhaxe
+    getAllNhaxe,
+    getAllDiachi,
+    getAllLoaixe,
+    getAllChuyenxeAdmin,
+    getAllVexeAdmin
 }

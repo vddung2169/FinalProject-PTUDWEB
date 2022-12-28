@@ -33,10 +33,11 @@ app.engine('hbs', engine({
     defaultLayout: "main",
     helpers: {
         calculateTime : require('./utils/calculateTime'),
-        formatHours : require('./utils/formatTime'),
+        formatHours : require('./utils/formatTime').formatHours,
         formatRating: require('./utils/formatRating').formatRating,
         formatStar: require('./utils/formatRating').formatRatingStar,
-        formatMoney: require('./utils/formatMoney')
+        formatMoney: require('./utils/formatMoney'),
+        formatTimeAdmin: require('./utils/formatTime').formatTimeAdmin
     }
 }))
 app.set('view engine','hbs')

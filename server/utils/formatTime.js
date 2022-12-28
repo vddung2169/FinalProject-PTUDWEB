@@ -5,4 +5,13 @@ const formatHours = (datetime) => {
     return hours.format('HH:mm')
 }
 
-module.exports = formatHours
+const formatTimeAdmin = (datetime) => {
+    const date = moment(datetime)
+    return date.format('YYYY-MM-DDTHH:mm')
+
+}
+
+module.exports = {
+    formatHours,
+    formatTimeAdmin
+}
