@@ -17,19 +17,13 @@ router.post("/register", async (req, res) => {
   try {
     const { name, email, password } = req.body;
 
-    // check user exist
-    // TODO comapre if admin
+ 
 
 
     const user = await accountDataController.getAnAdminAccountByEmail(email)
-    // const user = await pool.query("SELECT * FROM USER_TABLE WHERE email = $1", [
-    //   email,
-    // ]);
+   
 
-    // ! User is already existed
-    // if (user.rowCount != 0) {
-    //   return res.status(401).json("User is already existed!");
-    // }
+    
     
     if(user.length > 0){
         return res.status(401).json("User is already existed!");
@@ -39,11 +33,7 @@ router.post("/register", async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     const bcryptPassword = await bcrypt.hash(password, salt);
 
-    // add new user to database
-    // const newUser = await pool.query(
-    //   "INSERT INTO USER_TABLE(NAME,EMAIL,PASSWORD) VALUES ($1,$2,$3) RETURNING *",
-    //   [name, email, bcryptPassword]
-    // );
+    
     const newUser = await accountDataController.createAnAdminAccount(name,bcryptPassword,email)
 
 

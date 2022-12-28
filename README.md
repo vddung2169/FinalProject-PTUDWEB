@@ -30,7 +30,7 @@
 - [ ] Thực hiện filter
 - [ ] Hiển thị thông tin lên phần mua vé
 - [ ] Lưu thông tin mua vé lên database
-- [ ] Quản lý nhà xe: Xem, thêm, xóa, sửa
+- [X] Quản lý nhà xe: Xem, thêm, xóa, sửa
 - [ ] Quản lý chuyến xe: Thêm, xóa, sửa
 - [ ] Quản lý đặt chỗ: Xem, sửa
 - [ ] Chức năng đăng nhập
@@ -198,7 +198,7 @@ Có thể vào kiểm tra tại pgAdmin, nhấn chuột phải vài database **t
     </ul>
   </detail>
   
- - <details><summary> <b>14.Quản lý nhà xe: Xem, thêm, xóa, sửa</b> </summary>
+ - <details><summary> <b>14.Quản lý nhà xe: Xem, thêm, xóa, sửa &#10004</b> </summary>
     <ul><li>Người làm: </li>
     <li>Mô tả: 
         <ul></ul>
