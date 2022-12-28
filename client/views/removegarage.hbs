@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>TT Admin - Xóa nhà xe</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        {{>sidebar}}
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                {{>topbar}}
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="group d-flex flex-row d-flex justify-content-between">
+                        <h1 class="h3 mb-2 text-gray-800">Xóa nhà xe</h1>
+                        <div class="group-button">
+                            <button type="submit" form="removeGarageForm" class="save-btn btn-danger px-4 mb-2 mr-2">Xóa</button>
+                            <a href="/admin" class="save-btn btn-info px-4 mb-2">Trở về</a>
+                        </div>
+                    </div>
+
+                    <p class="mb-4">Vui lòng nhập thông tin nhà xe.</p>
+                    <!-- Content Row -->
+                    <div class="row">
+                        <!-- Area Chart -->
+                        <div class="card shadow mb-4 w-100">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Thông tin nhà xe</h6>
+                            </div>
+                            <div class="card-body">
+                                <form id="removeGarageForm" method="POST" action="/admin/GRUD/removeGarage?_method=DELETE" class="garage-info">
+                                    <div class="garage-info__group">
+                                        <label for="name" class="py-2 text-dark">Nhà xe<code style="color: red; font-weight: 700;">*</code></label>
+                                        <select name="manhaxe" id="" style="margin-left:75px;">
+                                            {{#each nhaxe}}
+                                                <option value="{{manhaxe}}" onclick="showdetail('{{tennhaxe}}','{{hinhanhd}}','{{sodienthoai}}')">{{tennhaxe}}</option>
+                                            {{/each}}
+                                        </select>
+                                    </div>
+                                    <div class="garage-info__group">
+                                        <label for="name" class="py-2 text-dark">Tên nhà xe<code style="color: red; font-weight: 700;">*</code></label>
+                                        <input type="text" class="garage-info__input w-50 ml-5" placeholder="" id="tennhaxe" readonly>
+                                    </div>
+                                    <div class="garage-info__group">
+                                        <label for="name" class="py-2 text-dark">Hình ảnh<code style="color: red; font-weight: 700;">*</code></label>
+                                        <input type="file" class="garage-info__input w-50" style="margin-left:61px;" id="img"  accept="image/*">
+                                    </div>
+                                    <div class="garage-info__group">
+                                        <label for="name" class="py-2 text-dark">Số điện thoại<code style="color: red; font-weight: 700;">*</code></label>
+                                        <input type="tel" class="garage-info__input w-50" style="margin-left:32px;" placeholder="" id="sodienthoai" readonly>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <label for="name" class="py-2 text-dark">Đánh giá</label>
+                                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Tên người đánh giá</th>
+                                                    <th>Bình luận</th>
+                                                    <th>Số sao</th>
+                                                    <th>Phân loại</th>
+                                                </tr>
+                                            </thead>
+                                            <tfoot>
+                                                <tr>
+                                                    <th>Tên người đánh giá</th>
+                                                    <th>Bình luận</th>
+                                                    <th>Số sao</th>
+                                                    <th>Phân loại</th>
+                                                </tr>
+                                            </tfoot>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Tiger Nixon</td>
+                                                    <td>System Architect</td>
+                                                    <td>Edinburgh</td>
+                                                    <td>61</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Garrett Winters</td>
+                                                    <td>Accountant</td>
+                                                    <td>Tokyo</td>
+                                                    <td>63</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Ashton Cox</td>
+                                                    <td>Junior Technical Author</td>
+                                                    <td>San Francisco</td>
+                                                    <td>66</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <hr>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- /.container-fluid -->
+
+                    </div>
+                    <!-- End of Main Content -->
+
+                    <!-- Footer -->
+                    <footer class="sticky-footer bg-white">
+                        <div class="container my-auto">
+                            <div class="copyright text-center my-auto">
+                                <span>Copyright &copy; Your Website 2020</span>
+                            </div>
+                        </div>
+                    </footer>
+                    <!-- End of Footer -->
+
+                </div>
+                <!-- End of Content Wrapper -->
+
+            </div>
+            <!-- End of Page Wrapper -->
+
+            <!-- Scroll to Top Button-->
+            <a class="scroll-to-top rounded" href="#page-top">
+                <i class="fas fa-angle-up"></i>
+            </a>
+
+            {{>logoutmodal}}
+
+            <!-- Bootstrap core JavaScript-->
+            <script src="/vendor/jquery/jquery.min.js"></script>
+            <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+            <!-- Core plugin JavaScript-->
+            <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+            <!-- Custom scripts for all pages-->
+            <script src="/js/sb-admin-2.min.js"></script>
+
+              <script>
+                // TODO lấy dữ liệu từ select truyền vào các input
+                function showdetail(tennhaxe,hinhanh,sodienthoai){
+                    const tennhaxeInput = document.querySelector('#tennhaxe')
+                    const sodienthoaiInput = document.querySelector('#sodienthoai')
+
+                    tennhaxeInput.value = tennhaxe
+                    sodienthoaiInput.value = sodienthoai
+
+                }
+
+            </script>
+
+</body>
+
+</html>

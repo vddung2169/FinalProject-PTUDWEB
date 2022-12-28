@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Take It!</title>
+    <link rel="icon" href=" /img/logo_has_color.png" type="image/x-icon">
+    <link rel="stylesheet" href=" /css/base.css">
+    <link rel="stylesheet" href=" /css/styles.css">
+    <link rel="stylesheet" href=" /css/reset.css">
+    <link rel="stylesheet" href=" /css/slider.css">
+    <link rel="stylesheet" href=" /css/home.css">
+    <link rel="stylesheet" href=" /css/buyTicket.css">
+    <link rel="stylesheet" href=" /css/queries.css">
+    <link rel="stylesheet" href=" /css/mobile.css">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/6501cf2109.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <!-- Header -->
+        {{>header}}
+
+        <!-- Body -->
+        <div id="body">
+            <!-- Slider -->
+            <div class="body__slideshow-container">
+                <!-- <div class="body__slideshow">
+                    <div class="body__slideshow-background">
+                        <img loading="lazy" class="body__slideshow-background--img" src=" /img/home_1.png" alt="">
+                    </div>
+                    <div class="body__slideshow-logo">
+                        <img loading="lazy" src=" /img/logo_not_color.png" alt="">
+                    </div>
+                </div> -->
+
+                <!-- Carousel -->
+                <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+                    <!-- Indicators/dots -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+                    </div>
+
+                    <!-- The slideshow/carousel -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src=" /img/home_1.png" alt="Los Angeles" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item">
+                            <img src=" /img/home_2.png" alt="Chicago" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item">
+                            <img src=" /img/home_3.png" alt="New York" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item">
+                            <img src=" /img/home_4.png" alt="New York" class="d-block w-100">
+                        </div>
+                        <div class="body__slideshow-logo">
+                            <img loading="lazy" src=" /img/logo_not_color.png" alt="">
+                        </div>
+                    </div>
+
+                    <!-- Left and right controls/icons -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Search Ticket -->
+            <div class="search__ticket">
+                <form method="GET" action="/bus"  class="container">
+                    <h5 class="search__ticket-header">Search Ticket</h5>
+                    <div class="search__ticket-choose-wrap">
+
+                        <div class="search__ticket-choose-direction">
+                            <div class="search__ticket-wrap-item">
+                                <img src=" /img/mini_icon_location.png" alt="" class="search__ticket-choose-img">
+                                <select name="tinhbatdau" required class="search__ticket-choose" id="tinhbatdau">
+                                    {{!-- <option value="">Your location</option>
+                                    <option value="hochiminh">TP Hồ Chí Minh</option>
+                                    <option value="dalat">Đà Lạt</option>
+                                    <option value="vungtau">Vũng Tàu</option>
+                                    <option value="tayninh">Tây Ninh</option>
+                                    <option value="camau">Cà Mau</option>
+                                    <option value="hue">Huế</option> --}}
+                                    <option value="">Your location</option>
+                                    {{#each tinhthanh}}
+                                    <option value="{{matinh}}">{{tentinh}}</option>
+                                    {{/each}}
+
+                                </select>
+                            </div>
+                            <img src=" /img/mini_icon_direction.png" alt="">
+                            <div class="search__ticket-wrap-item">
+                                <img src=" /img/mini_icon_destination.png" alt="" class="search__ticket-choose-img">
+                                <select name="tinhketthuc" required class="search__ticket-choose" id="tinhketthuc">
+                                    <option value="">Your destination</option>
+                                    {{!-- <option value="hochiminh">TP Hồ Chí Minh</option>
+                                    <option value="vungtau">Vũng Tàu</option>
+                                    <option value="dalat">Đà Lạt</option> --}}
+                                    {{#each tinhthanh}}
+                                    <option value="{{matinh}}">{{tentinh}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="search__ticket-wrap-item">
+                            <img src=" /img/mini_icon_date.png" alt="" class="search__ticket-choose-img">
+                            <input type="date" id="date" name="date" class="search__ticket-choose">
+
+                            </input>
+                        </div>
+                    </div>
+                    <div class="search__ticket-submit">
+                        <button type="submit" class="btn-base btn-search__ticket">
+                            Search
+                        </button>
+
+                    </div>
+                </form>
+            </div>
+
+            <!-- Home -->
+
+            <div class="home">
+                <div class="container">
+                    <h4 class="home__popular-heading">Popular bus routes</h4>
+                    <div class="home__popular">
+                        <ul class="home__popular-list">
+                            {{#each tuyenduongtop}}
+                            <li class="home__popular-item">
+                                <a href="">
+                                    <div class="home__popular-item--img">
+                                        <img src="/img/about1.png" alt="">
+                                    </div>
+                                    <div class="home__popular-item--title">
+                                        <p>{{ten}}</p>
+                                        <span>Từ {{formatMoney giachitu}} đ</span>
+                                    </div>
+                                </a>
+                            </li>
+                            {{/each}}
+
+
+                        </ul>
+                    </div>
+
+                    <h4 class="home__popular-heading">About</h4>
+                    <div class="home__about">
+
+                        <ul class="home__about-list">
+                            <li class="home__popular-item">
+                                <a href="">
+                                    <div class="home__popular-item--img">
+                                        <img src=" /img/about1.png" alt="">
+                                    </div>
+                                    <div class="home__popular-item--title">
+                                        <p>Sài Gòn - Đà Lạt</p>
+                                        <span>Từ 130.000</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="home__popular-item">
+                                <a href="">
+                                    <div class="home__popular-item--img">
+                                        <img src=" /img/about2.png" alt="">
+                                    </div>
+                                    <div class="home__popular-item--title">
+                                        <p>Sài Gòn - Đà Lạt</p>
+                                        <span>Từ 130.000</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="home__popular-item">
+                                <a href="">
+                                    <div class="home__popular-item--img">
+                                        <img src=" /img/about3.jpg" alt="">
+                                    </div>
+                                    <div class="home__popular-item--title">
+                                        <p>Sài Gòn - Đà Lạt</p>
+                                        <span>Từ 130.000</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="home__popular-item">
+                                <a href="">
+                                    <div class="home__popular-item--img">
+                                        <img src=" /img/about4.png" alt="">
+                                    </div>
+                                    <div class="home__popular-item--title">
+                                        <p>Sài Gòn - Đà Lạt</p>
+                                        <span>Từ 130.000</span>
+                                    </div>
+                                </a>
+                            </li>
+                            </li>
+                            <li class="home__popular-item">
+                                <a href="">
+                                    <div class="home__popular-item--img">
+                                        <img src=" /img/about5.png" alt="">
+                                    </div>
+                                    <div class="home__popular-item--title">
+                                        <p>Sài Gòn - Đà Lạt</p>
+                                        <span>Từ 130.000</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="home__popular-item">
+                                <a href="">
+                                    <div class="home__popular-item--img">
+                                        <img src=" /img/about2.png" alt="">
+                                    </div>
+                                    <div class="home__popular-item--title">
+                                        <p>Sài Gòn - Đà Lạt</p>
+                                        <span>Từ 130.000</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Available Ticket -->
+            <!-- Bỏ class disabled để hiện các vé search theo yêu cầu -->
+            <div class="availableTicket-container disabled">
+                <div class="container">
+                    <div class="availableTicket-header">
+                        <div class="availableTicket-header-title">Available Ticket</div>
+                        <div class="availableTicket-header-choose">
+                            <div class="availableTicket-header-choose__filter">
+                                Filter
+                                <i class="fa-solid fa-filter"></i>
+                            </div>
+                            <div class="availableTicket-header-choose__sort">
+                                Sort by
+                                <i class="fa-solid fa-sort"></i>
+                                <div class="availableTicket-location-list">
+                                    <ul class="availableTicket__sort-list">
+                                        Tỉnh - Thành phố
+                                        <li class="availableTicket__sort-item">Hà Nội</li>
+                                        <li class="availableTicket__sort-item">Quảng Ninh</li>
+                                        <li class="availableTicket__sort-item">Ninh Bình</li>
+                                        <li class="availableTicket__sort-item">Đà Nẵng</li>
+                                        <li class="availableTicket__sort-item">Sài Gòn</li>
+                                    </ul>
+                                    <ul class="availableTicket__sort-list">
+                                        Quận - Huyện
+                                        <li class="availableTicket__sort-item">SaPa</li>
+                                        <li class="availableTicket__sort-item">Vũng Tàu</li>
+                                        <li class="availableTicket__sort-item">Đà Lạt</li>
+                                        <li class="availableTicket__sort-item">Nha Trang</li>
+                                        <li class="availableTicket__sort-item">Phan Thiết</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <i class="more-ticket-down fa-solid fa-angles-down"></i>
+                </div>
+            </div>
+
+
+            <!-- Footer -->
+            {{>footer}}
+        </div>
+
+        <!-- Filter -->
+        <div class="filter-wrap">
+            <div class="filter__overlay">
+            </div>
+            <div class="filter__body">
+                <div class="filter__header">
+                    <h2>Filters</h2>
+                    <span>
+                        Clear all
+                        <i class="fa-solid fa-xmark"></i>
+                    </span>
+
+                </div>
+                <div class="container">
+                    <div class="filter__applied">
+                        <h3>Applied Filters</h3>
+                        <div class="filter__applied-list"></div>
+                    </div>
+                    <div class="filter__departureTime">
+                        <h3>Departure time</h3>
+                        <div class="filter__departureTime-list">
+                            <div class="filter__departureTime-item">
+                                <div class="filter__departureTime-title">Early Morning (200)</div>
+                                <div class="filter__departureTime-time">00:00 - 06:00</div>
+                            </div>
+                            <div class="filter__departureTime-item">
+                                <div class="filter__departureTime-title">Morning (250)</div>
+                                <div class="filter__departureTime-time">06:01 - 12:00</div>
+                            </div>
+                            <div class="filter__departureTime-item">
+                                <div class="filter__departureTime-title">Afternoon (204)</div>
+                                <div class="filter__departureTime-time">12:01 - 18:00</div>
+                            </div>
+                            <div class="filter__departureTime-item">
+                                <div class="filter__departureTime-title">Evening (173)</div>
+                                <div class="filter__departureTime-time">18:01 - 23:59</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter__departureSlider">
+                        <h3>Price</h3>
+                        <span class="multi-range">
+                            <input type="range" min="0" max="50" value="5" id="lower">
+                            <input type="range" min="0" max="50" value="45" id="upper">
+                        </span>
+                    </div>
+
+                    <div class="filter__departurePosition">
+                        <h3>Position of seats</h3>
+                        <div class="filter__departurePosition-list">
+                            <label for="name">
+                                <input type="checkbox" value="front" id="front" name="front">
+                                Front
+                            </label>
+                            <label for="name">
+                                <input type="checkbox" value="middle" id="middle" name="middle">
+                                Middle
+                            </label>
+                            <label for="name">
+                                <input type="checkbox" value="back" id="back" name="back">
+                                Back
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter__departureGarage">
+                        <h3>Garage</h3>
+                        <div class="filter__departureGarage-list list-item">
+                            <input class="filter__departureGarage-item" type="text" placeholder="Search">
+                            <label for="name">
+                                <input class="filter__departureGarage-item" type="checkbox" value="hoamai" id="hoamai"
+                                    name="hoamai">
+                                Hoa Mai <span class="garage-quantity">(25)</span>
+                            </label>
+                            <label for="name">
+                                <input class="filter__departureGarage-item" type="checkbox" value="thienphu"
+                                    id="thienphu" name="thienphu">
+                                Thiên Phú <span class="garage-quantity">(1)</span>
+                            </label>
+                            <label for="name">
+                                <input class="filter__departureGarage-item" type="checkbox" value="vielimousine"
+                                    id="vielimousine" name="vielimousine">
+                                Vie Limousine <span class="garage-quantity">(6)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter__departurePickupLocation">
+                        <h3>Pick up Location</h3>
+                        <div class="filter__departurePickupLocation-list list-item">
+                            <input class="filter__departurePickupLocation-item" type="text" placeholder="Search">
+                            <label for="name">
+                                <input class="filter__departurePickupLocation-item" type="checkbox" value="hoamai"
+                                    id="hoamai" name="hoamai">
+                                Quận 1
+                            </label>
+                            <label for="name">
+                                <input class="filter__departurePickupLocation-item" type="checkbox" value="thienphu"
+                                    id="thienphu" name="thienphu">
+                                Quận 2
+                            </label>
+                            <label for="name">
+                                <input class="filter__departurePickupLocation-item" type="checkbox" value="vielimousine"
+                                    id="vielimousine" name="vielimousine">
+                                Quận 5
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter__departureDropOffLocation">
+                        <h3>Pick up Location</h3>
+                        <div class="filter__departureDropOffLocation-list list-item">
+                            <input class="filter__departureDropOffLocation-item" type="text" placeholder="Search">
+                            <label for="name">
+                                <input class="filter__departureDropOffLocation-item" type="checkbox" value="hoamai"
+                                    id="hoamai" name="hoamai">
+                                Vũng Tàu
+                            </label>
+                            <label for="name">
+                                <input class="filter__departureDropOffLocation-item" type="checkbox" value="thienphu"
+                                    id="thienphu" name="thienphu">
+                                Bà Rịa
+                            </label>
+                            <label for="name">
+                                <input class="filter__departureDropOffLocation-item" type="checkbox"
+                                    value="vielimousine" id="vielimousine" name="vielimousine">
+                                Đà Lạt
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter__departureVehical">
+                        <h3>Pick up Location</h3>
+                        <div class="filter__departureVehical-list list-item">
+                            <input class="filter__departureVehical-item" type="text" placeholder="Search">
+                            <label for="name">
+                                <input class="filter__departureVehical-item" type="checkbox" value="hoamai" id="hoamai"
+                                    name="hoamai">
+                                Seat
+                            </label>
+                            <label for="name">
+                                <input class="filter__departureVehical-item" type="checkbox" value="thienphu"
+                                    id="thienphu" name="thienphu">
+                                Bed
+                            </label>
+                            <label for="name">
+                                <input class="filter__departureVehical-item" type="checkbox" value="vielimousine"
+                                    id="vielimousine" name="vielimousine">
+                                Limousine
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter__departureNumberOfSeat">
+                        <h3>Number of seats</h3>
+                        <div class="filter__departureNumberOfSeat--choose">
+                            <span class="down">-</span>
+                            <span class="quantity">2</span>
+                            <span class="up">+</span>
+                        </div>
+                    </div>
+
+                    <button class="filter__apply">
+                        Apply
+                        <i class="fa-solid fa-arrow-right-long"></i>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal layout -->
+        <div class="modal-wrap">
+            <div class="modal__overlay">
+            </div>
+
+            <div class="modal__body">
+                <!-- Seat form -->
+                <div class="seat-form bg-white">
+                    <header class="seat-form__header">
+                        <div class="seat-form__step seat-form__step--active" id="seat-form__step--choose-seat">
+                            <img src=" /img/number_1.png" alt="buoc1" class="seat-form__number_img"> Vị trí ghế ngồi
+                        </div>
+                        <div class="seat-form__step" id="seat-form__step--pick-location">
+                            <img src=" /img/number_2.png" alt="buoc2" class="seat-form__number_img"> Vị trí đón/trả
+                            khách
+                        </div>
+                        <div class="seat-form__step" id="seat-form__step--your-seat">
+                            <img src=" /img/number_3.png" alt="buoc3" class="seat-form__number_img"> Nhập thông tin
+                        </div>
+                    </header>
+                    <hr style="margin:0">
+
+                    <div class="seat-form__container modal__container-form active">
+                        <div class="seat-form__note mt-5 mb-5">
+                            <h4 class="mb-5">Chú thích: </h4>
+                            <div class="seat-form__seat mb-4">
+                                <img class="seat-form__seat-img" src=" /img/empty_seat.png" alt="empty_seat">
+                                <span class="seat-form__seat-condition">Còn trống</span>
+                            </div>
+                            <div class="seat-form__seat mb-4">
+                                <img class="seat-form__seat-img" src=" /img/notsale_seat.png" alt="empty_seat">
+                                <span class="seat-form__seat-condition">Ghế không bán</span>
+                            </div>
+                            <div class="seat-form__seat">
+                                <img class="seat-form__seat-img" src=" /img/choice_seat.png" alt="empty_seat">
+                                <span class="seat-form__seat-condition">Đang chọn</span>
+                            </div>
+                        </div>
+
+                        <div class="seat-form__seat-place mt-5 mb-5">
+                            <table>
+                                <tbody>
+                                    <tr class="coach-row">
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img class="driver-seat" src=" /img/volant.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img class="not-for-sale" src=" /img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img class="current-choice" src=" /img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="coach-row">
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img src=" /img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img src=" /img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img src=" /img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="coach-row">
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img src=" /img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img src=" /img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img src=" /img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="coach-row">
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img src=" /img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img src=" /img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="coach-row__seat">
+                                                <img src=" /img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+
+                    </div>
+
+                    <div class="location-form__container modal__container-form">
+                        <div class="location-form__information p-4">
+                            <div class="location-form__location px-4 py-3">
+                                <label for="location-form__place">Điểm đón</label>
+                                <br>
+                                <input type="text" class="location-form__input mt-3 mb-2 px-2"
+                                    placeholder="Điểm đón của bạn" required>
+                            </div>
+
+                            <div class="location-form__nearest-location p-3">
+                                <div class="location-form__nearest-title mb-2">Điểm đón gần nhất</div>
+
+                                <div class="location-form__nearest-start">
+                                    <i class="fa-regular fa-circle-dot"></i>
+                                    <span class="mx-2">17:40
+                                        <span>Văn phòng quận 5</span>
+                                    </span>
+                                </div>
+
+                                <div class="location-form__nearest-start-details mt-2">
+                                    <div class="location-form__address">
+                                        <i class="fa-solid fa-location-dot mt-1"></i>
+                                        <span class="mx-3">269 Hùng Vương, Phường 09, Quận 5, Hồ Chí Minh
+                                            <span>
+                                                <a href="#">Xem vị trí</a>
+                                            </span>
+                                            <br>
+                                            <span class="location-form__distance py-4">Cách vị trí của bạn 2.7km</span>
+                                        </span>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="verticalLine mt-4"></div>
+
+                        <div class="location-form__information p-4">
+                            <div class="location-form__location px-4 py-3">
+                                <label for="location-form__place">Điểm trả</label>
+                                <br>
+                                <input type="text" class="location-form__input mt-3 mb-2 px-2"
+                                    placeholder="Điểm trả của bạn" required>
+                            </div>
+
+                            <div class="location-form__nearest-location p-3">
+                                <div class="location-form__nearest-title mb-2">Điểm trả gần nhất</div>
+
+                                <div class="location-form__nearest-start">
+                                    <i class="fa-regular fa-circle-dot"></i>
+                                    <span class="mx-2">20:00
+                                        <span>Vũng Tàu</span>
+                                    </span>
+                                </div>
+
+                                <div class="location-form__nearest-start-details mt-2">
+                                    <div class="location-form__address">
+                                        <i class="fa-solid fa-location-dot mt-1"></i>
+                                        <span class="mx-3">Phường 1, Vũng Tàu, Bà Rịa-Vũng Tàu
+                                            <span>
+                                                <a href="#">Xem vị trí</a>
+                                            </span>
+                                            <br>
+                                            <span class="location-form__distance py-4">Cách vị trí của bạn 1.4km</span>
+                                        </span>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-form__container modal__container-form">
+                        <div class="info-form__form">
+                            <div class="info-form__group">
+                                <label for="fullname" class="py-2">Họ và tên<code
+                                        style="color: red; font-weight: 700;">*</code></label>
+                                <input type="text" class="info-form__input" placeholder="Tên hành khách" name="fullname"
+                                    required>
+                            </div>
+                            <div class="info-form__group">
+                                <label for="phone" class="py-2">Số điện thoại<code
+                                        style="color: red; font-weight: 700;">*</code></label>
+                                <br>
+                                <div class="info-form-wrap-item">
+                                    <select class="info-form_area-code">
+                                        <option value="">(VN)+84</option>
+                                        <option value="US">(US)+1</option>
+                                        <option value="CA">(CA)+1</option>
+                                        <option value="JP">(JP)+81</option>
+                                    </select>
+                                    <input type="tel" class="info-form__input" placeholder="Số điện thoại" name="phone"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="info-form__group">
+                                <label for="email" class="py-2">Email<code
+                                        style="color: red; font-weight: 700;">*</code></label>
+                                <input type="email" class="info-form__input" placeholder="Email để nhận thông báo"
+                                    name="email" required>
+                            </div>
+                            <div class="info-form__group">
+                                <label for="note" class="py-2">Ghi chú hoặc yêu cầu khác (Nếu có)<code
+                                        style="color: red; font-weight: 700;">*</code></label>
+                                <br>
+                                <textarea name="note" id="info-form__note" cols="" rows="2"
+                                    placeholder="Các yêu cầu đặc biệt không thể được đảm bảo - nhưng nhà xe sẽ cố gắng hết sức để đáp ứng nhu cầu của bạn."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="seat-form__footer">
+                        <span class="seat-form__text">Số lượng ghế:
+                            <span class="seat-form__price">1</span>
+                        </span>
+                        <div class="seat-form__right-corner">
+                            <span class="seat-form__text py-2">Tổng: <span
+                                    class="seat-form__price">200.000đ</span></span>
+                            <button class="btn-continue px-4">Tiếp tục</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src=" /js/rangeSlider.js"></script>
+        <script src=" /js/activeHeading.js"></script>
+        <script src=" /js/account.js"></script>
+        <script src=" /js/slider.js"></script>
+        <script src=" /js/searchTicket.js"></script>
+        <script src=" /js/buyTicket.js"></script>
+</body>
+
+</html>
