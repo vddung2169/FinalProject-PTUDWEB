@@ -8,7 +8,7 @@ const authorization = async (req,res,next) =>{
     try {
 
         const token = req.session.token
-        console.log(req.session)
+        
         if(token){
             const payload = jwt.verify(token,process.env.SECRET_KEY)
             req.userType = 'system'

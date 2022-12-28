@@ -30,12 +30,39 @@ const createGarage = async(req,res) => {
 const viewAllNhaxe = async(req,res,view) => {
     try {
         userInfo = await accountDataController.getAnAccountByID(req.user)
-        const data = await dataController.getAllNhaxe()
+        const data = await dataController.getAllNhaxe(userInfo[0].maquantri)
 
-        const nhaxe =data[0]
+        const nhaxe =data
 
         res.render(view,{nhaxe})
 
+
+    } catch (error) {
+        console.log(error.message)
+        res.status(500).json(error.message)
+    }
+}
+
+const updateGarage = async(req,res) => {
+    try {
+
+       
+        const {manhaxe,name,img,phone} = req.body
+
+       
+        const garageUpdate = await database.nhaxe.findOne({
+            where : {
+                manhaxe : manhaxe
+            }
+        })
+
+        garageUpdate.tennhaxe = name
+        garageUpdate.hinhanh = img
+        garageUpdate.sodienthoai = phone
+
+        garageUpdate.save()
+       
+        res.redirect('/admin/viewgarage')
 
     } catch (error) {
         console.log(error.message)
@@ -47,5 +74,6 @@ const viewAllNhaxe = async(req,res,view) => {
 
 module.exports = {
     createGarage,
-    viewAllNhaxe
+    viewAllNhaxe,
+    updateGarage
 }

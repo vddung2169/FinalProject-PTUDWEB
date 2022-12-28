@@ -10,7 +10,7 @@ router.get('/addgarage',(req,res) => res.render('addgarage'))
 router.get('/updategarage',authorization,(req,res) => 
 garageDataController.viewAllNhaxe(req,res,'updategarage'))
 router.get('/removegarage',(req,res) => res.render('removegarage'))
-router.get('/viewseat',authorization,garageDataController.getAllNhaxe)
+router.get('/viewseat',(req,res)=> res.render('viewsear'))
 router.get('/updateseat',(req,res) => res.render('updateseat'))
 router.get('/addroute',(req,res) => res.render('addroute'))
 router.get('/updateroute',(req,res) => res.render('updateroute'))

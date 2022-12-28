@@ -6,7 +6,7 @@ const {engine} = require('express-handlebars')
 const path = require('path')
 const cookieParser = require('cookie-parser')
 const sessions = require('express-session')
-
+const methodOverride = require('method-override')
 
 
 // const methodOverride = require('method-override')
@@ -25,7 +25,7 @@ app.use(cookieParser());
 // - Middleware
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
-// app.use(methodOverride('_method'))  // for DELETE/UPDATE method form
+app.use(methodOverride('_method'))  // for DELETE/UPDATE method form
 
 // - Handlebars
 app.engine('hbs', engine({ 

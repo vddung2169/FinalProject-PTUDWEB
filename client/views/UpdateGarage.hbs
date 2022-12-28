@@ -42,8 +42,8 @@
                     <div class="group d-flex flex-row d-flex justify-content-between">
                         <h1 class="h3 mb-2 text-gray-800">Cập nhật nhà xe</h1>
                         <div class="group-button">
-                            <button class="save-btn btn-primary px-4 mb-2 mr-2">Cập nhật</button>
-                            <button class="save-btn btn-info px-4 mb-2">Trở về</button>
+                            <button type="submit" form="updateGarageForm" class="save-btn btn-primary px-4 mb-2 mr-2">Cập nhật</button>
+                            <a href="/admin" class="save-btn btn-info px-4 mb-2">Trở về</a>
                         </div>
                     </div>
 
@@ -56,18 +56,18 @@
                                 <h6 class="m-0 font-weight-bold text-primary">Thông tin nhà xe</h6>
                             </div>
                             <div class="card-body">
-                                <div class="garage-info">
+                                <form id="updateGarageForm" method="POST" action="/admin/GRUD/updateGarage?_method=PUT" class="garage-info">
                                      <div class="garage-info__group">
                                         <label for="name" class="py-2 text-dark">Nhà xe<code style="color: red; font-weight: 700;">*</code></label>
-                                        <select name="manhaxe" id="">
+                                        <select name="manhaxe" id="" style="margin-left:75px;">
                                             {{#each nhaxe}}
-                                                <option value="{{manhaxe}}">{{tennhaxe}}</option>
+                                                <option value="{{manhaxe}}" onclick="test('{{tennhaxe}}','{{hinhanhd}}','{{sodienthoai}}')">{{tennhaxe}}</option>
                                             {{/each}}
                                         </select>
                                     </div>
                                     <div class="garage-info__group">
                                         <label for="name" class="py-2 text-dark">Tên nhà xe<code style="color: red; font-weight: 700;">*</code></label>
-                                        <input type="text" class="garage-info__input w-50 ml-5" placeholder="" name="name" required>
+                                        <input type="text" class="garage-info__input w-50 ml-5" placeholder="" name="name" id="tennhaxe" required>
                                     </div>
                                     <div class="garage-info__group">
                                         <label for="name" class="py-2 text-dark">Hình ảnh<code style="color: red; font-weight: 700;">*</code></label>
@@ -75,7 +75,7 @@
                                     </div>
                                     <div class="garage-info__group">
                                         <label for="name" class="py-2 text-dark">Số điện thoại<code style="color: red; font-weight: 700;">*</code></label>
-                                        <input type="tel" class="garage-info__input w-50" style="margin-left:32px;" placeholder="" name="phone" required>
+                                        <input type="tel" class="garage-info__input w-50" style="margin-left:32px;" placeholder="" name="phone" id="sodienthoai" required>
                                     </div>
                                     <div class="table-responsive">
                                         <label for="name" class="py-2 text-dark">Đánh giá</label>
@@ -119,7 +119,7 @@
                                         </table>
                                     </div>
                                     <hr>
-                                </div>
+                                </form>
                             </div>
 
                         </div>
@@ -163,7 +163,14 @@
 
             <script>
                 // TODO lấy dữ liệu từ select truyền vào các input
+                function test(tennhaxe,hinhanh,sodienthoai){
+                    const tennhaxeInput = document.querySelector('#tennhaxe')
+                    const sodienthoaiInput = document.querySelector('#sodienthoai')
 
+                    tennhaxeInput.value = tennhaxe
+                    sodienthoaiInput.value = sodienthoai
+
+                }
 
             </script>
 
