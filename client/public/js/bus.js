@@ -6,12 +6,13 @@ const selectedRoute = () =>{
 
     const {tinhbatdau,tinhketthuc} = params
 
-    console.log({tinhbatdau})
+    
       // TODO change to bus.js
-    const test = document.querySelector(`.search__ticket-choose > option[value="${tinhbatdau}"]`)
-
-    test.setAttribute('selected',true)
-    console.log(test)
+    const tbd = document.querySelector(`#tinhbatdau > option[value="${tinhbatdau}"]`)
+    tbd.setAttribute('selected',true)
+    const tkt = document.querySelector(`#tinhketthuc > option[value="${tinhketthuc}"]`)
+    tkt.setAttribute('selected',true)
+    
     // $("#tinhbatdau > option[value='" + tinhbatdau + "']").prop('selected', true)
     // $("#tinhketthuc > option[value='" + tinhketthuc + "']").prop('selected', true)
 

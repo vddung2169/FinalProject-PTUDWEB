@@ -4,8 +4,23 @@ const app = express()
 const PORT = process.env.PORT || 3000
 const {engine} = require('express-handlebars')
 const path = require('path')
+const cookieParser = require('cookie-parser')
+const sessions = require('express-session')
+
+
+
 // const methodOverride = require('method-override')
-const busDataController = require('./controllers/busDataController')
+const busDataController = require('./controllers/getDataController')
+
+
+
+app.use(sessions({
+    secret: process.env.SECRET_KEY,
+    saveUninitialized:true,
+    cookie: { maxAge: 1000*60*60 },
+    resave: false
+}));
+app.use(cookieParser());
 
 // - Middleware
 app.use(express.json())
@@ -19,7 +34,8 @@ app.engine('hbs', engine({
     helpers: {
         calculateTime : require('./utils/calculateTime'),
         formatHours : require('./utils/formatTime'),
-        formatRating: require('./utils/formatRating'),
+        formatRating: require('./utils/formatRating').formatRating,
+        formatStar: require('./utils/formatRating').formatRatingStar,
         formatMoney: require('./utils/formatMoney')
     }
 }))
@@ -46,12 +62,14 @@ app.get('/createDatabase', (req,res)=>{
     
 })
 
-app.get('/test', async(req,res)=>{
-    const data = await busDataController.getAllChuyenxe()
+app.post('/test', async(req,res)=>{
+    const {name,email,password,number} = req.body
+    const data = await require('./controllers/getAccountDataController').createAnAdminAccount(name,password,number,email)
     res.json(data)
 })
 
-
+app.use('/admin/GRUD',require('./routes/adminOperation'))
+app.use('/admin/auth',require('./routes/jwtAuth'))
 app.use('/admin',require('./routes/adminView'))
 app.use('/',require('./routes/userView'))
 

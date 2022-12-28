@@ -5,11 +5,14 @@ const renderBus = async(req, res) => {
     try {
 
         const { tinhbatdau, tinhketthuc } = req.query
+        let chuyenxe = await dataController.getAllChuyenxe()
 
 
+        if (tinhbatdau !== undefined && tinhketthuc !== undefined) {
+            chuyenxe = await dataController.getAllChuyenxeBy2Tinh(tinhbatdau, tinhketthuc)
+        }
 
         const tinhthanh = await dataController.getAllTinhthanh()
-        const chuyenxe = await dataController.getAllChuyenxe()
 
         res.render('bus', { chuyenxe, tinhthanh })
 
