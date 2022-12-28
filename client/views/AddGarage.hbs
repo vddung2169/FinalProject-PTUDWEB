@@ -42,7 +42,7 @@
                     <div class="group d-flex flex-row d-flex justify-content-between">
                         <h1 class="h3 mb-2 text-gray-800">Thêm nhà xe</h1>
                         <div class="group-button">
-                            <button class="save-btn btn-primary px-4 mb-2 mr-2">Lưu</button>
+                            <button type="submit" form="addGarageForm" class="save-btn btn-primary px-4 mb-2 mr-2">Lưu</button>
                             <button class="save-btn btn-info px-4 mb-2">Trở về</button>
                         </div>
                     </div>
@@ -55,21 +55,21 @@
                             <div class="card-header py-3">
                                 <h6 class="m-0 font-weight-bold text-primary">Thông tin nhà xe</h6>
                             </div>
-                            <div class="card-body">
+                            <form id="addGarageForm" method="POST" action="/admin/GRUD/createGarage" class="card-body">
                                 <div class="garage-info">
                                     <div class="garage-info__group">
                                         <label for="name" class="py-2 text-dark">Tên nhà xe<code style="color: red; font-weight: 700;">*</code></label>
-                                        <input type="text" class="garage-info__input w-50 ml-5" placeholder="" name="name" required>
+                                        <input type="text" class="garage-info__input w-50 ml-5" placeholder="" name="tennhaxe" required>
                                     </div>
                                     <div class="garage-info__group">
                                         <label for="name" class="py-2 text-dark">Hình ảnh<code style="color: red; font-weight: 700;">*</code></label>
-                                        <input type="file" class="garage-info__input w-50" style="margin-left:61px;" id="img" name="img" accept="image/*">
+                                        <input type="file" class="garage-info__input w-50" style="margin-left:61px;" id="img" name="hinhanhnhaxe" accept="image/*">
                                     </div>
                                     <div class="garage-info__group">
                                         <label for="name" class="py-2 text-dark">Số điện thoại<code style="color: red; font-weight: 700;">*</code></label>
-                                        <input type="tel" class="garage-info__input w-50" style="margin-left:32px;" placeholder="" name="phone" required>
+                                        <input type="tel" class="garage-info__input w-50" style="margin-left:32px;" placeholder="" name="sodienthoai" required>
                                     </div>
-                                    <div class="table-responsive">
+                                    {{!-- <div class="table-responsive">
                                         <label for="name" class="py-2 text-dark">Đánh giá</label>
                                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                             <thead>
@@ -109,10 +109,10 @@
                                                 </tr>
                                             </tbody>
                                         </table>
-                                    </div>
+                                    </div> --}}
                                     <hr>
                                 </div>
-                            </div>
+                            </form>
                         </div>
 
                     </div>
@@ -154,6 +154,9 @@
         <!-- Custom scripts for all pages-->
         <script src="/js/sb-admin-2.min.js"></script>
 
+        {{!-- <script src="/js/auth/admin.js"></script>
+
+        <script src="/client/public/js/auth/submitFormAdmin.js"></script> --}}
 </body>
 
 </html>

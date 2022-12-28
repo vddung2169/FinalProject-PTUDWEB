@@ -64,12 +64,11 @@
                                                 <th>Mã nhà xe</th>
                                                 <th>Tên nhà xe</th>
                                                 <th>Số điện thoại</th>
-                                                <th>Mã quản trị</th>
                                                 <th>Đánh giá</th>
                                                 <th>Hình ảnh</th>
                                             </tr>
                                         </thead>
-                                        <tfoot>
+                                        {{!-- <tfoot>
                                             <tr>
                                                 <th>Mã nhà xe</th>
                                                 <th>Tên nhà xe</th>
@@ -78,9 +77,19 @@
                                                 <th>Đánh giá</th>
                                                 <th>Hình ảnh</th>
                                             </tr>
-                                        </tfoot>
+                                        </tfoot> --}}
                                         <tbody>
+                                            {{#each nhaxe}}
                                             <tr>
+                                                <td>{{manhaxe}}</td>
+                                                <td>{{tennhaxe}}</td>
+                                                <td>{{sodienthoai}}</td>
+                                                <td>{{formatRating diemso}}</td>
+                                                <td>{{hinhanh}}</td>
+                                            </tr>
+                                            {{/each}}
+                                          
+                                            {{!-- <tr>
                                                 <td>Mã nhà xe</td>
                                                 <td>Tên nhà xe</td>
                                                 <td>Số điện thoại</td>
@@ -95,15 +104,7 @@
                                                 <td>Mã quản trị</td>
                                                 <td>Đánh giá</td>
                                                 <td>Hình ảnh</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Mã nhà xe</td>
-                                                <td>Tên nhà xe</td>
-                                                <td>Số điện thoại</td>
-                                                <td>Mã quản trị</td>
-                                                <td>Đánh giá</td>
-                                                <td>Hình ảnh</td>
-                                            </tr>
+                                            </tr> --}}
                                         </tbody>
                                     </table>
                                 </div>

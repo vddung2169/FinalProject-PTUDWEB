@@ -57,6 +57,14 @@
                             </div>
                             <div class="card-body">
                                 <div class="garage-info">
+                                     <div class="garage-info__group">
+                                        <label for="name" class="py-2 text-dark">Nhà xe<code style="color: red; font-weight: 700;">*</code></label>
+                                        <select name="manhaxe" id="">
+                                            {{#each nhaxe}}
+                                                <option value="{{manhaxe}}">{{tennhaxe}}</option>
+                                            {{/each}}
+                                        </select>
+                                    </div>
                                     <div class="garage-info__group">
                                         <label for="name" class="py-2 text-dark">Tên nhà xe<code style="color: red; font-weight: 700;">*</code></label>
                                         <input type="text" class="garage-info__input w-50 ml-5" placeholder="" name="name" required>
@@ -152,6 +160,12 @@
 
             <!-- Custom scripts for all pages-->
             <script src="/js/sb-admin-2.min.js"></script>
+
+            <script>
+                // TODO lấy dữ liệu từ select truyền vào các input
+
+
+            </script>
 
 </body>
 
