@@ -41,8 +41,8 @@
                     <div class="group d-flex flex-row d-flex justify-content-between">
                         <h1 class="h3 mb-2 text-gray-800">Cập nhật đặt chỗ</h1>
                         <div class="group-button">
-                            <button class="save-btn btn-primary px-4 mb-2 mr-2">Cập nhật</button>
-                            <button class="save-btn btn-info px-4 mb-2">Trở về</button>
+                            <button type="submit" form="updateSeatForm" class="save-btn btn-primary px-4 mb-2 mr-2">Cập nhật</button>
+                            <a class="save-btn btn-info px-4 mb-2">Trở về</a>
                         </div>
                     </div>
 
@@ -55,45 +55,58 @@
                                 <h6 class="m-0 font-weight-bold text-primary">Thông tin đặt chỗ</h6>
                             </div>
                             <div class="card-body">
-                                <div class="seat-info">
+                                <form id="updateSeatForm" method="POST" action="/admin/GRUD/updateSeat?_method=PUT" class="seat-info">
                                     <div class="seat-info__group">
-                                        <label for="idticket" class="py-2 text-dark">Mã vé</label>
-                                        <input type="text" class="seat-info__input w-25 ml-5" placeholder="" name="idticket" required>
+                                        <label for="name" class="py-2 text-dark">Mã vé<code style="color: red; font-weight: 700;">*</code></label>
+                                        <select name="mave" id="" style="margin-left:95px;">
+                                            {{#each vexe}}
+                                                <option value="{{mave}}" onclick="showdetail('{{machuyenxe}}','{{tenkhachhang}}','{{email}}','{{sodienthoai}}',
+                                                '{{tongtien}}','{{tinhtrang}}', [{{#each chitietvexe}} {{formatString ghexeMaghe}}, {{/each}}] )" >{{mave}}</option>
+                                            {{/each}}
+                                        </select>
                                     </div>
-                                    <div class="seat-info__group">
-                                        <label for="route" class="py-2 text-dark">Chuyến xe</label>
-                                        <input type="text" class="seat-info__input w-25 ml-3" placeholder="" name="route" required>
+                                     <div class="garage-info__group">
+                                        <label for="name" class="py-2 text-dark">Mã chuyến xe<code style="color: red; font-weight: 700;">*</code></label>
+                                        <select name="machuyenxe" id="chuyenxe" style="margin-left:40px;">
+                                            {{#each chuyenxe}}
+                                                <option value="{{machuyenxe}}">{{machuyenxe}} </option>
+                                            {{/each}}
+                                        </select>
                                     </div>
                                     <div class="seat-info__group">
                                         <label for="numberseat" class="py-2 text-dark">Số lượng ghế</label>
-                                        <input type="number" class="seat-info__input w-25" placeholder="" name="numberseat" min="0" required>
+                                        <span style="margin-left:50px;" id="soluongghe"></span>
+                                       <select name="maghe" id="ghexe" style="margin-left:50px;">
+                                        
+        
+                                        </select>
                                     </div>
                                     <br>
                                     <h7>Thông tin liên lạc</h7>
                                     <div class="seat-info__group px-3">
                                         <br>
                                         <label for="name" class="py-2 text-dark">Họ và tên</label>
-                                        <input type="text" class="seat-info__input w-25" style="margin-left:32px;" placeholder="" name="name" required>
+                                        <input type="text" class="seat-info__input w-25" style="margin-left:32px;" placeholder="" name="name" id="name" required>
                                     </div>
                                     <div class="seat-info__group px-3">
                                         <label for="email" class="py-2 text-dark">Email</label>
-                                        <input type="email" class="seat-info__input w-25" style="margin-left:62px;" placeholder="" name="email" required>
+                                        <input type="email" class="seat-info__input w-25" style="margin-left:62px;" placeholder="" name="email" id="email" required>
                                     </div>
                                     <div class="seat-info__group px-3">
                                         <label for="phone" class="py-2 text-dark">Số điện thoại</label>
-                                        <input type="tel" class="seat-info__input w-25" style="margin-left:10px;" placeholder="" name="phone" required>
+                                        <input type="tel" class="seat-info__input w-25" style="margin-left:10px;" placeholder="" name="phone" id="phone" required>
                                     </div>
                                     <br>
                                     <div class="seat-info__group">
                                         <label for="pay" class="py-2 text-dark">Tổng tiền</label>
-                                        <input type="tel" class="seat-info__input w-25" style="margin-left:36px;" placeholder="" name="pay" required>
+                                        <input type="tel" class="seat-info__input w-25" style="margin-left:36px;" placeholder="" name="pay" id="pay" >
                                     </div>
                                     <div class="seat-info__group">
                                         <label for="condition" class="py-2 text-dark">Tình trạng</label>
-                                        <input type="tel" class="seat-info__input w-25" style="margin-left:32px;" placeholder="" name="condition" required>
+                                        <input type="tel" class="seat-info__input w-25" style="margin-left:32px;" placeholder="" name="condition" id="condition" >
                                     </div>
                                     <hr>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -124,23 +137,7 @@
         </a>
 
         <!-- Logout Modal-->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                    </div>
-                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="login.html">Logout</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+       {{>logoutmodal}}
 
         <!-- Bootstrap core JavaScript-->
         <script src="/vendor/jquery/jquery.min.js"></script>
@@ -151,6 +148,30 @@
 
         <!-- Custom scripts for all pages-->
         <script src="/js/sb-admin-2.min.js"></script>
+
+        <script>
+            function showdetail(machuyenxe,tenkhachhang,email,sodienthoai,tongtien,tinhtrang,ghexe){
+                document.querySelector(`#chuyenxe > option[value="${machuyenxe}"]`).setAttribute('selected',true)
+                document.querySelector('#name').value = tenkhachhang
+                document.querySelector('#email').value = email
+                document.querySelector('#phone').value = sodienthoai
+                document.querySelector('#pay').value = tongtien
+                document.querySelector('#condition').value = tinhtrang
+                const ghexeList = document.querySelector('#ghexe')
+                console.log({ghexeList})
+                ghexeList.innerHTML = ""
+                ghexe.forEach(e => {
+                    console.log({e})
+                    ghexeList.innerHTML += `<option value="${e}">${e} </option>`
+                })
+
+                document.querySelector('#soluongghe').innerHTML = ghexe.length
+
+            }
+
+
+
+        </script>
 
 </body>
 

@@ -62,43 +62,28 @@
                                                 <th>Tên khách hàng</th>
                                                 <th>Số điện thoại</th>
                                                 <th>Email</th>
+                                                <th>Mã ghế</th>
                                             </tr>
                                         </thead>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Mã đặt chỗ</th>
-                                                <th>Mã chuyến xe</th>
-                                                <th>Mã khách hàng</th>
-                                                <th>Tên khách hàng</th>
-                                                <th>Số điện thoại</th>
-                                                <th>Email</th>
-                                            </tr>
-                                        </tfoot>
+                                        
                                         <tbody>
+                                            {{#each vexe}}
                                             <tr>
-                                                <td>Mã đặt chỗ</td>
-                                                <td>Mã chuyến xe</td>
-                                                <td>Mã khách hàng</td>
-                                                <td>Tên khách hàng</td>
-                                                <td>Số điện tdoại</td>
-                                                <td>Email</td>
+                                                <td>{{mave}}</td>
+                                                <td>{{machuyenxe}}</td>
+                                                <td>{{makhachhang}}</td>
+                                                <td>{{tenkhachhang}}</td>
+                                                <td>{{sodienthoai}}</td>
+                                                <td>{{email}}</td>
+                                                <td>
+                                                    {{#each chitietvexe}}
+                                                       {{ghexeMaghe}},
+                                                    {{/each}}
+
+                                                </td>
                                             </tr>
-                                            <tr>
-                                                <td>Mã đặt chỗ</td>
-                                                <td>Mã chuyến xe</td>
-                                                <td>Mã khách hàng</td>
-                                                <td>Tên khách hàng</td>
-                                                <td>Số điện tdoại</td>
-                                                <td>Email</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Mã đặt chỗ</td>
-                                                <td>Mã chuyến xe</td>
-                                                <td>Mã khách hàng</td>
-                                                <td>Tên khách hàng</td>
-                                                <td>Số điện tdoại</td>
-                                                <td>Email</td>
-                                            </tr>
+                                            {{/each}}
+                                            
                                         </tbody>
                                     </table>
                                 </div>

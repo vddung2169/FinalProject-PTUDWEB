@@ -31,8 +31,8 @@
 - [ ] Hiển thị thông tin lên phần mua vé
 - [ ] Lưu thông tin mua vé lên database
 - [X] Quản lý nhà xe: Xem, thêm, xóa, sửa
-- [ ] Quản lý chuyến xe: Thêm, xóa, sửa
-- [ ] Quản lý đặt chỗ: Xem, sửa
+- [X] Quản lý chuyến xe: Thêm, xóa, sửa
+- [X] Quản lý đặt chỗ: Xem, sửa
 - [ ] Chức năng đăng nhập
 - [ ] Chức năng đăng ký
 - [ ] Hiển thị lịch sử đặt vé

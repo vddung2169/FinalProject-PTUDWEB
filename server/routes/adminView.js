@@ -3,7 +3,7 @@ const accountDataController = require('../controllers/getAccountDataController')
 const router = require('express').Router()
 const garageDataController = require('../controllers/garageDataController')
 const routeDataController = require('../controllers/routeDataController')
-
+const seatDataController = require('../controllers/seatDataController')
 
 router.get('/viewgarage',authorization,(req,res) =>
 garageDataController.viewAllNhaxe(req,res,'viewgarage'))
@@ -12,8 +12,8 @@ router.get('/updategarage',authorization,(req,res) =>
 garageDataController.viewAllNhaxe(req,res,'updategarage'))
 router.get('/removegarage',authorization,(req,res) => 
 garageDataController.viewAllNhaxe(req,res,'removegarage'))
-router.get('/viewseat',(req,res)=> res.render('viewseat'))
-router.get('/updateseat',(req,res) => res.render('updateseat'))
+router.get('/viewseat',authorization,seatDataController.viewSeat)
+router.get('/updateseat',authorization,seatDataController.viewSeatUpdate)
 router.get('/addroute',authorization,routeDataController.viewRouteAdd)
 router.get('/updateroute',authorization,(req,res) => 
 routeDataController.viewRoute(req,res,'updateroute'))

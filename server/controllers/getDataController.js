@@ -156,8 +156,6 @@ const getAllChuyenxeByTuyenduong = async() => {
             }
            })
 
-          
-           
            data[0][index].diemdon = diemdon
            data[0][index].diemden = diemden
 
@@ -253,12 +251,33 @@ const getAllChuyenxeAdmin = async (maquantri) => {
 
 const getAllVexeAdmin = async(maquantri) => {
     try {
-        const vexe = await sequelize.query('SELECT VX.MAVE,VX.MACHUYENXE,VX.MAKHACHHANG,VX.TINHTRANG,VX.TONGTIEN '+
-        'FROM VEXE VX INNER JOIN CHUYENXE CX ON VX.MACHUYENXE = CX.MACHUYENXE INNER JOIN NHAXE NX ON CX.MANHAXE = NX.MANHAXE '+ 
+        
+        const data = await sequelize.query('SELECT VX.MAVE,VX.MACHUYENXE,VX.MAKHACHHANG,VX.TINHTRANG,VX.TONGTIEN,KH.TENKHACHHANG,KH.SODIENTHOAI,KH.EMAIL '+
+        'FROM VEXE VX INNER JOIN CHUYENXE CX ON VX.MACHUYENXE = CX.MACHUYENXE '+
+        'INNER JOIN KHACHHANG KH ON KH.MAKHACHHANG = VX.MAKHACHHANG ' + 
+        'INNER JOIN NHAXE NX ON CX.MANHAXE = NX.MANHAXE '+ 
         'INNER JOIN QUANTRI QT ON NX.MAQUANTRI = QT.MAQUANTRI '+
         `WHERE QT.MAQUANTRI ='${maquantri}'`)
 
-        return vexe[0]
+        for (let index = 0; index < data[0].length; index++) {
+            const chitietvexe = await database.vexe.findAll({
+                include :[{
+                    model : database.ghexe,
+                    require:true,
+                    attributes: []
+                }],
+                where : {
+                    mave : data[0][index].mave
+                },
+                attributes : [sequelize.col('ghexes.chitietvexe.ghexeMaghe')],
+                raw :true
+            })
+            data[0][index].chitietvexe = chitietvexe
+            
+        }
+
+
+        return data[0]
 
     } catch (error) {
         console.log(error.message);
