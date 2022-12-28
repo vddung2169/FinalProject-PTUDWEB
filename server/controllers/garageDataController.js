@@ -70,10 +70,31 @@ const updateGarage = async(req,res) => {
     }
 }
 
+const removeGarage = async(req,res) => {
+    try {
+
+        const {manhaxe} = req.body
+
+       
+        const garageRemove = await database.nhaxe.destroy({
+            where : {
+                manhaxe : manhaxe
+            }
+        })
+       
+        res.redirect('/admin/viewgarage')
+
+    } catch (error) {
+        console.log(error.message)
+        res.status(500).json(error.message)
+    }
+}
+
 
 
 module.exports = {
     createGarage,
     viewAllNhaxe,
-    updateGarage
+    updateGarage,
+    removeGarage
 }
