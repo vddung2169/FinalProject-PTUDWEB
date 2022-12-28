@@ -1,40 +1,12 @@
-// var lowerSlider = document.querySelector('#lower'),
-//     upperSlider = document.querySelector('#upper'),
-//     lowerVal = parseInt(lowerSlider.value);
-// upperVal = parseInt(upperSlider.value);
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
 
-// upperSlider.oninput = function() {
-//     lowerVal = parseInt(lowerSlider.value);
-//     upperVal = parseInt(upperSlider.value);
+// Không hiểu sao in ra vẫn ra value mà set vào innerHTML nó lại không hiện ấy
 
-//     if (upperVal < lowerVal + 4) {
-//         lowerSlider.value = upperVal - 4;
+console.log(slider.value);
+output.innerHTML = slider.value; // Display the default slider value
 
-//         if (lowerVal == lowerSlider.min) {
-//             upperSlider.value = 4;
-//         }
-//     }
-// };
-
-
-// lowerSlider.oninput = function() {
-//     lowerVal = parseInt(lowerSlider.value);
-//     upperVal = parseInt(upperSlider.value);
-
-//     if (lowerVal > upperVal - 4) {
-//         upperSlider.value = lowerVal + 4;
-
-//         if (upperVal == upperSlider.max) {
-//             lowerSlider.value = parseInt(upperSlider.max) - 4;
-//         }
-
-//     }
-// };
-
-// var modalWrap = document.querySelector('.modal-wrap');
-// var signUpBtn = document.querySelector('.btn-signup');
-
-// function showModal() {
-//     modalWrap.style.display = 'flex';
-// }
-// signUpBtn.addEventListener('click', showModal);
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+    output.innerHTML = slider.value;
+}

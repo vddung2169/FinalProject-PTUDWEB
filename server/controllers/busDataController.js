@@ -4,17 +4,17 @@ const dataController = require('./getDataController')
 const renderBus = async(req, res) => {
     try {
 
-        const {tinhbatdau,tinhketthuc} = req.query
+        const { tinhbatdau, tinhketthuc } = req.query
         let chuyenxe = await dataController.getAllChuyenxe()
 
 
-        if(tinhbatdau !== undefined && tinhketthuc !== undefined){
-            chuyenxe = await dataController.getAllChuyenxeBy2Tinh(tinhbatdau,tinhketthuc)
+        if (tinhbatdau !== undefined && tinhketthuc !== undefined) {
+            chuyenxe = await dataController.getAllChuyenxeBy2Tinh(tinhbatdau, tinhketthuc)
         }
 
-        const tinhthanh = await dataController.getAllTinhthanh() 
+        const tinhthanh = await dataController.getAllTinhthanh()
 
-        res.render('bus', { chuyenxe,tinhthanh })
+        res.render('bus', { chuyenxe, tinhthanh })
 
     } catch (error) {
         console.log(error.message)
@@ -22,16 +22,16 @@ const renderBus = async(req, res) => {
     }
 }
 
-const renderIndex = async (req,res) => {
+const renderIndex = async(req, res) => {
     try {
-       
-       
+
+
         const tinhthanh = await dataController.getAllTinhthanh()
 
         const tuyenduongtop = await dataController.getAllTuyenduongtop()
 
-       
-        res.render('index',{tuyenduongtop,tinhthanh})
+
+        res.render('index', { tuyenduongtop, tinhthanh })
 
     } catch (error) {
         console.log(error.message)
@@ -39,9 +39,6 @@ const renderIndex = async (req,res) => {
     }
 
 }
-
-
-
 
 
 module.exports = {

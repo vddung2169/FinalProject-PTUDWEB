@@ -13,7 +13,7 @@ function showListRoute(e) {
 }
 
 // TODO chuyển sang trang mới
-// searchTicketBtn.onclick = showListRoute
-// homeItem.forEach(e => {
-//     e.onclick = showListRoute
-// })
+searchTicketBtn.onclick = showListRoute
+homeItem.forEach(e => {
+    e.onclick = showListRoute
+})
