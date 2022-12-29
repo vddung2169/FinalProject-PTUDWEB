@@ -11,9 +11,16 @@ buyTicketBtns.forEach((buyTicketBtn, index) => {
 })
 
 modal.onclick = function() {
+    // Reset
+    $('.seat-form__step.seat-form__step--active').classList.remove('seat-form__step--active');
+    $('.modal__container-form.active').classList.remove('active');
+    infoHeaders[0].classList.add('seat-form__step--active');
+    infoContainers[0].classList.add('active');
     modal.classList.remove('active')
 }
-modalBody.onclick = function(event) { event.stopPropagation(); }
+modalBody.onclick = function(event) {
+    event.stopPropagation();
+}
 
 // backBtn.onclick = function() {
 //     for (var i = 0; i < infoHeaders.length; i++) {
@@ -23,6 +30,13 @@ modalBody.onclick = function(event) { event.stopPropagation(); }
 
 const infoHeaders = $$('.seat-form__step');
 const infoContainers = $$('.modal__container-form');
+
+
+$('.seat-form__step.seat-form__step--active').classList.remove('seat-form__step--active');
+$('.modal__container-form.active').classList.remove('active');
+infoHeaders[0].classList.add('seat-form__step--active');
+infoContainers[0].classList.add('active');
+
 // console.log(infoHeaders)
 infoHeaders.forEach((infoHeader, index) => {
     const infoContainer = infoContainers[index];

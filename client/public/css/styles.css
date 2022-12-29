@@ -1403,17 +1403,20 @@ textarea {
     padding: 12px 36px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .seat-form__text {
+    display: inline-block;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 1rem;
 }
 
+.seat-form__quantity,
 .seat-form__price {
+    display: inline-block;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 1rem;
     color: var(--yellow-color);
     margin: 0 5px;
 }

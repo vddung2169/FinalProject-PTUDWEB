@@ -1489,63 +1489,63 @@
                                         </td>
                                         <td>
                                             <div class="coach-row__seat">
-                                                <img class="not-for-sale" src="../public/img/empty_seat.png" alt="">
+                                                <img class="notsale_seat" src="../public/img/notsale_seat.png" alt="">
                                             </div>
                                         </td>
                                         <td>
                                             <div class="coach-row__seat">
-                                                <img class="current-choice" src="../public/img/empty_seat.png" alt="">
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="coach-row">
-                                        <td>
-                                            <div class="coach-row__seat">
-                                                <img src="../public/img/empty_seat.png" alt="">
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="coach-row__seat">
-                                                <img src="../public/img/empty_seat.png" alt="">
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="coach-row__seat">
-                                                <img src="../public/img/empty_seat.png" alt="">
+                                                <img class="notsale_seat" src="../public/img/notsale_seat.png" alt="">
                                             </div>
                                         </td>
                                     </tr>
                                     <tr class="coach-row">
                                         <td>
-                                            <div class="coach-row__seat">
-                                                <img src="../public/img/empty_seat.png" alt="">
+                                            <div class="coach-row__seat" onclick="chonghe1(event, '1A', 300000)">
+                                                <img class="empty_seat" src="../public/img/empty_seat.png" alt="">
                                             </div>
                                         </td>
                                         <td>
-                                            <div class="coach-row__seat">
-                                                <img src="../public/img/empty_seat.png" alt="">
+                                            <div class="coach-row__seat" onclick="chonghe1(event, '2A', 300000)">
+                                                <img class="empty_seat" src="../public/img/empty_seat.png" alt="">
                                             </div>
                                         </td>
                                         <td>
-                                            <div class="coach-row__seat">
-                                                <img src="../public/img/empty_seat.png" alt="">
+                                            <div class="coach-row__seat" onclick="chonghe1(event, '3A', 300000)">
+                                                <img class="empty_seat" src="../public/img/empty_seat.png" alt="">
                                             </div>
                                         </td>
                                     </tr>
                                     <tr class="coach-row">
                                         <td>
-                                            <div class="coach-row__seat">
-                                                <img src="../public/img/empty_seat.png" alt="">
+                                            <div class="coach-row__seat" onclick="chonghe1(event, '4A', 250000)">
+                                                <img class="empty_seat" src="../public/img/empty_seat.png" alt="">
                                             </div>
                                         </td>
                                         <td>
-                                            <div class="coach-row__seat">
-                                                <img src="../public/img/empty_seat.png" alt="">
+                                            <div class="coach-row__seat" onclick="chonghe1(event, '5A', 250000)">
+                                                <img class="empty_seat" src="../public/img/empty_seat.png" alt="">
                                             </div>
                                         </td>
                                         <td>
-                                            <div class="coach-row__seat">
-                                                <img src="../public/img/empty_seat.png" alt="">
+                                            <div class="coach-row__seat" onclick="chonghe1(event, '6A', 250000)">
+                                                <img class="empty_seat" src="../public/img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="coach-row">
+                                        <td>
+                                            <div class="coach-row__seat" onclick="chonghe1(event, '7A', 200000)">
+                                                <img class="empty_seat" src="../public/img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="coach-row__seat" onclick="chonghe1(event, '8A', 200000)">
+                                                <img class="empty_seat" src="../public/img/empty_seat.png" alt="">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="coach-row__seat" onclick="chonghe1(event, '9A', 200000)">
+                                                <img class="empty_seat" src="../public/img/empty_seat.png" alt="">
                                             </div>
                                         </td>
                                     </tr>
@@ -1661,10 +1661,10 @@
 
                     <div class="seat-form__footer">
                         <span class="seat-form__text">Số lượng ghế: 
-                        <span class="seat-form__price">1</span>
+                        <span class="seat-form__quantity">0</span>
                         </span>
+                        <span class="seat-form__text py-2">Tổng: <span class="seat-form__price">0</span>VNĐ</span>
                         <div class="seat-form__right-corner">
-                            <span class="seat-form__text py-2">Tổng: <span class="seat-form__price">200.000đ</span></span>
                             <button class="btn-continue px-4">Tiếp tục</button>
                             <button class="btn-continue btn-thanhtoan px-4">Thanh toán</button>
                         </div>
@@ -1680,6 +1680,7 @@
         <script src="../public/js/searchTicket.js"></script>
         <script src="../public/js/buyTicket.js"></script>
         <script src="../public/js/sortTicket.js"></script>
+        <script src="../public/js/ticket_details.js"></script>
 </body>
 
 </html>
