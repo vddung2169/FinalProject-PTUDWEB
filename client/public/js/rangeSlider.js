@@ -1,5 +1,5 @@
 var slider = document.getElementById("myRange");
-var output = document.getElementById("demo");
+var output = document.getElementById("demo_range");
 
 // Không hiểu sao in ra vẫn ra value mà set vào innerHTML nó lại không hiện ấy
 
