@@ -22,11 +22,11 @@
 - [X] Tạo dữ liệu mẫu
 - [X] Hiển thị tuyến xe ở trang chủ
 - [X] Hiển thị danh sách xe theo tuyến
-- [ ] Hiển thị thông tin chi tiết của xe
+- [X] Hiển thị thông tin chi tiết của xe
 - [ ] Sử dụng phân trang
 - [X] Thêm dữ liệu vào lựa tuyến xe (điểm bắt đầu, kết thúc)
-- [ ] Thực hiện sort
-- [ ] Thực hiện search
+- [X] Thực hiện sort
+- [X] Thực hiện search
 - [ ] Thực hiện filter
 - [ ] Hiển thị thông tin lên phần mua vé
 - [ ] Lưu thông tin mua vé lên database
@@ -116,7 +116,7 @@ Có thể vào kiểm tra tại pgAdmin, nhấn chuột phải vài database **t
     </ul>
   </detail>
   
-4.  <details><summary> <b> Hiển thị tuyến xe top ở trang chủ &#9733</b> </summary>
+4.  <details><summary> <b> Hiển thị tuyến xe top ở trang chủ &#10004</b> </summary>
     <ul><li>Người làm: </li>
     <li>Mô tả: 
         <ul>File làm việc : /server/controllers/busDataController_copy.js</ul>
@@ -125,7 +125,7 @@ Có thể vào kiểm tra tại pgAdmin, nhấn chuột phải vài database **t
     </ul>
   </detail>
 
-5.  <details><summary> <b> Hiển thị danh sách chuyến xe &#9733</b> </summary>
+5.  <details><summary> <b> Hiển thị danh sách chuyến xe &#10004</b> </summary>
     <ul><li>Người làm: </li>
     <li>Mô tả: 
         <ul>File làm việc : /server/controllers/busDataController.js</ul>
@@ -134,7 +134,7 @@ Có thể vào kiểm tra tại pgAdmin, nhấn chuột phải vài database **t
     </ul>
   </detail>
 
-6.  <details><summary> <b> Hiển thị thông tin chi tiết của xe</b> </summary>
+6.  <details><summary> <b> Hiển thị thông tin chi tiết của xe &#10004</b> </summary>
     <ul><li>Người làm: </li>
     <li>Mô tả: 
         <ul></ul>
@@ -153,7 +153,7 @@ Có thể vào kiểm tra tại pgAdmin, nhấn chuột phải vài database **t
   </detail>
   
   
-9.  <details><summary> <b> Thực hiện sort</b> </summary>
+9.  <details><summary> <b> Thực hiện sort &#10004</b> </summary>
     <ul><li>Người làm: </li>
     <li>Mô tả: 
         <ul></ul>
@@ -163,7 +163,7 @@ Có thể vào kiểm tra tại pgAdmin, nhấn chuột phải vài database **t
   </detail>
   
  
- - <details><summary> <b>10.Thực hiện search</b> </summary>
+ - <details><summary> <b>10.Thực hiện search &#10004</b> </summary>
       <ul><li>Người làm: </li>
       <li>Mô tả: 
           <ul></ul>
@@ -207,7 +207,7 @@ Có thể vào kiểm tra tại pgAdmin, nhấn chuột phải vài database **t
     </ul>
   </detail>
   
- - <details><summary> <b>15.Quản lý chuyến xe: Thêm, xóa, sửa</b> </summary>
+ - <details><summary> <b>15.Quản lý chuyến xe: Thêm, xóa, sửa &#10004</b> </summary>
     <ul><li>Người làm: </li>
     <li>Mô tả: 
         <ul></ul>
@@ -216,7 +216,7 @@ Có thể vào kiểm tra tại pgAdmin, nhấn chuột phải vài database **t
     </ul>
   </detail>
   
- - <details><summary> <b>16.Quản lý đặt chỗ: Xem, sửa</b> </summary>
+ - <details><summary> <b>16.Quản lý đặt chỗ: Xem, sửa &#10004</b> </summary>
     <ul><li>Người làm: </li>
     <li>Mô tả: 
         <ul></ul>
