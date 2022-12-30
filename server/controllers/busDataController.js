@@ -4,12 +4,12 @@ const dataController = require('./getDataController')
 const renderBus = async(req, res) => {
     try {
 
-        const { tinhbatdau, tinhketthuc,date } = req.query
+        const { tinhbatdau, tinhketthuc,date,sort } = req.query
         let chuyenxe
 
-
+        
         if (tinhbatdau !== undefined && tinhketthuc !== undefined) {
-            chuyenxe = await dataController.getAllChuyenxeBy2Tinh(tinhbatdau, tinhketthuc,date)
+            chuyenxe = await dataController.getAllChuyenxeBySearch(tinhbatdau, tinhketthuc,date,sort)
         }else{
             chuyenxe = await dataController.getAllChuyenxe()
         }

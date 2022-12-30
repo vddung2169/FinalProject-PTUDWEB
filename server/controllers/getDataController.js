@@ -159,7 +159,7 @@ const getAllChuyenxeByTuyenduong = async() => {
 }
 
 
-const getAllChuyenxeBy2Tinh = async(tinhbatdau,tinhketthuc,thoigian) => {
+const getAllChuyenxeBySearch = async(tinhbatdau,tinhketthuc,thoigian,sort) => {
     try {
         QUERY = 'SELECT CX.HINHANHXE,CX.MATUYENDUONG,CX.MACHUYENXE,NX.TENNHAXE,CX.MANHAXE,LX.TENLOAIXE,CX.TGKHOIHANH,CX.TGKETTHUC,' + 
         'DCBD.TENDIACHI TENDIACHIKHOIHANH,DCKT.TENDIACHI TENDIACHIKETTHUC,CX.GIAVENHONHAT,DG.DIEMSO'+
@@ -167,25 +167,29 @@ const getAllChuyenxeBy2Tinh = async(tinhbatdau,tinhketthuc,thoigian) => {
          ' INNER JOIN DIACHI DCKT ON CX.DIACHIKETTHUC = DCKT.MADIACHI INNER JOIN LOAIXE LX ON CX.MALOAIXE = LX.MALOAIXE INNER JOIN TUYENDUONG TD ON CX.MATUYENDUONG = TD.MATUYENDUONG INNER JOIN '+
          ' (SELECT NX1.MANHAXE,AVG(DG.DIEMSO) DIEMSO FROM NHAXE NX1 LEFT OUTER JOIN DANHGIA DG ON NX1.MANHAXE = DG.MANHAXE GROUP BY NX1.MANHAXE) DG ON DG.MANHAXE = CX.MANHAXE '
 
-        if(tinhbatdau.trim().length !== 0 || tinhketthuc.trim().length !== 0 || thoigian.trim().length !== 0){
+        if(tinhbatdau || tinhketthuc || thoigian){
             QUERY += 'WHERE '
         }
         CONDITION = []
 
-        if(tinhbatdau.trim().length !== 0){
+        if(tinhbatdau){
             CONDITION.push(`TD.TINHBATDAU = '${tinhbatdau}'`)
         }
 
-        if(tinhketthuc.trim().length !== 0){
+        if(tinhketthuc){
             CONDITION.push(`TD.TINHKETTHUC = '${tinhketthuc}'`) 
         }
 
-        if(thoigian.trim().length !== 0){
+        if(thoigian){
             CONDITION.push(`CX.TGKHOIHANH > '${thoigian}' ORDER BY ABS(DATE_PART('day','${thoigian}' - CX.TGKHOIHANH))`)
         }
 
         WHERE = CONDITION.join(' AND ')
         QUERY += WHERE
+
+        if(sort){
+            QUERY += ` ORDER BY CX.GIAVENHONHAT ${sort}`
+        }
 
         const data = await sequelize.query(QUERY
         ,QueryTypes.SELECT)
@@ -322,7 +326,7 @@ module.exports = {
     getAllTinhthanh,
     getAllTuyenduongtop,
     getAllChuyenxe,
-    getAllChuyenxeBy2Tinh,
+    getAllChuyenxeBySearch,
     getAllChuyenxeByTuyenduong,
     getAllNhaxe,
     getAllDiachi,
