@@ -3,7 +3,7 @@ const formatRating = (rating) => {
 }
 
 const formatRatingStar = (rating) => {
-    const ratingStar = ""
+    let ratingStar = ""
     const point = Math.floor(rating);
     const remainderPoint = (rating) % 1;
 
