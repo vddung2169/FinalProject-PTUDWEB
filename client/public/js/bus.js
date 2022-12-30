@@ -4,7 +4,7 @@ const selectedRoute = () =>{
         get: (searchParams, prop) => searchParams.get(prop),
       });
 
-    const {tinhbatdau,tinhketthuc} = params
+    const {tinhbatdau,tinhketthuc,date} = params
 
     
       // TODO change to bus.js
@@ -12,6 +12,7 @@ const selectedRoute = () =>{
     tbd.setAttribute('selected',true)
     const tkt = document.querySelector(`#tinhketthuc > option[value="${tinhketthuc}"]`)
     tkt.setAttribute('selected',true)
+    document.querySelector('#date').value = date
     
     // $("#tinhbatdau > option[value='" + tinhbatdau + "']").prop('selected', true)
     // $("#tinhketthuc > option[value='" + tinhketthuc + "']").prop('selected', true)

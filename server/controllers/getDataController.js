@@ -47,7 +47,8 @@ const getAllTuyenduongtop = async () => {
 
 const getAllChuyenxe = async () => {
     try {
-       const data = await sequelize.query('SELECT CX.HINHANHXE,CX.MATUYENDUONG,CX.MACHUYENXE,NX.TENNHAXE,LX.TENLOAIXE,CX.TGKHOIHANH,CX.TGKETTHUC,DCBD.TENDIACHI,DCKT.TENDIACHI,CX.GIAVENHONHAT,DG.DIEMSO'+
+       const data = await sequelize.query('SELECT CX.HINHANHXE,CX.MATUYENDUONG,CX.MACHUYENXE,NX.TENNHAXE,CX.MANHAXE,LX.TENLOAIXE,CX.TGKHOIHANH,CX.TGKETTHUC,'+
+       'DCBD.TENDIACHI TENDIACHIKHOIHANH,DCKT.TENDIACHI TENDIACHIKETTHUC,CX.GIAVENHONHAT,DG.DIEMSO'+
        ' FROM CHUYENXE CX INNER JOIN NHAXE NX ON CX.MANHAXE = NX.MANHAXE INNER JOIN DIACHI DCBD ON CX.DIACHIBATDAU = DCBD.MADIACHI' +
         ' INNER JOIN DIACHI DCKT ON CX.DIACHIKETTHUC = DCKT.MADIACHI INNER JOIN LOAIXE LX ON CX.MALOAIXE = LX.MALOAIXE INNER JOIN TUYENDUONG TD ON CX.MATUYENDUONG = TD.MATUYENDUONG INNER JOIN '+
         ' (SELECT NX1.MANHAXE,AVG(DG.DIEMSO) DIEMSO FROM NHAXE NX1 LEFT OUTER JOIN DANHGIA DG ON NX1.MANHAXE = DG.MANHAXE GROUP BY NX1.MANHAXE) DG ON DG.MANHAXE = CX.MANHAXE'
@@ -90,38 +91,25 @@ const getAllChuyenxe = async () => {
         //     ]
         // })
 
-        // for (let index = 0; index < data[0].length; index++) {
-        //     const diemdon = await database.diachi.findAll({
-        //      attributes: ['tendiachi','diachicuthe'],
-        //      where:{
-        //          matinh : data[0][index].tinhbatdau
-        //      }
-        //     })
-        //     const diemden = await database.diachi.findAll({
-        //      attributes: ['tendiachi','diachicuthe'],
-        //      where:{
-        //          matinh :  data[0][index].tinhketthuc
-        //      }
-        //     })
+      
 
-        //     const danhgia = await database.danhgia.findAll({
-        //         include:{
-        //             model: database.khachhang,
-        //             attributes : []
-        //         },
-        //         attributes:[[sequelize.col('database.khachhang.tenkhachhang'), 'tenkhachhang'],
-        //                 'diemso','binhluan'],
-        //         where:{
-        //             machuyenxe: data[0].machuyenxe
-        //         }
-        //     })
- 
-           
+        for (let index = 0; index < data[0].length; index++) {
+            const danhgia = await database.danhgia.findAll({
+             include : [{
+                model : database.khachhang,
+                require : true,
+                attributes : []
+             }],
+             attributes: ['binhluan','diemso',sequelize.col('khachhang.tenkhachhang')],
+             where:{
+                 manhaxe : data[0][index].manhaxe
+             },
+             raw : true
+            })
             
-        //     data[0][index].diemdon = diemdon
-        //     data[0][index].diemden = diemden
- 
-        //  }
+          
+            data[0][index].danhgia = danhgia
+         }
 
         return data[0]
         
@@ -171,14 +159,35 @@ const getAllChuyenxeByTuyenduong = async() => {
 }
 
 
-const getAllChuyenxeBy2Tinh = async(tinhbatdau,tinhketthuc) => {
+const getAllChuyenxeBy2Tinh = async(tinhbatdau,tinhketthuc,thoigian) => {
     try {
-        const data = await sequelize.query('SELECT CX.HINHANHXE,CX.MATUYENDUONG,CX.MACHUYENXE,NX.TENNHAXE,CX.MANHAXE,LX.TENLOAIXE,CX.TGKHOIHANH,CX.TGKETTHUC,' + 
+        QUERY = 'SELECT CX.HINHANHXE,CX.MATUYENDUONG,CX.MACHUYENXE,NX.TENNHAXE,CX.MANHAXE,LX.TENLOAIXE,CX.TGKHOIHANH,CX.TGKETTHUC,' + 
         'DCBD.TENDIACHI TENDIACHIKHOIHANH,DCKT.TENDIACHI TENDIACHIKETTHUC,CX.GIAVENHONHAT,DG.DIEMSO'+
         ' FROM CHUYENXE CX INNER JOIN NHAXE NX ON CX.MANHAXE = NX.MANHAXE INNER JOIN DIACHI DCBD ON CX.DIACHIBATDAU = DCBD.MADIACHI' +
          ' INNER JOIN DIACHI DCKT ON CX.DIACHIKETTHUC = DCKT.MADIACHI INNER JOIN LOAIXE LX ON CX.MALOAIXE = LX.MALOAIXE INNER JOIN TUYENDUONG TD ON CX.MATUYENDUONG = TD.MATUYENDUONG INNER JOIN '+
-         ' (SELECT NX1.MANHAXE,AVG(DG.DIEMSO) DIEMSO FROM NHAXE NX1 LEFT OUTER JOIN DANHGIA DG ON NX1.MANHAXE = DG.MANHAXE GROUP BY NX1.MANHAXE) DG ON DG.MANHAXE = CX.MANHAXE ' +
-         `WHERE TD.TINHBATDAU = '${tinhbatdau}' AND TD.TINHKETTHUC = '${tinhketthuc}'` 
+         ' (SELECT NX1.MANHAXE,AVG(DG.DIEMSO) DIEMSO FROM NHAXE NX1 LEFT OUTER JOIN DANHGIA DG ON NX1.MANHAXE = DG.MANHAXE GROUP BY NX1.MANHAXE) DG ON DG.MANHAXE = CX.MANHAXE '
+
+        if(tinhbatdau.trim().length !== 0 || tinhketthuc.trim().length !== 0 || thoigian.trim().length !== 0){
+            QUERY += 'WHERE '
+        }
+        CONDITION = []
+
+        if(tinhbatdau.trim().length !== 0){
+            CONDITION.push(`TD.TINHBATDAU = '${tinhbatdau}'`)
+        }
+
+        if(tinhketthuc.trim().length !== 0){
+            CONDITION.push(`TD.TINHKETTHUC = '${tinhketthuc}'`) 
+        }
+
+        if(thoigian.trim().length !== 0){
+            CONDITION.push(`CX.TGKHOIHANH > '${thoigian}' ORDER BY ABS(DATE_PART('day','${thoigian}' - CX.TGKHOIHANH))`)
+        }
+
+        WHERE = CONDITION.join(' AND ')
+        QUERY += WHERE
+
+        const data = await sequelize.query(QUERY
         ,QueryTypes.SELECT)
        
         for (let index = 0; index < data[0].length; index++) {
