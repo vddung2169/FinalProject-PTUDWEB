@@ -33,8 +33,8 @@
 - [X] Quản lý nhà xe: Xem, thêm, xóa, sửa
 - [X] Quản lý chuyến xe: Thêm, xóa, sửa
 - [X] Quản lý đặt chỗ: Xem, sửa
-- [ ] Chức năng đăng nhập
-- [ ] Chức năng đăng ký
+- [X] Chức năng đăng nhập
+- [X] Chức năng đăng ký
 - [ ] Hiển thị lịch sử đặt vé
 - [ ] Confirm đăng ký + quên mật khẩu
 - [ ] Gửi thông tin qua vé email, SMS
@@ -225,7 +225,7 @@ Có thể vào kiểm tra tại pgAdmin, nhấn chuột phải vài database **t
     </ul>
   </detail>
   
- - <details><summary> <b>17.Chức năng đăng nhập</b> </summary>
+ - <details><summary> <b>17.Chức năng đăng nhập &#10004</b> </summary>
     <ul><li>Người làm: </li>
     <li>Mô tả: 
         <ul></ul>
@@ -234,7 +234,7 @@ Có thể vào kiểm tra tại pgAdmin, nhấn chuột phải vài database **t
     </ul>
   </detail>
   
- - <details><summary> <b>18.Chức năng đăng ký</b> </summary>
+ - <details><summary> <b>18.Chức năng đăng ký &#10004</b> </summary>
     <ul><li>Người làm: </li>
     <li>Mô tả: 
         <ul></ul>
