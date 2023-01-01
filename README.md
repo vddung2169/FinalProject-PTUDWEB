@@ -15,6 +15,9 @@
 - [X] Tạo giao diện cho hệ quản trị (file html riêng)
 - [X] Chuyển sang handlebar
 - [X] Cấu trúc lại file
+- [ ] Tạo trang lỗi 404 (tối thiếu cần một thẻ span hoặc p ghi mã lỗi và nội dung lỗi)
+- [ ] Tạo trang quên mật khẩu(ở đây chỉ nhập email), khi nhấn nút gửi ==> không còn ô nhập email mà hiển thị thông báo đã gửi email, có thể có yêu cầu gửi lại)
+- [ ] Tạo trang cho đổi mật khẩu(gồm :một thẻ hiển thị email, ô nhập mẫu khẩu mới,nhập mật khẩu mới nhập lại,nút gửi )
 ## Back-end
 ### Task:
 - [X] Set up server, route
