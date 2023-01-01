@@ -23,6 +23,14 @@ const renderBus = async(req, res) => {
 const renderIndex = async(req, res) => {
     try {
 
+        const makhachhang = req.user
+
+        let user = {
+            name : ""
+        }
+        if(makhachhang){
+
+        }
 
         const tinhthanh = await dataController.getAllTinhthanh()
 

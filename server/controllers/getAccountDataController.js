@@ -1,6 +1,6 @@
 const database = require('../database/models')
 
-const getAnAccountByID = async (ID) => {
+const getAnAdminAccountByID = async (ID) => {
     try {
         const account = await database.quantri.findAll({
             attributes: ['maquantri','tenquantri','matkhau','email','sodienthoai'],
@@ -49,8 +49,61 @@ const createAnAdminAccount = async (name,password,email) => {
     }
 }
 
+const getAnAccountByID = async (makhachhang) => {
+    try {
+        const account = await database.khachhang.findAll({
+            attributes : ['makhachhang','tenkhachhang','email','sodienthoai'],
+            where : {
+                makhachhang : makhachhang
+            },
+            raw : true
+        })
+
+        return account
+
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+
+const getAnAccountByEmail = async (email) => {
+    try {
+        const account = await database.khachhang.findAll({
+            attributes : ['makhachhang','tenkhachhang','email','matkhau','sodienthoai'],
+            where : {
+                email:email
+            },
+            raw : true
+        })
+
+        return account
+
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+
+const createAnAccount = async (name,password,email) => {
+    try {
+        const newAccount = await database.khachhang.create({
+            tenkhachhang : name,
+            matkhau : password,
+            email : email,
+        })
+
+        return newAccount
+    } catch (error) {
+        console.log(error.message)
+    }
+}
+
+
+
+
 module.exports = {
     getAnAdminAccountByEmail,
     createAnAdminAccount,
-    getAnAccountByID
+    getAnAdminAccountByID,
+    getAnAccountByEmail,
+    createAnAccount
 }

@@ -10,8 +10,9 @@
             </div>
             <div class="header__information">
                 <ul class="header__information-list">
-                    <li class="header__information-item"><a href="/register">Sign Up</a></li>
-                    <li class="header__information-item"><a href="/login">Sign In</a></li>
+                    <li id="register" class="header__information-item"><a href="/register">Sign Up</a></li>
+                    <li id="login" class="header__information-item"><a href="/login">Sign In</a></li>
+                    <li id="account" class="header__information-item"><a href="">{{name}}</a></li>
                     <li class="header__information-item"><a href="/history">History</a></li>
                     <!-- <li class="header__information-item">
                         <i class="header__information-info fa-solid fa-user-large"></i>
@@ -36,6 +37,15 @@
                             </li>
                             <li class="header__setting-item">
                                 <a href="">Vietnamese</a>
+                            </li>
+                        </ul>
+                        <ul id="accountSetting" class="header__setting-list">
+                            <span>Account</span>
+                            <li class="header__setting-item">
+                                <a href="">Settings</a>
+                            </li>
+                            <li class="header__setting-item">
+                                <a href="">Logout</a>
                             </li>
                         </ul>
                     </li>

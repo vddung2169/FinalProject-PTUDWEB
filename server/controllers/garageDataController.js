@@ -29,7 +29,7 @@ const createGarage = async(req,res) => {
 
 const viewAllNhaxe = async(req,res,view) => {
     try {
-        userInfo = await accountDataController.getAnAccountByID(req.user)
+        const userInfo = await accountDataController.getAnAccountByID(req.user)
         const data = await dataController.getAllNhaxe(userInfo[0].maquantri)
 
         const nhaxe =data

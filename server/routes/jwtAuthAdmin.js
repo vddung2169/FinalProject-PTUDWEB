@@ -13,13 +13,9 @@ router.post("/register", async (req, res) => {
   try {
     const { name, email, password } = req.body;
 
- 
-
 
     const user = await accountDataController.getAnAdminAccountByEmail(email)
-   
-
-    
+  
     
     if(user.length > 0){
         return res.status(401).json("User is already existed!");
@@ -34,8 +30,8 @@ router.post("/register", async (req, res) => {
 
 
     const token = jwtGenerator(newUser.maquantri)
-
-    return res.json({token})
+    req.session.token = token
+    res.redirect('/admin')
 
 
   } catch (error) {
