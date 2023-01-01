@@ -4,10 +4,10 @@ const accountDataController = require('./getAccountDataController')
 const renderBus = async(req, res) => {
     try {
 
-        const { tinhbatdau, tinhketthuc,date,sort } = req.query
+        const { tinhbatdau, tinhketthuc,date,sort,tennhaxe } = req.query
         const page = req.query.page || 1
         
-        const chuyenxe = await dataController.getAllChuyenxeBySearch(tinhbatdau, tinhketthuc,date,sort,page)
+        const chuyenxe = await dataController.getAllChuyenxeBySearch(tinhbatdau, tinhketthuc,date,sort,tennhaxe,page)
 
         const tinhthanh = await dataController.getAllTinhthanh()
 

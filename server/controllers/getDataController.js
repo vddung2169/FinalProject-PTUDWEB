@@ -32,7 +32,16 @@ const getAllTinhthanh = async() =>{
 const getAllTuyenduongtop = async () => {
     try {
         const tuyenduongtop = await database.tuyenduongtop.findAll({
-            attributes : ['matuyenduong','ten','giachitu'],
+            include : [
+                {
+                    model : database.tuyenduong,
+                    require : true,
+                    attributes : []
+                }
+
+            ],
+            attributes : ['matuyenduong','ten','giachitu',
+            sequelize.col('tuyenduong.tinhbatdau'),sequelize.col('tuyenduong.tinhketthuc')],
             raw : true
         })
 
@@ -159,7 +168,7 @@ const getAllChuyenxeByTuyenduong = async() => {
 }
 
 
-const getAllChuyenxeBySearch = async(tinhbatdau,tinhketthuc,thoigian,sort,page) => {
+const getAllChuyenxeBySearch = async(tinhbatdau,tinhketthuc,thoigian,sort,tennhaxe,page) => {
     try {
         QUERY = 'SELECT CX.HINHANHXE,CX.MATUYENDUONG,CX.MACHUYENXE,NX.TENNHAXE,CX.MANHAXE,LX.TENLOAIXE,CX.TGKHOIHANH,CX.TGKETTHUC,' + 
         'DCBD.TENDIACHI TENDIACHIKHOIHANH,DCKT.TENDIACHI TENDIACHIKETTHUC,CX.GIAVENHONHAT,DG.DIEMSO'+
@@ -167,7 +176,7 @@ const getAllChuyenxeBySearch = async(tinhbatdau,tinhketthuc,thoigian,sort,page) 
          ' INNER JOIN DIACHI DCKT ON CX.DIACHIKETTHUC = DCKT.MADIACHI INNER JOIN LOAIXE LX ON CX.MALOAIXE = LX.MALOAIXE INNER JOIN TUYENDUONG TD ON CX.MATUYENDUONG = TD.MATUYENDUONG INNER JOIN '+
          ' (SELECT NX1.MANHAXE,AVG(DG.DIEMSO) DIEMSO FROM NHAXE NX1 LEFT OUTER JOIN DANHGIA DG ON NX1.MANHAXE = DG.MANHAXE GROUP BY NX1.MANHAXE) DG ON DG.MANHAXE = CX.MANHAXE '
 
-        if(tinhbatdau || tinhketthuc || thoigian){
+        if(tinhbatdau || tinhketthuc || thoigian || tennhaxe){
             QUERY += 'WHERE '
         }
         CONDITION = []
@@ -178,6 +187,10 @@ const getAllChuyenxeBySearch = async(tinhbatdau,tinhketthuc,thoigian,sort,page) 
 
         if(tinhketthuc){
             CONDITION.push(`TD.TINHKETTHUC = '${tinhketthuc}'`) 
+        }
+
+        if(tennhaxe){
+            CONDITION.push(`NX.TENNHAXE ILIKE '%${tennhaxe}%'`)
         }
 
         if(thoigian){
