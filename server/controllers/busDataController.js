@@ -23,17 +23,24 @@ const renderBus = async(req, res) => {
 const renderIndex = async(req, res) => {
     try {
 
-        const makhachhang = req.user
+        
+        const id = req.user
+        const accountType = req.accountType
 
         let user = {
             tenkhachhang : ""
         }
-        if(makhachhang){
-            const data  = await accountDataController.getAnAccountByID(makhachhang)
-            user = data[0]
+        if(id){
+            if(accountType === 'system'){
+                const data  = await accountDataController.getAnAccountByID(id)
+                user = data[0]
+            }else if(accountType === 'google'){
+                const data  = await accountDataController.getAnGoogleAccount(null,id)
+                user = data[0]
+            }
         }
 
-        console.log(user)
+        
 
         const tinhthanh = await dataController.getAllTinhthanh()
 

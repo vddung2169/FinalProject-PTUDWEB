@@ -48,7 +48,7 @@ module.exports = (sequelize, DataTypes) => {
     diachiketthuc: DataTypes.INTEGER,
     giavenhonhat: DataTypes.INTEGER,
     hinhanhxe: DataTypes.STRING,
-    mota: DataTypes.STRING,
+    mota: DataTypes.TEXT,
     maloaixe: DataTypes.STRING
   }, {
     sequelize,

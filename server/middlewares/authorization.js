@@ -34,7 +34,13 @@ const authorizationUser = async (req,res,next,redirect) => {
         
         if(token){
             const payload = jwt.verify(token,process.env.SECRET_KEY)
+            req.accountType = 'system'
             req.user = payload.userID
+            next()
+        }
+        else if(req.session.passport){
+            req.accountType = 'google'
+            req.user = req.session.passport.user
             next()
         }
         else{

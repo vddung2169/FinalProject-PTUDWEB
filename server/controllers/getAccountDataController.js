@@ -1,4 +1,5 @@
 const database = require('../database/models')
+const { Op } = require("sequelize");
 
 const getAnAdminAccountByID = async (ID) => {
     try {
@@ -83,11 +84,59 @@ const getAnAccountByEmail = async (email) => {
     }
 }
 
+const getAnGoogleAccount =async (email,googleID) => {
+    try {
+        let account = null
+        if(email){
+            account = await database.khachhang.findAll({
+                attributes : ['makhachhang','tenkhachhang','email','matkhau','sodienthoai','googleID'],
+                where : {
+                    [Op.or] : [
+                        {email:email},
+                        {googleID:googleID}
+                    ]
+                },
+                raw : true
+            })    
+        }else{
+            account = await database.khachhang.findAll({
+                attributes : ['makhachhang','tenkhachhang','email','matkhau','sodienthoai','googleID'],
+                where : {
+                    googleID:googleID
+                },
+                raw : true
+            })    
+        }
+        
+        return account
+
+    } catch (error) {
+        console.log(error.message);
+    }
+
+
+
+}
+
 const createAnAccount = async (name,password,email) => {
     try {
         const newAccount = await database.khachhang.create({
             tenkhachhang : name,
             matkhau : password,
+            email : email,
+        })
+
+        return newAccount
+    } catch (error) {
+        console.log(error.message)
+    }
+}
+
+const createAnGoogleAccount = async (name,googleID,email) => {
+    try {
+        const newAccount = await database.khachhang.create({
+            tenkhachhang : name,
+            googleID : googleID,
             email : email,
         })
 
@@ -106,5 +155,7 @@ module.exports = {
     getAnAdminAccountByID,
     getAnAccountByEmail,
     createAnAccount,
-    getAnAccountByID
+    getAnAccountByID,
+    getAnGoogleAccount,
+    createAnGoogleAccount
 }

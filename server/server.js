@@ -7,11 +7,10 @@ const path = require('path')
 const cookieParser = require('cookie-parser')
 const sessions = require('express-session')
 const methodOverride = require('method-override')
-
+const passport = require('passport')
 
 // const methodOverride = require('method-override')
 const busDataController = require('./controllers/getDataController')
-
 
 
 app.use(sessions({
@@ -21,6 +20,8 @@ app.use(sessions({
     resave: false
 }));
 app.use(cookieParser());
+app.use(passport.initialize());
+app.use(passport.session());
 
 // - Middleware
 app.use(express.json())
@@ -73,6 +74,7 @@ app.post('/test', async(req,res)=>{
 app.use('/admin/GRUD',require('./routes/adminOperation'))
 app.use('/admin/auth',require('./routes/jwtAuthAdmin'))
 app.use('/admin',require('./routes/adminView'))
+app.use('/auth/google',require('./routes/googleAuth'))
 app.use('/auth',require('./routes/jwtAuth'))
 app.use('/',require('./routes/userView'))
 
