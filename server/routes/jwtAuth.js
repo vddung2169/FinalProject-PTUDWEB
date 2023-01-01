@@ -74,6 +74,11 @@ router.post("/login", async (req, res) => {
   }
 });
 
+router.get('/logout',(req,res)=>{
+    req.session.destroy()
+    res.redirect('/')
+})
+
 // // - VERIFY
 // router.post("/verify", authorize, (req, res) => {
 //   try {

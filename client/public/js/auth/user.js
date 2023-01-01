@@ -1,7 +1,7 @@
 const navbarAccount = document.getElementById('account')
 const navbarRegister = document.getElementById('register')
 const navbarLogin = document.getElementById('login')
-const navbarAccountSetting = document.getElementById('accountSetting')
+const navbarAccountSetting = document.querySelectorAll('.accountSetting')
 
 const checkIfAccount = () =>{
     const nameUser = navbarAccount.firstElementChild.innerHTML
@@ -12,7 +12,9 @@ const checkIfAccount = () =>{
         navbarAccount.firstElementChild.innerHTML = 'Welcome, ' + nameUser + ' !'
     }else{
         navbarAccount.style.display = 'none'
-        navbarAccountSetting.style.display = 'none'
+        navbarAccountSetting.forEach(e => {
+            e.style.display = 'none'
+        })
     }
 
 }

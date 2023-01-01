@@ -32,11 +32,6 @@ passport.use(new GoogleStrategy({
     
     const name = profile.displayName
 
-    // ! PASSWORD = GOOGLE ID
-    // const newUser = await pool.query(
-    //     "INSERT INTO USER_TABLE(PASSWORD,NAME,EMAIL) VALUES ($1,$2,$3) RETURNING *",
-    //     [profile.id,name, profile.email]
-    //   );
     const newUser = await accountDataController.createAnGoogleAccount(name,profile.id,profile.email)
 
     return done(null, newUser);
