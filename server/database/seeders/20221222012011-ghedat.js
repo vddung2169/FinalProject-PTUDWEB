@@ -1,35 +1,87 @@
 'use strict';
-const ghexe = require('../models').ghexe
+
 const chuyenxe = require('../models').chuyenxe
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-  //   const danhsachghexe = await ghexe.findAll({
-  //     attributes: ['maghe']
-  // })
-  //   const danhsachvexe = await vexe.findAll({
-  //       attributes: ['mave']
-  //   })
+    const danhsachchuyenxe = await chuyenxe.findAll({
+      attributes: ['machuyenxe'],
+      order: [
+          ['createdAt', 'ASC'],
+      ]
+    })
 
-  //   const chitietvexedata = [{
-  //       ghexeMaghe: danhsachghexe[0].dataValues.maghe,
-  //       vexeMave: danhsachvexe[0].dataValues.mave,
-  //       createdAt: new Date(),
-  //       updatedAt: new Date()
-  //   }]
-
-
-  //   await queryInterface.bulkInsert('ghedat',
-  //     chitietvexedata, {}
-  //   )
+    const ghedatdata = [
+      {
+        machuyenxe : danhsachchuyenxe[0].dataValues.machuyenxe,
+        maghe : '1A',
+        maloaixe : 'LIMOU9',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        machuyenxe : danhsachchuyenxe[0].dataValues.machuyenxe,
+        maghe : '2A',
+        maloaixe : 'LIMOU9',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        machuyenxe : danhsachchuyenxe[0].dataValues.machuyenxe,
+        maghe : '3A',
+        maloaixe : 'LIMOU9',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        machuyenxe : danhsachchuyenxe[1].dataValues.machuyenxe,
+        maghe : '12A',
+        maloaixe : 'TOYOTA7',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        machuyenxe : danhsachchuyenxe[4].dataValues.machuyenxe,
+        maghe : '20A',
+        maloaixe : 'LIMOU7',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        machuyenxe : danhsachchuyenxe[4].dataValues.machuyenxe,
+        maghe : '21A',
+        maloaixe : 'LIMOU7',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        machuyenxe : danhsachchuyenxe[4].dataValues.machuyenxe,
+        maghe : '23A',
+        maloaixe : 'LIMOU9',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        machuyenxe : danhsachchuyenxe[0].dataValues.machuyenxe,
+        maghe : '5A',
+        maloaixe : 'LIMOU9',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        machuyenxe : danhsachchuyenxe[3].dataValues.machuyenxe,
+        maghe : '6A',
+        maloaixe : 'TOYOTA7',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+    ]
+    await queryInterface.bulkInsert('ghedat',
+      ghedatdata, {}
+    )
   },
 
   async down (queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
+    await queryInterface.bulkDelete('ghedat', null, {});
   }
 };

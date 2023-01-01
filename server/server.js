@@ -39,7 +39,8 @@ app.engine('hbs', engine({
         formatStar: require('./utils/formatRating').formatRatingStar,
         formatMoney: require('./utils/formatMoney'),
         formatTimeAdmin: require('./utils/formatTime').formatTimeAdmin,
-        formatString : require('./utils/formatToString')
+        formatString : require('./utils/formatToString'),
+        calculateSlot: require('./utils/calculate').calculateNumber
     }
 }))
 app.set('view engine','hbs')
