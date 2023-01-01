@@ -71,7 +71,7 @@ app.post('/test', async(req,res)=>{
 })
 
 app.use('/admin/GRUD',require('./routes/adminOperation'))
-app.use('/admin/auth',require('./routes/jwtAuth'))
+app.use('/admin/auth',require('./routes/jwtAuthAdmin'))
 app.use('/admin',require('./routes/adminView'))
 app.use('/',require('./routes/userView'))
 

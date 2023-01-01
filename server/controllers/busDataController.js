@@ -5,14 +5,9 @@ const renderBus = async(req, res) => {
     try {
 
         const { tinhbatdau, tinhketthuc,date,sort } = req.query
-        let chuyenxe
-
+        const page = req.query.page || 1
         
-        if (tinhbatdau !== undefined && tinhketthuc !== undefined) {
-            chuyenxe = await dataController.getAllChuyenxeBySearch(tinhbatdau, tinhketthuc,date,sort)
-        }else{
-            chuyenxe = await dataController.getAllChuyenxe()
-        }
+        const chuyenxe = await dataController.getAllChuyenxeBySearch(tinhbatdau, tinhketthuc,date,sort,page)
 
         const tinhthanh = await dataController.getAllTinhthanh()
 

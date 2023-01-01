@@ -11,7 +11,6 @@ const authorization = async (req,res,next) =>{
         
         if(token){
             const payload = jwt.verify(token,process.env.SECRET_KEY)
-            req.userType = 'system'
             req.user = payload.userID
             next()
         }
@@ -19,23 +18,7 @@ const authorization = async (req,res,next) =>{
             res.redirect('/admin/login')
             //res.status(401).json(false)
         }
-        // const token = req.header("jwtToken")
-        // if(token !== 'undefined'){
-        //     const payload = jwt.verify(token,process.env.SECRET_KEY)
-
-        // // USER = ID
-        //     req.userType = 'system'
-        //     req.user = payload.userID
-        //     next()
-        // }
-        // else if(req.session.passport !== undefined){
-        //     req.userType = 'google'
-        //     req.user = req.session.passport.user
-        //     next()
-        // }
-        // else{
-        //     res.status(401).json(false)
-        // }
+       
         
 
     } catch (error) {

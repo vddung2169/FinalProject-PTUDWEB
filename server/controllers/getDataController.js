@@ -159,7 +159,7 @@ const getAllChuyenxeByTuyenduong = async() => {
 }
 
 
-const getAllChuyenxeBySearch = async(tinhbatdau,tinhketthuc,thoigian,sort) => {
+const getAllChuyenxeBySearch = async(tinhbatdau,tinhketthuc,thoigian,sort,page) => {
     try {
         QUERY = 'SELECT CX.HINHANHXE,CX.MATUYENDUONG,CX.MACHUYENXE,NX.TENNHAXE,CX.MANHAXE,LX.TENLOAIXE,CX.TGKHOIHANH,CX.TGKETTHUC,' + 
         'DCBD.TENDIACHI TENDIACHIKHOIHANH,DCKT.TENDIACHI TENDIACHIKETTHUC,CX.GIAVENHONHAT,DG.DIEMSO'+
@@ -190,6 +190,10 @@ const getAllChuyenxeBySearch = async(tinhbatdau,tinhketthuc,thoigian,sort) => {
         if(sort){
             QUERY += ` ORDER BY CX.GIAVENHONHAT ${sort}`
         }
+
+        const limit = 6
+
+        QUERY += ` LIMIT ${limit} OFFSET ${limit*(page - 1)}`
 
         const data = await sequelize.query(QUERY
         ,QueryTypes.SELECT)
