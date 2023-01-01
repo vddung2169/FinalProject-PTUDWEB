@@ -1,5 +1,5 @@
 const dataController = require('./getDataController')
-
+const accountDataController = require('./getAccountDataController')
 
 const renderBus = async(req, res) => {
     try {
@@ -26,18 +26,21 @@ const renderIndex = async(req, res) => {
         const makhachhang = req.user
 
         let user = {
-            name : ""
+            tenkhachhang : ""
         }
         if(makhachhang){
-
+            const data  = await accountDataController.getAnAccountByID(makhachhang)
+            user = data[0]
         }
+
+        console.log(user)
 
         const tinhthanh = await dataController.getAllTinhthanh()
 
         const tuyenduongtop = await dataController.getAllTuyenduongtop()
 
 
-        res.render('index', { tuyenduongtop, tinhthanh })
+        res.render('index', { tuyenduongtop, tinhthanh,user })
 
     } catch (error) {
         console.log(error.message)

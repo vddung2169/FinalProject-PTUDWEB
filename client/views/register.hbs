@@ -19,7 +19,7 @@
         <div class="main signup">
 
 
-            <form action="" method="POST" class="form" id="form-1">
+            <form action="/auth/register" method="POST" class="form" id="form-1">
 
                 <div class="auth-form__header">
                     <h3 class="auth-form__heading">
@@ -52,13 +52,13 @@
                     <span class="form-message"></span>
                 </div>
 
-                <div class="form-group">
+                {{!-- <div class="form-group">
                     <label for="avatar" class="form-label">Ảnh đại diện</label>
                     <input id="avatar" name="avatar" type="file" class="form-control">
                     <span class="form-message"></span>
-                </div>
+                </div> --}}
 
-                <button class="form-submit">Đăng ký</button>
+                <button type="submit" class="form-submit">Đăng ký</button>
                 <button type="button" class="login-with-google-btn">
                     Đăng kí với Google
                 </button>
@@ -73,7 +73,8 @@
 
         </div>
     </div>
-    <script src=" /js/account.js"></script>
+    {{!-- <script src=" /js/account.js"></script> --}}
+    <script src="/js/validator.js"></script>
 
     <script>
         //Output expect
@@ -90,13 +91,8 @@
                 Validator.isConfirm('#password_confirmation', function() {
                     return document.querySelector('#form-1 #password').value;
                 }, 'Mật khẩu không trùng khớp'),
-                Validator.isRequired('#avatar', 'Vui lòng chọn file'),
-                Validator.isRequired("#province", "Vui lòng chọn tỉnh thành!"),
-                Validator.isRequired('input[name="gender"]')
+                
             ],
-            onSubmit: function(data) {
-                console.log(data);
-            }
         });
     </script>
 </body>

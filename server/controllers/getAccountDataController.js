@@ -105,5 +105,6 @@ module.exports = {
     createAnAdminAccount,
     getAnAdminAccountByID,
     getAnAccountByEmail,
-    createAnAccount
+    createAnAccount,
+    getAnAccountByID
 }

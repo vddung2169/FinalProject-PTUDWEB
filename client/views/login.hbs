@@ -19,7 +19,7 @@
             <img loading="lazy" src=" /img/logo_has_color.png" alt="This is LOGO">
         </a> -->
         <div class="main signin">
-            <form action="/auth/" method="POST" class="form" id="form-1">
+            <form action="/auth/login" method="POST" class="form" id="form-1">
 
                 <div class="auth-form__header">
                     <h3 class="auth-form__heading signin">
@@ -40,7 +40,7 @@
                     <span class="form-message"></span>
                 </div>
 
-                <button class="form-submit">Đăng nhập</button>
+                <button type="submit" class="form-submit">Đăng nhập</button>
                 <button type="button" class="login-with-google-btn">
                     Đăng nhập với Google
                 </button>
@@ -54,9 +54,10 @@
 
     </div>
 
-    <script src=" /js/activeHeading.js"></script>
-    <script src=" /js/account.js"></script>
-    <script src=" /js/signIn.js"></script>
+    {{!-- <script src=" /js/activeHeading.js"></script>
+    {{!-- <script src=" /js/account.js"></script> --}}
+    <script src=" /js/signIn.js"></script> --}}
+    <script src="/js/validator.js"></script>
 
     <script>
         //Output expect
@@ -64,22 +65,11 @@
             form: '#form-1',
             formGroupSelector: '.form-group',
             rules: [
-                Validator.isRequired('#fullname', 'Vui lòng nhập họ tên đầy đủ của bạn'),
                 Validator.isRequired('#email', 'Vui lòng không bỏ trống trường này'),
                 Validator.isEmail('#email'),
                 Validator.isRequired('#password', 'Vui lòng không bỏ trống trường này'),
                 Validator.minLength('#password', 6),
-                Validator.isRequired('#password_confirmation', 'Vui lòng không bỏ trống trường này'),
-                Validator.isConfirm('#password_confirmation', function() {
-                    return document.querySelector('#form-1 #password').value;
-                }, 'Mật khẩu không trùng khớp'),
-                Validator.isRequired('#avatar', 'Vui lòng chọn file'),
-                Validator.isRequired("#province", "Vui lòng chọn tỉnh thành!"),
-                Validator.isRequired('input[name="gender"]')
             ],
-            onSubmit: function(data) {
-                console.log(data);
-            }
         });
     </script>
 </body>

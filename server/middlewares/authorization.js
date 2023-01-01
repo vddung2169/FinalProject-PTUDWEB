@@ -27,7 +27,7 @@ const authorizationAdmin = async (req,res,next) =>{
     }
 }
 
-const authorizationUser = async (req,res,redirect) => {
+const authorizationUser = async (req,res,next,redirect) => {
     try {
 
         const token = req.session.token
@@ -40,6 +40,8 @@ const authorizationUser = async (req,res,redirect) => {
         else{
             if(redirect) {
                 res.redirect(redirect)
+            }else{
+                next()
             }
             
             //res.status(401).json(false)

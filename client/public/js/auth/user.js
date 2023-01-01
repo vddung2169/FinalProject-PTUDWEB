@@ -5,6 +5,7 @@ const navbarAccountSetting = document.getElementById('accountSetting')
 
 const checkIfAccount = () =>{
     const nameUser = navbarAccount.firstElementChild.innerHTML
+    console.log(nameUser)
     if(nameUser){
         navbarLogin.style.display = "none"
         navbarRegister.style.display = "none"

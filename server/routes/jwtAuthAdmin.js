@@ -75,14 +75,14 @@ router.post("/login", async (req, res) => {
 });
 
 // - VERIFY
-router.post("/verify", authorize, (req, res) => {
-  try {
-    res.json(true);
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).json("Server error");
-  }
-});
+// router.post("/verify", authorize, (req, res) => {
+//   try {
+//     res.json(true);
+//   } catch (err) {
+//     console.error(err.message);
+//     res.status(500).json("Server error");
+//   }
+// });
 
 
 

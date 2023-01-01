@@ -15,7 +15,7 @@ require('dotenv').config()
 // - REGISTER
 router.post("/register", async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { fullname, email, password } = req.body;
 
     const user = await accountDataController.getAnAccountByEmail(email);
 
@@ -28,7 +28,7 @@ router.post("/register", async (req, res) => {
     const bcryptPassword = await bcrypt.hash(password, salt);
 
     // add new user to database
-    const newUser = await accountDataController.createAnAccount(name,bcryptPassword,email)
+    const newUser = await accountDataController.createAnAccount(fullname,bcryptPassword,email)
 
 
     const token = jwtGenerator(newUser.makhachhang)
@@ -51,38 +51,38 @@ router.post("/login", async (req, res) => {
     const user = await accountDataController.getAnAccountByEmail(email);
 
     if(user.length <= 0){
-        res.status(401).json("User is not exist");
+        return res.status(401).json("User is not exist");
     }
 
    
 
     const validPassword = await bcrypt.compare(
       password,
-      user[0].password
+      user[0].matkhau
     );
 
     if (!validPassword) {
-      res.status(401).json("The password is wrong");
+      return res.status(401).json("The password is wrong");
     }
     const token = jwtGenerator(user[0].makhachhang);
     
     req.session.token = token
     res.redirect('/')
   } catch (err) {
-    console.error(err.message);
-    res.status(500).json("Server error");
+      console.error(err.message);
+      res.status(500).json("Server error");
   }
 });
 
-// - VERIFY
-router.post("/verify", authorize, (req, res) => {
-  try {
-    res.json(true);
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).json("Server error");
-  }
-});
+// // - VERIFY
+// router.post("/verify", authorize, (req, res) => {
+//   try {
+//     res.json(true);
+//   } catch (err) {
+//     console.error(err.message);
+//     res.status(500).json("Server error");
+//   }
+// });
 
 // // - RESET PASSWORD
 // router.post('/forgot', async (req,res) => {
