@@ -116,12 +116,17 @@ Có thể vào kiểm tra tại pgAdmin, nhấn chuột phải vài database **t
     </ul>
   </detail>
   
-4.  <details><summary> <b> Hiển thị tuyến xe top ở trang chủ &#10004</b> </summary>
+4.  <details><summary> <b> Hiển thị thông tin tuyến xe top ở trang chủ</b> </summary>
     <ul><li>Người làm: </li>
     <li>Mô tả: 
-        <ul>File làm việc : /server/controllers/busDataController_copy.js</ul>
+        <ul>
+            <li>Kiếm hình ảnh cho Popular bus routes: hình xe, hình cảnh gì cũng được miễn đẹp, 
+                kích thước phải tương đương hình Hot deals (ở client/public/img/about1.png), 
+                để hình ảnh ở client/public/img/</li>
+            <li>Viết thông tin ý nghĩa ở mục about ở client/views/index.html</li>
+        </ul>
     </li>
-    <li>Deadline: 22/12/2022</li>
+    <li>Deadline: 01/02/2022</li>
     </ul>
   </detail>
 

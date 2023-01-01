@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER
     },
     tenloaighe: DataTypes.STRING,
-    giaghe: DataTypes.DECIMAL(12, 2) 
+    giaghe: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'loaighe',

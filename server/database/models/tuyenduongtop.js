@@ -23,7 +23,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER
     },
     ten:DataTypes.STRING,
-    giachitu: DataTypes.DECIMAL(12, 2) 
+    giachitu: DataTypes.INTEGER,
+    hinhanh: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'tuyenduongtop',
