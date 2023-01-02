@@ -40,7 +40,7 @@ const getAllTuyenduongtop = async () => {
                 }
 
             ],
-            attributes : ['matuyenduong','ten','giachitu',
+            attributes : ['matuyenduong','ten','giachitu','hinhanh',
             sequelize.col('tuyenduong.tinhbatdau'),sequelize.col('tuyenduong.tinhketthuc')],
             raw : true
         })

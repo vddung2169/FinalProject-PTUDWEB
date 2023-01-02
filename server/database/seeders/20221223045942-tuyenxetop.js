@@ -16,6 +16,7 @@ module.exports = {
             matuyenduong: danhsachtuyenduong[4].dataValues.matuyenduong,
             ten: 'Sài Gòn - Đà Lạt',
             giachitu: 180000,
+            hinhanh : '/img/popular1.jpg',
             createdAt: new Date(),
             updatedAt: new Date()
           },
@@ -23,6 +24,7 @@ module.exports = {
             matuyenduong: danhsachtuyenduong[3].dataValues.matuyenduong,
             ten: 'Sài Gòn - Vũng Tàu',
             giachitu: 150000,
+            hinhanh : '/img/popular2.jpg',
             createdAt: new Date(),
             updatedAt: new Date()
           },
@@ -30,6 +32,7 @@ module.exports = {
             matuyenduong: danhsachtuyenduong[2].dataValues.matuyenduong,
             ten: 'Nghệ An - Sài Gòn',
             giachitu: 200000,
+            hinhanh : '/img/popular3.jpg',
             createdAt: new Date(),
             updatedAt: new Date()
           },
@@ -37,6 +40,7 @@ module.exports = {
             matuyenduong: danhsachtuyenduong[1].dataValues.matuyenduong,
             ten: 'Hà Nội - Nghệ An',
             giachitu: 200000,
+            hinhanh : '/img/popular4.jpg',
             createdAt: new Date(),
             updatedAt: new Date()
           },
@@ -44,6 +48,7 @@ module.exports = {
             matuyenduong: danhsachtuyenduong[0].dataValues.matuyenduong,
             ten: 'Sài Gòn - Hà Nội',
             giachitu: 150000,
+            hinhanh : '/img/popular6.jpg',
             createdAt: new Date(),
             updatedAt: new Date()
           },
