@@ -6,6 +6,8 @@ const price = $('.seat-form__footer .seat-form__price');
 var selectingSeats = 0;
 var totalPrice = 0;
 
+var listTickets = [];
+
 function chonghe1(e, maghe, giatien) {
     console.log({ maghe });
     console.log({ giatien });
