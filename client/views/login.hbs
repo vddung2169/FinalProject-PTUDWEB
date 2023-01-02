@@ -41,9 +41,9 @@
                 </div>
 
                 <button type="submit" class="form-submit">Đăng nhập</button>
-                <a href="/auth/google" class="login-with-google-btn">
+                <button type="button"  id="google-login-button" class="login-with-google-btn">
                     Đăng nhập với Google
-                </a>
+                </button>
                 <a href="/" class="modal-logo">
                     <img loading="lazy" src=" /img/logo_has_color.png" alt="This is LOGO">
                     <span>Về trang chủ</span>
@@ -71,6 +71,11 @@
                 Validator.minLength('#password', 6),
             ],
         });
+
+        document.getElementById('google-login-button').addEventListener('click', (e) => {
+            window.location.href = '/auth/google'
+        })
+
     </script>
 </body>
 
