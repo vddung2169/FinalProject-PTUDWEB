@@ -6,16 +6,21 @@ const blockSendEmail = $('.send-email');
 const blockSendEmailSuccess = $('.send-email-success');
 const forgotForm = document.getElementById('forgotForm')
 
-btnSend.onclick = function() {
-    blockSendEmail.classList.remove('active');
-    blockSendEmailSuccess.classList.add('active');
-    const btnResend = $('.btn-resend');
-    btnResend.onclick = function() {
-        blockSendEmail.classList.add('active');
-        blockSendEmailSuccess.classList.remove('active');
-    }
-}
+// btnSend.onclick = function() {
+//     blockSendEmail.classList.remove('active');
+//     blockSendEmailSuccess.classList.add('active');
+//     const btnResend = $('.btn-resend');
+//     btnResend.onclick = function() {
+//         blockSendEmail.classList.add('active');
+//         blockSendEmailSuccess.classList.remove('active');
+//     }
+// }
 
+
+btnResend.onclick = function() {
+    blockSendEmail.classList.add('active');
+    blockSendEmailSuccess.classList.remove('active');
+}
 const forgotSubmit = async(e) => {
     e.preventDefault()
 

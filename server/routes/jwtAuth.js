@@ -2,12 +2,12 @@ const accountDataController = require('../controllers/getAccountDataController')
 const bcrypt = require("bcrypt");
 const router = require("express").Router();
 const jwtGenerator = require("../utils/jwtGenerator");
-// const authorize = require('../middleware/authorization')
+const PORT = process.env.PORT || 3000
 require('dotenv').config()
 const hbs = require('handlebars')
 const fs = require('fs')
 const path = require('path')
-const sendEmail = require('../utils/sendEmail')
+const sendEmail = require('../utils/sendMail')
 // const validateReset = require('../middleware/validateReset')
 
 
@@ -20,7 +20,8 @@ router.post("/register", async (req, res) => {
     const user = await accountDataController.getAnAccountByEmail(email);
 
     if(user.length > 0){
-        res.status(401).json("User is already existed!");
+       return res.render('register',{register_error : 'Email này đã được đăng ký tài khoản'})
+        // res.status(401).json("Email này đã được đăng ký tài khoản");
     }
 
     // Bcrypt the password
@@ -31,7 +32,7 @@ router.post("/register", async (req, res) => {
     const newUser = await accountDataController.createAnAccount(fullname,bcryptPassword,email)
 
 
-    const token = jwtGenerator(newUser.makhachhang)
+    const token = jwtGenerator.jwtGenerator(newUser.makhachhang)
     req.session.token = token
     res.redirect('/')
 
@@ -51,10 +52,8 @@ router.post("/login", async (req, res) => {
     const user = await accountDataController.getAnAccountByEmail(email);
 
     if(user.length <= 0){
-        return res.status(401).json("User is not exist");
+       return res.render('login',{login_error :"Tài khoản này không tồn tại" })
     }
-
-   
 
     const validPassword = await bcrypt.compare(
       password,
@@ -62,12 +61,14 @@ router.post("/login", async (req, res) => {
     );
 
     if (!validPassword) {
-      return res.status(401).json("The password is wrong");
-    }
-    const token = jwtGenerator(user[0].makhachhang);
+      res.render('login',{login_error :"Mật khẩu không đúng" })
+    }else {
+      const token = jwtGenerator.jwtGenerator(user[0].makhachhang);
     
-    req.session.token = token
-    res.redirect('/')
+      req.session.token = token
+      res.redirect('/')
+    }
+    
   } catch (err) {
       console.error(err.message);
       res.status(500).json("Server error");
@@ -102,10 +103,10 @@ router.post('/forgot', async (req,res) => {
     }
 
     // TODO 2. search ID from email and generate token with ID (using different secret key)
-    const token = jwtGenerator(user[0].makhachhang,'SECRET_KEY_RESEY','15m');
+    const token = jwtGenerator.jwtGeneratorForReset(user[0].makhachhang,email,'15m');
 
     // TODO 3. send token in url to that email with route reset password menu
-    const URL = `http://localhost:${process.env.PORT}/resetpassword/?rs=` + token 
+    const URL = `http://localhost:${PORT}/changepassword/?rs=` + token 
 
     const emailTemplate = fs.readFileSync(path.join(__dirname,'../../client/public/templates/mailReset.hbs'),"utf8")
 
@@ -113,7 +114,7 @@ router.post('/forgot', async (req,res) => {
 
     const context = emailTemplateCompiled({url : URL})
 
-    if(sendEmail(context,email)){
+    if(sendEmail('Reset your account password !',context,email)){
       //TODO return true to reset.js and redirect to another page
       res.json(true)
     }
@@ -129,22 +130,22 @@ router.post('/forgot', async (req,res) => {
   }
 })
 
-router.post('/resetpassword/:token',validateReset, async (req,res) => {
+router.post('/resetpassword', async (req,res) => {
   try {
     // TODO 5. get new password and bcrypt it
     const {newpassword} = req.body
+    const makhachhang = req.session.user
 
     // Bcrypt the password
     const salt = await bcrypt.genSalt(10);
     const bcryptPassword = await bcrypt.hash(newpassword, salt);
   
     // TODO 6. change password in database
-    const newUser = await pool.query(
-      "UPDATE USER_TABLE SET PASSWORD = $1 WHERE ID = $2",
-      [bcryptPassword,req.user]
-    );
+    accountDataController.updatePassword(makhachhang,bcryptPassword)
 
-    res.json(true)
+
+    req.session.destroy()
+    res.redirect('/login')
 
 
   } catch (error) {

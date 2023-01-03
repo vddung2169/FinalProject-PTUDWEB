@@ -132,6 +132,22 @@ const createAnAccount = async (name,password,email) => {
     }
 }
 
+const updatePassword = async (id,newPassword) => {
+    try {
+        const account = await database.khachhang.findOne({
+            where : {
+                makhachhang : id
+            }
+        })
+
+        account.matkhau = newPassword
+        account.save()
+
+    } catch (error) {
+        console.log(error.message)
+    }
+}
+
 const createAnGoogleAccount = async (name,googleID,email) => {
     try {
         const newAccount = await database.khachhang.create({
@@ -157,5 +173,6 @@ module.exports = {
     createAnAccount,
     getAnAccountByID,
     getAnGoogleAccount,
-    createAnGoogleAccount
+    createAnGoogleAccount,
+    updatePassword
 }
