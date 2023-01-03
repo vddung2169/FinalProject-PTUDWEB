@@ -27,7 +27,7 @@
     <div class="app">
         <!-- Header -->
         {{>header name=user.tenkhachhang}}
-        
+
 
         <!-- Body -->
         <div id="body">
@@ -84,7 +84,7 @@
 
             <!-- Search Ticket -->
             <div class="search__ticket">
-                <form method="GET" action="/bus"  class="container">
+                <form method="GET" action="/bus" class="container">
                     <h5 class="search__ticket-header">Search Ticket</h5>
                     <div class="search__ticket-choose-wrap">
 
@@ -92,7 +92,7 @@
                             <div class="search__ticket-wrap-item">
                                 <img src=" /img/mini_icon_location.png" alt="" class="search__ticket-choose-img">
                                 <select name="tinhbatdau" class="search__ticket-choose" id="tinhbatdau">
-    
+
                                     <option value="">Your location</option>
                                     {{#each tinhthanh}}
                                     <option value="{{matinh}}">{{tentinh}}</option>
@@ -103,9 +103,9 @@
                             <img src=" /img/mini_icon_direction.png" alt="">
                             <div class="search__ticket-wrap-item">
                                 <img src=" /img/mini_icon_destination.png" alt="" class="search__ticket-choose-img">
-                                <select name="tinhketthuc"  class="search__ticket-choose" id="tinhketthuc">
+                                <select name="tinhketthuc" class="search__ticket-choose" id="tinhketthuc">
                                     <option value="">Your destination</option>
-                                   
+
                                     {{#each tinhthanh}}
                                     <option value="{{matinh}}">{{tentinh}}</option>
                                     {{/each}}
@@ -161,8 +161,10 @@
                                         <img src=" /img/about1.png" alt="">
                                     </div>
                                     <div class="home__popular-item--title">
-                                        <p>Sài Gòn - Đà Lạt</p>
-                                        <span>Từ 130.000</span>
+                                        <p>HOT DEALS</p>
+                                        <span>Đặt vé tại Ticket - Take it để được hưởng cái quyền lợi tại phòng chờ của
+                                            nhà xe.</span>
+
                                     </div>
                                 </a>
                             </li>
@@ -172,8 +174,10 @@
                                         <img src=" /img/about2.png" alt="">
                                     </div>
                                     <div class="home__popular-item--title">
-                                        <p>Sài Gòn - Đà Lạt</p>
-                                        <span>Từ 130.000</span>
+                                        <p>DEAL HOT BẤT NGỜ</p>
+                                        <span>Nhập mã TICKETTAKEIT được giảm đến 50k khi đặt vé online trên trang Ticket
+                                            - Take it.</span>
+
                                     </div>
                                 </a>
                             </li>
@@ -183,8 +187,8 @@
                                         <img src=" /img/about3.jpg" alt="">
                                     </div>
                                     <div class="home__popular-item--title">
-                                        <p>Sài Gòn - Đà Lạt</p>
-                                        <span>Từ 130.000</span>
+                                        <p>GIỚI THIỆU BẠN BÈ</p>
+                                        <span>Giới thiệu bạn bè cùng mua vé tại Ticket-Take it để được giảm 30k.</span>
                                     </div>
                                 </a>
                             </li>
@@ -194,8 +198,9 @@
                                         <img src=" /img/about4.png" alt="">
                                     </div>
                                     <div class="home__popular-item--title">
-                                        <p>Sài Gòn - Đà Lạt</p>
-                                        <span>Từ 130.000</span>
+                                        <p>THANH TOÁN MOMO</p>
+                                        <span>Giảm ngay 30k khi nhập mã VXR30 khi thanh toán bằng Momo.</span>
+
                                     </div>
                                 </a>
                             </li>
@@ -206,8 +211,10 @@
                                         <img src=" /img/about5.png" alt="">
                                     </div>
                                     <div class="home__popular-item--title">
-                                        <p>Sài Gòn - Đà Lạt</p>
-                                        <span>Từ 130.000</span>
+                                        <p>MỞ THỂ SACCMBANK</p>
+                                        <span>Khi mở thẻ Sacombank nhận mã giảm 150k khi mua vé xe trên Ticket-Take
+                                            it.</span>
+
                                     </div>
                                 </a>
                             </li>
@@ -217,8 +224,10 @@
                                         <img src=" /img/about2.png" alt="">
                                     </div>
                                     <div class="home__popular-item--title">
-                                        <p>Sài Gòn - Đà Lạt</p>
-                                        <span>Từ 130.000</span>
+                                        <p>BẬT MÍ BÍ MẬT</p>
+                                        <span>Giảm 30k cho mỗi vé xe khi mua từ 5 vé xe trên trang Ticket - Take
+                                            it.</span>
+
                                     </div>
                                 </a>
                             </li>
@@ -227,25 +236,26 @@
                 </div>
             </div>
 
-           
+
 
 
             <!-- Footer -->
             {{>footer}}
         </div>
 
-      
 
-       
 
-        {{!-- <script src=" /js/rangeSlider.js"></script> --}}
+
+
+        {{!--
+        <script src=" /js/rangeSlider.js"></script> --}}
         <script src=" /js/activeHeading.js"></script>
-       
+
         <script src=" /js/slider.js"></script>
         <script src=" /js/searchTicket.js"></script>
-      
 
-          <script src="/js/auth/user.js"></script>
+
+        <script src="/js/auth/user.js"></script>
 </body>
 
 </html>
