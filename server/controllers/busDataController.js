@@ -6,17 +6,27 @@ const renderBus = async(req, res) => {
 
         const { tinhbatdau, tinhketthuc,date,sort,tennhaxe } = req.query
         const page = req.query.page || 1
+        if(page === 0) page = 1
         
+
         const chuyenxe = await dataController.getAllChuyenxeBySearch(tinhbatdau, tinhketthuc,date,sort,tennhaxe,page)
 
         const tinhthanh = await dataController.getAllTinhthanh()
 
-       
+        const count = chuyenxe[0].full_count
+        res.locals.pagination = {
+            page,
+            limit : 6,
+            totalRows : count
+        }
+
+        
         res.render('bus', { chuyenxe, tinhthanh })
 
     } catch (error) {
         console.log(error.message)
-        res.status(500).json(error.message)
+        res.render('notfound404',{error: "500: " + error.message})
+      
     }
 }
 

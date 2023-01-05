@@ -7,6 +7,7 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
     dialect:  'postgres'
 })
 const {QueryTypes} = require('sequelize')
+const LIMIT = 6
 
 
 // Tham khảo cách query : https://sequelize.org/docs/v6/core-concepts/model-querying-basics/
@@ -170,7 +171,7 @@ const getAllChuyenxeByTuyenduong = async() => {
 
 const getAllChuyenxeBySearch = async(tinhbatdau,tinhketthuc,thoigian,sort,tennhaxe,page) => {
     try {
-        QUERY = 'SELECT CX.HINHANHXE,CX.MATUYENDUONG,CX.MACHUYENXE,NX.TENNHAXE,CX.MANHAXE,CX.MALOAIXE,LX.TENLOAIXE,CX.TGKHOIHANH,CX.TGKETTHUC,' + 
+        QUERY = 'SELECT count(*) OVER() AS FULL_COUNT,CX.HINHANHXE,CX.MATUYENDUONG,CX.MACHUYENXE,NX.TENNHAXE,CX.MANHAXE,CX.MALOAIXE,LX.TENLOAIXE,CX.TGKHOIHANH,CX.TGKETTHUC,' + 
         'DCBD.TENDIACHI TENDIACHIKHOIHANH,DCKT.TENDIACHI TENDIACHIKETTHUC,CX.GIAVENHONHAT,DG.DIEMSO,CX.MOTA'+
         ' FROM CHUYENXE CX INNER JOIN NHAXE NX ON CX.MANHAXE = NX.MANHAXE INNER JOIN DIACHI DCBD ON CX.DIACHIBATDAU = DCBD.MADIACHI' +
          ' INNER JOIN DIACHI DCKT ON CX.DIACHIKETTHUC = DCKT.MADIACHI INNER JOIN LOAIXE LX ON CX.MALOAIXE = LX.MALOAIXE INNER JOIN TUYENDUONG TD ON CX.MATUYENDUONG = TD.MATUYENDUONG INNER JOIN '+
@@ -204,9 +205,9 @@ const getAllChuyenxeBySearch = async(tinhbatdau,tinhketthuc,thoigian,sort,tennha
             QUERY += ` ORDER BY CX.GIAVENHONHAT ${sort}`
         }
 
-        const limit = 6
+    
 
-        QUERY += ` LIMIT ${limit} OFFSET ${limit*(page - 1)}`
+        QUERY += ` LIMIT ${LIMIT} OFFSET ${LIMIT*(page - 1)}`
 
         const data = await sequelize.query(QUERY
         ,QueryTypes.SELECT)
@@ -247,6 +248,7 @@ const getAllChuyenxeBySearch = async(tinhbatdau,tinhketthuc,thoigian,sort,tennha
          }
 
 
+
         return data[0]
 
 
@@ -255,6 +257,10 @@ const getAllChuyenxeBySearch = async(tinhbatdau,tinhketthuc,thoigian,sort,tennha
     }
 
 }
+
+
+
+
 
 const getAllNhaxe =async (maquantri) => {
     try {

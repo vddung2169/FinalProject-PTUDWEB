@@ -6,6 +6,7 @@ specifiers:
   dotenv: ^16.0.3
   express: ^4.18.2
   express-handlebars: ^6.0.6
+  express-handlebars-paginate: ^1.0.3
   express-session: ^1.17.3
   handlebars: ^4.7.7
   jsonwebtoken: ^9.0.0
@@ -25,6 +26,7 @@ dependencies:
   dotenv: 16.0.3
   express: 4.18.2
   express-handlebars: 6.0.6
+  express-handlebars-paginate: 1.0.3
   express-session: 1.17.3
   handlebars: 4.7.7
   jsonwebtoken: 9.0.0
@@ -456,6 +458,10 @@ packages:
       d: 1.0.1
       es5-ext: 0.10.62
     dev: true
+
+  /express-handlebars-paginate/1.0.3:
+    resolution: {integrity: sha512-dj1d8ntEfneIU+gs//7s8KYpn7w6RQxovQ0ThSqO5ziqbhhlMaGex+vQgVHqCLYxWFXNrN2EEoMmQjJS07lBgg==}
+    dev: false
 
   /express-handlebars/6.0.6:
     resolution: {integrity: sha512-E4QHYCh+9fyfdBEb8uKJ8p6HD4qq/sUSHBq83lRNlLJp2TQKEg2nFJYbVdC+M3QzaV19dODe43lgjQWVaIpbyQ==}

@@ -82,8 +82,8 @@
             </div>
 
             <!-- Search Ticket -->
-             <div class="search__ticket">
-                <form method="GET" action="/bus"  class="container">
+            <div class="search__ticket">
+                <form method="GET" action="/bus" class="container">
                     <h5 class="search__ticket-header">Search Ticket</h5>
                     <div class="search__ticket-choose-wrap">
 
@@ -129,7 +129,7 @@
 
             <!-- Available Ticket -->
             <!-- Bỏ class disabled để hiện các vé search theo yêu cầu -->
-             <div class="availableTicket-container">
+            <div class="availableTicket-container">
                 <div class="container">
                     <div class="availableTicket-header">
                         <div class="availableTicket-header-title">Available Ticket</div>
@@ -187,7 +187,8 @@
                                         </div>
 
                                         <div class="ticket-wrap-buy">
-                                            <span class="ticket-left">{{calculateSlot ghexe.length ghedat.length 'minus'}} slots left</span>
+                                            <span class="ticket-left">{{calculateSlot ghexe.length ghedat.length
+                                                'minus'}} slots left</span>
                                             <span class="btn-base ticket-buy">Buy</span>
                                         </div>
                                     </div>
@@ -321,7 +322,7 @@
                                                 </div>
                                             </div>
                                         </li>
-                                         {{/each}}
+                                        {{/each}}
                                     </ul>
                                 </div>
                             </div>
@@ -329,10 +330,31 @@
                     </div>
 
                     {{/each}}
-                   
 
-                   
-                    <i class="more-ticket-down fa-solid fa-angles-down"></i>
+
+                    <nav aria-label="Page navigation example mt-5">
+                        {{{createPagination pagination paginationClass="pagination justify-content-center mt-5" leftText="&laquo;" rightText="&raquo;" limit=5}}}
+
+
+                        {{!-- <ul class="pagination justify-content-center mt-5">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </li>
+                        </ul> --}}
+                    </nav>
+                    {{!-- <i class="more-ticket-down fa-solid fa-angles-down"></i> --}}
                 </div>
             </div>
 
@@ -342,16 +364,16 @@
         </div>
 
         <!-- Filter -->
-         <div class="filter-wrap">
+        <div class="filter-wrap">
             <div class="filter__overlay">
             </div>
             <div class="filter__body">
                 <div class="filter__header">
                     <h2>Filters</h2>
                     <span>
-                    Clear all
-                    <i class="fa-solid fa-xmark"></i>
-                </span>
+                        Clear all
+                        <i class="fa-solid fa-xmark"></i>
+                    </span>
 
                 </div>
                 <div class="container">
@@ -393,17 +415,17 @@
                         <h3>Position of seats</h3>
                         <div class="filter__departurePosition-list">
                             <label for="name">
-                            <input type="checkbox" value="front" id="front" name="front">
-                            Front
-                        </label>
+                                <input type="checkbox" value="front" id="front" name="front">
+                                Front
+                            </label>
                             <label for="name">
-                            <input type="checkbox" value="middle" id="middle" name="middle">
-                            Middle
-                        </label>
+                                <input type="checkbox" value="middle" id="middle" name="middle">
+                                Middle
+                            </label>
                             <label for="name">
-                            <input type="checkbox" value="back" id="back" name="back">
-                            Back
-                        </label>
+                                <input type="checkbox" value="back" id="back" name="back">
+                                Back
+                            </label>
                         </div>
                     </div>
 
@@ -412,17 +434,20 @@
                         <div class="filter__departureGarage-list list-item">
                             <input class="filter__departureGarage-item" type="text" placeholder="Search">
                             <label for="name">
-                            <input class="filter__departureGarage-item" type="checkbox" value="hoamai" id="hoamai" name="hoamai">
-                            Hoa Mai <span class="garage-quantity">(25)</span>
-                        </label>
+                                <input class="filter__departureGarage-item" type="checkbox" value="hoamai" id="hoamai"
+                                    name="hoamai">
+                                Hoa Mai <span class="garage-quantity">(25)</span>
+                            </label>
                             <label for="name">
-                            <input class="filter__departureGarage-item" type="checkbox" value="thienphu" id="thienphu" name="thienphu">
-                            Thiên Phú <span class="garage-quantity">(1)</span>
-                        </label>
+                                <input class="filter__departureGarage-item" type="checkbox" value="thienphu"
+                                    id="thienphu" name="thienphu">
+                                Thiên Phú <span class="garage-quantity">(1)</span>
+                            </label>
                             <label for="name">
-                            <input class="filter__departureGarage-item" type="checkbox" value="vielimousine" id="vielimousine" name="vielimousine">
-                            Vie Limousine <span class="garage-quantity">(6)</span>
-                        </label>
+                                <input class="filter__departureGarage-item" type="checkbox" value="vielimousine"
+                                    id="vielimousine" name="vielimousine">
+                                Vie Limousine <span class="garage-quantity">(6)</span>
+                            </label>
                         </div>
                     </div>
 
@@ -431,17 +456,20 @@
                         <div class="filter__departurePickupLocation-list list-item">
                             <input class="filter__departurePickupLocation-item" type="text" placeholder="Search">
                             <label for="name">
-                            <input class="filter__departurePickupLocation-item" type="checkbox" value="hoamai" id="hoamai" name="hoamai">
-                            Quận 1
-                        </label>
+                                <input class="filter__departurePickupLocation-item" type="checkbox" value="hoamai"
+                                    id="hoamai" name="hoamai">
+                                Quận 1
+                            </label>
                             <label for="name">
-                            <input class="filter__departurePickupLocation-item" type="checkbox" value="thienphu" id="thienphu" name="thienphu">
-                            Quận 2
-                        </label>
+                                <input class="filter__departurePickupLocation-item" type="checkbox" value="thienphu"
+                                    id="thienphu" name="thienphu">
+                                Quận 2
+                            </label>
                             <label for="name">
-                            <input class="filter__departurePickupLocation-item" type="checkbox" value="vielimousine" id="vielimousine" name="vielimousine">
-                            Quận 5
-                        </label>
+                                <input class="filter__departurePickupLocation-item" type="checkbox" value="vielimousine"
+                                    id="vielimousine" name="vielimousine">
+                                Quận 5
+                            </label>
                         </div>
                     </div>
 
@@ -450,17 +478,20 @@
                         <div class="filter__departureDropOffLocation-list list-item">
                             <input class="filter__departureDropOffLocation-item" type="text" placeholder="Search">
                             <label for="name">
-                            <input class="filter__departureDropOffLocation-item" type="checkbox" value="hoamai" id="hoamai" name="hoamai">
-                            Vũng Tàu
-                        </label>
+                                <input class="filter__departureDropOffLocation-item" type="checkbox" value="hoamai"
+                                    id="hoamai" name="hoamai">
+                                Vũng Tàu
+                            </label>
                             <label for="name">
-                            <input class="filter__departureDropOffLocation-item" type="checkbox" value="thienphu" id="thienphu" name="thienphu">
-                            Bà Rịa
-                        </label>
+                                <input class="filter__departureDropOffLocation-item" type="checkbox" value="thienphu"
+                                    id="thienphu" name="thienphu">
+                                Bà Rịa
+                            </label>
                             <label for="name">
-                            <input class="filter__departureDropOffLocation-item" type="checkbox" value="vielimousine" id="vielimousine" name="vielimousine">
-                            Đà Lạt
-                        </label>
+                                <input class="filter__departureDropOffLocation-item" type="checkbox"
+                                    value="vielimousine" id="vielimousine" name="vielimousine">
+                                Đà Lạt
+                            </label>
                         </div>
                     </div>
 
@@ -469,17 +500,20 @@
                         <div class="filter__departureVehical-list list-item">
                             <input class="filter__departureVehical-item" type="text" placeholder="Search">
                             <label for="name">
-                            <input class="filter__departureVehical-item" type="checkbox" value="hoamai" id="hoamai" name="hoamai">
-                            Seat
-                        </label>
+                                <input class="filter__departureVehical-item" type="checkbox" value="hoamai" id="hoamai"
+                                    name="hoamai">
+                                Seat
+                            </label>
                             <label for="name">
-                            <input class="filter__departureVehical-item" type="checkbox" value="thienphu" id="thienphu" name="thienphu">
-                            Bed
-                        </label>
+                                <input class="filter__departureVehical-item" type="checkbox" value="thienphu"
+                                    id="thienphu" name="thienphu">
+                                Bed
+                            </label>
                             <label for="name">
-                            <input class="filter__departureVehical-item" type="checkbox" value="vielimousine" id="vielimousine" name="vielimousine">
-                            Limousine
-                        </label>
+                                <input class="filter__departureVehical-item" type="checkbox" value="vielimousine"
+                                    id="vielimousine" name="vielimousine">
+                                Limousine
+                            </label>
                         </div>
                     </div>
 
@@ -493,16 +527,16 @@
                     </div>
 
                     <button class="filter__apply">
-                    Apply
-                    <i class="fa-solid fa-arrow-right-long"></i>
-                </button>
+                        Apply
+                        <i class="fa-solid fa-arrow-right-long"></i>
+                    </button>
 
                 </div>
             </div>
         </div>
 
         <!-- Modal layout -->
-           <div class="modal-wrap">
+        <div class="modal-wrap">
             <div class="modal__overlay">
             </div>
 
@@ -514,7 +548,8 @@
                             <img src=" /img/number_1.png" alt="buoc1" class="seat-form__number_img"> Vị trí ghế ngồi
                         </div>
                         <div class="seat-form__step" id="seat-form__step--pick-location">
-                            <img src=" /img/number_2.png" alt="buoc2" class="seat-form__number_img"> Vị trí đón/trả khách
+                            <img src=" /img/number_2.png" alt="buoc2" class="seat-form__number_img"> Vị trí đón/trả
+                            khách
                         </div>
                         <div class="seat-form__step" id="seat-form__step--your-seat">
                             <img src=" /img/number_3.png" alt="buoc3" class="seat-form__number_img"> Nhập thông tin
@@ -622,7 +657,8 @@
                             <div class="location-form__location px-4 py-3">
                                 <label for="location-form__place">Điểm đón</label>
                                 <br>
-                                <input type="text" class="location-form__input mt-3 mb-2 px-2" placeholder="Điểm đón của bạn" required>
+                                <input type="text" class="location-form__input mt-3 mb-2 px-2"
+                                    placeholder="Điểm đón của bạn" required>
                             </div>
 
                             <div class="location-form__nearest-location p-3">
@@ -630,20 +666,20 @@
 
                                 <div class="location-form__nearest-start">
                                     <i class="fa-regular fa-circle-dot"></i>
-                                    <span class="mx-2">17:40 
-                                    <span>Văn phòng quận 5</span>
+                                    <span class="mx-2">17:40
+                                        <span>Văn phòng quận 5</span>
                                     </span>
                                 </div>
 
                                 <div class="location-form__nearest-start-details mt-2">
                                     <div class="location-form__address">
                                         <i class="fa-solid fa-location-dot mt-1"></i>
-                                        <span class="mx-3">269 Hùng Vương, Phường 09, Quận 5, Hồ Chí Minh 
-                                        <span>
-                                            <a href="#">Xem vị trí</a>
-                                        </span>
-                                        <br>
-                                        <span class="location-form__distance py-4">Cách vị trí của bạn 2.7km</span>
+                                        <span class="mx-3">269 Hùng Vương, Phường 09, Quận 5, Hồ Chí Minh
+                                            <span>
+                                                <a href="#">Xem vị trí</a>
+                                            </span>
+                                            <br>
+                                            <span class="location-form__distance py-4">Cách vị trí của bạn 2.7km</span>
                                         </span>
 
                                     </div>
@@ -658,7 +694,8 @@
                             <div class="location-form__location px-4 py-3">
                                 <label for="location-form__place">Điểm trả</label>
                                 <br>
-                                <input type="text" class="location-form__input mt-3 mb-2 px-2" placeholder="Điểm trả của bạn" required>
+                                <input type="text" class="location-form__input mt-3 mb-2 px-2"
+                                    placeholder="Điểm trả của bạn" required>
                             </div>
 
                             <div class="location-form__nearest-location p-3">
@@ -666,20 +703,20 @@
 
                                 <div class="location-form__nearest-start">
                                     <i class="fa-regular fa-circle-dot"></i>
-                                    <span class="mx-2">20:00 
-                                    <span>Vũng Tàu</span>
+                                    <span class="mx-2">20:00
+                                        <span>Vũng Tàu</span>
                                     </span>
                                 </div>
 
                                 <div class="location-form__nearest-start-details mt-2">
                                     <div class="location-form__address">
                                         <i class="fa-solid fa-location-dot mt-1"></i>
-                                        <span class="mx-3">Phường 1, Vũng Tàu, Bà Rịa-Vũng Tàu 
-                                        <span>
-                                            <a href="#">Xem vị trí</a>
-                                        </span>
-                                        <br>
-                                        <span class="location-form__distance py-4">Cách vị trí của bạn 1.4km</span>
+                                        <span class="mx-3">Phường 1, Vũng Tàu, Bà Rịa-Vũng Tàu
+                                            <span>
+                                                <a href="#">Xem vị trí</a>
+                                            </span>
+                                            <br>
+                                            <span class="location-form__distance py-4">Cách vị trí của bạn 1.4km</span>
                                         </span>
 
                                     </div>
@@ -692,37 +729,45 @@
                     <div class="info-form__container modal__container-form">
                         <div class="info-form__form">
                             <div class="info-form__group">
-                                <label for="fullname" class="py-2">Họ và tên<code style="color: red; font-weight: 700;">*</code></label>
-                                <input type="text" class="info-form__input" placeholder="Tên hành khách" name="fullname" required>
+                                <label for="fullname" class="py-2">Họ và tên<code
+                                        style="color: red; font-weight: 700;">*</code></label>
+                                <input type="text" class="info-form__input" placeholder="Tên hành khách" name="fullname"
+                                    required>
                             </div>
                             <div class="info-form__group">
-                                <label for="phone" class="py-2">Số điện thoại<code style="color: red; font-weight: 700;">*</code></label>
+                                <label for="phone" class="py-2">Số điện thoại<code
+                                        style="color: red; font-weight: 700;">*</code></label>
                                 <br>
                                 <div class="info-form-wrap-item">
                                     <select class="info-form_area-code">
-                                    <option value="">(VN)+84</option>
-                                    <option value="US">(US)+1</option>
-                                    <option value="CA">(CA)+1</option>
-                                    <option value="JP">(JP)+81</option>
-                                </select>
-                                    <input type="tel" class="info-form__input" placeholder="Số điện thoại" name="phone" required>
+                                        <option value="">(VN)+84</option>
+                                        <option value="US">(US)+1</option>
+                                        <option value="CA">(CA)+1</option>
+                                        <option value="JP">(JP)+81</option>
+                                    </select>
+                                    <input type="tel" class="info-form__input" placeholder="Số điện thoại" name="phone"
+                                        required>
                                 </div>
                             </div>
                             <div class="info-form__group">
-                                <label for="email" class="py-2">Email<code style="color: red; font-weight: 700;">*</code></label>
-                                <input type="email" class="info-form__input" placeholder="Email để nhận thông báo" name="email" required>
+                                <label for="email" class="py-2">Email<code
+                                        style="color: red; font-weight: 700;">*</code></label>
+                                <input type="email" class="info-form__input" placeholder="Email để nhận thông báo"
+                                    name="email" required>
                             </div>
                             <div class="info-form__group">
-                                <label for="note" class="py-2">Ghi chú hoặc yêu cầu khác (Nếu có)<code style="color: red; font-weight: 700;">*</code></label>
+                                <label for="note" class="py-2">Ghi chú hoặc yêu cầu khác (Nếu có)<code
+                                        style="color: red; font-weight: 700;">*</code></label>
                                 <br>
-                                <textarea name="note" id="info-form__note" cols="" rows="2" placeholder="Các yêu cầu đặc biệt không thể được đảm bảo - nhưng nhà xe sẽ cố gắng hết sức để đáp ứng nhu cầu của bạn."></textarea>
+                                <textarea name="note" id="info-form__note" cols="" rows="2"
+                                    placeholder="Các yêu cầu đặc biệt không thể được đảm bảo - nhưng nhà xe sẽ cố gắng hết sức để đáp ứng nhu cầu của bạn."></textarea>
                             </div>
                         </div>
                     </div>
 
                     <div class="seat-form__footer">
-                        <span class="seat-form__text">Số lượng ghế: 
-                        <span class="seat-form__quantity">0</span>
+                        <span class="seat-form__text">Số lượng ghế:
+                            <span class="seat-form__quantity">0</span>
                         </span>
                         <span class="seat-form__text py-2">Tổng: <span class="seat-form__price">0</span>VNĐ</span>
                         <div class="seat-form__right-corner">
@@ -744,7 +789,7 @@
         <script src="/js/ticket_details.js"></script>
 
         <script src="/js/bus.js"></script>
-      
+
 </body>
 
 </html>

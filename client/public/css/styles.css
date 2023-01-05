@@ -825,7 +825,7 @@ textarea {
     min-width: 120px;
     text-decoration: none;
     color: var(--black-color);
-    background-color: #y;
+    /* background-color: #y; */
 }
 
 .auth-form__socials-icon {
@@ -957,14 +957,14 @@ textarea {
     font-weight: bold;
 }
 
-.filter__departureTime-time {}
+/* .filter__departureTime-time {}
 
-.filter__departureGarage {}
+.filter__departureGarage {} */
 
-.filter__departureGarage-list {
+/* .filter__departureGarage-list {
     /* display: flex;
     flex-direction: column; */
-}
+/*} */
 
 .filter__departureGarage-item,
 .filter__departurePickupLocation-item,
@@ -1037,7 +1037,7 @@ textarea {
 
 /* More information */
 
-.active {}
+/* .active {} */
 
 .ticket__information-details {
     border-top: 1px solid #333;
@@ -1158,7 +1158,7 @@ textarea {
     color: #ffb43b;
 }
 
-.view-item__content {}
+/* .view-item__content {} */
 
 .content-detail {
     display: none;
@@ -1328,7 +1328,7 @@ textarea {
     font-size: 1.2rem;
 }
 
-.rate-detail__userComment-rate {}
+/* .rate-detail__userComment-rate {} */
 
 
 /* Seat form */
@@ -1600,7 +1600,7 @@ table {
     border-radius: 2px;
 }
 
-.location-form__nearest-location {}
+/* .location-form__nearest-location {} */
 
 .location-form__nearest-title {
     font-weight: 500;
@@ -1723,4 +1723,39 @@ table {
     /* Green background */
     cursor: pointer;
     /* Cursor on hover */
+}
+
+.pagination{
+    --bs-pagination-font-size: 1.3rem !important;
+}
+
+
+.pagination > li > a
+{
+    background-color: white;
+    color: #5A4181;
+    border-color: var(--text-title-color);
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover
+{
+    color: white;
+    background-color: var(--text-title-color);
+    
+}
+
+.pagination > .active > a
+{
+    color: var(--yellow-color);
+    background-color: #5A4181 !Important;
+    border: solid 1px #5A4181 !Important;
+}
+
+.pagination > .active > a:hover
+{
+    background-color: #5A4181 !Important;
+    border: solid 1px #5A4181;
 }

@@ -8,9 +8,10 @@ const cookieParser = require('cookie-parser')
 const sessions = require('express-session')
 const methodOverride = require('method-override')
 const passport = require('passport')
+const paginateHelper = require('express-handlebars-paginate')
 
 // const methodOverride = require('method-override')
-const busDataController = require('./controllers/getDataController')
+
 
 
 app.use(sessions({
@@ -40,7 +41,8 @@ app.engine('hbs', engine({
         formatMoney: require('./utils/formatMoney'),
         formatTimeAdmin: require('./utils/formatTime').formatTimeAdmin,
         formatString : require('./utils/formatToString'),
-        calculateSlot: require('./utils/calculate').calculateNumber
+        calculateSlot: require('./utils/calculate').calculateNumber,
+        createPagination: paginateHelper.createPagination
     }
 }))
 app.set('view engine','hbs')
