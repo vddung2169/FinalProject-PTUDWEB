@@ -27,7 +27,7 @@
 - [X] Hiển thị tuyến xe ở trang chủ
 - [X] Hiển thị danh sách xe theo tuyến
 - [X] Hiển thị thông tin chi tiết của xe
-- [ ] Sử dụng phân trang
+- [X] Sử dụng phân trang
 - [X] Thêm dữ liệu vào lựa tuyến xe (điểm bắt đầu, kết thúc)
 - [X] Thực hiện sort
 - [X] Thực hiện search
