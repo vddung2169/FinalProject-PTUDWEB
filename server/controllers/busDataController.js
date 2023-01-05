@@ -5,8 +5,12 @@ const renderBus = async(req, res) => {
     try {
 
         const { tinhbatdau, tinhketthuc,date,sort,tennhaxe } = req.query
-        const page = req.query.page || 1
-        if(page === 0) page = 1
+        let page = req.query.page || 1
+        if(page == 0){
+            page = 1
+        } 
+
+        
         
 
         const chuyenxe = await dataController.getAllChuyenxeBySearch(tinhbatdau, tinhketthuc,date,sort,tennhaxe,page)
