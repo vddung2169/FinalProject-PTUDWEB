@@ -27,7 +27,7 @@ const authorizationAdmin = async (req,res,next) =>{
     }
 }
 
-const authorizationUser = async (req,res,next,redirect) => {
+const authorizationUser = async (req,res,next,successRedirect,failRedirect) => {
     try {
 
         const token = req.session.token
@@ -36,16 +36,18 @@ const authorizationUser = async (req,res,next,redirect) => {
             const payload = jwt.verify(token,process.env.SECRET_KEY)
             req.accountType = 'system'
             req.user = payload.userID
-            next()
+            if(successRedirect) res.redirect(successRedirect)
+            else next()
         }
         else if(req.session.passport){
             req.accountType = 'google'
             req.user = req.session.passport.user
-            next()
+            if(successRedirect) res.redirect(successRedirect)
+            else next()
         }
         else{
-            if(redirect) {
-                res.redirect(redirect)
+            if(failRedirect) {
+                res.redirect(failRedirect)
             }else{
                 next()
             }
@@ -57,7 +59,8 @@ const authorizationUser = async (req,res,next,redirect) => {
 
     } catch (error) {
         console.error(error.message + ' at authorization.js')
-        res.status(401).json(false)
+        res.render('notfound404',{error : "401: " + error.message})
+        // res.status(401).json(false)
     }
 } 
 

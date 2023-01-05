@@ -147,7 +147,7 @@ body {
 }
 
 .modal__container-form {
-    display: none;
+    /* display: none; */
 }
 
 .modal-wrap.active {
