@@ -16,7 +16,7 @@ const forgotForm = document.getElementById('forgotForm')
 //     }
 // }
 
-
+const btnResend = $('.btn-resend');
 btnResend.onclick = function() {
     blockSendEmail.classList.add('active');
     blockSendEmailSuccess.classList.remove('active');
