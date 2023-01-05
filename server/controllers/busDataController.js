@@ -10,6 +10,22 @@ const renderBus = async(req, res) => {
             page = 1
         } 
 
+        const id = req.user
+        const accountType = req.accountType
+
+        let user = {
+            tenkhachhang : ""
+        }
+        if(id){
+            if(accountType === 'system'){
+                const data  = await accountDataController.getAnAccountByID(id)
+                user = data[0]
+            }else if(accountType === 'google'){
+                const data  = await accountDataController.getAnGoogleAccount(null,id)
+                user = data[0]
+            }
+        }
+
         
         
 
@@ -25,7 +41,7 @@ const renderBus = async(req, res) => {
         }
 
         
-        res.render('bus', { chuyenxe, tinhthanh })
+        res.render('bus', { chuyenxe, tinhthanh,user })
 
     } catch (error) {
         console.log(error.message)
