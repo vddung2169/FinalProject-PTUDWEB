@@ -67,15 +67,26 @@
                                     <img src=" /img/nha-xe-thanh-buoi.png" alt="">
                                 </div>
                             </div>
+                            <button class="ticket__information_btn btn-rate">Rate</button>
                         </li>
+                    </ul>
+                    <i class="more-ticket-down fa-solid fa-angles-down"></i>
+                </div>
+            </div>
 
+            <div class="availableTicket-container">
+                <div class="container">
+                    <div class="availableTicket-header">
+                        <div class="availableTicket-header-title">History</div>
+                    </div>
+                    <ul class="ticket__information-list">
                         <li class="ticket__information sketchy">
                             <div class="ticket__information-summary row">
                                 <div class="ticket__information-content col-xl-8">
                                     <div class="row">
                                         <div class="ticket__information-description col-xl-8">
                                             <div class="ticket__car">
-                                                <div class="ticket__car-name">Phương Trang</div>
+                                                <div class="ticket__car-name">Thành Bưởi</div>
                                                 <div class="ticket__car-rate">
                                                     <i class="fa-solid fa-star"></i>
                                                     <span>4.8 (B55)</span>
@@ -96,54 +107,107 @@
                                         </div>
                                         <div class="ticket__information-price col-xl-4">
                                             <div class="ticket__information-price-heading">Total:</div>
-                                            <div class="ticket__information-price-detail">300.000<span>đ</span></div>
+                                            <div class="ticket__information-price-detail">200.000<span>đ</span></div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="ticket__information-img col-xl-4">
-                                    <img src=" /img/nha-xe-phuong-trang.png" alt="">
+                                    <img src=" /img/nha-xe-thanh-buoi.png" alt="">
                                 </div>
                             </div>
+                            <button class="ticket__information_btn btn-rate">Rate</button>
                         </li>
+                    </ul>
+                    <i class="more-ticket-down fa-solid fa-angles-down"></i>
+                </div>
+            </div>
 
+            <div class="availableTicket-container">
+                <div class="container">
+                    <div class="availableTicket-header">
+                        <div class="availableTicket-header-title">History</div>
+                    </div>
+                    <ul class="ticket__information-list">
                         <li class="ticket__information sketchy">
                             <div class="ticket__information-summary row">
                                 <div class="ticket__information-content col-xl-8">
                                     <div class="row">
                                         <div class="ticket__information-description col-xl-8">
                                             <div class="ticket__car">
-                                                <div class="ticket__car-name">Toàn Thắng</div>
+                                                <div class="ticket__car-name">Thành Bưởi</div>
                                                 <div class="ticket__car-rate">
                                                     <i class="fa-solid fa-star"></i>
                                                     <span>4.8 (B55)</span>
                                                 </div>
                                             </div>
-                                            <div class="ticket__car-type">Limousine 16 seats</div>
+                                            <div class="ticket__car-type">Limousine 9 seats</div>
                                             <div class="ticket__car-depart">
                                                 <i class="fa-solid fa-location-dot"></i>
-                                                <span class="ticket__car-depart-time">19:00</span>
+                                                <span class="ticket__car-depart-time">09:00</span>
                                                 <span class="ticket__car-depart-location">Bến xe miền Đông</span>
                                             </div>
                                             <div class="ticket__car-depart-period">2h</div>
                                             <div class="ticket__car-arrive">
                                                 <i class="fa-solid fa-location-dot"></i>
-                                                <span class="ticket__car-arrive-time">22:00</span>
+                                                <span class="ticket__car-arrive-time">14:00</span>
                                                 <span class="ticket__car-arrive-location">Văn phòng Bà Rịa</span>
                                             </div>
                                         </div>
                                         <div class="ticket__information-price col-xl-4">
                                             <div class="ticket__information-price-heading">Total:</div>
-                                            <div class="ticket__information-price-detail">150.000<span>đ</span></div>
+                                            <div class="ticket__information-price-detail">200.000<span>đ</span></div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="ticket__information-img col-xl-4">
-                                    <img src=" /img/nha-xe-toan-thang.png" alt="">
+                                    <img src=" /img/nha-xe-thanh-buoi.png" alt="">
                                 </div>
                             </div>
+                            <button class="ticket__information_btn btn-rate">Rate</button>
                         </li>
                     </ul>
                     <i class="more-ticket-down fa-solid fa-angles-down"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-wrap p-5">
+            <div class="modal__overlay">
+            </div>
+
+            <div class="modal__body">
+                <!-- Seat form -->
+                <div class="seat-form bg-white">
+                    <div class="info-form__container modal__container-form">
+                        <div class="info-form__form">
+                            <div class="info-form__group">
+                                <label for="fullname" class="py-2">Họ và tên<code style="color: red; font-weight: 700;">*</code></label>
+                                <input type="text" class="info-form__input" placeholder="Tên hành khách" name="fullname" required>
+                            </div>
+                            
+                            <div class="info-form__group d-flex align-items-center">
+                                <label for="email" class="py-2">Đánh giá sao</label>
+                                <div class="rate">
+                                    <input type="radio" id="star5" name="rate" value="5" />
+                                    <label for="star5" title="text">5 stars</label>
+                                    <input type="radio" id="star4" name="rate" value="4" />
+                                    <label for="star4" title="text">4 stars</label>
+                                    <input type="radio" id="star3" name="rate" value="3" />
+                                    <label for="star3" title="text">3 stars</label>
+                                    <input type="radio" id="star2" name="rate" value="2" />
+                                    <label for="star2" title="text">2 stars</label>
+                                    <input type="radio" id="star1" name="rate" value="1" />
+                                    <label for="star1" title="text">1 star</label>
+                                </div>
+                            </div>
+                            <div class="info-form__group">
+                                <label for="note" class="py-2">Nhận xét</label>
+                                <br>
+                                <textarea name="note" id="info-form__note" cols="" rows="2" placeholder="Hãy chia sẽ trải nghiệm của bạn."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -152,5 +216,16 @@
         {{>footer}}
     </div>
 </body>
+<script>
+    const rateBtn = document.querySelectorAll('.btn-rate');
+    const modal = document.querySelector('.modal-wrap');
+    const overlay = document.querySelector('.modal__overlay');
+    overlay.onclick=() => modal.classList.remove("active");
+    Array.from(rateBtn).forEach(btn => {
+        btn.onclick=() => {
+            modal.classList.add("active");
+        }
+    })
+</script>
 
 </html>

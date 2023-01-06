@@ -95,3 +95,23 @@
     width: 100%;
     padding-right: 25px;
 }
+
+.payment_price {
+    padding: 0 24px;
+}
+
+.payment_price-label {
+}
+
+.price {
+    color: #ffb43b;
+    font-weight: 700;
+}
+
+.payment_activity-pay {
+    background-color: rgba(36,0,70,1);
+    color: white;
+    padding: 8px;
+    width: 100%;
+    font-weight: 600;
+}
