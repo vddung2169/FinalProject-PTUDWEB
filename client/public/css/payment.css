@@ -39,6 +39,24 @@
 
 }
 
+.payment_activity {
+    flex: 2;
+}
+
+.payment_info-route {
+    flex: 1;
+}
+
 .payment_activity-heading {
     
+}
+
+.payment_activity-method--momo {
+}
+
+.momo {
+    display: flex;
+}
+
+.payment_choice {
 }
