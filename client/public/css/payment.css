@@ -1,0 +1,16 @@
+.header_time {
+    display: flex;
+    flex-direction: column;
+    padding: 0 55px;
+}
+
+.header_time-label {
+
+}
+
+.header_time-countdown {
+    font-size: 18px;
+    font-weight: 700;
+    color: red;
+    text-align: center;
+}
