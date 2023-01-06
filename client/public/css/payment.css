@@ -44,19 +44,34 @@
 }
 
 .payment_info-route {
-    flex: 1;
+    flex: 1;    
 }
 
 .payment_activity-heading {
     
 }
 
-.payment_activity-method--momo {
+.payment_activity-method {
+    border: 1px solid rgba(0,0,0,0.1);
+    
 }
 
-.momo {
+.payment_activity-method--doing {
+    padding: 12px 12px;
+}
+
+.payment_edit {
     display: flex;
+    align-items: center;
 }
 
 .payment_choice {
+    width: 18px;
+    height: 18px;
+}
+
+.row span {
+    margin-left: 28px;
+    margin-top: 6px;
+    flex-wrap: wrap;
 }
