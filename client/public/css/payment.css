@@ -107,3 +107,10 @@
     color: #ffb43b;
     font-weight: 700;
 }
+
+.payment_activity-pay {
+    background-color: rgba(36,0,70,1);
+    color: white;
+    padding: 8px 10px;
+    width: 100%;
+}
