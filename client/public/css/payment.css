@@ -111,6 +111,7 @@
 .payment_activity-pay {
     background-color: rgba(36,0,70,1);
     color: white;
-    padding: 8px 10px;
+    padding: 8px;
     width: 100%;
+    font-weight: 600;
 }
