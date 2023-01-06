@@ -95,3 +95,15 @@
     width: 100%;
     padding-right: 25px;
 }
+
+.payment_price {
+    padding: 0 24px;
+}
+
+.payment_price-label {
+}
+
+.price {
+    color: #ffb43b;
+    font-weight: 700;
+}
