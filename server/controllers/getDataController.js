@@ -6,7 +6,7 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
     host: process.env.DB_HOST,
     dialect:  'postgres'
 })
-const {QueryTypes} = require('sequelize')
+const {QueryTypes,Op} = require('sequelize')
 const LIMIT = 6
 
 
@@ -172,6 +172,7 @@ const getAllChuyenxeByTuyenduong = async() => {
 const getAllChuyenxeBySearch = async(tinhbatdau,tinhketthuc,thoigian,sort,tennhaxe,page) => {
     try {
         QUERY = 'SELECT count(*) OVER() AS FULL_COUNT,CX.HINHANHXE,CX.MATUYENDUONG,CX.MACHUYENXE,NX.TENNHAXE,CX.MANHAXE,CX.MALOAIXE,LX.TENLOAIXE,CX.TGKHOIHANH,CX.TGKETTHUC,' + 
+        'DCBD.MADIACHI MABATDAU, DCKT.MADIACHI MAKETTHUC, ' + 
         'DCBD.TENDIACHI TENDIACHIKHOIHANH,DCKT.TENDIACHI TENDIACHIKETTHUC,CX.GIAVENHONHAT,DG.DIEMSO,CX.MOTA'+
         ' FROM CHUYENXE CX INNER JOIN NHAXE NX ON CX.MANHAXE = NX.MANHAXE INNER JOIN DIACHI DCBD ON CX.DIACHIBATDAU = DCBD.MADIACHI' +
          ' INNER JOIN DIACHI DCKT ON CX.DIACHIKETTHUC = DCKT.MADIACHI INNER JOIN LOAIXE LX ON CX.MALOAIXE = LX.MALOAIXE INNER JOIN TUYENDUONG TD ON CX.MATUYENDUONG = TD.MATUYENDUONG INNER JOIN '+
@@ -241,7 +242,7 @@ const getAllChuyenxeBySearch = async(tinhbatdau,tinhketthuc,thoigian,sort,tennha
                 raw : true
             })
             
-          
+          //TODO only need slot left
             data[0][index].danhgia = danhgia
             data[0][index].ghedat = ghedat
             data[0][index].ghexe = ghexe
@@ -258,7 +259,52 @@ const getAllChuyenxeBySearch = async(tinhbatdau,tinhketthuc,thoigian,sort,tennha
 
 }
 
+const getAllSeat = async(machuyenxe,maloaixe) => {
+    const ghedat = await database.ghedat.findAll({
+        where:{
+            machuyenxe : machuyenxe
+        },
+        attributes : ['maghe'],
+        raw : true
+    })
+    const ghexe = await database.ghexe.findAll({
+        include:[{
+            model : database.loaighe,
+            required : true,
+            attributes : []
+        }],
+        where:{
+            maloaixe : maloaixe
+        },
+        attributes : ['maghe',sequelize.col('loaighe.giaghe')],
+        order: [
+            ['maghe','ASC']
+        ],
+        raw : true
+    })
 
+    return {ghedat,ghexe}
+}
+
+const getDiachi2Noi = async(mabatdau,maketthuc) => {
+    try {
+        const diachi = await database.diachi.findAll({
+            where : {
+                [Op.or]: [
+                  { madiachi: mabatdau },
+                  { madiachi: maketthuc }
+                ]
+              },
+            attributes : ['madiachi','tendiachi','diachicuthe'],
+            raw: true
+        })
+
+        return diachi
+
+    } catch (error) {
+        console.log(error.message)
+    }
+}
 
 
 
@@ -372,5 +418,7 @@ module.exports = {
     getAllDiachi,
     getAllLoaixe,
     getAllChuyenxeAdmin,
-    getAllVexeAdmin
+    getAllVexeAdmin,
+    getAllSeat,
+    getDiachi2Noi
 }

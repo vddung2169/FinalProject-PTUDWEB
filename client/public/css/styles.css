@@ -1421,6 +1421,10 @@ textarea {
     margin: 0 5px;
 }
 
+.loading-disbled{
+    display: none;
+}
+
 .coach-row td {
     display: inline-flex;
     padding: 0 3px 20px 3px;

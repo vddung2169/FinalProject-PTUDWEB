@@ -57,7 +57,7 @@ module.exports = {
       {
         machuyenxe : danhsachchuyenxe[4].dataValues.machuyenxe,
         maghe : '23A',
-        maloaixe : 'LIMOU9',
+        maloaixe : 'LIMOU7',
         createdAt: new Date(),
         updatedAt: new Date()
       },
