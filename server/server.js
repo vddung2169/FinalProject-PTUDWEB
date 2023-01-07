@@ -69,11 +69,13 @@ app.get('/createDatabase', (req,res)=>{
 })
 
 app.post('/test', async(req,res)=>{
-    const {name,email,password,number} = req.body
-    const data = await require('./controllers/getAccountDataController').createAnAdminAccount(name,password,number,email)
+    const {machuyenxe,maloaixe} = req.body
+    const data = await require('./controllers/getDataController').getAllSeat(machuyenxe,maloaixe)
     res.json(data)
 })
 
+
+app.use('/data',require('./routes/dataRoute'))
 app.use('/admin/GRUD',require('./routes/adminOperation'))
 app.use('/admin/auth',require('./routes/jwtAuthAdmin'))
 app.use('/admin',require('./routes/adminView'))

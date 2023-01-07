@@ -189,7 +189,9 @@
                                         <div class="ticket-wrap-buy">
                                             <span class="ticket-left">{{calculateSlot ghexe.length ghedat.length
                                                 'minus'}} slots left</span>
-                                            <span class="btn-base ticket-buy">Buy</span>
+                                            <span class="btn-base ticket-buy" onclick="renderBuyTicketModal(event,'{{machuyenxe}}',
+                                            '{{maloaixe}}','{{mabatdau}}','{{maketthuc}}',
+                                            '{{formatHours tgkhoihanh}}','{{formatHours tgketthuc}}')">Buy</span>
                                         </div>
                                     </div>
                                 </div>
@@ -536,7 +538,7 @@
         </div>
 
         <!-- Modal layout -->
-        <div class="modal-wrap">
+         <div class="modal-wrap">
             <div class="modal__overlay">
             </div>
 
@@ -548,8 +550,7 @@
                             <img src=" /img/number_1.png" alt="buoc1" class="seat-form__number_img"> Vị trí ghế ngồi
                         </div>
                         <div class="seat-form__step" id="seat-form__step--pick-location">
-                            <img src=" /img/number_2.png" alt="buoc2" class="seat-form__number_img"> Vị trí đón/trả
-                            khách
+                            <img src=" /img/number_2.png" alt="buoc2" class="seat-form__number_img"> Vị trí đón/trả khách
                         </div>
                         <div class="seat-form__step" id="seat-form__step--your-seat">
                             <img src=" /img/number_3.png" alt="buoc3" class="seat-form__number_img"> Nhập thông tin
@@ -646,8 +647,19 @@
                                         </td>
                                     </tr>
                                 </tbody>
-
+                                 {{!-- <div class="d-flex justify-content-center loading-disbled" id="loading">
+                                    <div class="spinner-border" role="status">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                </div>  --}}
                             </table>
+
+                        </div>
+                        <div class="userSelectedSeat">
+                            <ul class="selected-list">
+                                <!-- <li class="selected-item">9A</li> -->
+                                <!-- <li class="selected-item">9A</li> -->
+                            </ul>
                         </div>
 
                     </div>
@@ -656,17 +668,16 @@
                         <div class="location-form__information p-4">
                             <div class="location-form__location px-4 py-3">
                                 <label for="location-form__place">Điểm đón</label>
-                                <br>
-                                <input type="text" class="location-form__input mt-3 mb-2 px-2"
-                                    placeholder="Điểm đón của bạn" required>
+                                {{!-- <br>
+                                <input type="text" class="location-form__input mt-3 mb-2 px-2" placeholder="Điểm đón của bạn" required> --}}
                             </div>
 
                             <div class="location-form__nearest-location p-3">
                                 <div class="location-form__nearest-title mb-2">Điểm đón gần nhất</div>
 
-                                <div class="location-form__nearest-start">
+                                <div  class="location-form__nearest-start">
                                     <i class="fa-regular fa-circle-dot"></i>
-                                    <span class="mx-2">17:40
+                                    <span id="location-start" class="mx-2">17:40 
                                         <span>Văn phòng quận 5</span>
                                     </span>
                                 </div>
@@ -674,12 +685,12 @@
                                 <div class="location-form__nearest-start-details mt-2">
                                     <div class="location-form__address">
                                         <i class="fa-solid fa-location-dot mt-1"></i>
-                                        <span class="mx-3">269 Hùng Vương, Phường 09, Quận 5, Hồ Chí Minh
-                                            <span>
-                                                <a href="#">Xem vị trí</a>
-                                            </span>
-                                            <br>
-                                            <span class="location-form__distance py-4">Cách vị trí của bạn 2.7km</span>
+                                        <span id="location-start-detail" class="mx-3">269 Hùng Vương, Phường 09, Quận 5, Hồ Chí Minh 
+                                        <span>
+                                            <a href="#">Xem vị trí</a>
+                                        </span>
+                                        <br>
+                                        <span class="location-form__distance py-4">Cách vị trí của bạn 2.7km</span>
                                         </span>
 
                                     </div>
@@ -693,9 +704,8 @@
                         <div class="location-form__information p-4">
                             <div class="location-form__location px-4 py-3">
                                 <label for="location-form__place">Điểm trả</label>
-                                <br>
-                                <input type="text" class="location-form__input mt-3 mb-2 px-2"
-                                    placeholder="Điểm trả của bạn" required>
+                                {{!-- <br>
+                                <input type="text" class="location-form__input mt-3 mb-2 px-2" placeholder="Điểm trả của bạn" required> --}}
                             </div>
 
                             <div class="location-form__nearest-location p-3">
@@ -703,20 +713,20 @@
 
                                 <div class="location-form__nearest-start">
                                     <i class="fa-regular fa-circle-dot"></i>
-                                    <span class="mx-2">20:00
-                                        <span>Vũng Tàu</span>
+                                    <span id="location-end" class="mx-2">20:00 
+                                    <span>Vũng Tàu</span>
                                     </span>
                                 </div>
 
                                 <div class="location-form__nearest-start-details mt-2">
                                     <div class="location-form__address">
                                         <i class="fa-solid fa-location-dot mt-1"></i>
-                                        <span class="mx-3">Phường 1, Vũng Tàu, Bà Rịa-Vũng Tàu
-                                            <span>
-                                                <a href="#">Xem vị trí</a>
-                                            </span>
-                                            <br>
-                                            <span class="location-form__distance py-4">Cách vị trí của bạn 1.4km</span>
+                                        <span id="location-end-detail" class="mx-3">Phường 1, Vũng Tàu, Bà Rịa-Vũng Tàu 
+                                        <span>
+                                            <a href="#">Xem vị trí</a>
+                                        </span>
+                                        <br>
+                                        <span class="location-form__distance py-4">Cách vị trí của bạn 1.4km</span>
                                         </span>
 
                                     </div>
@@ -729,45 +739,37 @@
                     <div class="info-form__container modal__container-form">
                         <div class="info-form__form">
                             <div class="info-form__group">
-                                <label for="fullname" class="py-2">Họ và tên<code
-                                        style="color: red; font-weight: 700;">*</code></label>
-                                <input type="text" class="info-form__input" placeholder="Tên hành khách" name="fullname"
-                                    required>
+                                <label for="fullname" class="py-2">Họ và tên<code style="color: red; font-weight: 700;">*</code></label>
+                                <input type="text" class="info-form__input" placeholder="Tên hành khách" name="fullname" required>
                             </div>
                             <div class="info-form__group">
-                                <label for="phone" class="py-2">Số điện thoại<code
-                                        style="color: red; font-weight: 700;">*</code></label>
+                                <label for="phone" class="py-2">Số điện thoại<code style="color: red; font-weight: 700;">*</code></label>
                                 <br>
                                 <div class="info-form-wrap-item">
                                     <select class="info-form_area-code">
-                                        <option value="">(VN)+84</option>
-                                        <option value="US">(US)+1</option>
-                                        <option value="CA">(CA)+1</option>
-                                        <option value="JP">(JP)+81</option>
-                                    </select>
-                                    <input type="tel" class="info-form__input" placeholder="Số điện thoại" name="phone"
-                                        required>
+                                    <option value="">(VN)+84</option>
+                                    <option value="US">(US)+1</option>
+                                    <option value="CA">(CA)+1</option>
+                                    <option value="JP">(JP)+81</option>
+                                </select>
+                                    <input type="tel" class="info-form__input" placeholder="Số điện thoại" name="phone" required>
                                 </div>
                             </div>
                             <div class="info-form__group">
-                                <label for="email" class="py-2">Email<code
-                                        style="color: red; font-weight: 700;">*</code></label>
-                                <input type="email" class="info-form__input" placeholder="Email để nhận thông báo"
-                                    name="email" required>
+                                <label for="email" class="py-2">Email<code style="color: red; font-weight: 700;">*</code></label>
+                                <input type="email" class="info-form__input" placeholder="Email để nhận thông báo" name="email" required>
                             </div>
                             <div class="info-form__group">
-                                <label for="note" class="py-2">Ghi chú hoặc yêu cầu khác (Nếu có)<code
-                                        style="color: red; font-weight: 700;">*</code></label>
+                                <label for="note" class="py-2">Ghi chú hoặc yêu cầu khác (Nếu có)<code style="color: red; font-weight: 700;">*</code></label>
                                 <br>
-                                <textarea name="note" id="info-form__note" cols="" rows="2"
-                                    placeholder="Các yêu cầu đặc biệt không thể được đảm bảo - nhưng nhà xe sẽ cố gắng hết sức để đáp ứng nhu cầu của bạn."></textarea>
+                                <textarea name="note" id="info-form__note" cols="" rows="2" placeholder="Các yêu cầu đặc biệt không thể được đảm bảo - nhưng nhà xe sẽ cố gắng hết sức để đáp ứng nhu cầu của bạn."></textarea>
                             </div>
                         </div>
                     </div>
 
                     <div class="seat-form__footer">
-                        <span class="seat-form__text">Số lượng ghế:
-                            <span class="seat-form__quantity">0</span>
+                        <span class="seat-form__text">Số lượng ghế: 
+                        <span class="seat-form__quantity">0</span>
                         </span>
                         <span class="seat-form__text py-2">Tổng: <span class="seat-form__price">0</span>VNĐ</span>
                         <div class="seat-form__right-corner">
@@ -786,7 +788,7 @@
         <script src=" /js/searchTicket.js"></script>
         <script src=" /js/buyTicket.js"></script>
         <script src="/js/sortTicket.js"></script>
-        <script src="/js/ticket_details.js"></script>
+        {{!-- <script src="/js/ticket_detailstest.js"></script> --}}
 
         <script src="/js/bus.js"></script>
 

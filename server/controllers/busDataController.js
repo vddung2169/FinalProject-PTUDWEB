@@ -86,8 +86,34 @@ const renderIndex = async(req, res) => {
 
 }
 
+const getSeatData = async (req,res) => {
+    
+    try {
+	    const {machuyenxe,maloaixe,mabatdau,maketthuc} = req.body
+	
+
+	    const dataSeat = await dataController.getAllSeat(machuyenxe,maloaixe)
+	
+        const diachi = await dataController.getDiachi2Noi(mabatdau,maketthuc)
+
+        
+        const data = {
+            ghedat : dataSeat.ghedat,
+            ghexe: dataSeat.ghexe,
+            diachi : diachi
+        }
+
+	    res.json(data)
+    } catch (error) {
+        console.log(error.message)
+        res.status(500).json(error.message)
+    }
+}
+
+
 
 module.exports = {
     renderBus,
-    renderIndex
+    renderIndex,
+    getSeatData
 }
