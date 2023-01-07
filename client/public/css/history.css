@@ -7,6 +7,11 @@
     font-size: 1.6rem;
 }
 
+.ticket__car {
+    display: flex;
+    justify-content: space-between;
+}
+
 .ticket__information {
     position: relative;
     margin: 20px 0;
@@ -109,10 +114,11 @@
     padding: 4px 50px;
     background-color: #ffb43b;
     color: #000;
-    position: absolute;
-    top: 20px;
-    right: 403px;
     border: none;
+    text-align: center;
+    /* margin-right: 22px;
+    margin-bottom: 22px;
+    margin-top: 16px; */
 }
 
 /* modal */
