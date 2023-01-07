@@ -170,40 +170,43 @@
         <div class="modal-wrap">
             <div class="modal__overlay">
             </div>
-
             <div class="modal__body">
-                <div class="info-form bg-white">
-                    <div class="info-form__container modal__container-form">
-                        <div class="info-form__form">
-                            <div class="info-form__group">
-                                <label for="fullname" class="py-2">Họ và tên<code style="color: red; font-weight: 700;">*</code></label>
-                                <input type="text" class="info-form__input" placeholder="Tên hành khách" name="fullname" required>
-                            </div>
-                            
-                            <div class="info-form__group d-flex align-items-center">
-                                <label for="email" class="py-2">Đánh giá sao</label>
-                                <div class="rate">
-                                    <input type="radio" id="star5" name="rate" value="5" />
-                                    <label for="star5" title="text">5 stars</label>
-                                    <input type="radio" id="star4" name="rate" value="4" />
-                                    <label for="star4" title="text">4 stars</label>
-                                    <input type="radio" id="star3" name="rate" value="3" />
-                                    <label for="star3" title="text">3 stars</label>
-                                    <input type="radio" id="star2" name="rate" value="2" />
-                                    <label for="star2" title="text">2 stars</label>
-                                    <input type="radio" id="star1" name="rate" value="1" />
-                                    <label for="star1" title="text">1 star</label>
-                                </div>
-                            </div>
-                            <div class="info-form__group">
-                                <label for="note" class="py-2">Nhận xét</label>
-                                <br>
-                                <textarea name="note" id="info-form__note" cols="" rows="2" placeholder="Hãy chia sẽ trải nghiệm của bạn."></textarea>
+            <!-- Seat form -->
+            <div class="info-form bg-white">
+                <div class="info-form__footer">
+                    <div class="info-form__form">
+                        <h4 class="my-2 py-2 text-center" style="color: #ffb43b; width: 100%; background-color: rgb(36,0,72);">Đánh giá</h4>
+                        <div class="info-form__group">
+                            <label for="fullname" class="py-2">Họ và tên<code
+                                    style="color: red; font-weight: 700;">*</code></label>
+                            <input type="text" class="info-form__input" placeholder="Tên hành khách" name="fullname"
+                                required>
+                        </div>
+                        <div class="info-form__group d-inline-flex align-items-center">
+                            <label for="email" class="py-2">Email</label>
+                            <div class="rate">
+                                <input type="radio" id="star5" name="rate" value="5" />
+                                <label for="star5" title="text">5 stars</label>
+                                <input type="radio" id="star4" name="rate" value="4" />
+                                <label for="star4" title="text">4 stars</label>
+                                <input type="radio" id="star3" name="rate" value="3" />
+                                <label for="star3" title="text">3 stars</label>
+                                <input type="radio" id="star2" name="rate" value="2" />
+                                <label for="star2" title="text">2 stars</label>
+                                <input type="radio" id="star1" name="rate" value="1" />
+                                <label for="star1" title="text">1 star</label>
                             </div>
                         </div>
+                        <div class="info-form__group">
+                            <label for="note" class="py-2">Nhận xét</label>
+                            <br>
+                            <textarea name="note" id="info-form__note" cols="" rows="2"
+                                placeholder="Để lại trải nghiệm của bạn."></textarea>
+                        </div>
+                        <input type="submit" value="Gửi" class="btn-send">
                     </div>
-
                 </div>
+            </div>
             </div>
         </div>
     </div>
