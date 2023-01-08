@@ -131,11 +131,12 @@
     margin: 10px 0;
 }
 
-.bill {
+.email {
     font-size: 20px;
 }
 
-.bill-id {
+.email-address {
+    font-size: 20px;
     font-weight: bold;
     color: lightgreen;
 }
