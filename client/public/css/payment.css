@@ -134,3 +134,8 @@
 .bill {
     font-size: 20px;
 }
+
+.bill-id {
+    font-weight: bold;
+    color: lightgreen;
+}
