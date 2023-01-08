@@ -2,7 +2,14 @@ const backBtn = $('.modal__header-form.active .btn-back');
 const nextBtn = $('.modal__header-form.active .btn-continue');
 const modalBody = $('.modal__body');
 const modal = $('.modal-wrap');
+const btnNext = $('.seat-form__footer .btn-continue');
 const buyTicketBtns = $$('.ticket-wrap-buy .ticket-buy');
+const paymentBtn = document.getElementById('payment-btn')
+const fullname = document.getElementById('namebuy')
+const phone = document.getElementById('phonebuy')
+const email = document.getElementById('emailbuy')
+const note = document.getElementById('notebuy')
+const ticketform = document.getElementById('ticketform')
 
 
 
@@ -13,6 +20,13 @@ modal.onclick = function() {
     infoHeaders[0].classList.add('seat-form__step--active');
     infoContainers[0].classList.add('active');
     modal.classList.remove('active')
+    btnNext.style.display = 'block'
+    paymentBtn.style.display = 'none'
+    // selectingSeats = 0
+    // totalPrice = 0
+    // listTickets.length = 0
+    quantity.innerHTML = selectingSeats;
+    price.innerHTML = totalPrice;
 }
 modalBody.onclick = function(event) {
     event.stopPropagation();
@@ -37,6 +51,13 @@ infoContainers[0].classList.add('active');
 infoHeaders.forEach((infoHeader, index) => {
     const infoContainer = infoContainers[index];
     infoHeader.onclick = function() {
+        if(index == 2){
+            btnNext.style.display = 'none'
+            paymentBtn.style.display = 'block'
+        }else{
+            btnNext.style.display = 'block'
+            paymentBtn.style.display = 'none'
+        }
         $('.seat-form__step.seat-form__step--active').classList.remove('seat-form__step--active');
         $('.modal__container-form.active').classList.remove('active');
         this.classList.add('seat-form__step--active');
@@ -55,7 +76,7 @@ function indexInClass(node) {
     return -1;
 }
 
-const btnNext = $('.seat-form__footer .btn-continue');
+
 btnNext.onclick = function() {
     const currentHeading = $('.seat-form__step.seat-form__step--active');
 
@@ -65,6 +86,14 @@ btnNext.onclick = function() {
         indexCurrent++;
     } else {
         indexCurrent = 0;
+    }
+
+    if(indexCurrent == 2){
+        btnNext.style.display = 'none'
+        paymentBtn.style.display = 'block'
+    }else{
+        btnNext.style.display = 'block'
+        paymentBtn.style.display = 'none'
     }
 
     currentHeading.classList.remove('seat-form__step--active');
@@ -142,6 +171,8 @@ var ul = $('.userSelectedSeat .selected-list');
 
 var listTickets = []; //Chuỗi chứa ghế
 
+let busID = ''
+let pricePerSeat = 0
 
 
 
@@ -239,6 +270,10 @@ const renderBuyTicketModal = async (e,machuyenxe,maloaixe,mabatdau,maketthuc,tgk
     locationEnd.childNodes[0].nodeValue = tgketthuc + ' '
     locationEnd.childNodes[1].innerHTML = diachiketthuc.tendiachi
     locationEndDetail.innerHTML = diachiketthuc.diachicuthe
+    quantity.innerHTML = selectingSeats;
+    price.innerHTML = totalPrice;
+
+    busID = machuyenxe
 }
 
 function chonghe1(e, maghe, giatien) {
@@ -270,4 +305,36 @@ function chonghe1(e, maghe, giatien) {
     }
     quantity.innerHTML = selectingSeats;
     price.innerHTML = totalPrice;
+    pricePerSeat = giatien
 }
+
+const buyticket = async (e) => {
+    try {
+            //TODO 1: 
+
+        // ! Kiểm tra machuyenxe, fullname, email, phone, maghe
+
+        const ticketdetail = {
+            machuyenxe : busID,
+            maghe : listTickets,
+            fullname : fullname.value,
+            email: email.value,
+            phone : phone.value,
+            note : note.value,
+            totalPrice : totalPrice,
+            pricePerSeat : pricePerSeat,
+            selectingSeats : selectingSeats
+        }
+
+        window.localStorage.setItem('ticket',JSON.stringify(ticketdetail))
+
+
+        window.location.href = '/payment'
+    } catch (error) {
+        console.log(error.message)
+    }
+
+
+}
+
+paymentBtn.addEventListener('click',buyticket)

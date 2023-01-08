@@ -737,10 +737,10 @@
                     </div>
 
                     <div class="info-form__container modal__container-form">
-                        <div class="info-form__form">
+                        <form id="ticketform" class="info-form__form">
                             <div class="info-form__group">
                                 <label for="fullname" class="py-2">Họ và tên<code style="color: red; font-weight: 700;">*</code></label>
-                                <input type="text" class="info-form__input" placeholder="Tên hành khách" name="fullname" required>
+                                <input id="namebuy" type="text" class="info-form__input" placeholder="Tên hành khách" name="fullname" required>
                             </div>
                             <div class="info-form__group">
                                 <label for="phone" class="py-2">Số điện thoại<code style="color: red; font-weight: 700;">*</code></label>
@@ -752,19 +752,19 @@
                                     <option value="CA">(CA)+1</option>
                                     <option value="JP">(JP)+81</option>
                                 </select>
-                                    <input type="tel" class="info-form__input" placeholder="Số điện thoại" name="phone" required>
+                                    <input id="phonebuy" type="tel" class="info-form__input" placeholder="Số điện thoại" name="phone" required>
                                 </div>
                             </div>
                             <div class="info-form__group">
                                 <label for="email" class="py-2">Email<code style="color: red; font-weight: 700;">*</code></label>
-                                <input type="email" class="info-form__input" placeholder="Email để nhận thông báo" name="email" required>
+                                <input id="emailbuy" type="email" class="info-form__input" placeholder="Email để nhận thông báo" name="email" required>
                             </div>
                             <div class="info-form__group">
-                                <label for="note" class="py-2">Ghi chú hoặc yêu cầu khác (Nếu có)<code style="color: red; font-weight: 700;">*</code></label>
+                                <label  for="note" class="py-2">Ghi chú hoặc yêu cầu khác (Nếu có)<code style="color: red; font-weight: 700;">*</code></label>
                                 <br>
-                                <textarea name="note" id="info-form__note" cols="" rows="2" placeholder="Các yêu cầu đặc biệt không thể được đảm bảo - nhưng nhà xe sẽ cố gắng hết sức để đáp ứng nhu cầu của bạn."></textarea>
+                                <textarea id="notebuy" name="note" id="info-form__note" cols="" rows="2" placeholder="Các yêu cầu đặc biệt không thể được đảm bảo - nhưng nhà xe sẽ cố gắng hết sức để đáp ứng nhu cầu của bạn."></textarea>
                             </div>
-                        </div>
+                        </form>
                     </div>
 
                     <div class="seat-form__footer">
@@ -774,7 +774,7 @@
                         <span class="seat-form__text py-2">Tổng: <span class="seat-form__price">0</span>VNĐ</span>
                         <div class="seat-form__right-corner">
                             <button class="btn-continue px-4">Tiếp tục</button>
-                            <button class="btn-continue btn-thanhtoan px-4">Thanh toán</button>
+                            <button form="ticketform" type="submit" id="payment-btn" class="btn-continue btn-thanhtoan px-4" style="display: none;">Thanh toán</button>
                         </div>
                     </div>
                 </div>

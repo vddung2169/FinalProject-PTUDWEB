@@ -6,16 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ticket Take It!</title>
-    <link rel="icon" href="../public/img/logo_has_color.png" type="image/x-icon">
-    <link rel="stylesheet" href="../public/css/base.css">
-    <link rel="stylesheet" href="../public/css/styles.css">
-    <link rel="stylesheet" href="../public/css/reset.css">
-    <link rel="stylesheet" href="../public/css/slider.css">
-    <link rel="stylesheet" href="../public/css/home.css">
-    <link rel="stylesheet" href="../public/css/buyTicket.css">
-    <link rel="stylesheet" href="../public/css/queries.css">
-    <link rel="stylesheet" href="../public/css/mobile.css">
-    <link rel="stylesheet" href="../public/css/payment.css">
+    <link rel="icon" href=" /img/logo_has_color.png" type="image/x-icon">
+    <link rel="stylesheet" href=" /css/base.css">
+    <link rel="stylesheet" href=" /css/styles.css">
+    <link rel="stylesheet" href=" /css/reset.css">
+    <link rel="stylesheet" href=" /css/slider.css">
+    <link rel="stylesheet" href=" /css/home.css">
+    <link rel="stylesheet" href=" /css/buyTicket.css">
+    <link rel="stylesheet" href=" /css/queries.css">
+    <link rel="stylesheet" href=" /css/mobile.css">
+    <link rel="stylesheet" href=" /css/payment.css">
     <!-- Latest compiled and minified CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Latest compiled JavaScript -->
@@ -29,13 +29,13 @@
         <!-- Header -->
         <header id="header" class="container-fluid">
             <div class="header_wrap">
-                <a href="index.html" class="header__logo px-5">
-                    <img loading="lazy" src="../public/img/logo_has_color.png" alt="This is LOGO">
+                <a href="/" class="header__logo px-5">
+                    <img loading="lazy" src=" /img/logo_has_color.png" alt="This is LOGO">
                 </a>
             </div>
             <div class="header_time">
                 <span class="header_time-label">Thời gian thanh toán còn lại</span>
-                <span class="header_time-countdown">
+                <span id="counter" class="header_time-countdown">
                     07:13
                 </span>
             </div>
@@ -52,9 +52,9 @@
                         <div class="payment_activity-method--doing">
                             <div class="row">
                                 <div class="payment_edit">
-                                    <input type="radio" class="payment_choice" name="choice">
-                                    <img src="../public/img/momo.svg" alt="momo_logo" class="px-2">
-                                    <h7 class="payment_activity-method-label px-1">Thanh toán MoMo</h7>
+                                    <input id="momo" type="radio" class="payment_choice" name="choice">
+                                    <img src=" /img/momo.svg" alt="momo_logo" class="px-2">
+                                    <label style="cursor: pointer;" for="momo" class="payment_activity-method-label px-1">Thanh toán MoMo</label>
                                 </div>
                                 <span>Điện thoại của bạn phải được cài đặt ứng dụng MoMo</span>
                             </div>
@@ -64,9 +64,9 @@
                         <div class="payment_activity-method--doing">
                             <div class="row">
                                 <div class="payment_edit">
-                                    <input type="radio" class="payment_choice" name="choice">
-                                    <img src="../public/img/zalo_pay.svg" alt="zalopay_logo" class="px-2">
-                                    <h7 class="payment_activity-method-label px-1">Thanh toán ZaloPay</h7>
+                                    <input id="zalo" type="radio" class="payment_choice" name="choice">
+                                    <img src=" /img/zalo_pay.svg" alt="zalopay_logo" class="px-2">
+                                    <label style="cursor: pointer;" for="zalo" class="payment_activity-method-label px-1">Thanh toán ZaloPay</label>
                                 </div>
                                 <span>Điện thoại của bạn phải được cài đặt ứng dụng ZaloPay</span>
                             </div>
@@ -76,31 +76,31 @@
                         <div class="payment_activity-method--doing">
                             <div class="row">
                                 <div class="payment_edit">
-                                    <input type="radio" class="payment_choice" name="choice">
-                                    <img src="../public/img/cash.png" alt="cash_logo" class="px-2 cash_logo">
-                                    <h7 class="payment_activity-method-label px-1">Thanh toán tiền mặt</h7>
+                                    <input id="cash" type="radio" class="payment_choice" name="choice">
+                                    <img src=" /img/cash.png" alt="cash_logo" class="px-2 cash_logo">
+                                    <label style="cursor: pointer;" for="cash" class="payment_activity-method-label px-1">Thanh toán tiền mặt</label>
                                 </div>
                                 <span>Thanh toán tại nhà xe</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="payment_price py-5">
+                    <div id="payment-price" class="payment_price py-5">
                         <div class="line d-flex align-items-center justify-content-between">
                             <h6 class="payment_price-label">Tổng tiền</h6>
-                            <h5 class="price">655.000đ</h5>
+                            <h5 class="price">đ</h5>
                         </div>
                         <div class="line d-flex align-items-center justify-content-between">
                             <span>Giá vé</span>
-                            <h7 class="price_seat">655.000đ</h7>
+                            <h7 class="price_seat">đ</h7>
                         </div>
                         <div class="line d-flex align-items-center justify-content-between">
                             <span>Số lượng</span>
-                            <h7 class="number_of_seat">1</h7>
+                            <h7 class="number_of_seat"></h7>
                         </div>
                         <div class="line d-flex align-items-center justify-content-between">
                             <span>Ghế/Giường</span>
-                            <h7 class="seat_id">6A</h7>
+                            <h7 class="seat_id"></h7>
                         </div>
                     </div>
 
@@ -112,41 +112,41 @@
                 <div class="payment_info-route">
                     <h6 class="payment_info-route-heading">Thông tin chuyến đi</h6>
                     <div class="payment_info-route-user py-2 px-1">
-                        <div class="payment_info-route--doing">
+                        <div id="client-infor" class="payment_info-route--doing">
                             <div class="row">
                                 <span>Hành khách</span>
-                                <h7 class="payment_info-route-buyer py-2">Nguyễn Nhật Quỳnh</h7>
+                                <h7 id="name" class="payment_info-route-buyer py-2"></h7>
                             </div>
                             <div class="row">
                                 <span>Số điện thoại</span>
-                                <h7 class="payment_info-route-buyer py-2">0909372851</h7>
+                                <h7 id="phone" class="payment_info-route-buyer py-2"></h7>
                             </div>
                             <div class="row">
                                 <span>Email</span>
-                                <h7 class="payment_info-route-buyer py-2">nhatquynh@gmail.com</h7>
+                                <h7 id="email" class="payment_info-route-buyer py-2"></h7>
                             </div>
                             <hr>
                             <div style="padding-right: 2rem;" class="row">
                                 <span>Ghi chú</span>
-                                <h7 class="payment_info-route-buyer py-2"></h7>
+                                <h7 id="note" class="payment_info-route-buyer py-2"</h7>
                             </div>
                             <hr>
                             <div class="row">
                                 <span>Nhà xe</span>
-                                <h7 class="payment_info-route-buyer py-2">Bình Minh Bus</h7>
+                                <h7 id="nhaxe" class="payment_info-route-buyer py-2"></h7>
                             </div>
                             <div class="row">
                                 <span>Điểm đón (dự kiến)</span>
-                                <h7 class="payment_info-route-buyer py-2">
-                                22:35 - 07/01/2023
-                                <br>VP Sài Gòn  
+                                <h7 id="batdau" class="payment_info-route-buyer py-2">
+                               
+                                <br><span ></span>  
                                 </h7>
                             </div>
                             <div class="row">
                                 <span>Điểm trả (dự kiến)</span>
-                                <h7 class="payment_info-route-buyer py-2">
-                                22:35 - 07/01/2023
-                                <br>VP Sài Gòn  
+                                <h7 id="ketthuc" class="payment_info-route-buyer py-2">
+                               
+                                <br><span ></span>
                                 </h7>
                             </div>
                         </div>
@@ -161,14 +161,9 @@
             <p class="policy__decription">© 2022 - Bản quyền thuộc về Công ty TNHH Ticket Take It</p>
         </footer>
             
-        <script src="../public/js/rangeSlider.js"></script>
-        <script src="../public/js/activeHeading.js"></script>
-        <script src="../public/js/account.js"></script>
-        <script src="../public/js/slider.js"></script>
-        <script src="../public/js/searchTicket.js"></script>
-        <script src="../public/js/buyTicket.js"></script>
-        <script src="../public/js/sortTicket.js"></script>
-        <script src="../public/js/ticket_details.js"></script>
+     
+
+        <script src="/js/payment.js"></script>
 </body>
 
 </html>

@@ -306,6 +306,45 @@ const getDiachi2Noi = async(mabatdau,maketthuc) => {
     }
 }
 
+const getInforFromChuyenxe = async(machuyenxe) => {
+    try {
+        const ticket = await database.chuyenxe.findAll({
+            include : [
+                {
+                    model: database.nhaxe,
+                    required : true,
+                    attributes : []
+                },
+                {
+                    model: database.diachi,
+                    as :'DCBD',
+                    required: true,
+                    attributes : []
+                },
+                {
+                    model: database.diachi,
+                    as: 'DCKT',
+                    required: true,
+                    attributes : []
+                },
+            ],
+            where : {
+                machuyenxe : machuyenxe
+            },
+            attributes : [sequelize.col('nhaxe.tennhaxe'),
+                [sequelize.col('DCBD.tendiachi'), 'diachibatdau'],
+                [sequelize.col('DCKT.tendiachi'), 'diachiketthuc'],
+                'tgkhoihanh','tgketthuc'
+            ],
+            raw : true
+        })
+
+        return ticket[0]
+    } catch (error) {
+        console.log(error.message)
+    }
+}
+
 
 
 const getAllNhaxe =async (maquantri) => {
@@ -420,5 +459,6 @@ module.exports = {
     getAllChuyenxeAdmin,
     getAllVexeAdmin,
     getAllSeat,
-    getDiachi2Noi
+    getDiachi2Noi,
+    getInforFromChuyenxe
 }

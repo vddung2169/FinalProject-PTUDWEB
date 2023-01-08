@@ -9,7 +9,7 @@ const sessions = require('express-session')
 const methodOverride = require('method-override')
 const passport = require('passport')
 const paginateHelper = require('express-handlebars-paginate')
-
+const formatTime = require('./utils/formatTime')
 // const methodOverride = require('method-override')
 
 
@@ -35,11 +35,12 @@ app.engine('hbs', engine({
     defaultLayout: "main",
     helpers: {
         calculateTime : require('./utils/calculateTime'),
-        formatHours : require('./utils/formatTime').formatHours,
+        formatHours : formatTime.formatHours,
+        formatHoursDay : formatTime.formatHoursDay,
         formatRating: require('./utils/formatRating').formatRating,
         formatStar: require('./utils/formatRating').formatRatingStar,
         formatMoney: require('./utils/formatMoney'),
-        formatTimeAdmin: require('./utils/formatTime').formatTimeAdmin,
+        formatTimeAdmin: formatTime.formatTimeAdmin,
         formatString : require('./utils/formatToString'),
         calculateSlot: require('./utils/calculate').calculateNumber,
         createPagination: paginateHelper.createPagination
@@ -74,7 +75,7 @@ app.post('/test', async(req,res)=>{
     res.json(data)
 })
 
-
+app.use('/ticket',require('./routes/ticketRoute'))
 app.use('/data',require('./routes/dataRoute'))
 app.use('/admin/GRUD',require('./routes/adminOperation'))
 app.use('/admin/auth',require('./routes/jwtAuthAdmin'))
