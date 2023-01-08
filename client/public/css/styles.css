@@ -957,13 +957,17 @@ textarea {
     font-weight: bold;
 }
 
+
 /* .filter__departureTime-time {}
 
 .filter__departureGarage {} */
 
+
 /* .filter__departureGarage-list {
     /* display: flex;
     flex-direction: column; */
+
+
 /*} */
 
 .filter__departureGarage-item,
@@ -1036,6 +1040,7 @@ textarea {
 
 
 /* More information */
+
 
 /* .active {} */
 
@@ -1157,6 +1162,7 @@ textarea {
 .view-item__heading i {
     color: #ffb43b;
 }
+
 
 /* .view-item__content {} */
 
@@ -1328,6 +1334,7 @@ textarea {
     font-size: 1.2rem;
 }
 
+
 /* .rate-detail__userComment-rate {} */
 
 
@@ -1337,6 +1344,21 @@ textarea {
     padding: 0 32px;
     display: flex;
     align-items: center;
+    flex-direction: column;
+}
+
+.seat-form__wrapTop {
+    display: flex;
+}
+
+.seat-form__wrapBottom ul {
+    padding-left: 0;
+    display: flex;
+}
+
+.selected-list .selected-item {
+    color: green;
+    margin-left: 8px;
 }
 
 .seat-form__header {
@@ -1379,6 +1401,7 @@ textarea {
 
 .seat-form__note {
     flex: 1;
+    margin-right: 50px;
 }
 
 .seat-form__seat {
@@ -1421,7 +1444,7 @@ textarea {
     margin: 0 5px;
 }
 
-.loading-disbled{
+.loading-disbled {
     display: none;
 }
 
@@ -1604,6 +1627,7 @@ table {
     border-radius: 2px;
 }
 
+
 /* .location-form__nearest-location {} */
 
 .location-form__nearest-title {
@@ -1729,37 +1753,31 @@ table {
     /* Cursor on hover */
 }
 
-.pagination{
+.pagination {
     --bs-pagination-font-size: 1.3rem !important;
 }
 
-
-.pagination > li > a
-{
+.pagination>li>a {
     background-color: white;
     color: #5A4181;
     border-color: var(--text-title-color);
 }
 
-.pagination > li > a:focus,
-.pagination > li > a:hover,
-.pagination > li > span:focus,
-.pagination > li > span:hover
-{
+.pagination>li>a:focus,
+.pagination>li>a:hover,
+.pagination>li>span:focus,
+.pagination>li>span:hover {
     color: white;
     background-color: var(--text-title-color);
-    
 }
 
-.pagination > .active > a
-{
+.pagination>.active>a {
     color: var(--yellow-color);
     background-color: #5A4181 !Important;
     border: solid 1px #5A4181 !Important;
 }
 
-.pagination > .active > a:hover
-{
+.pagination>.active>a:hover {
     background-color: #5A4181 !Important;
     border: solid 1px #5A4181;
 }
