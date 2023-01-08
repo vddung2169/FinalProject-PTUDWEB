@@ -148,5 +148,15 @@
 
 .back-homepage {
     font-size: 20px;
-    margin-top: 20px;
+    margin: 20px 0 5px 0;
+}
+
+.payment-annoucement-form-container button {
+    background-color: Green;
+    color: white;
+    font-size: 25px;
+    margin-bottom: 20px;
+    height: 60px;
+    width: 300px;
+    border: none;
 }
