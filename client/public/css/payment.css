@@ -128,4 +128,9 @@
 .payment-success {
     font-size: 30px;
     font-weight: bold;
+    margin: 10px 0;
+}
+
+.bill {
+    font-size: 20px;
 }
