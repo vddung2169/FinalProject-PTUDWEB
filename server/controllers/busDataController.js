@@ -119,7 +119,10 @@ const renderHistory = async(req,res) => {
         //      manhaxe
         // }
 
-        
+        const vexe = await dataController.getAllTicketUser(user.makhachhang)
+
+
+        res.render('history',{vexe,user})
 
 
 

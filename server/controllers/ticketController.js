@@ -60,12 +60,15 @@ const buyTicket = async (req,res,status) => {
     try {
         const {mave} = req.body
         let statusTicket = 'Đã hủy'
-        // TODO cập nhật đã thanh toán
         if(status == 'SUCCESS'){
             statusTicket = 'Đã thanh toán'
         }
         const vexe = await dataController.updateTicket(mave,statusTicket)
 
+
+        // TODO 2: Gửi email người với vé
+
+        
         res.json(true)
 
     } catch (error) {

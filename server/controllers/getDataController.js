@@ -419,7 +419,7 @@ const checkSlot = async (maghe,machuyenxe) => {
         const ghedadat = await database.vexe.findAll({
             include :[{
                 model : database.ghexe,
-                require:true,
+                required:true,
                 attributes: [],
                 where : {
                     maghe : {
@@ -500,10 +500,100 @@ const updateTicket = async(mave,status) => {
 
         vexe.tinhtrang = status
         vexe.save()
+        return vexe
 
     } catch (error) {
         console.log(error.message + " at updateTicket")
     }
+
+}
+
+const getAllTicketUser = async (makhachhang) => {
+    try {
+        const vexe = await database.vexe.findAll({
+            include: [
+                {
+                    model : database.chuyenxe,
+                    required : true,
+                    attributes : []
+                },
+                {
+                    model: database.diachi,
+                    as :'DCBD',
+                    required: true,
+                    attributes : []
+                },
+                {
+                    model: database.diachi,
+                    as: 'DCKT',
+                    required: true,
+                    attributes : []
+                },
+                {
+                    model : database.nhaxe,
+                    required : true,
+                    attributes : []
+                },
+                {
+                    model : database.loaixe,
+                    required : true,
+                    attributes : []
+                },
+            ],
+            where : {
+                makhachhang : makhachhang
+            },
+            attributes : [sequelize.col('nhaxe.tennhaxe'),
+            sequelize.col('chuyenxe.manhaxe'),
+            sequelize.col('loaixe.tenloaixe'),
+            sequelize.col('chuyenxe.tgkhoihanh'),
+            [sequelize.col('DCBD.tendiachi'), 'diachibatdau'],
+            [sequelize.col('DCKT.tendiachi'), 'diachiketthuc'],
+            sequelize.col('chuyenxe.tgketthuc'),
+            sequelize.col('chuyenxe.hinhanhxe'),
+            'tongtien',
+            'tinhtrang',
+            'mave'
+        ],
+            raw : true
+        })
+
+
+        for (let index = 0; index < vexe.length; index++) {
+            const ghedadat = await database.vexe.findAll({
+                include :[{
+                    model : database.ghexe,
+                    require:true,
+                    attributes: [],
+                    where : {
+                        maghe : {
+                            [Op.or] : maghe
+                        }
+                    }
+                }],
+                where:{
+                    mave : vexe[0].mave
+                },
+                attributes : [[sequelize.col('ghexes.chitietvexe.ghexeMaghe'),'maghe']],
+                raw : true
+            })
+            const slot = ghedadat.map(function(ghe) {
+                return ghe['maghe'];
+            });
+
+            vexe[index].slots = slot.join(',')
+        }
+
+        return vexe
+
+
+
+    } catch (error) {
+        console.log(error.message + " at getAllTicketUser")
+    }
+
+
+
 
 }
 
@@ -581,5 +671,6 @@ module.exports = {
     getInforFromChuyenxe,
     createNewTicket,
     updateTicket,
-    checkSlot
+    checkSlot,
+    getAllTicketUser
 }

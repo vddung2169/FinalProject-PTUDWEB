@@ -22,7 +22,7 @@
 <body>
     <div class="app">
         <!-- Header -->
-        {{>header}}
+        {{>header name=user.tenkhachhang}}
 
         <div id="body" class="history">
             <!-- Available Ticket -->
@@ -40,6 +40,9 @@
                                         <div class="ticket__information-description col-xl-5">
                                             <div class="ticket__car">
                                                 <div class="ticket__car-name">{{tennhaxe}}</div>
+                                                <div class="ticket__car-rate">
+                                                    <span>{{tinhtrang}}</span>
+                                                </div>
                                                 <button type="submit" class="ticket__information_btn btn-rate">Rate</button>
                                             </div>
                                             <div class="ticket__car-type">{{tenloaixe}}</div>
@@ -135,7 +138,7 @@
                                 required>
                         </div>
                         <div class="info-form__group d-inline-flex align-items-center">
-                            <label for="email" class="py-2">Email</label>
+                            <label  class="py-2">Đánh giá</label>
                             <div class="rate">
                                 <input type="radio" id="star5" name="rate" value="5" />
                                 <label for="star5" title="text">5 stars</label>
@@ -153,7 +156,7 @@
                             <label for="note" class="py-2">Nhận xét</label>
                             <br>
                             <textarea name="note" id="info-form__note" cols="" rows="2"
-                                placeholder="Để lại trải nghiệm của bạn."></textarea>
+                                placeholder="Để lại trải nghiệm của bạn." required></textarea>
                         </div>
                         <input type="submit" value="Gửi" class="btn-send">
                     </div>
@@ -166,16 +169,7 @@
         {{>footer}}
 </body>
 
-<script>
-    const rateBtn = document.querySelectorAll('.btn-rate');
-    const modal = document.querySelector('.modal-wrap');
-    const overlay = document.querySelector('.modal__overlay');
-    overlay.onclick=() => modal.classList.remove("active");
-    Array.from(rateBtn).forEach(btn => {
-        btn.onclick=() => {
-            modal.classList.add("active");
-        }
-    })
-</script>
+    <script src="/js/auth/user.js"></script>
+    <script src="/js/rating.js"></script>
 
 </html>
