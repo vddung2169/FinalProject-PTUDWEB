@@ -86,6 +86,51 @@ const renderIndex = async(req, res) => {
 
 }
 
+
+const renderHistory = async(req,res) => {
+    try {
+        const id = req.user
+        const accountType = req.accountType
+
+        let user = {
+            tenkhachhang : ""
+        }
+        if(id){
+            if(accountType === 'system'){
+                const data  = await accountDataController.getAnAccountByID(id)
+                user = data[0]
+            }else if(accountType === 'google'){
+                const data  = await accountDataController.getAnGoogleAccount(null,id)
+                user = data[0]
+            }
+        }
+
+        // TODO 1: Lấy dữ liệu vé của user
+        // vexe = {
+        //     tennhaxe,
+        //     tenloaixe,
+        //     tgkhoihanh,
+        //     diachibatdau,
+        //     tgketthuc,
+        //     diachiketthuc,
+        //     slots,
+        //     tongtien,
+        //     hinhanhxe,
+        //      manhaxe
+        // }
+
+        
+
+
+
+
+    } catch (error) {
+        console.log(error.message)
+        res.status(500).json(error.message)
+    }
+
+}
+
 const getSeatData = async (req,res) => {
     
     try {
@@ -115,5 +160,6 @@ const getSeatData = async (req,res) => {
 module.exports = {
     renderBus,
     renderIndex,
-    getSeatData
+    getSeatData,
+    renderHistory
 }

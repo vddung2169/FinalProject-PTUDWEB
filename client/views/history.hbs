@@ -32,139 +32,91 @@
                         <div class="availableTicket-header-title">History</div>
                     </div>
                     <ul class="ticket__information-list">
-                        <li class="ticket__information ">
+                        {{#each vexe}}
+                           <li class="ticket__information ">
                             <div class="ticket__information-summary row">
-                                <div class="ticket__information-content col-xl-8">
+                                <div class="ticket__information-content col-xl-9">
                                     <div class="row">
-                                        <div class="ticket__information-description col-xl-8">
+                                        <div class="ticket__information-description col-xl-5">
+                                            <div class="ticket__car">
+                                                <div class="ticket__car-name">{{tennhaxe}}</div>
+                                                <button type="submit" class="ticket__information_btn btn-rate">Rate</button>
+                                            </div>
+                                            <div class="ticket__car-type">{{tenloaixe}}</div>
+                                            <div class="ticket__car-depart">
+                                                <i class="fa-solid fa-location-dot"></i>
+                                                <span class="ticket__car-depart-time">{{formatHours tgkhoihanh}}</span>
+                                                <span class="ticket__car-depart-location">{{diachibatdau}}</span>
+                                            </div>
+                                            <div class="ticket__car-depart-period">{{calculateTime tgkhoihanh tgketthuc}}h</div>
+                                            <div class="ticket__car-arrive">
+                                                <i class="fa-solid fa-location-dot"></i>
+                                                <span class="ticket__car-arrive-time">{{formatHours tgketthuc}}</span>
+                                                <span class="ticket__car-arrive-location">{{diachiketthuc}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="ticket__information-price col-xl-4">
+                                            <div class="ticket__information-price-heading" style="font-size: 1.25rem;">Ghế đặt: </div>
+                                            <div class="ticket__information-price-detail" style="font-size: 1.25rem;">{{slots}}</div>
+                                          
+                                        </div>
+                                        <div class="ticket__information-price col-xl-3">
+                                            <div class="ticket__information-price-heading">Total:</div>
+                                            <div class="ticket__information-price-detail">{{formatMoney tongtien}}<span>đ</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ticket__information-img col-xl-3">
+                                    <img src=" {{hinhanhxe}}" alt="">
+                                </div>
+                            </div>
+                        </li>
+                        {{/each}}
+                        {{!-- <li class="ticket__information ">
+                            <div class="ticket__information-summary row">
+                                <div class="ticket__information-content col-xl-9">
+                                    <div class="row">
+                                        <div class="ticket__information-description col-xl-5">
                                             <div class="ticket__car">
                                                 <div class="ticket__car-name">Thành Bưởi</div>
-                                                <div class="ticket__car-rate">
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <span>4.8 (B55)</span>
-                                                </div>
                                                 <button type="submit" class="ticket__information_btn btn-rate">Rate</button>
                                             </div>
                                             <div class="ticket__car-type">Limousine 9 seats</div>
                                             <div class="ticket__car-depart">
                                                 <i class="fa-solid fa-location-dot"></i>
-                                                <span class="ticket__car-depart-time">09:00</span>
+                                                <span class="ticket__car-depart-time">15:30</span>
                                                 <span class="ticket__car-depart-location">Bến xe miền Đông</span>
                                             </div>
                                             <div class="ticket__car-depart-period">2h</div>
                                             <div class="ticket__car-arrive">
                                                 <i class="fa-solid fa-location-dot"></i>
-                                                <span class="ticket__car-arrive-time">14:00</span>
+                                                <span class="ticket__car-arrive-time">15:30</span>
                                                 <span class="ticket__car-arrive-location">Văn phòng Bà Rịa</span>
                                             </div>
                                         </div>
                                         <div class="ticket__information-price col-xl-4">
+                                            <div class="ticket__information-price-heading" style="font-size: 1.25rem;">Ghế đặt: </div>
+                                            <div class="ticket__information-price-detail" style="font-size: 1.25rem;">1A,2A,3A</div>
+                                          
+                                        </div>
+                                        <div class="ticket__information-price col-xl-3">
                                             <div class="ticket__information-price-heading">Total:</div>
-                                            <div class="ticket__information-price-detail">200.000<span>đ</span></div>
+                                            <div class="ticket__information-price-detail">202555<span>đ</span></div>
+                                          
                                         </div>
                                     </div>
                                 </div>
-                                <div class="ticket__information-img col-xl-4">
-                                    <img src=" /img/nha-xe-thanh-buoi.png" alt="">
+                                <div class="ticket__information-img col-xl-3">
+                                    <img src="/img/nha-xe-toan-thang.png" alt="">
                                 </div>
                             </div>
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
             </div>
-            <div class="availableTicket-container">
-                <div class="container">
-                    <div class="availableTicket-header">
-                        <div class="availableTicket-header-title">History</div>
-                    </div>
-                    <ul class="ticket__information-list">
-                        <li class="ticket__information">
-                            <div class="ticket__information-summary row">
-                                <div class="ticket__information-content col-xl-8">
-                                    <div class="row">
-                                        <div class="ticket__information-description col-xl-8">
-                                            <div class="ticket__car">
-                                                <div class="ticket__car-name">Thành Bưởi</div>
-                                                <div class="ticket__car-rate">
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <span>4.8 (B55)</span>
-                                                </div>
-                                                <button type="submit" class="ticket__information_btn btn-rate">Rate</button>
-                                            </div>
-                                            <div class="ticket__car-type">Limousine 9 seats</div>
-                                            <div class="ticket__car-depart">
-                                                <i class="fa-solid fa-location-dot"></i>
-                                                <span class="ticket__car-depart-time">09:00</span>
-                                                <span class="ticket__car-depart-location">Bến xe miền Đông</span>
-                                            </div>
-                                            <div class="ticket__car-depart-period">2h</div>
-                                            <div class="ticket__car-arrive">
-                                                <i class="fa-solid fa-location-dot"></i>
-                                                <span class="ticket__car-arrive-time">14:00</span>
-                                                <span class="ticket__car-arrive-location">Văn phòng Bà Rịa</span>
-                                            </div>
-                                        </div>
-                                        <div class="ticket__information-price col-xl-4">
-                                            <div class="ticket__information-price-heading">Total:</div>
-                                            <div class="ticket__information-price-detail">200.000<span>đ</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ticket__information-img col-xl-4">
-                                    <img src=" /img/nha-xe-thanh-buoi.png" alt="">
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="availableTicket-container">
-                <div class="container">
-                    <div class="availableTicket-header">
-                        <div class="availableTicket-header-title">History</div>
-                    </div>
-                    <ul class="ticket__information-list">
-                        <li class="ticket__information">
-                            <div class="ticket__information-summary row">
-                                <div class="ticket__information-content col-xl-8">
-                                    <div class="row">
-                                        <div class="ticket__information-description col-xl-8">
-                                            <div class="ticket__car">
-                                                <div class="ticket__car-name">Thành Bưởi</div>
-                                                <div class="ticket__car-rate">
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <span>4.8 (B55)</span>
-                                                </div>
-                                                <button type="submit" class="ticket__information_btn btn-rate">Rate</button>
-                                            </div>
-                                            <div class="ticket__car-type">Limousine 9 seats</div>
-                                            <div class="ticket__car-depart">
-                                                <i class="fa-solid fa-location-dot"></i>
-                                                <span class="ticket__car-depart-time">09:00</span>
-                                                <span class="ticket__car-depart-location">Bến xe miền Đông</span>
-                                            </div>
-                                            <div class="ticket__car-depart-period">2h</div>
-                                            <div class="ticket__car-arrive">
-                                                <i class="fa-solid fa-location-dot"></i>
-                                                <span class="ticket__car-arrive-time">14:00</span>
-                                                <span class="ticket__car-arrive-location">Văn phòng Bà Rịa</span>
-                                            </div>
-                                        </div>
-                                        <div class="ticket__information-price col-xl-4">
-                                            <div class="ticket__information-price-heading">Total:</div>
-                                            <div class="ticket__information-price-detail">200.000<span>đ</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ticket__information-img col-xl-4">
-                                    <img src=" /img/nha-xe-thanh-buoi.png" alt="">
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <i class="more-ticket-down fa-solid fa-angles-down"></i>
-                </div>
-            </div>
+
+
+            
         </div>
 
         <div class="modal-wrap">

@@ -10,7 +10,7 @@ router.get('/register',(req,res,next) => authorization.authorizationUser(req,res
 router.get('/forgetpassword',(req,res,next) => authorization.authorizationUser(req,res,next,'/',''),(req,res)=> res.render('forgetpassword'))
 router.get('/confirm',(req,res) => res.render('confirmMail'))
 router.get('/changepassword',validateReset,(req,res) => res.render('changepassword'))
-router.get('/history',(req,res) => res.render('history'))
+router.get('/history',(req,res,next) => authorization.authorizationUser(req,res,next,'','/login'),busDataController.renderHistory)
 router.get('/bus',(req,res,next) => authorization.authorizationUser(req,res,next,'',''),busDataController.renderBus)
 router.get('/',(req,res,next) => authorization.authorizationUser(req,res,next,'',''),busDataController.renderIndex)
 router.get('*',(req,res) => res.render('notfound404',{error: "Not found!"}))
