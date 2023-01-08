@@ -53,10 +53,25 @@ const prepareTicket =async () => {
 
 }
 
-const removeTicket = () => {
+const removeTicket = async () => {
     if(ticket){
         window.sessionStorage.removeItem('ticket')
     }
+
+    await fetch('/ticket/cancel',{
+        method : 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body : JSON.stringify({mave : ticket.mave})
+    })
+
+    //const resJson = await res.json()
+
+    
+
+
     window.location.href = '/bus'
 }
 
@@ -85,11 +100,52 @@ function countdown(minutes) {
     tick();
 }
 
-countdown(5);
+countdown(10);
 
 prepareTicket()
 
-document.querySelectorAll('input[type=radio]').onclick = (e) => {
+
+
+
+document.querySelectorAll('input[type=radio]').forEach(btn => {
+    btn.onclick = (e) => {
+    console.log("click")
     paymentBtn.disabled = false
+    }
+})
+
+
+
+paymentBtn.onclick = async(e) =>{
+    e.preventDefault()
+
+    console.log(ticket.mave)
+
+    console.log('click')
+    try {
+        const res = await fetch('/ticket/donepayment',{
+            method : 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body : JSON.stringify({mave : ticket.mave})
+        })
+    
+        const resJson = await res.json()
+
+        if(resJson){
+            //TODO hiện lên thành báo mua thành công
+            // redirect tới trang chủ trong 5s
+            confirm('Thành công')
+        }else {
+            confirm('thất bại')
+        }
+
+
+    } catch (error) {
+        console.log(error.message)
+    }
+
 }
 

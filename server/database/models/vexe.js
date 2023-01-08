@@ -31,6 +31,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     machuyenxe: DataTypes.UUID,
     makhachhang: DataTypes.UUID,
+    hoten: DataTypes.STRING,
+    email: DataTypes.STRING,
+    sodienthoai :DataTypes.STRING,
     tinhtrang: DataTypes.STRING,
     tongtien: DataTypes.DECIMAL(12,2)
   }, {

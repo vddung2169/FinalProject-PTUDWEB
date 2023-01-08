@@ -332,10 +332,33 @@ const buyticket = async (e) => {
             selectingSeats : selectingSeats
         }
 
-        window.localStorage.setItem('ticket',JSON.stringify(ticketdetail))
+        const maveRaw = await fetch('/ticket/newticket',{
+            method : 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
+            body : JSON.stringify(ticketdetail)
+        })
 
+        const mave = await maveRaw.json()
 
-        window.location.href = '/payment'
+        if(!mave){
+            // TODO ghế đã được đặt
+            // Hiện cảnh báo
+
+            
+        }else{
+            ticketdetail.mave = mave
+
+            window.localStorage.setItem('ticket',JSON.stringify(ticketdetail))
+
+            window.location.href = '/payment'
+        }
+
+    
+
+     
     } catch (error) {
         console.log(error.message)
     }

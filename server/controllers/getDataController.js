@@ -7,6 +7,7 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
     dialect:  'postgres'
 })
 const {QueryTypes,Op} = require('sequelize')
+const moment = require('moment')
 const LIMIT = 6
 
 
@@ -227,13 +228,24 @@ const getAllChuyenxeBySearch = async(tinhbatdau,tinhketthuc,thoigian,sort,tennha
              raw : true
             })
 
-            const ghedat = await database.ghedat.findAll({
+            const ghedat = await database.vexe.findAll({
+                include :[{
+                    model : database.ghexe,
+                    require:true,
+                    attributes: []
+                }],
                 where:{
-                    machuyenxe : data[0][index].machuyenxe
+                    [Op.and]:[
+                        {machuyenxe :  data[0][index].machuyenxe},
+                       {tinhtrang : {
+                            [Op.or] : ['Vừa đặt','Đã thanh toán']
+                       }}
+                    ]
                 },
-                attributes : ['maghe'],
+                attributes : [sequelize.col('ghexes.chitietvexe.ghexeMaghe')],
                 raw : true
             })
+            
             const ghexe = await database.ghexe.findAll({
                 where:{
                     maloaixe : data[0][index].maloaixe
@@ -260,11 +272,21 @@ const getAllChuyenxeBySearch = async(tinhbatdau,tinhketthuc,thoigian,sort,tennha
 }
 
 const getAllSeat = async(machuyenxe,maloaixe) => {
-    const ghedat = await database.ghedat.findAll({
+    const ghedat = await database.vexe.findAll({
+        include :[{
+            model : database.ghexe,
+            require:true,
+            attributes: []
+        }],
         where:{
-            machuyenxe : machuyenxe
+            [Op.and]:[
+                {machuyenxe :  machuyenxe},
+               {tinhtrang : {
+                    [Op.or] : ['Vừa đặt','Đã thanh toán']
+               }}
+            ]
         },
-        attributes : ['maghe'],
+        attributes : [[sequelize.col('ghexes.chitietvexe.ghexeMaghe'),'maghe']],
         raw : true
     })
     const ghexe = await database.ghexe.findAll({
@@ -391,6 +413,102 @@ const getAllLoaixe = async () => {
     }
 }
 
+
+const checkSlot = async (maghe,machuyenxe) => {
+    try {
+        const ghedadat = await database.vexe.findAll({
+            include :[{
+                model : database.ghexe,
+                require:true,
+                attributes: [],
+                where : {
+                    maghe : {
+                        [Op.or] : maghe
+                    }
+                }
+            }],
+            where:{
+                [Op.and]:[
+                    {machuyenxe :  machuyenxe},
+                   {tinhtrang : {
+                        [Op.or] : ['Vừa đặt','Đã thanh toán']
+                   }}
+                ]
+            },
+            attributes : [[sequelize.col('ghexes.chitietvexe.ghexeMaghe'),'maghe']],
+            raw : true
+        })
+
+        return ghedadat.length > 0
+
+
+    } catch (error) {
+        console.log(error.message + " at checkSlot")
+    }
+
+
+}
+
+
+const createNewTicket = async (ticket) => {
+    try {
+
+        ticketdetail  = {
+            machuyenxe : ticket.machuyenxe,
+            hoten: ticket.fullname,
+            email: ticket.email,
+            sodienthoai :ticket.email,
+            tongtien : ticket.totalPrice,
+            tinhtrang : 'Vừa đặt'
+        }
+
+        if(ticket.khachhang){
+            ticketdetail.makhachhang = ticket.makhachhang
+        }
+        const data  = await database.vexe.create(ticketdetail)
+        
+        const vexe = data.dataValues
+        
+
+        // !FIX 
+        for (const ghe of ticket.maghe) {
+            const createdAt = moment(new Date()).format('YYYY-MM-DD HH:mm:ss')
+            const updatedAt = moment(new Date()).format('YYYY-MM-DD HH:mm:ss')
+
+
+
+            await sequelize.query(`INSERT INTO CHITIETVEXE("ghexeMaghe","vexeMave","createdAt","updatedAt") VALUES('${ghe}','${vexe.mave}','${createdAt}','${updatedAt}')`)
+            //await database.chitietvexe.create(chitiet)
+        }
+
+        return vexe.mave
+
+
+    } catch (error) {
+        console.log(error.message + " at createNewTicket")
+    }
+
+}
+
+const updateTicket = async(mave,status) => {
+    try {
+        const vexe = await database.vexe.findOne({
+            where : {
+                mave : mave
+            }
+        })
+
+        vexe.tinhtrang = status
+        vexe.save()
+
+    } catch (error) {
+        console.log(error.message + " at updateTicket")
+    }
+
+}
+
+
+
 const getAllChuyenxeAdmin = async (maquantri) => {
     try {
         const chuyenxe = await sequelize.query('SELECT CX.MACHUYENXE,NX.MANHAXE,CX.TGKHOIHANH,'+
@@ -460,5 +578,8 @@ module.exports = {
     getAllVexeAdmin,
     getAllSeat,
     getDiachi2Noi,
-    getInforFromChuyenxe
+    getInforFromChuyenxe,
+    createNewTicket,
+    updateTicket,
+    checkSlot
 }
