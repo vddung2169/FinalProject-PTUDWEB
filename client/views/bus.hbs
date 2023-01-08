@@ -559,7 +559,8 @@
                     <hr style="margin:0">
 
                     <div class="seat-form__container modal__container-form active">
-                        <div class="seat-form__note mt-5 mb-5">
+                        <div  class="seat-form__wrapTop">
+                            <div class="seat-form__note mt-5 mb-5">
                             <h4 class="mb-5">Chú thích: </h4>
                             <div class="seat-form__seat mb-4">
                                 <img class="seat-form__seat-img" src=" /img/empty_seat.png" alt="empty_seat">
@@ -655,10 +656,10 @@
                             </table>
 
                         </div>
-                        <div class="userSelectedSeat">
+                        </div>
+                        <div class="userSelectedSeat seat-form__wrapBottom">
                             <ul class="selected-list">
-                                <!-- <li class="selected-item">9A</li> -->
-                                <!-- <li class="selected-item">9A</li> -->
+
                             </ul>
                         </div>
 
@@ -737,7 +738,7 @@
                     </div>
 
                     <div class="info-form__container modal__container-form">
-                        <form id="ticketform" class="info-form__form">
+                        <div class="info-form__form">
                             <div class="info-form__group">
                                 <label for="fullname" class="py-2">Họ và tên<code style="color: red; font-weight: 700;">*</code></label>
                                 <input id="namebuy" type="text" class="info-form__input" placeholder="Tên hành khách" name="fullname" required>
@@ -764,7 +765,7 @@
                                 <br>
                                 <textarea id="notebuy" name="note" id="info-form__note" cols="" rows="2" placeholder="Các yêu cầu đặc biệt không thể được đảm bảo - nhưng nhà xe sẽ cố gắng hết sức để đáp ứng nhu cầu của bạn."></textarea>
                             </div>
-                        </form>
+                        </div>
                     </div>
 
                     <div class="seat-form__footer">
@@ -774,7 +775,7 @@
                         <span class="seat-form__text py-2">Tổng: <span class="seat-form__price">0</span>VNĐ</span>
                         <div class="seat-form__right-corner">
                             <button class="btn-continue px-4">Tiếp tục</button>
-                            <button form="ticketform" type="submit" id="payment-btn" class="btn-continue btn-thanhtoan px-4" style="display: none;">Thanh toán</button>
+                            <button  id="payment-btn" class="btn-continue btn-thanhtoan px-4" style="display: none;">Thanh toán</button>
                         </div>
                     </div>
                 </div>

@@ -285,6 +285,9 @@ function chonghe1(e, maghe, giatien) {
 
         listTickets.push(`${maghe}`)
         var textInner = "";
+        if (listTickets.length) {
+            textInner += "Danh sách ghế đã chọn:&nbsp"
+        }
         listTickets.forEach(function(ticket, index) {
             textInner += `<li class="selected-item">${ticket}</li>`
         })
@@ -298,6 +301,9 @@ function chonghe1(e, maghe, giatien) {
             listTickets.splice(index, 1);
         }
         var textInner = "";
+        if (listTickets.length) {
+            textInner += "Danh sách ghế đã chọn:&nbsp"
+        }
         listTickets.forEach(function(ticket, index) {
             textInner += `<li class="selected-item">${ticket}</li>`
         })

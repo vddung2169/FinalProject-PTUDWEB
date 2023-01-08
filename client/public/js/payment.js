@@ -8,7 +8,7 @@ const paymentPrice = document.getElementById('payment-price')
 const clientInfor = document.getElementById('client-infor')
 const start = document.getElementById('batdau')
 const end  = document.getElementById('ketthuc')
-
+const paymentBtn  =document.getElementById('payment-btn')
 
 const numberWithCommas = (num) => {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -88,4 +88,8 @@ function countdown(minutes) {
 countdown(5);
 
 prepareTicket()
+
+document.querySelectorAll('input[type=radio]').onclick = (e) => {
+    paymentBtn.disabled = false
+}
 
