@@ -10,6 +10,8 @@ const start = document.getElementById('batdau')
 const end  = document.getElementById('ketthuc')
 const paymentBtn  =document.getElementById('payment-btn')
 
+
+
 const numberWithCommas = (num) => {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
@@ -119,9 +121,9 @@ document.querySelectorAll('input[type=radio]').forEach(btn => {
 paymentBtn.onclick = async(e) =>{
     e.preventDefault()
 
-    console.log(ticket.mave)
+   // Kiểm tra các phương thức thanh toán
+   // CSS lại nút
 
-    console.log('click')
     try {
         const res = await fetch('/ticket/donepayment',{
             method : 'POST',

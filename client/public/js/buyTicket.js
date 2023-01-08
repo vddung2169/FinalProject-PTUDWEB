@@ -12,9 +12,7 @@ const note = document.getElementById('notebuy')
 const ticketform = document.getElementById('ticketform')
 
 
-
-modal.onclick = function() {
-    // Reset
+function reset() {
     $('.seat-form__step.seat-form__step--active').classList.remove('seat-form__step--active');
     $('.modal__container-form.active').classList.remove('active');
     infoHeaders[0].classList.add('seat-form__step--active');
@@ -28,6 +26,9 @@ modal.onclick = function() {
     quantity.innerHTML = selectingSeats;
     price.innerHTML = totalPrice;
 }
+
+modal.onclick = reset()
+
 modalBody.onclick = function(event) {
     event.stopPropagation();
 }
@@ -173,6 +174,7 @@ var listTickets = []; //Chuỗi chứa ghế
 
 let busID = ''
 let pricePerSeat = 0
+const ticketForm = document.getElementById('ticket-form')
 
 
 
@@ -320,6 +322,11 @@ const buyticket = async (e) => {
 
         // ! Kiểm tra machuyenxe, fullname, email, phone, maghe
 
+        if(!ticketForm.reportValidity()){
+            return
+        }
+
+
         const ticketdetail = {
             machuyenxe : busID,
             maghe : listTickets,
@@ -344,10 +351,8 @@ const buyticket = async (e) => {
         const mave = await maveRaw.json()
 
         if(!mave){
-            // TODO ghế đã được đặt
-            // Hiện cảnh báo
-
-            
+           confirm("Ghế đặt đã được chọn!")
+           reset()
         }else{
             ticketdetail.mave = mave
 
