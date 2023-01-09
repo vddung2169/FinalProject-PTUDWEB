@@ -597,6 +597,40 @@ const getAllTicketUser = async (makhachhang) => {
 
 }
 
+const createRating = async (makhachhang,manhaxe,rating) => {
+    try {
+        const rateID = await database.danhgia.findOne({
+            where : {
+                [Op.and]: [
+                    { makhachhang: makhachhang },
+                    { manhaxe: manhaxe }
+                ]
+            },
+            attributes : ['madanhgia']
+        })
+
+        if(rateID){
+            rateID.binhluan = rating.comment
+            rateID.diemso = rating.score
+            rateID.save()
+            
+        }else{
+            const newRating = await database.danhgia.create({
+                makhachhang : makhachhang,
+                manhaxe : manhaxe,
+                binhluan : rating.comment,
+                diemso : rating.score
+            })
+        }
+
+    } catch (error) {
+        console.log(error.message + " at checkRating")
+    }
+
+}
+
+
+
 
 
 const getAllChuyenxeAdmin = async (maquantri) => {
@@ -672,5 +706,6 @@ module.exports = {
     createNewTicket,
     updateTicket,
     checkSlot,
-    getAllTicketUser
+    getAllTicketUser,
+    createRating
 }

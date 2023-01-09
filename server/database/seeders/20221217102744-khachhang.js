@@ -1,8 +1,14 @@
 'use strict';
 const khachhang = require('../models').khachhang
+const bcrypt = require('bcrypt')
     /** @type {import('sequelize-cli').Migration} */
 module.exports = {
+
+    
     async up(queryInterface, Sequelize) {
+        // Bcrypt the password
+        const salt = await bcrypt.genSalt(10);
+       
         const khachhangdata = [{
                 tenkhachhang: 'Hiện',
                 matkhau: '123',
@@ -36,6 +42,9 @@ module.exports = {
         ]
 
         for (const data of khachhangdata) {
+            const bcryptPassword = await bcrypt.hash(data.matkhau, salt);
+            data.matkhau = bcryptPassword
+
             await khachhang.create(data)
         }
     },

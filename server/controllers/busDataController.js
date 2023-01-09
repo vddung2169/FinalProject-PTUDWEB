@@ -105,20 +105,6 @@ const renderHistory = async(req,res) => {
             }
         }
 
-        // TODO 1: Lấy dữ liệu vé của user
-        // vexe = {
-        //     tennhaxe,
-        //     tenloaixe,
-        //     tgkhoihanh,
-        //     diachibatdau,
-        //     tgketthuc,
-        //     diachiketthuc,
-        //     slots,
-        //     tongtien,
-        //     hinhanhxe,
-        //      manhaxe
-        // }
-
         const vexe = await dataController.getAllTicketUser(user.makhachhang)
 
 
@@ -159,10 +145,42 @@ const getSeatData = async (req,res) => {
 }
 
 
+const ratingBus = async(req,res) => {
+    try {
+        const id = req.user
+        const accountType = req.accountType
+
+        let user = {
+            tenkhachhang : ""
+        }
+        if(id){
+            if(accountType === 'system'){
+                const data  = await accountDataController.getAnAccountByID(id)
+                user = data[0]
+            }else if(accountType === 'google'){
+                const data  = await accountDataController.getAnGoogleAccount(null,id)
+                user = data[0]
+            }
+        }
+
+        const rating = req.body
+
+        await dataController.createRating(user.makhachhang,rating.manhaxe,rating)
+
+        res.json(true)
+
+
+    } catch (error) {
+        console.log(error.message)
+        res.render('notfound404',{error : '500' + error.message})
+    }
+}
+
 
 module.exports = {
     renderBus,
     renderIndex,
     getSeatData,
-    renderHistory
+    renderHistory,
+    ratingBus
 }
