@@ -4,11 +4,11 @@ const path = require('path')
 
 const createPDF = async (data) => {
     try {
-        const html = fs.readFileSync(path.join(__dirname,'../../client/public/templates/template_copy.html'),'utf-8')
+        const html = fs.readFileSync(path.join(__dirname,'../../client/public/templates/template.html'),'utf-8')
 
         const option = {
-            "height": "10in",        
-            "width": "4in",
+            "height": "9in",        
+            "width": "3.34in",
             orientation: "portrait",
             border: "0mm"
         }

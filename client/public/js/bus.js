@@ -39,9 +39,9 @@ const selectedRoute = () =>{
 
 const instantSearch = (listname,inputname) => {
   const list = document.querySelectorAll(listname)
-  console.log({list})
+ 
   list.forEach(item => {
-          console.log(item)
+        
           item.outerText.toLowerCase()
           .indexOf(document.getElementById(inputname)
           .value.toLowerCase()) > -1 ?  
@@ -60,7 +60,7 @@ const searchFilter = () => {
       if(tennhaxe){
         currentURL.searchParams.set('tennhaxe', tennhaxe.value)
       }
-      const diemkhoihanh = document.querySelector('input[name = "diembatdau"]:checked')
+      const diemkhoihanh = document.querySelector('input[name = "diemkhoihanh"]:checked')
       if(diemkhoihanh){
         currentURL.searchParams.set('diemkhoihanh', diemkhoihanh.value)
       }
@@ -73,6 +73,7 @@ const searchFilter = () => {
         currentURL.searchParams.set('maloaixe', maloaixe.value)
       }
 
+      
       currentURL.searchParams.set('giavenhonhat',slider.value)
       currentURL.searchParams.set('slot',slotNeed)
     
@@ -81,6 +82,7 @@ const searchFilter = () => {
 }
 
 const clearFilter = () => {
+    const currentURL = new URL(window.location.href)
       if(currentURL.searchParams.has('search')){
         currentURL.searchParams.delete('search')
       }

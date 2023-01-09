@@ -40,6 +40,7 @@ const renderBus = async(req, res) => {
         const loaixe = await dataController.getAllLoaixe()
 
 
+       
         const count = fullcount
         res.locals.pagination = {
             page,

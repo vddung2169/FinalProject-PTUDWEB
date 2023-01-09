@@ -375,14 +375,10 @@
                     </span>
 
                 </div>
-                <div class="d-flex justify-content-center loading-disbled" id="loading">
-                    <div class="spinner-border" role="status">
-                        <span class="visually-hidden">Loading...</span>
-                    </div>
-                </div>  
+              
                 
 
-                <form class="container" >
+                <div class="container" >
                     <div class="filter__applied">
                         <h3>Applied Filters</h3>
                         <div class="filter__applied-list"></div>
@@ -390,7 +386,7 @@
                     <div class="filter__departureTime">
                         <h3>Departure time</h3>
                         <div class="radio-toolbar">
-                            <input type="radio" id="radio1" name="time" value="earlymorning" checked>
+                            <input type="radio" id="radio1" name="time" value="earlymorning">
                             <label for="radio1">00:00 - 06:00</label>
                             <input type="radio" id="radio2" name="time" value="morning">
                             <label for="radio2">06:00 - 12:00</label>
@@ -405,7 +401,7 @@
                     <div class="filter__departureSlider">
                         <h3>Price</h3>
                         <div class="slidecontainer">
-                            <input type="range" min="50" max="900" value="100" class="slider" id="myRange">
+                            <input type="range" min="100" max="900" value="500" class="slider" id="myRange">
                             <p>Value: <span id="demo_range"></span>.000 VNĐ</p>
                         </div>
                     </div>
@@ -414,10 +410,10 @@
                     <div class="filter__departureGarage">
                         <h3>Garage</h3>
                         <div class="filter__departureGarage-list list-item" >
-                            <input id="garage-search" class="filter__departureGarage-item" type="text" placeholder="Search" onkeyup="instantSearch('.garage-item','arage-search')">
+                            <input id="garage-search" class="filter__departureGarage-item" type="text" placeholder="Search" onkeyup="instantSearch('.garage-item','garage-search')">
                             {{#each nhaxe}}
-                               <label for="{{manhaxe}}">
-                                <input class="filter__departureGarage-item garage-item" type="checkbox" value="{{tennhaxe}}" id="{{manhaxe}}" name="tennhaxe">
+                               <label class="garage-item" for="{{manhaxe}}">
+                                <input class="filter__departureGarage-item " type="checkbox" value="{{tennhaxe}}" id="{{manhaxe}}" name="tennhaxe">
                                     {{tennhaxe}} 
                                 </label>
                             {{/each}}
@@ -429,8 +425,8 @@
                         <div class="filter__departurePickupLocation-list list-item">
                             <input id="departure-search" class="filter__departurePickupLocation-item" type="text" placeholder="Search" onkeyup="instantSearch('.departure-item','departure-search')">
                             {{#each diachi}}
-                               <label for="{{madiachi}}kh">
-                                    <input class="filter__departurePickupLocation-item departure-item" type="checkbox" value="{{madiachi}}" id="{{madiachi}}kh" name="diemkhoihanh">
+                               <label class="departure-item" for="{{madiachi}}kh">
+                                    <input class="filter__departurePickupLocation-item " type="checkbox" value="{{madiachi}}" id="{{madiachi}}kh" name="diemkhoihanh">
                                     {{tendiachi}}
                                 </label>
                             {{/each}}
@@ -442,8 +438,8 @@
                         <div class="filter__departureDropOffLocation-list list-item">
                             <input id="arrival-search" class="filter__departureDropOffLocation-item" type="text" placeholder="Search" onkeyup="instantSearch('.arrival-item','arrival-search')">
                             {{#each diachi}}
-                               <label for="{{madiachi}}kt">
-                                    <input class="filter__departurePickupLocation-item arrival-item" type="checkbox" value="{{madiachi}}" id="{{madiachi}}kt" name="diemketthuc">
+                               <label class="arrival-item" for="{{madiachi}}kt">
+                                    <input class="filter__departurePickupLocation-item " type="checkbox" value="{{madiachi}}" id="{{madiachi}}kt" name="diemketthuc">
                                     {{tendiachi}}
                                 </label>
                             {{/each}}
@@ -455,8 +451,8 @@
                         <div class="filter__departureDropOffLocation-list list-item">
                             <input id="type-search" class="filter__departureDropOffLocation-item" type="text" placeholder="Search" onkeyup="instantSearch('.type-item','type-search')">
                             {{#each loaixe}}
-                                <label for="{{maloaixe}}">
-                                        <input class="filter__departurePickupLocation-item type-item" type="checkbox" value="{{maloaixe}}" id="{{maloaixe}}" name="maloaixe">
+                                <label class="type-item" for="{{maloaixe}}">
+                                        <input class="filter__departurePickupLocation-item " type="checkbox" value="{{maloaixe}}" id="{{maloaixe}}" name="maloaixe">
                                         {{tenloaixe}}
                                     </label>
                             {{/each}}
@@ -478,7 +474,7 @@
                         <i class="fa-solid fa-arrow-right-long"></i>
                     </button>
 
-                </form>
+                </div>
             </div>
         </div>
 

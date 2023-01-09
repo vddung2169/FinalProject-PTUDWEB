@@ -172,6 +172,7 @@ const getAllChuyenxeByTuyenduong = async() => {
 
 const getAllChuyenxeBySearch = async(query,page) => {
     try {
+        
         let QUERY = 'SELECT count(*) OVER() AS FULL_COUNT,CX.HINHANHXE,CX.MATUYENDUONG,CX.MACHUYENXE,NX.TENNHAXE,CX.MANHAXE,CX.MALOAIXE,LX.TENLOAIXE,CX.TGKHOIHANH,CX.TGKETTHUC,' + 
         'DCBD.MADIACHI MABATDAU, DCKT.MADIACHI MAKETTHUC, ' + 
         'DCBD.TENDIACHI TENDIACHIKHOIHANH,DCKT.TENDIACHI TENDIACHIKETTHUC,CX.GIAVENHONHAT,DG.DIEMSO,CX.MOTA'+
@@ -181,65 +182,61 @@ const getAllChuyenxeBySearch = async(query,page) => {
 
         if(query.tinhbatdau || query.tinhketthuc || query.thoigian || query.tennhaxe || query.search){
             QUERY += 'WHERE '
-        }
-        CONDITION = []
+            CONDITION = []
 
-        if(query.tinhbatdau){
-            CONDITION.push(`TD.TINHBATDAU = '${query.tinhbatdau}'`)
-        }
-
-        if(query.tinhketthuc){
-            CONDITION.push(`TD.TINHKETTHUC = '${query.tinhketthuc}'`) 
-        }
-
-        if(query.tennhaxe){
-            CONDITION.push(`NX.TENNHAXE ILIKE '%${query.tennhaxe}%'`)
-        }
-
-        if(query.thoigian){
-            CONDITION.push(`CX.TGKHOIHANH > '${query.thoigian}' ORDER BY ABS(DATE_PART('day','${query.thoigian}' - CX.TGKHOIHANH))`)
-        }
-
-        if(query.tgkhoihanh){
-            switch (query.tgkhoihanh) {
-                case 'earlymorning':
-                    CONDITION.push("CX.TGKHOIHANH::time BETWEEN time '00:00:00' AND '06:00:00'")
-                    break;
-                case 'morning':
-                    CONDITION.push("CX.TGKHOIHANH::time BETWEEN time '06:00:00' AND '12:00:00'")
-                    break;
-                case 'afternoon':
-                    CONDITION.push("CX.TGKHOIHANH::time BETWEEN time '12:00:00' AND '18:00:00'")
-                    break;
-                case 'evening':
-                    CONDITION.push("CX.TGKHOIHANH::time BETWEEN time '18:00:00' AND '24:00:00'")
-                    break;
-                default:
-                    break;
+            if(query.tinhbatdau){
+                CONDITION.push(`TD.TINHBATDAU = '${query.tinhbatdau}'`)
             }
-        }
 
-        if(query.diemkhoihanh){
-            CONDITION.push(`CX.DIACHIBATDAU = '${query.diemkhoihanh}'`)
-        }
-        if(query.diemketthuc){
-            CONDITION.push(`CX.DIACHIBATDAU = '${query.diemketthuc}'`)
-        }
-        if(query.maloaixe){
-            CONDITION.push(`CX.MALOAIXE = '${query.maloaixe}'`)
-        }
+            if(query.tinhketthuc){
+                CONDITION.push(`TD.TINHKETTHUC = '${query.tinhketthuc}'`) 
+            }
 
-        if(query.giavenhonhat){
-            CONDITION.push(`CX.GIAVENHONHAT <= '${query.giavenhonhat * 1000}'`)
+            if(query.tennhaxe){
+                CONDITION.push(`NX.TENNHAXE ILIKE '%${query.tennhaxe}%'`)
+            }
+
+            if(query.thoigian){
+                CONDITION.push(`CX.TGKHOIHANH > '${query.thoigian}' ORDER BY ABS(DATE_PART('day','${query.thoigian}' - CX.TGKHOIHANH))`)
+            }
+
+            if(query.tgkhoihanh){
+                switch (query.tgkhoihanh) {
+                    case 'morning':
+                        CONDITION.push("CX.TGKHOIHANH::time BETWEEN time '00:00:00' AND time '06:00:00'")
+                        break;
+                    case 'afternoon':
+                        CONDITION.push("CX.TGKHOIHANH::time BETWEEN time '06:00:00' AND time '12:00:00'")
+                        break;
+                    case 'evening':
+                        CONDITION.push("CX.TGKHOIHANH::time BETWEEN time '12:00:00' AND time '18:00:00'")
+                        break;
+                    case 'earlymorning':
+                        CONDITION.push("CX.TGKHOIHANH::time BETWEEN time '18:00:00' AND time '24:00:00'")
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            if(query.diemkhoihanh){
+                CONDITION.push(`CX.DIACHIBATDAU = ${query.diemkhoihanh}`)
+            }
+            if(query.diemketthuc){
+                CONDITION.push(`CX.DIACHIBATDAU = ${query.diemketthuc}`)
+            }
+            if(query.maloaixe){
+                CONDITION.push(`CX.MALOAIXE = '${query.maloaixe}'`)
+            }
+
+            if(query.giavenhonhat){
+                CONDITION.push(`CX.GIAVENHONHAT <= ${query.giavenhonhat * 1000}`)
+            }
+
+            let WHERE = CONDITION.join(' AND ')
+            QUERY += WHERE
         }
-
-
-
         
-
-
-        WHERE = CONDITION.join(' AND ')
-        QUERY += WHERE
 
         if(query.sort){
             QUERY += ` ORDER BY CX.GIAVENHONHAT ${sort}`
@@ -252,7 +249,11 @@ const getAllChuyenxeBySearch = async(query,page) => {
         const data = await sequelize.query(QUERY
         ,QueryTypes.SELECT)
 
-        const fullcount = data[0][0].full_count
+       console.log({soluong : data[0].length})
+        if(data[0].length <= 0) return data[0]
+
+
+        let fullcount = data[0][0].full_count
        
         for (let index = 0; index < data[0].length; index++) {
             const danhgia = await database.danhgia.findAll({

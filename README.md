@@ -31,7 +31,7 @@
 - [X] Thêm dữ liệu vào lựa tuyến xe (điểm bắt đầu, kết thúc)
 - [X] Thực hiện sort
 - [X] Thực hiện search
-- [ ] Thực hiện filter
+- [X] Thực hiện filter
 - [X] Hiển thị thông tin lên phần mua vé
 - [X] Lưu thông tin mua vé lên database
 - [X] Quản lý nhà xe: Xem, thêm, xóa, sửa
