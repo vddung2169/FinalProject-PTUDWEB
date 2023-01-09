@@ -9,6 +9,11 @@ const clientInfor = document.getElementById('client-infor')
 const start = document.getElementById('batdau')
 const end  = document.getElementById('ketthuc')
 const paymentBtn  =document.getElementById('payment-btn')
+const modal = document.querySelector('.modal-wrap');
+const overlay = document.querySelector('.modal__overlay');
+const userEmail = document.getElementById('email-send')
+const backTime = document.getElementById('time-to-back')
+let disabledCountdown = false
 
 
 
@@ -95,14 +100,39 @@ function countdown(minutes) {
                     
             }
         }
-        if(current_minutes <= 0 && seconds <= 0 ){
-        	removeTicket()
+        if(current_minutes <= 0 && seconds <= 0 && !disabledCountdown){
+        	setTimeout(() => {
+                removeTicket()
+            },1000)
         }
     }
-    tick();
+    if(!disabledCountdown){
+        tick();
+    }
+    
+}
+
+
+function counttimeback(second){
+    timeLeft = second;
+
+    function countdown() {
+        timeLeft--;
+        backTime.innerHTML = String( timeLeft );
+        if (timeLeft > 0) {
+            setTimeout(countdown, 1000);
+        }else{
+            setTimeout(() => {
+                window.location.href = '/'
+            }, 1000);
+        }
+    };
+
+    setTimeout(countdown, 1000);
 }
 
 countdown(10);
+
 
 prepareTicket()
 
@@ -139,7 +169,9 @@ paymentBtn.onclick = async(e) =>{
         if(resJson){
             //TODO hiện lên thành báo mua thành công
             // redirect tới trang chủ trong 5s
-            confirm('Thành công')
+            userEmail.innerHTML = ticket.email
+            modal.classList.add("active");       
+            counttimeback(10)    
         }else {
             confirm('thất bại')
         }
