@@ -113,9 +113,24 @@ const getAnGoogleAccount =async (email,googleID) => {
     } catch (error) {
         console.log(error.message);
     }
+}
 
+const getGoogleAccountSafe = async(googleID) => {
+    try {
+        
+        const account = await database.khachhang.findAll({
+            attributes : ['makhachhang','tenkhachhang','email','sodienthoai','googleID'],
+            where : {
+                googleID:googleID
+            },
+            raw : true
+        })    
+        
+        return account
 
-
+    } catch (error) {
+        console.log(error.message);
+    }
 }
 
 const createAnAccount = async (name,password,email) => {
@@ -173,6 +188,7 @@ module.exports = {
     createAnAccount,
     getAnAccountByID,
     getAnGoogleAccount,
+    getGoogleAccountSafe,
     createAnGoogleAccount,
     updatePassword
 }

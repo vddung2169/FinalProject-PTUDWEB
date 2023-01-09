@@ -35,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
     email: DataTypes.STRING,
     sodienthoai :DataTypes.STRING,
     tinhtrang: DataTypes.STRING,
-    tongtien: DataTypes.DECIMAL(12,2)
+    tongtien: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'vexe',

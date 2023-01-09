@@ -32,22 +32,22 @@
 - [X] Thực hiện sort
 - [X] Thực hiện search
 - [ ] Thực hiện filter
-- [ ] Hiển thị thông tin lên phần mua vé
-- [ ] Lưu thông tin mua vé lên database
+- [X] Hiển thị thông tin lên phần mua vé
+- [X] Lưu thông tin mua vé lên database
 - [X] Quản lý nhà xe: Xem, thêm, xóa, sửa
 - [X] Quản lý chuyến xe: Thêm, xóa, sửa
 - [X] Quản lý đặt chỗ: Xem, sửa
 - [X] Chức năng đăng nhập
 - [X] Chức năng đăng ký
-- [ ] Hiển thị lịch sử đặt vé
+- [X] Hiển thị lịch sử đặt vé
 - [X] Confirm đăng ký + quên mật khẩu
 - [ ] Gửi thông tin qua vé email, SMS
-- [ ] Thực hiện đánh giá + bình luận
+- [X] Thực hiện đánh giá + bình luận
 
 ***Bonus:***
 - [ ] Thanh toán liên kết ngân hàng
 - [ ] Hỗ trợ nhiều điểm khởi hành, kết thúc và chức năng tìm kiếm có khả năng tìm được chuyến xe giữa chặng 
-- [ ] cho phép chọn ghế khi đặt chỗ
+- [X] cho phép chọn ghế khi đặt chỗ
 - [ ] Sử dụng AJAX để tải thêm tự động thông tin
 ### Hướng dẫn chạy server
 #### Cài đặt biến môi trường:

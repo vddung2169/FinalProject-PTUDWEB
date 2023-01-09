@@ -10,6 +10,64 @@ const phone = document.getElementById('phonebuy')
 const email = document.getElementById('emailbuy')
 const note = document.getElementById('notebuy')
 const ticketform = document.getElementById('ticketform')
+const infoHeaders = $$('.seat-form__step');
+const infoContainers = $$('.modal__container-form');
+
+
+const loadingBus = '<div class="d-flex justify-content-center loading-disbled" id="loading"><div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div></div>'
+const busbody = document.querySelector('.seat-form__seat-place table tbody')
+const locationStart = document.getElementById('location-start')
+const locationStartDetail = document.getElementById('location-start-detail')
+const locationEnd = document.getElementById('location-end')
+const locationEndDetail = document.getElementById('location-end-detail')
+
+
+const quantity = $('.seat-form__footer .seat-form__quantity');
+const price = $('.seat-form__footer .seat-form__price');
+
+// const hostname = window.location.protocol + '//' + window.location.hostname +":3000"
+
+var selectingSeats = 0;
+var totalPrice = 0;
+
+var ul = $('.userSelectedSeat .selected-list');
+
+var listTickets = []; //Chuỗi chứa ghế
+
+let busID = ''
+let pricePerSeat = 0
+const ticketForm = document.getElementById('ticket-form')
+
+let user = JSON.parse(window.sessionStorage.getItem('user')) || null
+
+
+const getInforUser = async() => {
+    
+    try {
+        if(user)return
+        
+        const data = await fetch('/getinfor',{
+            method : 'GET'
+        })
+
+        user = await data.json()
+
+       
+
+        if(user) {
+            fullname.value = user.tenkhachhang
+            email.value = user.email
+            phone.value = user.sodienthoai
+            window.sessionStorage.setItem('user',JSON.stringify(user))
+        }
+
+    } catch (error) {
+        console.log(error.message + " at getInforUser")
+    }
+}
+
+getInforUser()
+
 
 
 function reset() {
@@ -27,7 +85,9 @@ function reset() {
     price.innerHTML = totalPrice;
 }
 
-modal.onclick = reset()
+modal.onclick = () => {
+    reset()
+}
 
 modalBody.onclick = function(event) {
     event.stopPropagation();
@@ -39,8 +99,7 @@ modalBody.onclick = function(event) {
 //     }
 // }
 
-const infoHeaders = $$('.seat-form__step');
-const infoContainers = $$('.modal__container-form');
+
 
 
 $('.seat-form__step.seat-form__step--active').classList.remove('seat-form__step--active');
@@ -152,29 +211,6 @@ class CoachRow {
 }
 
 
-const loadingBus = '<div class="d-flex justify-content-center loading-disbled" id="loading"><div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div></div>'
-const busbody = document.querySelector('.seat-form__seat-place table tbody')
-const locationStart = document.getElementById('location-start')
-const locationStartDetail = document.getElementById('location-start-detail')
-const locationEnd = document.getElementById('location-end')
-const locationEndDetail = document.getElementById('location-end-detail')
-
-
-const quantity = $('.seat-form__footer .seat-form__quantity');
-const price = $('.seat-form__footer .seat-form__price');
-
-// const hostname = window.location.protocol + '//' + window.location.hostname +":3000"
-
-var selectingSeats = 0;
-var totalPrice = 0;
-
-var ul = $('.userSelectedSeat .selected-list');
-
-var listTickets = []; //Chuỗi chứa ghế
-
-let busID = ''
-let pricePerSeat = 0
-const ticketForm = document.getElementById('ticket-form')
 
 
 
@@ -337,6 +373,10 @@ const buyticket = async (e) => {
             totalPrice : totalPrice,
             pricePerSeat : pricePerSeat,
             selectingSeats : selectingSeats
+        }
+
+        if(user){
+            ticketdetail.makhachhang = user.makhachhang
         }
 
         const maveRaw = await fetch('/ticket/newticket',{

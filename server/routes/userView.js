@@ -3,6 +3,7 @@ const busDataController = require('../controllers/busDataController')
 const authorization = require('../middlewares/authorization')
 const validateReset = require('../middlewares/validateReset')
 
+router.get('/getinfor',(req,res,next) => authorization.authorizationUser(req,res,next,'',''),busDataController.getAccountInfor)
 router.post('/rating',(req,res,next) => authorization.authorizationUser(req,res,next,'','/login'),busDataController.ratingBus)
 router.get('/payment',(req,res) => res.render('payment'))
 router.get('/login',(req,res,next) => authorization.authorizationUser(req,res,next,'/',''),(req,res) => res.render('login'))

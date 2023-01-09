@@ -176,11 +176,37 @@ const ratingBus = async(req,res) => {
     }
 }
 
+const getAccountInfor = async(req,res) => {
+    try {
+        const id = req.user
+        const accountType = req.accountType
+
+        let user = null
+        if(id){
+            if(accountType === 'system'){
+                const data  = await accountDataController.getAnAccountByID(id)
+                user = data[0]
+            }else if(accountType === 'google'){
+                const data  = await accountDataController.getGoogleAccountSafe(id)
+                user = data[0]
+            }
+        }
+
+
+        res.json(user)
+
+    } catch (error) {
+        console.log(error.message)
+        res.render('notfound404',{error : '500' + error.message})
+    }
+} 
+
 
 module.exports = {
     renderBus,
     renderIndex,
     getSeatData,
     renderHistory,
-    ratingBus
+    ratingBus,
+    getAccountInfor
 }

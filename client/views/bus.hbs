@@ -371,11 +371,11 @@
             </div>
             <div class="filter__body">
                 <div class="filter__header">
-                    <h2>Filters</h2>
+                    <h3>Filters</h3>
                     <span>
-                        Clear all
-                        <i class="fa-solid fa-xmark"></i>
-                    </span>
+                    Clear all
+                    <i class="fa-solid fa-xmark"></i>
+                </span>
 
                 </div>
                 <div class="container">
@@ -385,7 +385,7 @@
                     </div>
                     <div class="filter__departureTime">
                         <h3>Departure time</h3>
-                        <div class="filter__departureTime-list">
+                        <!-- <div class="filter__departureTime-list">
                             <div class="filter__departureTime-item">
                                 <div class="filter__departureTime-title">Early Morning (200)</div>
                                 <div class="filter__departureTime-time">00:00 - 06:00</div>
@@ -402,7 +402,19 @@
                                 <div class="filter__departureTime-title">Evening (173)</div>
                                 <div class="filter__departureTime-time">18:01 - 23:59</div>
                             </div>
+                        </div> -->
+
+                        <div class="radio-toolbar">
+                            <input type="radio" id="radio1" name="radios" value="EarlyMorning" checked>
+                            <label for="radio1">00:00 - 06:00</label>
+                            <input type="radio" id="radio2" name="radios" value="Morning">
+                            <label for="radio2">06:00 - 12:00</label>
+                            <input type="radio" id="radio3" name="radios" value="Afternoon">
+                            <label for="radio3">12:00 - 18:00</label>
+                            <input type="radio" id="radio4" name="radios" value="Evening">
+                            <label for="radio4">18:00 - 24:00</label>
                         </div>
+
                     </div>
 
                     <div class="filter__departureSlider">
@@ -417,17 +429,17 @@
                         <h3>Position of seats</h3>
                         <div class="filter__departurePosition-list">
                             <label for="name">
-                                <input type="checkbox" value="front" id="front" name="front">
-                                Front
-                            </label>
+                            <input type="checkbox" value="front" id="front" name="front">
+                            Front
+                        </label>
                             <label for="name">
-                                <input type="checkbox" value="middle" id="middle" name="middle">
-                                Middle
-                            </label>
+                            <input type="checkbox" value="middle" id="middle" name="middle">
+                            Middle
+                        </label>
                             <label for="name">
-                                <input type="checkbox" value="back" id="back" name="back">
-                                Back
-                            </label>
+                            <input type="checkbox" value="back" id="back" name="back">
+                            Back
+                        </label>
                         </div>
                     </div>
 
@@ -436,20 +448,17 @@
                         <div class="filter__departureGarage-list list-item">
                             <input class="filter__departureGarage-item" type="text" placeholder="Search">
                             <label for="name">
-                                <input class="filter__departureGarage-item" type="checkbox" value="hoamai" id="hoamai"
-                                    name="hoamai">
-                                Hoa Mai <span class="garage-quantity">(25)</span>
-                            </label>
+                            <input class="filter__departureGarage-item" type="checkbox" value="hoamai" id="hoamai" name="hoamai">
+                            Hoa Mai <span class="garage-quantity">(25)</span>
+                        </label>
                             <label for="name">
-                                <input class="filter__departureGarage-item" type="checkbox" value="thienphu"
-                                    id="thienphu" name="thienphu">
-                                Thiên Phú <span class="garage-quantity">(1)</span>
-                            </label>
+                            <input class="filter__departureGarage-item" type="checkbox" value="thienphu" id="thienphu" name="thienphu">
+                            Thiên Phú <span class="garage-quantity">(1)</span>
+                        </label>
                             <label for="name">
-                                <input class="filter__departureGarage-item" type="checkbox" value="vielimousine"
-                                    id="vielimousine" name="vielimousine">
-                                Vie Limousine <span class="garage-quantity">(6)</span>
-                            </label>
+                            <input class="filter__departureGarage-item" type="checkbox" value="vielimousine" id="vielimousine" name="vielimousine">
+                            Vie Limousine <span class="garage-quantity">(6)</span>
+                        </label>
                         </div>
                     </div>
 
@@ -458,20 +467,17 @@
                         <div class="filter__departurePickupLocation-list list-item">
                             <input class="filter__departurePickupLocation-item" type="text" placeholder="Search">
                             <label for="name">
-                                <input class="filter__departurePickupLocation-item" type="checkbox" value="hoamai"
-                                    id="hoamai" name="hoamai">
-                                Quận 1
-                            </label>
+                            <input class="filter__departurePickupLocation-item" type="checkbox" value="hoamai" id="hoamai" name="hoamai">
+                            Quận 1
+                        </label>
                             <label for="name">
-                                <input class="filter__departurePickupLocation-item" type="checkbox" value="thienphu"
-                                    id="thienphu" name="thienphu">
-                                Quận 2
-                            </label>
+                            <input class="filter__departurePickupLocation-item" type="checkbox" value="thienphu" id="thienphu" name="thienphu">
+                            Quận 2
+                        </label>
                             <label for="name">
-                                <input class="filter__departurePickupLocation-item" type="checkbox" value="vielimousine"
-                                    id="vielimousine" name="vielimousine">
-                                Quận 5
-                            </label>
+                            <input class="filter__departurePickupLocation-item" type="checkbox" value="vielimousine" id="vielimousine" name="vielimousine">
+                            Quận 5
+                        </label>
                         </div>
                     </div>
 
@@ -480,20 +486,17 @@
                         <div class="filter__departureDropOffLocation-list list-item">
                             <input class="filter__departureDropOffLocation-item" type="text" placeholder="Search">
                             <label for="name">
-                                <input class="filter__departureDropOffLocation-item" type="checkbox" value="hoamai"
-                                    id="hoamai" name="hoamai">
-                                Vũng Tàu
-                            </label>
+                            <input class="filter__departureDropOffLocation-item" type="checkbox" value="hoamai" id="hoamai" name="hoamai">
+                            Vũng Tàu
+                        </label>
                             <label for="name">
-                                <input class="filter__departureDropOffLocation-item" type="checkbox" value="thienphu"
-                                    id="thienphu" name="thienphu">
-                                Bà Rịa
-                            </label>
+                            <input class="filter__departureDropOffLocation-item" type="checkbox" value="thienphu" id="thienphu" name="thienphu">
+                            Bà Rịa
+                        </label>
                             <label for="name">
-                                <input class="filter__departureDropOffLocation-item" type="checkbox"
-                                    value="vielimousine" id="vielimousine" name="vielimousine">
-                                Đà Lạt
-                            </label>
+                            <input class="filter__departureDropOffLocation-item" type="checkbox" value="vielimousine" id="vielimousine" name="vielimousine">
+                            Đà Lạt
+                        </label>
                         </div>
                     </div>
 
@@ -502,20 +505,17 @@
                         <div class="filter__departureVehical-list list-item">
                             <input class="filter__departureVehical-item" type="text" placeholder="Search">
                             <label for="name">
-                                <input class="filter__departureVehical-item" type="checkbox" value="hoamai" id="hoamai"
-                                    name="hoamai">
-                                Seat
-                            </label>
+                            <input class="filter__departureVehical-item" type="checkbox" value="hoamai" id="hoamai" name="hoamai">
+                            Seat
+                        </label>
                             <label for="name">
-                                <input class="filter__departureVehical-item" type="checkbox" value="thienphu"
-                                    id="thienphu" name="thienphu">
-                                Bed
-                            </label>
+                            <input class="filter__departureVehical-item" type="checkbox" value="thienphu" id="thienphu" name="thienphu">
+                            Bed
+                        </label>
                             <label for="name">
-                                <input class="filter__departureVehical-item" type="checkbox" value="vielimousine"
-                                    id="vielimousine" name="vielimousine">
-                                Limousine
-                            </label>
+                            <input class="filter__departureVehical-item" type="checkbox" value="vielimousine" id="vielimousine" name="vielimousine">
+                            Limousine
+                        </label>
                         </div>
                     </div>
 
@@ -529,9 +529,9 @@
                     </div>
 
                     <button class="filter__apply">
-                        Apply
-                        <i class="fa-solid fa-arrow-right-long"></i>
-                    </button>
+                    Apply
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </button>
 
                 </div>
             </div>

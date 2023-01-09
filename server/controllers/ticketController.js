@@ -32,6 +32,9 @@ const prepareTicket = async (req,res) =>{
 
 const newTicket =async (req,res) => {
     try {
+
+
+
         const ticket = req.body
 
         //TODO 1: kiểm tra ghế
@@ -48,7 +51,7 @@ const newTicket =async (req,res) => {
 
         // TODO3: trả mã vé
 
-        res.json({mave})
+        res.json(mave)
 
     } catch (error) {
         console.log(error.message)

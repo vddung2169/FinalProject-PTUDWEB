@@ -4,6 +4,8 @@ const nameField = document.getElementById('name')
 const commentField = document.getElementById('info-form__note')
 const rateForm = document.getElementById('rating-form')
 const sendBtn = document.getElementById('sendRating')
+const successModal = new bootstrap.Modal(document.getElementById("success-modal"), {});
+const closeModal = document.getElementById('close-btn')
 
 let MANHANXE = ''
 
@@ -34,10 +36,11 @@ const rateBus = async(e) => {
 
     try {
         const rateStar = document.querySelector('input[name = "rate"]:checked').value
+       
         const rating = {
             manhaxe : MANHANXE,
             fullname : nameField.value,
-            score : rateStar.rateStar,
+            score : rateStar,
             comment : commentField.value
         }
 
@@ -53,9 +56,12 @@ const rateBus = async(e) => {
         const resJson = await res.json()
 
         if(resJson){
-            confirm('đánh giá thành công')
+            modal.classList.remove("active")
+            successModal.show()
+
         }else{
-            confirm('đánh giá thất bại')
+            modal.classList.remove("active")
+            confirm('Đánh giá thất bại')
         }
 
         
@@ -64,6 +70,10 @@ const rateBus = async(e) => {
     }
 
 }
+
+closeModal.addEventListener('click',() => {
+    successModal.hide()
+})
 
 sendBtn.addEventListener('click',rateBus)
 

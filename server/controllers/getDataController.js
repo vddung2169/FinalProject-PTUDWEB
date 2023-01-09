@@ -462,7 +462,7 @@ const createNewTicket = async (ticket) => {
             tinhtrang : 'Vừa đặt'
         }
 
-        if(ticket.khachhang){
+        if(ticket.makhachhang){
             ticketdetail.makhachhang = ticket.makhachhang
         }
         const data  = await database.vexe.create(ticketdetail)
@@ -510,45 +510,48 @@ const updateTicket = async(mave,status) => {
 
 const getAllTicketUser = async (makhachhang) => {
     try {
+        
         const vexe = await database.vexe.findAll({
             include: [
                 {
                     model : database.chuyenxe,
                     required : true,
-                    attributes : []
-                },
-                {
-                    model: database.diachi,
-                    as :'DCBD',
-                    required: true,
-                    attributes : []
-                },
-                {
-                    model: database.diachi,
-                    as: 'DCKT',
-                    required: true,
-                    attributes : []
-                },
-                {
-                    model : database.nhaxe,
-                    required : true,
-                    attributes : []
-                },
-                {
-                    model : database.loaixe,
-                    required : true,
-                    attributes : []
+                    attributes : [],
+                    include : [
+                        {
+                            model: database.diachi,
+                            as :'DCBD',
+                            required: true,
+                            attributes : []
+                        },
+                        {
+                            model: database.diachi,
+                            as: 'DCKT',
+                            required: true,
+                            attributes : []
+                        },
+                        {
+                            model : database.nhaxe,
+                            required : true,
+                            attributes : ['tennhaxe']
+                        },
+                        {
+                            model : database.loaixe,
+                            required : true,
+                            attributes : []
+                        },
+                    ]
                 },
             ],
             where : {
                 makhachhang : makhachhang
             },
-            attributes : [sequelize.col('nhaxe.tennhaxe'),
+            attributes : [sequelize.col('chuyenxe.nhaxe.tennhaxe'),
             sequelize.col('chuyenxe.manhaxe'),
-            sequelize.col('loaixe.tenloaixe'),
+            sequelize.col('chuyenxe.loaixe.tenloaixe'),
             sequelize.col('chuyenxe.tgkhoihanh'),
-            [sequelize.col('DCBD.tendiachi'), 'diachibatdau'],
-            [sequelize.col('DCKT.tendiachi'), 'diachiketthuc'],
+            [sequelize.col('chuyenxe.DCBD.tendiachi'), 'diachibatdau'],
+            [sequelize.col('chuyenxe.DCKT.tendiachi'), 'diachiketthuc'],
             sequelize.col('chuyenxe.tgketthuc'),
             sequelize.col('chuyenxe.hinhanhxe'),
             'tongtien',
@@ -558,18 +561,14 @@ const getAllTicketUser = async (makhachhang) => {
             raw : true
         })
 
+      
 
         for (let index = 0; index < vexe.length; index++) {
             const ghedadat = await database.vexe.findAll({
                 include :[{
                     model : database.ghexe,
                     require:true,
-                    attributes: [],
-                    where : {
-                        maghe : {
-                            [Op.or] : maghe
-                        }
-                    }
+                    attributes: []
                 }],
                 where:{
                     mave : vexe[0].mave

@@ -33,17 +33,18 @@
                     </div>
                     <ul class="ticket__information-list">
                         {{#each vexe}}
-                           <li class="ticket__information ">
+                        <li class="ticket__information ">
                             <div class="ticket__information-summary row">
                                 <div class="ticket__information-content col-xl-9">
                                     <div class="row">
                                         <div class="ticket__information-description col-xl-5">
                                             <div class="ticket__car">
-                                                <div class="ticket__car-name">{{tennhaxe}}</div>
-                                                <div class="ticket__car-rate">
+                                                <div class="ticket__car-name" style="font-size: 1.3rem;">{{tennhaxe}}</div>
+                                                <div class="ticket__car-rate" style="width: auto; padding :0 0.5rem;" >
                                                     <span>{{tinhtrang}}</span>
                                                 </div>
-                                                <button type="submit" class="ticket__information_btn btn-rate" onclick="renderRateBus(event,'{{manhaxe}}')">Rate</button>
+                                                <button type="submit" class="ticket__information_btn btn-rate"
+                                                    onclick="renderRateBus(event,'{{manhaxe}}')">Rate</button>
                                             </div>
                                             <div class="ticket__car-type">{{tenloaixe}}</div>
                                             <div class="ticket__car-depart">
@@ -51,7 +52,8 @@
                                                 <span class="ticket__car-depart-time">{{formatHours tgkhoihanh}}</span>
                                                 <span class="ticket__car-depart-location">{{diachibatdau}}</span>
                                             </div>
-                                            <div class="ticket__car-depart-period">{{calculateTime tgkhoihanh tgketthuc}}h</div>
+                                            <div class="ticket__car-depart-period">{{calculateTime tgkhoihanh
+                                                tgketthuc}}h</div>
                                             <div class="ticket__car-arrive">
                                                 <i class="fa-solid fa-location-dot"></i>
                                                 <span class="ticket__car-arrive-time">{{formatHours tgketthuc}}</span>
@@ -59,13 +61,16 @@
                                             </div>
                                         </div>
                                         <div class="ticket__information-price col-xl-4">
-                                            <div class="ticket__information-price-heading" style="font-size: 1.25rem;">Ghế đặt: </div>
-                                            <div class="ticket__information-price-detail" style="font-size: 1.25rem;">{{slots}}</div>
-                                          
+                                            <div class="ticket__information-price-heading" style="font-size: 1.25rem;">
+                                                Ghế đặt: </div>
+                                            <div class="ticket__information-price-detail" style="font-size: 1.25rem;">
+                                                {{slots}}</div>
+
                                         </div>
                                         <div class="ticket__information-price col-xl-3">
                                             <div class="ticket__information-price-heading">Total:</div>
-                                            <div class="ticket__information-price-detail">{{formatMoney tongtien}}<span>đ</span></div>
+                                            <div class="ticket__information-price-detail">{{formatMoney
+                                                tongtien}}<span>đ</span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -82,7 +87,8 @@
                                         <div class="ticket__information-description col-xl-5">
                                             <div class="ticket__car">
                                                 <div class="ticket__car-name">Thành Bưởi</div>
-                                                <button type="submit" class="ticket__information_btn btn-rate">Rate</button>
+                                                <button type="submit"
+                                                    class="ticket__information_btn btn-rate">Rate</button>
                                             </div>
                                             <div class="ticket__car-type">Limousine 9 seats</div>
                                             <div class="ticket__car-depart">
@@ -98,14 +104,16 @@
                                             </div>
                                         </div>
                                         <div class="ticket__information-price col-xl-4">
-                                            <div class="ticket__information-price-heading" style="font-size: 1.25rem;">Ghế đặt: </div>
-                                            <div class="ticket__information-price-detail" style="font-size: 1.25rem;">1A,2A,3A</div>
-                                          
+                                            <div class="ticket__information-price-heading" style="font-size: 1.25rem;">
+                                                Ghế đặt: </div>
+                                            <div class="ticket__information-price-detail" style="font-size: 1.25rem;">
+                                                1A,2A,3A</div>
+
                                         </div>
                                         <div class="ticket__information-price col-xl-3">
                                             <div class="ticket__information-price-heading">Total:</div>
                                             <div class="ticket__information-price-detail">202555<span>đ</span></div>
-                                          
+
                                         </div>
                                     </div>
                                 </div>
@@ -119,57 +127,84 @@
             </div>
 
 
-            
+
         </div>
 
         <div class="modal-wrap">
             <div class="modal__overlay">
             </div>
             <div class="modal__body">
-            <!-- Seat form -->
-            <div class="info-form bg-white">
-                <div class="info-form__footer">
-                    <form id="rating-form" class="info-form__form">
-                        <h4 class="my-2 py-2 text-center" style="color: #ffb43b; width: 100%; background-color: rgb(36,0,72);">Đánh giá</h4>
-                        <div class="info-form__group">
-                            <label for="fullname" class="py-2">Họ và tên<code
-                                    style="color: red; font-weight: 700;">*</code></label>
-                            <input id="name" type="text" class="info-form__input" placeholder="Tên hành khách" name="fullname"
-                                required>
-                        </div>
-                        <div class="info-form__group d-inline-flex align-items-center">
-                            <label  class="py-2">Đánh giá</label>
-                            <div class="rate">
-                                <input type="radio" id="star5" name="rate" value="5" />
-                                <label for="star5" title="text">5 stars</label>
-                                <input type="radio" id="star4" name="rate" value="4" />
-                                <label for="star4" title="text">4 stars</label>
-                                <input type="radio" id="star3" name="rate" value="3" />
-                                <label for="star3" title="text">3 stars</label>
-                                <input type="radio" id="star2" name="rate" value="2" />
-                                <label for="star2" title="text">2 stars</label>
-                                <input type="radio" id="star1" name="rate" value="1" required/>
-                                <label for="star1" title="text">1 star</label>
+                <!-- Seat form -->
+                <div class="info-form bg-white">
+                    <div class="info-form__footer">
+                        <form id="rating-form" class="info-form__form">
+                            <h4 class="my-2 py-2 text-center"
+                                style="color: #ffb43b; width: 100%; background-color: rgb(36,0,72);">Đánh giá</h4>
+                            <div class="info-form__group">
+                                <label for="fullname" class="py-2">Họ và tên<code
+                                        style="color: red; font-weight: 700;">*</code></label>
+                                <input id="name" type="text" class="info-form__input" placeholder="Tên hành khách"
+                                    name="fullname" required>
                             </div>
-                        </div>
-                        <div class="info-form__group">
-                            <label for="note" class="py-2">Nhận xét</label>
-                            <br>
-                            <textarea name="note" id="info-form__note" cols="" rows="2"
-                                placeholder="Để lại trải nghiệm của bạn." required></textarea>
-                        </div>
-                        <input id="sendRating" type="submit" value="Gửi" class="btn-send">
-                    </form>
+                            <div class="info-form__group d-inline-flex align-items-center">
+                                <label class="py-2">Đánh giá</label>
+                                <div class="rate">
+                                    <input type="radio" id="star5" name="rate" value="5" />
+                                    <label for="star5" title="text">5 stars</label>
+                                    <input type="radio" id="star4" name="rate" value="4" />
+                                    <label for="star4" title="text">4 stars</label>
+                                    <input type="radio" id="star3" name="rate" value="3" />
+                                    <label for="star3" title="text">3 stars</label>
+                                    <input type="radio" id="star2" name="rate" value="2" />
+                                    <label for="star2" title="text">2 stars</label>
+                                    <input type="radio" id="star1" name="rate" value="1" required />
+                                    <label for="star1" title="text">1 star</label>
+                                </div>
+                            </div>
+                            <div class="info-form__group">
+                                <label for="note" class="py-2">Nhận xét</label>
+                                <br>
+                                <textarea name="note" id="info-form__note" cols="" rows="2"
+                                    placeholder="Để lại trải nghiệm của bạn." required></textarea>
+                            </div>
+                            <input id="sendRating" type="submit" value="Gửi" class="btn-send">
+                        </form>
+                    </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="success-modal" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Đánh giá thành công</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Cảm ơn bạn đã để lại đánh giá cho chuyến xe này !
+                        <br>
+                        Những lời nhận xét của sẽ luôn được hiển thị trên phần đánh giá của chuyến xe
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" id="close-btn" >Đóng</button>
+                        <a href="/" class="btn btn-info">Quay về trang chủ</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+
     <!-- Footer -->
-        {{>footer}}
+    {{>footer}}
 </body>
 
-    <script src="/js/auth/user.js"></script>
-    <script src="/js/rating.js"></script>
+<script src="/js/auth/user.js"></script>
+<script src="/js/rating.js"></script>
 
 </html>

@@ -166,9 +166,9 @@ paymentBtn.onclick = async(e) =>{
     
         const resJson = await res.json()
 
+        console.log({resJson})
         if(resJson){
-            //TODO hiện lên thành báo mua thành công
-            // redirect tới trang chủ trong 5s
+           
             userEmail.innerHTML = ticket.email
             modal.classList.add("active");       
             counttimeback(10)    
