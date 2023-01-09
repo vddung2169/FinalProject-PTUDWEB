@@ -170,40 +170,78 @@ const getAllChuyenxeByTuyenduong = async() => {
 }
 
 
-const getAllChuyenxeBySearch = async(tinhbatdau,tinhketthuc,thoigian,sort,tennhaxe,page) => {
+const getAllChuyenxeBySearch = async(query,page) => {
     try {
-        QUERY = 'SELECT count(*) OVER() AS FULL_COUNT,CX.HINHANHXE,CX.MATUYENDUONG,CX.MACHUYENXE,NX.TENNHAXE,CX.MANHAXE,CX.MALOAIXE,LX.TENLOAIXE,CX.TGKHOIHANH,CX.TGKETTHUC,' + 
+        let QUERY = 'SELECT count(*) OVER() AS FULL_COUNT,CX.HINHANHXE,CX.MATUYENDUONG,CX.MACHUYENXE,NX.TENNHAXE,CX.MANHAXE,CX.MALOAIXE,LX.TENLOAIXE,CX.TGKHOIHANH,CX.TGKETTHUC,' + 
         'DCBD.MADIACHI MABATDAU, DCKT.MADIACHI MAKETTHUC, ' + 
         'DCBD.TENDIACHI TENDIACHIKHOIHANH,DCKT.TENDIACHI TENDIACHIKETTHUC,CX.GIAVENHONHAT,DG.DIEMSO,CX.MOTA'+
         ' FROM CHUYENXE CX INNER JOIN NHAXE NX ON CX.MANHAXE = NX.MANHAXE INNER JOIN DIACHI DCBD ON CX.DIACHIBATDAU = DCBD.MADIACHI' +
          ' INNER JOIN DIACHI DCKT ON CX.DIACHIKETTHUC = DCKT.MADIACHI INNER JOIN LOAIXE LX ON CX.MALOAIXE = LX.MALOAIXE INNER JOIN TUYENDUONG TD ON CX.MATUYENDUONG = TD.MATUYENDUONG INNER JOIN '+
          ' (SELECT NX1.MANHAXE,AVG(DG.DIEMSO) DIEMSO FROM NHAXE NX1 LEFT OUTER JOIN DANHGIA DG ON NX1.MANHAXE = DG.MANHAXE GROUP BY NX1.MANHAXE) DG ON DG.MANHAXE = CX.MANHAXE '
 
-        if(tinhbatdau || tinhketthuc || thoigian || tennhaxe){
+        if(query.tinhbatdau || query.tinhketthuc || query.thoigian || query.tennhaxe || query.search){
             QUERY += 'WHERE '
         }
         CONDITION = []
 
-        if(tinhbatdau){
-            CONDITION.push(`TD.TINHBATDAU = '${tinhbatdau}'`)
+        if(query.tinhbatdau){
+            CONDITION.push(`TD.TINHBATDAU = '${query.tinhbatdau}'`)
         }
 
-        if(tinhketthuc){
-            CONDITION.push(`TD.TINHKETTHUC = '${tinhketthuc}'`) 
+        if(query.tinhketthuc){
+            CONDITION.push(`TD.TINHKETTHUC = '${query.tinhketthuc}'`) 
         }
 
-        if(tennhaxe){
-            CONDITION.push(`NX.TENNHAXE ILIKE '%${tennhaxe}%'`)
+        if(query.tennhaxe){
+            CONDITION.push(`NX.TENNHAXE ILIKE '%${query.tennhaxe}%'`)
         }
 
-        if(thoigian){
-            CONDITION.push(`CX.TGKHOIHANH > '${thoigian}' ORDER BY ABS(DATE_PART('day','${thoigian}' - CX.TGKHOIHANH))`)
+        if(query.thoigian){
+            CONDITION.push(`CX.TGKHOIHANH > '${query.thoigian}' ORDER BY ABS(DATE_PART('day','${query.thoigian}' - CX.TGKHOIHANH))`)
         }
+
+        if(query.tgkhoihanh){
+            switch (query.tgkhoihanh) {
+                case 'earlymorning':
+                    CONDITION.push("CX.TGKHOIHANH::time BETWEEN time '00:00:00' AND '06:00:00'")
+                    break;
+                case 'morning':
+                    CONDITION.push("CX.TGKHOIHANH::time BETWEEN time '06:00:00' AND '12:00:00'")
+                    break;
+                case 'afternoon':
+                    CONDITION.push("CX.TGKHOIHANH::time BETWEEN time '12:00:00' AND '18:00:00'")
+                    break;
+                case 'evening':
+                    CONDITION.push("CX.TGKHOIHANH::time BETWEEN time '18:00:00' AND '24:00:00'")
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        if(query.diemkhoihanh){
+            CONDITION.push(`CX.DIACHIBATDAU = '${query.diemkhoihanh}'`)
+        }
+        if(query.diemketthuc){
+            CONDITION.push(`CX.DIACHIBATDAU = '${query.diemketthuc}'`)
+        }
+        if(query.maloaixe){
+            CONDITION.push(`CX.MALOAIXE = '${query.maloaixe}'`)
+        }
+
+        if(query.giavenhonhat){
+            CONDITION.push(`CX.GIAVENHONHAT <= '${query.giavenhonhat * 1000}'`)
+        }
+
+
+
+        
+
 
         WHERE = CONDITION.join(' AND ')
         QUERY += WHERE
 
-        if(sort){
+        if(query.sort){
             QUERY += ` ORDER BY CX.GIAVENHONHAT ${sort}`
         }
 
@@ -213,6 +251,8 @@ const getAllChuyenxeBySearch = async(tinhbatdau,tinhketthuc,thoigian,sort,tennha
 
         const data = await sequelize.query(QUERY
         ,QueryTypes.SELECT)
+
+        const fullcount = data[0][0].full_count
        
         for (let index = 0; index < data[0].length; index++) {
             const danhgia = await database.danhgia.findAll({
@@ -250,19 +290,34 @@ const getAllChuyenxeBySearch = async(tinhbatdau,tinhketthuc,thoigian,sort,tennha
                 where:{
                     maloaixe : data[0][index].maloaixe
                 },
-                attributes : ['maghe','maloaighe'],
+                attributes : ['maghe'],
                 raw : true
             })
             
-          //TODO only need slot left
+            const slotLeft = ghexe.length - ghedat.length 
+            
+            if(slotLeft <= 0){
+                data[0][index] = undefined
+                fullcount -= 1
+                continue
+            }else{
+                if(query.slot){
+                    if(slotLeft < query.slot){
+                        data[0][index] = undefined
+                        fullcount -= 1
+                        continue
+                    }
+                }
+                
+            }            
+            data[0][index].slotLeft = slotLeft
             data[0][index].danhgia = danhgia
-            data[0][index].ghedat = ghedat
-            data[0][index].ghexe = ghexe
+            
          }
 
 
 
-        return data[0]
+        return {chuyenxe : data[0],fullcount :fullcount}
 
 
     } catch (error) {
@@ -369,7 +424,7 @@ const getInforFromChuyenxe = async(machuyenxe) => {
 
 
 
-const getAllNhaxe =async (maquantri) => {
+const getAllNhaxeAdmin =async (maquantri) => {
     try {
         const data = await sequelize.query('SELECT NX.MANHAXE,NX.TENNHAXE,NX.SODIENTHOAI,NX.HINHANH,DS.DIEMSO '+ 
         'FROM NHAXE NX LEFT OUTER JOIN (SELECT NX1.MANHAXE,AVG(DG.DIEMSO) DIEMSO FROM NHAXE NX1 LEFT OUTER JOIN DANHGIA DG ' + 
@@ -379,6 +434,21 @@ const getAllNhaxe =async (maquantri) => {
         return data[0]
     } catch (error) {
         console.log(error.message)
+    }
+}
+
+const getAllNhaxe = async () => {
+    try {
+        const nhaxe = await database.nhaxe.findAll({
+            attributes : ['manhaxe','tennhaxe'],
+            raw : true
+        })
+
+        return  nhaxe
+
+    } catch (error) {
+        console.log(error.message);
+        
     }
 }
 
@@ -697,6 +767,7 @@ module.exports = {
     getAllNhaxe,
     getAllDiachi,
     getAllLoaixe,
+    getAllNhaxeAdmin,
     getAllChuyenxeAdmin,
     getAllVexeAdmin,
     getAllSeat,

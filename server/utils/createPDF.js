@@ -4,19 +4,19 @@ const path = require('path')
 
 const createPDF = async (data) => {
     try {
-        const html = fs.readFileSync(path.join(__dirname,'../../client/public/template.html'),'utf-8')
+        const html = fs.readFileSync(path.join(__dirname,'../../client/public/templates/template_copy.html'),'utf-8')
 
         const option = {
-            "height": "6in",        
+            "height": "10in",        
             "width": "4in",
             orientation: "portrait",
-            border: "10mm"
+            border: "0mm"
         }
 
         const document = {
             html : html,
             data : data,
-            path : path.join(__dirname,'../../client/public/ticket.pdf')
+            path : path.join(__dirname,'../../client/public/templates/ticket.pdf')
         }
 
         const generatePDF = await pdf.create(document,option)

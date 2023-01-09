@@ -10,6 +10,8 @@ const filter = $('.filter-wrap')
 const filterBody = $('.filter__body')
 const closeFilter = $('.filter__header i')
 
+const slotNeed = document.getElementById('slot')
+
 filterBtn.onclick = function() {
     filter.classList.add('active')
 }
@@ -27,8 +29,12 @@ const downBtn = $('.filter__departureNumberOfSeat--choose .down');
 upBtn.onclick = function() {
     const quantity = $('.filter__departureNumberOfSeat--choose .quantity');
     var currentSlot = parseInt(quantity.innerText);
-    currentSlot++;
+    if(currentSlot < 9){
+        currentSlot++;
+    }
+    
     quantity.innerHTML = currentSlot;
+    slotNeed.value = currentSlot
 }
 
 downBtn.onclick = function() {
@@ -38,4 +44,5 @@ downBtn.onclick = function() {
         currentSlot--;
     }
     quantity.innerText = currentSlot;
+    slotNeed.value = currentSlot
 }

@@ -4,7 +4,7 @@ const accountDataController = require('./getAccountDataController')
 const renderBus = async(req, res) => {
     try {
 
-        const { tinhbatdau, tinhketthuc,date,sort,tennhaxe } = req.query
+        const query = req.query
         let page = req.query.page || 1
         if(page == 0){
             page = 1
@@ -29,11 +29,18 @@ const renderBus = async(req, res) => {
         
         
 
-        const chuyenxe = await dataController.getAllChuyenxeBySearch(tinhbatdau, tinhketthuc,date,sort,tennhaxe,page)
+        const {chuyenxe,fullcount} = await dataController.getAllChuyenxeBySearch(query,page)
 
         const tinhthanh = await dataController.getAllTinhthanh()
 
-        const count = chuyenxe[0].full_count
+        const nhaxe = await dataController.getAllNhaxe()
+
+        const diachi = await dataController.getAllDiachi()
+
+        const loaixe = await dataController.getAllLoaixe()
+
+
+        const count = fullcount
         res.locals.pagination = {
             page,
             limit : 6,
@@ -41,7 +48,7 @@ const renderBus = async(req, res) => {
         }
 
         
-        res.render('bus', { chuyenxe, tinhthanh,user })
+        res.render('bus', { chuyenxe, tinhthanh,nhaxe,diachi,loaixe,user })
 
     } catch (error) {
         console.log(error.message)

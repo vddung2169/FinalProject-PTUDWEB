@@ -2,6 +2,8 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
   get: (searchParams, prop) => searchParams.get(prop),
 });
 
+
+
 const selectedRoute = () =>{
   
 
@@ -29,6 +31,64 @@ const selectedRoute = () =>{
 
 
 
+
+
+
+
+
+
+const instantSearch = (listname,inputname) => {
+  const list = document.querySelectorAll(listname)
+  console.log({list})
+  list.forEach(item => {
+          console.log(item)
+          item.outerText.toLowerCase()
+          .indexOf(document.getElementById(inputname)
+          .value.toLowerCase()) > -1 ?  
+              item.style.display = 'block' : item.style.display = 'none'});
+}
+
+const searchFilter = () => {
+
+      const currentURL = new URL(window.location.href)
+
+      const time = document.querySelector('input[name = "time"]:checked')
+      if(time){
+        currentURL.searchParams.set('tgkhoihanh', time.value)
+      }
+      const tennhaxe = document.querySelector('input[name = "tennhaxe"]:checked')
+      if(tennhaxe){
+        currentURL.searchParams.set('tennhaxe', tennhaxe.value)
+      }
+      const diemkhoihanh = document.querySelector('input[name = "diembatdau"]:checked')
+      if(diemkhoihanh){
+        currentURL.searchParams.set('diemkhoihanh', diemkhoihanh.value)
+      }
+      const diemketthuc = document.querySelector('input[name = "diemketthuc"]:checked')
+      if(diemketthuc){
+        currentURL.searchParams.set('diemketthuc', diemketthuc.value)
+      }
+      const maloaixe = document.querySelector('input[name = "maloaixe"]:checked')
+      if(maloaixe){
+        currentURL.searchParams.set('maloaixe', maloaixe.value)
+      }
+
+      currentURL.searchParams.set('giavenhonhat',slider.value)
+      currentURL.searchParams.set('slot',slotNeed)
+    
+      currentURL.searchParams.set('search', 'true')
+      window.location.href = currentURL
+}
+
+const clearFilter = () => {
+      if(currentURL.searchParams.has('search')){
+        currentURL.searchParams.delete('search')
+      }
+      window.location.href = currentURL
+}
+document.getElementById('clear-filter').addEventListener('click',clearFilter)
+document.getElementById('apply-btn').addEventListener('click',searchFilter)
+
 selectedRoute()
 
 
@@ -42,8 +102,6 @@ const addCSSPagination = () => {
   if(!page || page == 0) page = 1
 
   
-
-
   pagination.querySelectorAll('li').forEach(e => {
     e.classList.add('page-item')
   })

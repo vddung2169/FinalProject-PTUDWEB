@@ -11,6 +11,7 @@ const passport = require('passport')
 const paginateHelper = require('express-handlebars-paginate')
 const formatTime = require('./utils/formatTime')
 // const methodOverride = require('method-override')
+const createPDF = require('./utils/createPDF')
 
 
 
@@ -70,9 +71,30 @@ app.get('/createDatabase', (req,res)=>{
 })
 
 app.post('/test', async(req,res)=>{
-    const {machuyenxe,maloaixe} = req.body
-    const data = await require('./controllers/getDataController').getAllSeat(machuyenxe,maloaixe)
-    res.json(data)
+    try {
+        const dataGet = {
+            from : 'Văn phòng sadsd',
+            to : 'Bến xe miền Đông',
+            tgkhoihanh : '20:30 15/08/2023',
+            tgketthuc : '01:15 17/08/2023',
+            tenloaixe  :'LIMOUE 9 chỗ',
+            maghe : '1A,2A,3A,4A',
+            username : 'Hiện',
+            mave : req.body.mave
+        }
+
+        if(createPDF(dataGet)){
+            res.json(true)
+        }
+        else{
+            res.json(false)
+        }
+
+    } catch (error) {
+        console.log(error.message)
+        res.status(400).json(error.message)
+    }
+
 })
 
 app.use('/ticket',require('./routes/ticketRoute'))
