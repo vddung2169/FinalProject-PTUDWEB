@@ -58,6 +58,14 @@ const prepareTicket =async () => {
     end.childNodes[0].nodeValue = resJson.tgketthuc
     end.childNodes[2].innerHTML = resJson.diachiketthuc
 
+
+    ticket.tgkhoihanh = resJson.tgkhoihanh
+    ticket.from = resJson.diachibatdau
+    ticket.tgketthuc = resJson.tgketthuc
+    ticket.to = resJson.diachiketthuc
+    ticket.tennhaxe = resJson.tennhaxe
+    ticket.tenloaixe = resJson.tenloaixe
+
 }
 
 const removeTicket = async () => {
@@ -161,14 +169,16 @@ paymentBtn.onclick = async(e) =>{
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body : JSON.stringify({mave : ticket.mave})
+            body : JSON.stringify({
+                detail : ticket
+            })
         })
     
         const resJson = await res.json()
 
         console.log({resJson})
         if(resJson){
-           
+            disabledCountdown =true
             userEmail.innerHTML = ticket.email
             modal.classList.add("active");       
             counttimeback(10)    

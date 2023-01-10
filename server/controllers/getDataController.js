@@ -386,10 +386,17 @@ const getDiachi2Noi = async(mabatdau,maketthuc) => {
 
 const getInforFromChuyenxe = async(machuyenxe) => {
     try {
+       
+        //console.log(database)
         const ticket = await database.chuyenxe.findAll({
             include : [
                 {
                     model: database.nhaxe,
+                    required : true,
+                    attributes : []
+                },
+                {
+                    model: database.loaixe,
                     required : true,
                     attributes : []
                 },
@@ -404,22 +411,24 @@ const getInforFromChuyenxe = async(machuyenxe) => {
                     as: 'DCKT',
                     required: true,
                     attributes : []
-                },
+                }
             ],
             where : {
                 machuyenxe : machuyenxe
             },
             attributes : [sequelize.col('nhaxe.tennhaxe'),
+                sequelize.col('loaixe.tenloaixe'),
                 [sequelize.col('DCBD.tendiachi'), 'diachibatdau'],
                 [sequelize.col('DCKT.tendiachi'), 'diachiketthuc'],
                 'tgkhoihanh','tgketthuc'
             ],
             raw : true
         })
+        console.log(ticket[0])
 
         return ticket[0]
     } catch (error) {
-        console.log(error.message)
+        console.log(error.message + " at getInforFromChuyenxe")
     }
 }
 

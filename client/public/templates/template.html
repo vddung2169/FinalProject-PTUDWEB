@@ -24,13 +24,9 @@
             -moz-osx-font-smoothing: grayscale;
             text-align: center;
             color: #1c1c1c;
-            /* display: flex;
-            justify-content: flex-start; */
-            
          }
         
         .ticket-system {
-            /* max-width: 405px; */
             width: 400px;
         }
         
@@ -69,11 +65,6 @@
             display: flex;
             align-items: center;
             flex-direction: column;
-           
-            /* animation-duration: 2.5s;
-            animation-delay: 500ms;
-            animation-name: print;
-            animation-fill-mode: forwards; */
         }
         
         .ticket-system .receipts .receipt {
@@ -163,20 +154,6 @@
             height: 70px;
         }
         
-        @keyframes print {
-            0% {
-                transform: translateY(-510px);
-            }
-            35% {
-                transform: translateY(-395px);
-            }
-            70% {
-                transform: translateY(-140px);
-            }
-            100% {
-                transform: translateY(0);
-            }
-        }
     </style>
 </head>
 
@@ -189,8 +166,8 @@
             <div class="receipts-wrapper">
                 <div class="receipts">
                     <div class="receipt">
-                        <img class="busr-logo" src="/client/public/img/logo-has-color-svg.svg" alt="">
-                        <h2 style="margin-left: 100px;color: #240046;">Tickettakeit!</h2>
+                        <!-- <img class="busr-logo" src="/client/public/img/logo-has-color-svg.svg" alt=""> -->
+                        <h2 style="margin-left: 100px;color: #240046;">TicketTakeIt!</h2>
                         <div class="route">
                             <h2>{{from}}</h2>
                             <svg class="plane-icon" style="color: rgb(255, 202, 10);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 18H7v1a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1a2 2 0 0 1-2-2V2c0-1.1.9-2 2-2h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2v1a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1zM4 5v6h5V5H4zm7 0v6h5V5h-5zM5 2v1h10V2H5zm.5 14a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm9 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" fill="#ffca0a"></path></svg>
@@ -199,18 +176,22 @@
                         <div class="details">
                             <div class="item">
                                 <span>Passanger</span>
-                                <h3>{{username}}</h3>
+                                <h3>{{fullname}}</h3>
                             </div>
                             <div class="item">
                                 <span>Bus No.</span>
                                 <h3>{{mave}}</h3>
                             </div>
                             <div class="item">
+                                <span>Garage</span>
+                                <h3>{{tennhaxe}}</h3>
+                            </div>
+                            <div class="item">
                                 <span>Departure</span>
                                 <h3>{{tgkhoihanh}}</h3>
                             </div>
                             <div class="item">
-                                <span>Departure</span>
+                                <span>Arrival</span>
                                 <h3>{{tgketthuc}}</h3>
                             </div>
                             <div class="item">
@@ -219,7 +200,11 @@
                             </div>
                             <div class="item">
                                 <span>Seat</span>
-                                <h3>{{maghe}}</h3>
+                                <h3>{{slot}}</h3>
+                            </div>
+                            <div class="item">
+                                <span>TotalPrice</span>
+                                <h3>{{tongtien}}</h3>
                             </div>
                         </div>
                     </div>

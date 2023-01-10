@@ -41,7 +41,7 @@
 - [X] Chức năng đăng ký
 - [X] Hiển thị lịch sử đặt vé
 - [X] Confirm đăng ký + quên mật khẩu
-- [ ] Gửi thông tin qua vé email, SMS
+- [X] Gửi thông tin qua vé email, SMS
 - [X] Thực hiện đánh giá + bình luận
 
 ***Bonus:***

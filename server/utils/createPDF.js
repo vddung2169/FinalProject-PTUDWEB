@@ -7,23 +7,25 @@ const createPDF = async (data) => {
         const html = fs.readFileSync(path.join(__dirname,'../../client/public/templates/template.html'),'utf-8')
 
         const option = {
-            "height": "9in",        
+            "height": "10.5in",        
             "width": "3.34in",
             orientation: "portrait",
             border: "0mm"
         }
 
+        const ticketFileName = 'ticket-' + data.mave + '.pdf'
+
         const document = {
             html : html,
             data : data,
-            path : path.join(__dirname,'../../client/public/templates/ticket.pdf')
+            path : path.join(__dirname,'../../client/public/templates/' + ticketFileName)
         }
 
         const generatePDF = await pdf.create(document,option)
 
         console.log(generatePDF)
 
-        return true
+        return ticketFileName
 
     } catch (error) {
         console.log(error.message)

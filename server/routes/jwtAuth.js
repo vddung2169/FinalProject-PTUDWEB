@@ -105,6 +105,8 @@ router.post('/forgot', async (req,res) => {
     // TODO 2. search ID from email and generate token with ID (using different secret key)
     const token = jwtGenerator.jwtGeneratorForReset(user[0].makhachhang,email,'15m');
 
+
+    // ! FIX RES HOSTNAME
     // TODO 3. send token in url to that email with route reset password menu
     const URL = `http://localhost:${PORT}/changepassword/?rs=` + token 
 
@@ -114,7 +116,7 @@ router.post('/forgot', async (req,res) => {
 
     const context = emailTemplateCompiled({url : URL})
 
-    if(sendEmail('Reset your account password !',context,email)){
+    if(sendEmail.sendEmail('Reset your account password !',context,email)){
       //TODO return true to reset.js and redirect to another page
       res.json(true)
     }

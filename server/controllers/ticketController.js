@@ -1,8 +1,8 @@
 const dataController = require('./getDataController')
 const formatTime = require('../utils/formatTime')
-
-
-
+const formatPrice = require('../utils/formatMoney')
+const createPDF = require('../utils/createPDF')
+const {sendEmailTicket} = require('../utils/sendMail')
 
 const prepareTicket = async (req,res) =>{
     try {
@@ -13,6 +13,7 @@ const prepareTicket = async (req,res) =>{
 
         const data = {
             tennhaxe : rawdata.tennhaxe,
+            tenloaixe : rawdata.tenloaixe,
             diachibatdau :  rawdata.diachibatdau,
             diachiketthuc : rawdata.diachiketthuc,
             tgkhoihanh : formatTime.formatHoursDay(rawdata.tgkhoihanh),
@@ -32,9 +33,6 @@ const prepareTicket = async (req,res) =>{
 
 const newTicket =async (req,res) => {
     try {
-
-
-
         const ticket = req.body
 
         //TODO 1: kiểm tra ghế
@@ -61,18 +59,38 @@ const newTicket =async (req,res) => {
 
 const buyTicket = async (req,res,status) => {
     try {
-        const {mave} = req.body
+        const {detail} = req.body
         let statusTicket = 'Đã hủy'
         if(status == 'SUCCESS'){
             statusTicket = 'Đã thanh toán'
         }
-        const vexe = await dataController.updateTicket(mave,statusTicket)
+        await dataController.updateTicket(detail.mave,statusTicket)
 
 
         // TODO 2: Gửi email người với vé
 
-        
-        res.json(true)
+        if(status == 'SUCCESS'){
+            detail.tongtien = formatPrice(detail.totalPrice) + " đ"
+            detail.slot = detail.maghe.join(',')
+
+            const filename = await createPDF(detail)
+
+            const sendResult = await sendEmailTicket('Your bus ticket !',detail.email,filename)
+
+
+            // TODO remove ticket
+            if(sendResult){
+
+                
+
+                res.json(true)
+            }else{
+                res.json(false)
+            }
+            
+        }else{
+            res.json(false)
+        }
 
     } catch (error) {
         console.log(error.message)
