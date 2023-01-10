@@ -14,6 +14,7 @@ const overlay = document.querySelector('.modal__overlay');
 const userEmail = document.getElementById('email-send')
 const backTime = document.getElementById('time-to-back')
 let disabledCountdown = false
+const waitingModal = new bootstrap.Modal(document.getElementById("waiting-modal"), {});
 
 
 
@@ -140,56 +141,74 @@ function counttimeback(second){
 }
 
 countdown(10);
-
-
 prepareTicket()
-
-
 
 
 document.querySelectorAll('input[type=radio]').forEach(btn => {
     btn.onclick = (e) => {
-    console.log("click")
-    paymentBtn.disabled = false
+        paymentBtn.classList.remove('payment_activity-pay-disabled')
+        paymentBtn.disabled = false
     }
 })
+
+var paymentActive = (clicked => {
+    return async(e) => {
+        if(!clicked){
+            e.preventDefault()
+
+            const paymentMethod = document.querySelector('input[name = "radio"]:checked')
+            if(paymentMethod){
+                clicked = true;
+                document.getElementById('noti-body').innerHTML = `<div class="d-flex justify-content-center">
+                                                                        <div class="spinner-border text-warning m-4" role="status">
+                                                                        <span class="visually-hidden">Loading...</span>
+                                                                                    </div>
+                                                                                </div>
+                                            <h5 class="text-center">Đang thực hiện thanh toán, vui lòng đợi giây lát</h5>`
+                waitingModal.show()
+            }else{
+                waitingModal.show()
+                return
+            }
+          
+
+            try {
+                const res = await fetch('/ticket/donepayment',{
+                    method : 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body : JSON.stringify({
+                        detail : ticket
+                    })
+                })
+            
+                const resJson = await res.json()
+
+                console.log({resJson})
+                if(resJson){
+                    disabledCountdown =true
+                    userEmail.innerHTML = ticket.email
+                    modal.classList.add("active");       
+                    counttimeback(10)    
+                }else {
+                    confirm('thất bại')
+                }
+
+
+            } catch (error) {
+                console.log(error.message)
+            }
+        }else{
+            waitingModal.show()
+        }
+    }
+})(false);
 
 
 
 paymentBtn.onclick = async(e) =>{
-    e.preventDefault()
-
-   // Kiểm tra các phương thức thanh toán
-   // CSS lại nút
-
-    try {
-        const res = await fetch('/ticket/donepayment',{
-            method : 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body : JSON.stringify({
-                detail : ticket
-            })
-        })
-    
-        const resJson = await res.json()
-
-        console.log({resJson})
-        if(resJson){
-            disabledCountdown =true
-            userEmail.innerHTML = ticket.email
-            modal.classList.add("active");       
-            counttimeback(10)    
-        }else {
-            confirm('thất bại')
-        }
-
-
-    } catch (error) {
-        console.log(error.message)
-    }
-
+   paymentActive(e)
 }
 

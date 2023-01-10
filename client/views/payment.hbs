@@ -104,7 +104,7 @@
                         </div>
                     </div>
 
-                    <button id="payment-btn" class="payment_activity-pay" disabled>
+                    <button id="payment-btn" class="payment_activity-pay payment_activity-pay-disabled" disabled>
                         THANH TOÁN
                     </button>
                 </div>
@@ -175,6 +175,23 @@
                         <div class="check-email">Vui lòng kiểm tra lại email của bạn.</div>
                         <div class="back-homepage">Quay lại trang chủ trong <span id="time-to-back">10</span> s!</div>
                         <button><a href="/">Quay lại trang chủ</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <div class="modal fade" id="waiting-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color: #ffb43b;color: rgba(36, 0, 70, 1);">
+                        <h5 class="modal-title fw-bold" id="noti-title">Thực hiện thanh toán</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div id="noti-body" class="modal-body">
+                        <h5 class="text-center">Vui lòng chọn một phương thức thanh toán</h5>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
                     </div>
                 </div>
             </div>

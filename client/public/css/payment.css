@@ -110,6 +110,10 @@
     font-weight: 600;
 }
 
+.payment_activity-pay-disabled{
+    background-color: rgb(199, 187, 210);
+}
+
 
 /* Modal */
 

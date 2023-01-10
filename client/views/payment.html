@@ -104,7 +104,7 @@
                         </div>
                     </div>
 
-                    <button class="payment_activity-pay">
+                    <button class="payment_activity-pay ">
                         THANH TOÁN
                     </button>
                 </div>
@@ -157,7 +157,7 @@
         </div>
 
         <!--Modal -->
-        <div class="modal-wrap active">
+        <div class="modal-wrap">
             <div class="modal__overlay">
             </div>
 
@@ -178,6 +178,30 @@
                 </div>
             </div>
         </div>
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Launch demo modal
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="waiting-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color: #ffb43b;color: rgba(36, 0, 70, 1);">
+                        <h5 class="modal-title fw-bold" id="noti-title">Thực hiện thanh toán</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div id="noti-body" class="modal-body">
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <!-- Footer -->
         <footer id="footer" class="p-2">
