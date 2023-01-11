@@ -12,7 +12,7 @@ const note = document.getElementById('notebuy')
 const ticketform = document.getElementById('ticketform')
 const infoHeaders = $$('.seat-form__step');
 const infoContainers = $$('.modal__container-form');
-const hostname = window.location.hostname === 'localhost' ? window.location.protocol + '//' + window.location.hostname + ":3000" : window.location.hostname
+const hostname = window.location.hostname === 'localhost' ? window.location.protocol + '//' + window.location.hostname + ":3000" : window.location.protocol + '//' + window.location.hostname
 
 
 const loadingBus = '<div class="d-flex justify-content-center loading-disbled" id="loading"><div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div></div>'

@@ -96,7 +96,7 @@ router.post('/forgot', async (req,res) => {
     // TODO 1. get email and validate email from user
     const {email} = req.body
 
-    const hostname = req.hostname === 'localhost' ? 'http://' + req.hostname + ':' + PORT : req.hostname
+    const hostname = req.hostname === 'localhost' ? 'http://' + req.hostname + ':' + PORT : 'https://' +  req.hostname
     
     const user = await accountDataController.getAnAccountByEmail(email);
 
