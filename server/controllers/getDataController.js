@@ -239,7 +239,7 @@ const getAllChuyenxeBySearch = async(query,page) => {
         
 
         if(query.sort){
-            QUERY += ` ORDER BY CX.GIAVENHONHAT ${sort}`
+            QUERY += ` ORDER BY CX.GIAVENHONHAT ${query.sort}`
         }
 
     
@@ -424,7 +424,7 @@ const getInforFromChuyenxe = async(machuyenxe) => {
             ],
             raw : true
         })
-        console.log(ticket[0])
+        
 
         return ticket[0]
     } catch (error) {

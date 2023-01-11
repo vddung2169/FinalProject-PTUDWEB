@@ -1,5 +1,5 @@
-accountDataController = require('../controllers/getAccountDataController')
-database = require('../database/models')
+const accountDataController = require('../controllers/getAccountDataController')
+const database = require('../database/models')
 
 const dataController = require('./getDataController')
 
@@ -7,13 +7,13 @@ const dataController = require('./getDataController')
 const createGarage = async(req,res) => {
     try {
        const {tennhaxe,hinhanhnhaxe,sodienthoai} = req.body
-       userInfo = await accountDataController.getAnAccountByID(req.user)
+      
        
         const newNhaxe = await database.nhaxe.create({
             tennhaxe : tennhaxe,
             hinhanh :hinhanhnhaxe,
             sodienthoai: sodienthoai,
-            maquantri: userInfo[0].maquantri
+            maquantri: req.user
         })
 
         res.redirect('/admin/viewgarage')
@@ -29,8 +29,8 @@ const createGarage = async(req,res) => {
 
 const viewAllNhaxe = async(req,res,view) => {
     try {
-        const userInfo = await accountDataController.getAnAccountByID(req.user)
-        const data = await dataController.getAllNhaxe(userInfo[0].maquantri)
+        
+        const data = await dataController.getAllNhaxe(req.user)
 
         const nhaxe =data
 

@@ -80,9 +80,6 @@ const buyTicket = async (req,res,status) => {
 
             // TODO remove ticket
             if(sendResult){
-
-                
-
                 res.json(true)
             }else{
                 res.json(false)

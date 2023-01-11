@@ -17,6 +17,8 @@ let disabledCountdown = false
 const waitingModal = new bootstrap.Modal(document.getElementById("waiting-modal"), {});
 
 
+const timeLeft = parseInt(window.sessionStorage.getItem('timeleft')) || null
+
 
 const numberWithCommas = (num) => {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -72,6 +74,7 @@ const prepareTicket =async () => {
 const removeTicket = async () => {
     if(ticket){
         window.sessionStorage.removeItem('ticket')
+        
     }
 
     await fetch('/ticket/cancel',{
@@ -94,6 +97,7 @@ const removeTicket = async () => {
 function countdown(minutes) {
     var seconds = 60;
     var mins = minutes
+    window.sessionStorage.setItem('timeleft',minutes)
     function tick() {
         var counter = document.getElementById("counter");
         var current_minutes = mins-1
@@ -140,7 +144,12 @@ function counttimeback(second){
     setTimeout(countdown, 1000);
 }
 
-countdown(10);
+if(timeLeft){
+    countdown(timeLeft);
+}else{
+    countdown(10)
+}
+
 prepareTicket()
 
 
@@ -156,7 +165,8 @@ var paymentActive = (clicked => {
         if(!clicked){
             e.preventDefault()
 
-            const paymentMethod = document.querySelector('input[name = "radio"]:checked')
+            const paymentMethod = document.querySelector('input[type="radio"]:checked')
+            console.log(paymentMethod)
             if(paymentMethod){
                 clicked = true;
                 document.getElementById('noti-body').innerHTML = `<div class="d-flex justify-content-center">

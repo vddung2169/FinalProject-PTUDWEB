@@ -73,7 +73,13 @@ const sendEmailTicket = async (subject,receiver,filename) =>{
         const sendNow = await transporter.sendMail(optionEmail)
 
 
-        fs.unlink(path.join(__dirname,'../../client/public/templates/' + filename))
+        fs.unlink(path.join(__dirname,'../../client/public/templates/' + filename) , (error) => {
+            if(error){
+                console.log('error delete file')
+            }else{
+                
+            }
+        })
 
         console.log(sendNow.messageId)
         return true

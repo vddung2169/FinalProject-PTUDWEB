@@ -7,7 +7,7 @@ const createPDF = async (data) => {
         const html = fs.readFileSync(path.join(__dirname,'../../client/public/templates/template.html'),'utf-8')
 
         const option = {
-            "height": "10.5in",        
+            "height": "11in",        
             "width": "3.34in",
             orientation: "portrait",
             border: "0mm"

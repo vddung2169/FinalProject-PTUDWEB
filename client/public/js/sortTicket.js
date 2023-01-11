@@ -10,7 +10,7 @@ asc.onclick = function() {
         
        
         currentURL.searchParams.set('sort', 'asc')
-        currentURL.searchParams.set('search', 'true')
+       
         window.location.href = currentURL
     } catch (error) {
         console.log(error.message)
@@ -24,7 +24,7 @@ desc.onclick = function() {
         const currentURL = new URL(window.location.href)
 
         currentURL.searchParams.set('sort', 'desc')
-        currentURL.searchParams.set('search', 'true')
+        
         window.location.href = currentURL
 
     } catch (error) {

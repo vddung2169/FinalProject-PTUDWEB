@@ -1,5 +1,5 @@
-accountDataController = require('../controllers/getAccountDataController')
-database = require('../database/models')
+const accountDataController = require('../controllers/getAccountDataController')
+const database = require('../database/models')
 
 const dataController = require('./getDataController')
 
@@ -35,8 +35,8 @@ const createRoute = async(req,res) => {
 
 const viewRouteAdd = async(req,res) => {
     try {
-        userInfo = await accountDataController.getAnAccountByID(req.user)
-        const nhaxe = await dataController.getAllNhaxe(userInfo[0].maquantri)
+     
+        const nhaxe = await dataController.getAllNhaxe(req.user)
         const diachi = await dataController.getAllDiachi()
         const loaixe = await dataController.getAllLoaixe()
         
@@ -52,9 +52,9 @@ const viewRouteAdd = async(req,res) => {
 
 const viewRoute = async(req,res,view) => {
     try {
-        userInfo = await accountDataController.getAnAccountByID(req.user)
-        const nhaxe = await dataController.getAllNhaxe(userInfo[0].maquantri)
-        const chuyenxe = await dataController.getAllChuyenxeAdmin(userInfo[0].maquantri)
+        
+        const nhaxe = await dataController.getAllNhaxe(req.user)
+        const chuyenxe = await dataController.getAllChuyenxeAdmin(req.user)
         const diachi = await dataController.getAllDiachi()
         const loaixe = await dataController.getAllLoaixe()
         

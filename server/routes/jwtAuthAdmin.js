@@ -18,7 +18,7 @@ router.post("/register", async (req, res) => {
   
     
     if(user.length > 0){
-        return res.status(401).json("User is already existed!");
+        return res.status(401).render('/admin/register',{error : "User is already existed!"});
     }
 
     // Bcrypt the password
@@ -36,8 +36,7 @@ router.post("/register", async (req, res) => {
 
   } catch (error) {
     console.error(error.message);
-    res.status(500).json("Server error");
-
+    res.status(500).render('notfound404',"Server error");
   }
 });
 
@@ -50,7 +49,7 @@ router.post("/login", async (req, res) => {
 
 
     if(user.length === 0){
-        return res.status(401).json("User is not exist");
+      return res.status(401).render('/admin/login',{error : "User is not exist"});  
     }
     
 
@@ -60,7 +59,8 @@ router.post("/login", async (req, res) => {
     );
 
     if (!validPassword) {
-      return res.status(401).json("The password is wrong");
+      
+      return res.status(401).render('/admin/login',{error: "The password is wrong"});
     }
     const token = jwtGenerator(user[0].maquantri);
     
@@ -70,19 +70,11 @@ router.post("/login", async (req, res) => {
 
   } catch (err) {
     console.error(err.message);
-    res.status(500).json("Server error");
+    res.status(500).render('notfound404',"Server error");
   }
 });
 
-// - VERIFY
-// router.post("/verify", authorize, (req, res) => {
-//   try {
-//     res.json(true);
-//   } catch (err) {
-//     console.error(err.message);
-//     res.status(500).json("Server error");
-//   }
-// });
+
 
 
 
