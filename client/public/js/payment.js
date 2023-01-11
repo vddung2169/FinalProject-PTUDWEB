@@ -16,8 +16,11 @@ const backTime = document.getElementById('time-to-back')
 let disabledCountdown = false
 const waitingModal = new bootstrap.Modal(document.getElementById("waiting-modal"), {});
 
-
-const timeLeft = parseInt(window.sessionStorage.getItem('timeleft')) || null
+const timeData = window.sessionStorage.getItem('timeleft') || null
+let timeLeft = null
+if(timeData){
+    timeLeft = parseInt(timeData)
+}
 
 
 const numberWithCommas = (num) => {
@@ -74,7 +77,7 @@ const prepareTicket =async () => {
 const removeTicket = async () => {
     if(ticket){
         window.sessionStorage.removeItem('ticket')
-        
+        window.sessionStorage.removeItem('timeleft')
     }
 
     await fetch('/ticket/cancel',{
@@ -202,6 +205,8 @@ var paymentActive = (clicked => {
                     userEmail.innerHTML = ticket.email
                     modal.classList.add("active");       
                     counttimeback(10)    
+                    window.sessionStorage.removeItem('ticket')
+                    window.sessionStorage.removeItem('timeleft')
                 }else {
                     confirm('thất bại')
                 }
