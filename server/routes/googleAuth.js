@@ -5,7 +5,8 @@ const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET
 const router = require('express').Router()
 const accountDataController = require('../controllers/getAccountDataController')
-const hostname = req.hostname === 'localhost' ? 'http://' + req.hostname + ':' + PORT : 'https://' +  req.hostname
+require('dotenv').config()
+const hostname = process.env.HOSTNAME
 
 
 passport.use(new GoogleStrategy({
