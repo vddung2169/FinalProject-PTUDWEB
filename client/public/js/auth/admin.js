@@ -7,7 +7,7 @@ const adminName = adminDisplayname.innerHTML
 if(!adminName){
   adminDisplayname.innerHTML = adminNameSaved
 }else{
-  window.localStorage.setItem('admin',adminNameSaved)
+  window.localStorage.setItem('admin',adminName)
 }
 
 logoutBtn.addEventListener('click',async (e) =>{

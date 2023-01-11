@@ -30,7 +30,7 @@ const createGarage = async(req,res) => {
 const viewAllNhaxe = async(req,res,view) => {
     try {
         
-        const data = await dataController.getAllNhaxe(req.user)
+        const data = await dataController.getAllNhaxeAdmin(req.user)
 
         const nhaxe =data
 

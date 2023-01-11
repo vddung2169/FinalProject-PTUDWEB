@@ -3,6 +3,8 @@ const router = require('express').Router()
 const garageDataController = require('../controllers/garageDataController')
 const routeDataController = require('../controllers/routeDataController')
 const seatDataController = require('../controllers/seatDataController')
+const adminController = require('../controllers/adminController')
+
 
 router.get('/viewgarage',authorization.authorizationAdmin,(req,res) =>
 garageDataController.viewAllNhaxe(req,res,'viewgarage'))
@@ -22,7 +24,7 @@ router.get('/login',(req,res) => res.render('loginAdmin'))
 router.get('/register',(req,res) => res.render('registerAdmin'))
 router.get('/forgotpassword',(req,res) => res.render('forgot-passwordAdmin'))
 
-router.get('/',authorization.authorizationAdmin,(req,res) => res.render('admin'))
+router.get('/',authorization.authorizationAdmin,adminController.renderAdmin)
 
 
 

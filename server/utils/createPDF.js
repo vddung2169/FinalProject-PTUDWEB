@@ -23,7 +23,7 @@ const createPDF = async (data) => {
 
         const generatePDF = await pdf.create(document,option)
 
-        console.log(generatePDF)
+       
 
         return ticketFileName
 

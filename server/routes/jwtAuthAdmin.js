@@ -18,7 +18,7 @@ router.post("/register", async (req, res) => {
   
     
     if(user.length > 0){
-        return res.status(401).render('/admin/register',{error : "User is already existed!"});
+        return res.status(401).render('registerAdmin',{error : "User is already existed!"});
     }
 
     // Bcrypt the password
@@ -29,7 +29,7 @@ router.post("/register", async (req, res) => {
     const newUser = await accountDataController.createAnAdminAccount(name,bcryptPassword,email)
 
 
-    const token = jwtGenerator(newUser.maquantri)
+    const token = jwtGenerator.jwtGenerator(newUser.maquantri)
     req.session.token = token
     res.redirect('/admin')
 
@@ -49,7 +49,7 @@ router.post("/login", async (req, res) => {
 
 
     if(user.length === 0){
-      return res.status(401).render('/admin/login',{error : "User is not exist"});  
+      return res.status(401).render('loginAdmin',{error : "User is not exist"});  
     }
     
 
@@ -60,9 +60,9 @@ router.post("/login", async (req, res) => {
 
     if (!validPassword) {
       
-      return res.status(401).render('/admin/login',{error: "The password is wrong"});
+      return res.status(401).render('loginAdmin',{error: "The password is wrong"});
     }
-    const token = jwtGenerator(user[0].maquantri);
+    const token = jwtGenerator.jwtGenerator(user[0].maquantri);
     
     req.session.token = token
 

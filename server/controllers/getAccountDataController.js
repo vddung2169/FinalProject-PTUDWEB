@@ -8,7 +8,7 @@ const getAnAdminAccountByID = async (ID) => {
             where:{
                 maquantri : ID
             },
-            raw: false
+            raw: true
         })
 
         return account

@@ -2,9 +2,13 @@ const accountDataController = require('./getAccountDataController')
 
 const renderAdmin = async(req,res) => {
     try {
-        const adminInfo = await accountDataController.getAnAdminAccountByID(req.user)
+        const data = await accountDataController.getAnAdminAccountByID(req.user)
 
-        res.render('admin',{adminInfo})
+        const adminInfor = data[0]
+
+        
+
+        res.render('admin',{adminInfor})
 
 
     } catch (error) {
