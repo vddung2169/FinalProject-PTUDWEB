@@ -199,17 +199,17 @@ var paymentActive = (clicked => {
             
                 const resJson = await res.json()
 
-                console.log({resJson})
-                if(resJson){
-                    disabledCountdown =true
-                    userEmail.innerHTML = ticket.email
-                    modal.classList.add("active");       
-                    counttimeback(10)    
-                    window.sessionStorage.removeItem('ticket')
-                    window.sessionStorage.removeItem('timeleft')
-                }else {
-                    confirm('thất bại')
+                
+                if(!resJson){
+                    confirm('In pdf thất bại')
                 }
+
+                disabledCountdown =true
+                userEmail.innerHTML = ticket.email
+                modal.classList.add("active");       
+                counttimeback(10)    
+                window.sessionStorage.removeItem('ticket')
+                window.sessionStorage.removeItem('timeleft')
 
 
             } catch (error) {
