@@ -2,7 +2,7 @@ const dataController = require('./getDataController')
 const formatTime = require('../utils/formatTime')
 const formatPrice = require('../utils/formatMoney')
 const createPDF = require('../utils/createPDF')
-const {sendEmailTicket} = require('../utils/sendMail')
+const {sendEmailTicketPDF,sendEmailTicket} = require('../utils/sendMail')
 
 const prepareTicket = async (req,res) =>{
     try {
@@ -74,8 +74,15 @@ const buyTicket = async (req,res,status) => {
             detail.slot = detail.maghe.join(',')
 
             const filename = await createPDF(detail)
+            
 
-            const sendResult = await sendEmailTicket('Your bus ticket !',detail.email,filename)
+            let sendResult = false
+            if(filename){
+                sendResult = await sendEmailTicketPDF('Your bus ticket !',detail.email,filename)
+            }else{
+                sendResult = await sendEmailTicket('Your bus ticket !',detail.email,detail)
+            }
+           
 
 
             // TODO remove ticket

@@ -39,7 +39,7 @@ const sendEmail = async (subject,context,receiver) => {
 
 }
 
-const sendEmailTicket = async (subject,receiver,filename) =>{
+const sendEmailTicketPDF = async (subject,receiver,filename) =>{
     try{
         const transporter = nodemailer.createTransport({
             service : 'gmail',
@@ -52,7 +52,7 @@ const sendEmailTicket = async (subject,receiver,filename) =>{
             }
         })
 
-        const emailTemplate = fs.readFileSync(path.join(__dirname,'../../client/public/templates/ticketSend.hbs'),"utf8")
+        const emailTemplate = fs.readFileSync(path.join(__dirname,'../../client/public/templates/ticketSendPDF.hbs'),"utf8")
 
         const emailTemplateCompiled = hbs.compile(emailTemplate)
     
@@ -90,7 +90,48 @@ const sendEmailTicket = async (subject,receiver,filename) =>{
     }
 }
 
+const sendEmailTicket = async (subject,receiver,vexe) =>{
+    try{
+        const transporter = nodemailer.createTransport({
+            service : 'gmail',
+            auth : {
+                user : userGmail,
+                pass : passwordGmail
+            },
+            tls : {
+                rejectUnauthorized : false
+            }
+        })
+
+        const emailTemplate = fs.readFileSync(path.join(__dirname,'../../client/public/templates/ticketSend.hbs'),"utf8")
+
+        const emailTemplateCompiled = hbs.compile(emailTemplate)
+    
+        const context = emailTemplateCompiled(vexe)
+
+        
+
+        const optionEmail = {
+            from : userGmail,
+            to : receiver,
+            subject : subject,
+            html : context,
+            
+        }
+        const sendNow = await transporter.sendMail(optionEmail)
+
+
+        console.log(sendNow.messageId)
+        return true
+
+    }catch(error){
+        console.log(error.message)
+        return false
+    }
+}
+
 module.exports = {
     sendEmail,
+    sendEmailTicketPDF,
     sendEmailTicket
 }
