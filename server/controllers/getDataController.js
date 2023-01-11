@@ -640,7 +640,6 @@ const getAllTicketUser = async (makhachhang) => {
         ],
             raw : true
         })
-
       
 
         for (let index = 0; index < vexe.length; index++) {
@@ -731,27 +730,33 @@ const getAllChuyenxeAdmin = async (maquantri) => {
 const getAllVexeAdmin = async(maquantri) => {
     try {
         
-        const data = await sequelize.query('SELECT VX.MAVE,VX.MACHUYENXE,VX.MAKHACHHANG,VX.TINHTRANG,VX.TONGTIEN,KH.TENKHACHHANG,KH.SODIENTHOAI,KH.EMAIL '+
-        'FROM VEXE VX INNER JOIN CHUYENXE CX ON VX.MACHUYENXE = CX.MACHUYENXE '+
-        'INNER JOIN KHACHHANG KH ON KH.MAKHACHHANG = VX.MAKHACHHANG ' + 
+        const data = await sequelize.query('SELECT VX.MAVE,VX.MACHUYENXE,VX.MAKHACHHANG,VX.TINHTRANG,VX.TONGTIEN,VX.HOTEN,VX.SODIENTHOAI,VX.EMAIL '+
+        'FROM VEXE VX INNER JOIN CHUYENXE CX ON VX.MACHUYENXE = CX.MACHUYENXE '+ 
         'INNER JOIN NHAXE NX ON CX.MANHAXE = NX.MANHAXE '+ 
         'INNER JOIN QUANTRI QT ON NX.MAQUANTRI = QT.MAQUANTRI '+
         `WHERE QT.MAQUANTRI ='${maquantri}'`)
 
+
+
         for (let index = 0; index < data[0].length; index++) {
-            const chitietvexe = await database.vexe.findAll({
+            const ghedadat = await database.vexe.findAll({
                 include :[{
                     model : database.ghexe,
                     require:true,
                     attributes: []
                 }],
-                where : {
+                where:{
                     mave : data[0][index].mave
                 },
-                attributes : [sequelize.col('ghexes.chitietvexe.ghexeMaghe')],
-                raw :true
+                attributes : [[sequelize.col('ghexes.chitietvexe.ghexeMaghe'),'maghe']],
+                raw : true
             })
-            data[0][index].chitietvexe = chitietvexe
+            const slot = ghedadat.map(function(ghe) {
+                return ghe['maghe'];
+            });
+
+            data[0][index].slots = slot.join(',')
+            
             
         }
 

@@ -61,7 +61,7 @@
                                         <select name="mave" id="" style="margin-left:95px;">
                                             {{#each vexe}}
                                                 <option value="{{mave}}" onclick="showdetail('{{machuyenxe}}','{{tenkhachhang}}','{{email}}','{{sodienthoai}}',
-                                                '{{tongtien}}','{{tinhtrang}}', [{{#each chitietvexe}} {{formatString ghexeMaghe}}, {{/each}}] )" >{{mave}}</option>
+                                                '{{tongtien}}','{{tinhtrang}}' )" >{{mave}}</option>
                                             {{/each}}
                                         </select>
                                     </div>
@@ -74,12 +74,9 @@
                                         </select>
                                     </div>
                                     <div class="seat-info__group">
-                                        <label for="numberseat" class="py-2 text-dark">Số lượng ghế</label>
-                                        <span style="margin-left:50px;" id="soluongghe"></span>
-                                       <select name="maghe" id="ghexe" style="margin-left:50px;">
-                                        
-        
-                                        </select>
+                                        <label for="numberseat" class="py-2 text-dark">Ghê đặt:</label>
+                                        <span style="margin-left:50px;" >{{slots}}</span>
+                                       
                                     </div>
                                     <br>
                                     <h7>Thông tin liên lạc</h7>
@@ -150,22 +147,13 @@
         <script src="/js/sb-admin-2.min.js"></script>
 
         <script>
-            function showdetail(machuyenxe,tenkhachhang,email,sodienthoai,tongtien,tinhtrang,ghexe){
+            function showdetail(machuyenxe,tenkhachhang,email,sodienthoai,tongtien,tinhtrang){
                 document.querySelector(`#chuyenxe > option[value="${machuyenxe}"]`).setAttribute('selected',true)
                 document.querySelector('#name').value = tenkhachhang
                 document.querySelector('#email').value = email
                 document.querySelector('#phone').value = sodienthoai
                 document.querySelector('#pay').value = tongtien
                 document.querySelector('#condition').value = tinhtrang
-                const ghexeList = document.querySelector('#ghexe')
-                console.log({ghexeList})
-                ghexeList.innerHTML = ""
-                ghexe.forEach(e => {
-                    console.log({e})
-                    ghexeList.innerHTML += `<option value="${e}">${e} </option>`
-                })
-
-                document.querySelector('#soluongghe').innerHTML = ghexe.length
 
             }
 

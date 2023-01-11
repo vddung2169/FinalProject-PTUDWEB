@@ -23,7 +23,7 @@ const viewSeat = async(req,res) => {
 
 const viewSeatUpdate = async(req,res) => {
     try {
-        maquantri = '040457b0-b965-476f-b810-129377cbabaf'
+        //maquantri = '040457b0-b965-476f-b810-129377cbabaf'
         const vexe = await dataController.getAllVexeAdmin(req.user)
         const chuyenxe = await dataController.getAllChuyenxeAdmin(req.user)
         
@@ -81,5 +81,6 @@ const updateRoute = async(req,res) => {
 
 module.exports = {
     viewSeat,
-    viewSeatUpdate
+    viewSeatUpdate,
+    updateRoute
 }
