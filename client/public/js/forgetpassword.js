@@ -5,6 +5,7 @@ const btnSend = $('.btn-send');
 const blockSendEmail = $('.send-email');
 const blockSendEmailSuccess = $('.send-email-success');
 const forgotForm = document.getElementById('forgotForm')
+const errorMess = document.getElementById('error-message')
 
 // btnSend.onclick = function() {
 //     blockSendEmail.classList.remove('active');
@@ -41,8 +42,7 @@ const forgotSubmit = async(e) => {
             blockSendEmailSuccess.classList.add('active');
         }
         else{
-          // TODO SHOW ERROR MAIL
-            
+            errorMess.innerHTML = resJson
         }
     } catch(error){
         console.error(error.message)

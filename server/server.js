@@ -12,6 +12,7 @@ const paginateHelper = require('express-handlebars-paginate')
 const formatTime = require('./utils/formatTime')
 // const methodOverride = require('method-override')
 const createPDF = require('./utils/createPDF')
+const os = require('os')
 
 
 
@@ -70,31 +71,9 @@ app.get('/createDatabase', (req,res)=>{
     
 })
 
-app.post('/test', async(req,res)=>{
-    try {
-        const dataGet = {
-            from : 'Văn phòng sadsd',
-            to : 'Bến xe miền Đông',
-            tgkhoihanh : '20:30 15/08/2023',
-            tgketthuc : '01:15 17/08/2023',
-            tenloaixe  :'LIMOUE 9 chỗ',
-            maghe : '1A,2A,3A,4A',
-            username : 'Hiện',
-            mave : req.body.mave
-        }
-
-        if(createPDF(dataGet)){
-            res.json(true)
-        }
-        else{
-            res.json(false)
-        }
-
-    } catch (error) {
-        console.log(error.message)
-        res.status(400).json(error.message)
-    }
-
+app.get('/test', async(req,res)=>{
+    const host = req.hostname
+    res.json(host)
 })
 
 app.use('/ticket',require('./routes/ticketRoute'))

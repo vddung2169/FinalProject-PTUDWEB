@@ -39,7 +39,7 @@ router.post("/register", async (req, res) => {
 
   } catch (error) {
     console.error(error.message);
-    res.status(500).json("Server error");
+    res.status(500).render('notfound404',{error : 'Server error'})
 
   }
 });
@@ -71,7 +71,7 @@ router.post("/login", async (req, res) => {
     
   } catch (err) {
       console.error(err.message);
-      res.status(500).json("Server error");
+      res.status(500).render('notfound404',{error : 'Server error'})
   }
 });
 
@@ -95,6 +95,8 @@ router.post('/forgot', async (req,res) => {
   try {
     // TODO 1. get email and validate email from user
     const {email} = req.body
+
+    const hostname = req.hostname === 'localhost' ? 'http://' + req.hostname + ':' + PORT : req.hostname
     
     const user = await accountDataController.getAnAccountByEmail(email);
 
@@ -108,7 +110,7 @@ router.post('/forgot', async (req,res) => {
 
     // ! FIX RES HOSTNAME
     // TODO 3. send token in url to that email with route reset password menu
-    const URL = `http://localhost:${PORT}/changepassword/?rs=` + token 
+    const URL = hostname + `/changepassword/?rs=` + token 
 
     const emailTemplate = fs.readFileSync(path.join(__dirname,'../../client/public/templates/mailReset.hbs'),"utf8")
 
@@ -122,13 +124,13 @@ router.post('/forgot', async (req,res) => {
     }
     else{
       //TODO redirect to fail send mail page
-      res.json(false)
+      res.json('Send mail fail')
     }
 
     
   } catch (error) {
     console.error(error.message);
-    res.status(500).json("Server error");
+    res.status(500).render('notfound404',{error : 'Server error'})
   }
 })
 
@@ -143,7 +145,7 @@ router.post('/resetpassword', async (req,res) => {
     const bcryptPassword = await bcrypt.hash(newpassword, salt);
   
     // TODO 6. change password in database
-    accountDataController.updatePassword(makhachhang,bcryptPassword)
+    await accountDataController.updatePassword(makhachhang,bcryptPassword)
 
 
     req.session.destroy()
@@ -152,7 +154,7 @@ router.post('/resetpassword', async (req,res) => {
 
   } catch (error) {
     console.log(error.message)
-    res.status(500).json('Server error')
+    res.status(500).render('notfound404',{error : 'Server error'})
   }
 
 
