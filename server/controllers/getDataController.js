@@ -202,16 +202,16 @@ const getAllChuyenxeBySearch = async(query,page) => {
 
             if(query.tgkhoihanh){
                 switch (query.tgkhoihanh) {
-                    case 'morning':
+                    case 'earlymorning':
                         CONDITION.push("CX.TGKHOIHANH::time BETWEEN time '00:00:00' AND time '06:00:00'")
                         break;
-                    case 'afternoon':
+                    case 'morning':
                         CONDITION.push("CX.TGKHOIHANH::time BETWEEN time '06:00:00' AND time '12:00:00'")
                         break;
-                    case 'evening':
+                    case 'afternoon':
                         CONDITION.push("CX.TGKHOIHANH::time BETWEEN time '12:00:00' AND time '18:00:00'")
                         break;
-                    case 'earlymorning':
+                    case 'evening':
                         CONDITION.push("CX.TGKHOIHANH::time BETWEEN time '18:00:00' AND time '24:00:00'")
                         break;
                     default:
