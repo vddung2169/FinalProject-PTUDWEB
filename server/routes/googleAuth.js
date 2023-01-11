@@ -5,13 +5,13 @@ const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET
 const router = require('express').Router()
 const accountDataController = require('../controllers/getAccountDataController')
-
+const hostname = req.hostname === 'localhost' ? 'http://' + req.hostname + ':' + PORT : 'https://' +  req.hostname
 
 
 passport.use(new GoogleStrategy({
     clientID: GOOGLE_CLIENT_ID,
     clientSecret: GOOGLE_CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/google/callback",
+    callbackURL:  hostname + "/auth/google/callback",
     passReqToCallback : true
   },
   async (request, accessToken, refreshToken, profile, done) => {
