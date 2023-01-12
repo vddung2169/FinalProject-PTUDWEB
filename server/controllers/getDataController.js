@@ -232,7 +232,7 @@ const getAllChuyenxeBySearch = async(query,page) => {
             }
 
             if(query.date){
-                CONDITION.push(`CX.TGKHOIHANH > '${query.date}' ORDER BY ABS(DATE_PART('day','${query.thoigian}' - CX.TGKHOIHANH))`)
+                CONDITION.push(`CX.TGKHOIHANH > '${query.date}' ORDER BY ABS(DATE_PART('day','${query.date}' - CX.TGKHOIHANH))`)
             }
 
             let WHERE = CONDITION.join(' AND ')
