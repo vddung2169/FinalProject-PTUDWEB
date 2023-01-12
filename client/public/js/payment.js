@@ -178,6 +178,7 @@ var paymentActive = (clicked => {
                                                                                 </div>
                                             <h5 class="text-center">Đang thực hiện thanh toán, vui lòng đợi giây lát</h5>`
                 waitingModal.show()
+                
             }else{
                 waitingModal.show()
                 return
@@ -203,6 +204,10 @@ var paymentActive = (clicked => {
                     confirm('In pdf thất bại')
                 }
 
+                if(waitingModal._isShown){
+                    waitingModal.hide()
+                }
+
                 disabledCountdown =true
                 userEmail.innerHTML = ticket.email
                 modal.classList.add("active");       
@@ -216,6 +221,7 @@ var paymentActive = (clicked => {
             }
         }else{
             waitingModal.show()
+           
         }
     }
 })(false);
