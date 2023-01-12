@@ -4,6 +4,7 @@ if(!ticket){
     ticket = JSON.parse(window.sessionStorage.getItem('ticket')) || null
     saveClient =true
 }
+const backHomeLogo = document.getElementById('backHome')
 const paymentPrice = document.getElementById('payment-price')
 const clientInfor = document.getElementById('client-infor')
 const start = document.getElementById('batdau')
@@ -90,8 +91,6 @@ const removeTicket = async () => {
     })
 
     //const resJson = await res.json()
-
-    
 
 
     window.location.href = '/bus'
@@ -227,3 +226,27 @@ paymentBtn.onclick = async(e) =>{
    paymentActive(e)
 }
 
+backHomeLogo.addEventListener('click' , async() =>{
+    if(ticket){
+        window.sessionStorage.removeItem('ticket')
+        window.sessionStorage.removeItem('timeleft')
+    }
+
+    await fetch('/ticket/cancel',{
+        method : 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body : JSON.stringify({
+            detail : ticket
+        })
+    })
+
+    //const resJson = await res.json()
+
+
+    window.location.href = '/'
+
+
+})

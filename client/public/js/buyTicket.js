@@ -363,6 +363,11 @@ const buyticket = async (e) => {
             return
         }
 
+        if(listTickets.length <= 0 ){
+            confirm('Vui lòng chọn một ghế xe')
+            return
+        }
+
 
         const ticketdetail = {
             machuyenxe : busID,
