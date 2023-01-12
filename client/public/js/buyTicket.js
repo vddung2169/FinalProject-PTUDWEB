@@ -302,12 +302,12 @@ const renderBuyTicketModal = async (e,machuyenxe,maloaixe,mabatdau,maketthuc,tgk
         busbody.innerHTML += e
     })
 
-    locationStart.childNodes[0].nodeValue = tgkhoihanh + ' <br>'
-    locationStart.childNodes[1].innerHTML = diachibatdau.tendiachi
+    locationStart.childNodes[0].nodeValue = tgkhoihanh
+    locationStart.childNodes[1].innerHTML = ' <br> ' +  diachibatdau.tendiachi
     locationStartDetail.innerHTML = diachibatdau.diachicuthe
 
-    locationEnd.childNodes[0].nodeValue = tgketthuc + ' <br>'
-    locationEnd.childNodes[1].innerHTML = diachiketthuc.tendiachi
+    locationEnd.childNodes[0].nodeValue = tgketthuc 
+    locationEnd.childNodes[1].innerHTML = ' <br> ' + diachiketthuc.tendiachi
     locationEndDetail.innerHTML = diachiketthuc.diachicuthe
     quantity.innerHTML = selectingSeats;
     price.innerHTML = totalPrice;
