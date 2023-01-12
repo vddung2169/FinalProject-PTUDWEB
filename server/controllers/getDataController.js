@@ -180,7 +180,7 @@ const getAllChuyenxeBySearch = async(query,page) => {
          ' INNER JOIN DIACHI DCKT ON CX.DIACHIKETTHUC = DCKT.MADIACHI INNER JOIN LOAIXE LX ON CX.MALOAIXE = LX.MALOAIXE INNER JOIN TUYENDUONG TD ON CX.MATUYENDUONG = TD.MATUYENDUONG INNER JOIN '+
          ' (SELECT NX1.MANHAXE,AVG(DG.DIEMSO) DIEMSO FROM NHAXE NX1 LEFT OUTER JOIN DANHGIA DG ON NX1.MANHAXE = DG.MANHAXE GROUP BY NX1.MANHAXE) DG ON DG.MANHAXE = CX.MANHAXE '
 
-        if(query.tinhbatdau || query.tinhketthuc || query.thoigian || query.tennhaxe || query.search){
+        if(query.tinhbatdau || query.tinhketthuc || query.date || query.tennhaxe || query.search){
             QUERY += 'WHERE '
             CONDITION = []
 
@@ -196,9 +196,7 @@ const getAllChuyenxeBySearch = async(query,page) => {
                 CONDITION.push(`NX.TENNHAXE ILIKE '%${query.tennhaxe}%'`)
             }
 
-            if(query.thoigian){
-                CONDITION.push(`CX.TGKHOIHANH > '${query.thoigian}' ORDER BY ABS(DATE_PART('day','${query.thoigian}' - CX.TGKHOIHANH))`)
-            }
+           
 
             if(query.tgkhoihanh){
                 switch (query.tgkhoihanh) {
@@ -233,12 +231,16 @@ const getAllChuyenxeBySearch = async(query,page) => {
                 CONDITION.push(`CX.GIAVENHONHAT <= ${query.giavenhonhat * 1000}`)
             }
 
+            if(query.date){
+                CONDITION.push(`CX.TGKHOIHANH > '${query.thoigian}' ORDER BY ABS(DATE_PART('day','${query.thoigian}' - CX.TGKHOIHANH))`)
+            }
+
             let WHERE = CONDITION.join(' AND ')
             QUERY += WHERE
         }
         
 
-        if(query.sort){
+        if(query.sort && !query.date){
             QUERY += ` ORDER BY CX.GIAVENHONHAT ${query.sort}`
         }
 

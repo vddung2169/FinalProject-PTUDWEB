@@ -1,4 +1,5 @@
 const accountDataController = require('./getAccountDataController')
+const dataController = require('./getDataController')
 
 const renderAdmin = async(req,res) => {
     try {
@@ -6,9 +7,9 @@ const renderAdmin = async(req,res) => {
 
         const adminInfor = data[0]
 
-        
+        const nhaxe = await dataController.getAllNhaxeAdmin(req.user)
 
-        res.render('admin',{adminInfor})
+        res.render('admin',{adminInfor,nhaxe})
 
 
     } catch (error) {

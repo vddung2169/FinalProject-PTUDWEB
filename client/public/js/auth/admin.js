@@ -14,6 +14,6 @@ logoutBtn.addEventListener('click',async (e) =>{
   e.preventDefault()
   
   localStorage.removeItem('admin')
-  window.location.href = hostname + "/admin/login"
+  window.location.href = "/admin/auth/logout"
   
 })
