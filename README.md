@@ -59,6 +59,14 @@ DB_HOST = 'localhost'
 DB_NAME = 'tickettakeit'
 DB_USER = 'tên tài khoản postgres (nếu không có thì để mặc định là postgres'
 DB_PASSWORD = 'mật khẩu postgres'
+SECRET_KEY = 'chuỗi key dùng cho JWT'
+SECRET_KEY_RESEY = 'chuỗi key dùng cho reset mật khẩu'
+USER_GMAIL ='gmail của hệ thống web'
+PASSWORD_GMAIL = 'gmail của hệ thống web'
+GOOGLE_CLIENT_ID='lấy từ Google OAuth'
+GOOGLE_CLIENT_SECRET='lấy từ Google OAuth'
+PORT = 3000
+HOSTNAME = 'http://localhost:3000'
 ```
 #### Chạy server
 Vào cmd chạy các lệnh sau theo trình tự:
@@ -73,6 +81,7 @@ Vào cmd chạy các lệnh sau theo trình tự:
 - `npm run db:create` : tạo database. thấy `Database tickettakeit created` là ok
 - `npm start` chạy server
 - truy cập đường dẫn `http://localhost:3000/createDatabase` và hiện lên **create database tickettakeit successful** là thành công
+- `npm run runseed` để nạp dữ liệu mẫu
 - `npm run db:drop` để xóa database
 
 Có thể vào kiểm tra tại pgAdmin, nhấn chuột phải vài database **tickettakeit** -> chọn **Grenerate ERD** (Tổng 13 bảng)
